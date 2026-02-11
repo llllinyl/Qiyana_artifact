@@ -1,0 +1,41 @@
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyanawosel_client`
+========================================
+🔍 Qiyana-wosel Client
+========================================
+
+1. Initialize TFHE Client...
+2. Connect to server: 127.0.0.1:9999
+   ✅ Connect successfully!
+3. Send public parameters to server...
+   Public parameters size: 555491992 bytes
+   ✅ Public parameters sent successfully!
+4. Wait 10 seconds for server preprocessing...
+   ✅ Preprocessing wait completed
+5. Generate query...
+   Query generation time: 116.126972ms
+6. Send query to server...
+   ✅ Query sent successfully!
+   📊 Query summary: 17384082 bytes in 4 chunks, took 3.482553309s, 4.76 MB/s
+7. Waiting for server response...
+.....   Expecting response: 135688 bytes
+
+   ✅ Response received!
+   Response size: 135688 bytes (1 chunks)
+   Wait time: 5.352134542s
+   Total time (query+wait): 8.974047716s
+   Deserializing response...
+8. Recover results...
+   Recovery time: 22.452µs
+   Number of results: 16
+   First result: true
+   Second result: false
+   ✅ Verification passed!
+
+📊 FINAL STATISTICS:
+   Query generation: 116.126972ms
+   Server wait time: 5.352134542s
+   Result recovery: 22.452µs
+   Total elapsed: 8.974138799s
+
+🔶 Test completed!

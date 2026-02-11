@@ -1,0 +1,43 @@
+    Finished `release` profile [optimized] target(s) in 0.05s
+     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/baseline_client`
+========================================
+🔍 Baseline Client
+========================================
+
+1. Initialize TFHE Client...
+2. Connect to server: 127.0.0.1:9999
+   ✅ Connect successfully!
+3. Send public parameters to server...
+   Public parameters size: 127823230 bytes
+   ✅ Public parameters sent successfully!
+4. Wait 10 seconds for server preprocessing...
+   ✅ Preprocessing wait completed
+5. Generate query...
+   Query generation time: 46.064648ms
+6. Send query to server...
+   ✅ Query sent successfully!
+   📊 Query summary: 5927919 bytes in 2 chunks, took 47.315925ms, 119.48 MB/s
+7. Waiting for server response...
+............................................................
+   Still waiting... (60.16557674s elapsed)
+....................................   Expecting response: 263688 bytes
+
+   ✅ Response received!
+   Response size: 263688 bytes (1 chunks)
+   Wait time: 96.533160131s
+   Total time (query+wait): 96.636951098s
+   Deserializing response...
+8. Recover results...
+   Recovery time: 11.12µs
+   Number of results: 16
+   First result: true
+   Second result: false
+   ✅ Verification passed!
+
+📊 FINAL STATISTICS:
+   Query generation: 46.064648ms
+   Server wait time: 96.533160131s
+   Result recovery: 11.12µs
+   Total elapsed: 96.637013996s
+
+🔶 Test completed!
