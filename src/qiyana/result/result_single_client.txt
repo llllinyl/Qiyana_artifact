@@ -1,0 +1,57 @@
+    Blocking waiting for file lock on build directory
+   Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
+    Finished `release` profile [optimized] target(s) in 22.80s
+     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyana_client`
+========================================
+🔍 Qiyana Client
+========================================
+
+1. Initialize TFHE Client...
+2. Connect to server: 127.0.0.1:9999
+   ✅ Connect successfully!
+3. Send public parameters to server...
+   Public parameters size: 694035232 bytes
+   ✅ Public parameters sent successfully!
+4. Wait 10 seconds for server preprocessing...
+   ✅ Preprocessing wait completed
+5. Generate query...
+   Query generation time: 3.436413938s
+6. Send query to server...
+   ✅ Query sent successfully!
+   📊 Query summary: 21054114 bytes in 5 chunks, took 1.61352139s, 12.44 MB/s
+7. Waiting for server response...
+....................   Expecting response: 262192 bytes
+
+   ✅ Response received!
+   Response size: 262192 bytes (1 chunks)
+   Wait time: 20.754690787s
+   Total time (query+wait): 25.83341426s
+   Deserializing response...
+8. Recover results...
+   Recovery time: 7.570609ms
+   Number of results: 16
+First final score 222-222
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+Other final scores 0-0
+   ✅ Verification passed!
+
+📊 FINAL STATISTICS:
+   Query generation: 3.436413938s
+   Server wait time: 20.754690787s
+   Result recovery: 7.570609ms
+   Total elapsed: 25.841101436s
+
+🔶 Test completed!

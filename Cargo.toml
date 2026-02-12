@@ -34,28 +34,49 @@ path = "src/qiyana/qiyana_client.rs"
 test = false
 
 [[bin]]
-name = "qiyanawoselclient"
-path = "src/qiyanawosel/client.rs"
-
-[[bin]]
-name = "qiyanawoselmaster"
-path = "src/qiyanawosel/master.rs"
-
-[[bin]]
-name = "qiyanawoselworker"
-path = "src/qiyanawosel/worker.rs"
-
-[[bin]]
 name = "baselineclient"
 path = "src/baseline/client.rs"
+test = false
 
 [[bin]]
 name = "baselinemaster"
 path = "src/baseline/master.rs"
+test = false
 
 [[bin]]
 name = "baselineworker"
 path = "src/baseline/worker.rs"
+test = false
+
+[[bin]]
+name = "qiyanaclient"
+path = "src/qiyana/client.rs"
+test = false
+
+[[bin]]
+name = "qiyanamaster"
+path = "src/qiyana/master.rs"
+test = false
+
+[[bin]]
+name = "qiyanaworker"
+path = "src/qiyana/worker.rs"
+test = false
+
+[[bin]]
+name = "qiyanawoselclient"
+path = "src/qiyanawosel/client.rs"
+test = false
+
+[[bin]]
+name = "qiyanawoselmaster"
+path = "src/qiyanawosel/master.rs"
+test = false
+
+[[bin]]
+name = "qiyanawoselworker"
+path = "src/qiyanawosel/worker.rs"
+test = false
 
 [dependencies]
 tfhe = { version = "*", features = ["boolean", "shortint", "integer", "strings"] }

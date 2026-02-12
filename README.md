@@ -92,14 +92,9 @@ chmod +x run_single.sh
 ```
 
 # Running Client-(Master-Workers) Interactive Mode
-## Baseline Protocol
-
-## Qiyana Protocol
-
-## Qiyana-wosel Protocol
 We provide a shell script to support easy execution of the entire system. For example, you can run the following code to test the performance with 4 workers. If you wish to adjust the number of documents, ports, threads, etc., please modify the settings in the `share.rs` file.
 ```
-cd src/qiyanawosel
+cd src/<folder>
 chmod +x run_distribute.sh
 WORKER_NUM=4 ./run_distribute.sh
 ```

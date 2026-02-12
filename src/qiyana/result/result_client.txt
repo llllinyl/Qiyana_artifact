@@ -1,55 +1,44 @@
-    Finished `release` profile [optimized] target(s) in 0.04s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyana_client`
+    Blocking waiting for file lock on build directory
+   Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
+    Finished `release` profile [optimized] target(s) in 14.83s
+     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyanaclient 2 1`
 ========================================
-🔍 Qiyana Client
+🔍 Distributed Client
 ========================================
 
-1. Initialize TFHE Client...
-2. Connect to server: 127.0.0.1:9999
+1. Starting result listener on port 10001...
+   ✅ Result listener ready
+2. Connecting to Master (127.0.0.1:9999)...
    ✅ Connect successfully!
-3. Send public parameters to server...
+3. Initialize TFHE Client and send public parameters to Master...
    Public parameters size: 694035232 bytes
    ✅ Public parameters sent successfully!
-4. Wait 10 seconds for server preprocessing...
+4. Wait 20 seconds for worker preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 3.325849179s
-6. Send query to server...
+   Query generation time: 3.322817498s
+6. Send query to Master...
    ✅ Query sent successfully!
-   📊 Query summary: 21054114 bytes in 5 chunks, took 3.561789568s, 5.64 MB/s
-7. Waiting for server response...
-......................   Expecting response: 262192 bytes
-
-   ✅ Response received!
-   Response size: 262192 bytes (1 chunks)
-   Wait time: 22.537302144s
-   Total time (query+wait): 29.590032383s
-   Deserializing response...
+   📊 Query summary: 21054114 bytes in 5 chunks, took 12.976884ms, 1547.27 MB/s
+   ✅ Disconnected from Master
+7. Waiting for 2 workers...
+   📍 Listening on: Ok(0.0.0.0:10001)
+   ⏳ Waiting for 2 workers to report results...
+.....................
+   🔗 Got connection from 127.0.0.1:46028
+   Expecting response: 262192 bytes
+   The response part from : Worker 0
+   📋 Current results: 1/2
+.
+   🔗 Got connection from 127.0.0.1:46032
+   Expecting response: 262192 bytes
+   The response part from : Worker 1
+   📋 Current results: 2/2
+   🎉 All workers reported!
+   The total latency : 22.113333441s
 8. Recover results...
-   Recovery time: 7.541393ms
+   Recovery time: 14.233049ms
    Number of results: 16
-First final score 222-222
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
-Other final scores 0-0
+   First result: 222
+   Second result: 0
    ✅ Verification passed!
-
-📊 FINAL STATISTICS:
-   Query generation: 3.325849179s
-   Server wait time: 22.537302144s
-   Result recovery: 7.541393ms
-   Total elapsed: 29.597724263s
-
-🔶 Test completed!

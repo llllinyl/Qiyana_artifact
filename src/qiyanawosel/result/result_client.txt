@@ -1,0 +1,51 @@
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `qiyana` (bin "qiyanawoselclient") generated 1 warning (run `cargo fix --bin "qiyanawoselclient"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyanawoselclient 2`
+========================================
+🔍 Distributed Client
+========================================
+
+1. Starting result listener on port 10001...
+   ✅ Result listener ready
+2. Connecting to Master (127.0.0.1:9999)...
+   ✅ Connect successfully!
+3. Initialize TFHE Client and send public parameters to Master...
+   Public parameters size: 555491992 bytes
+   ✅ Public parameters sent successfully!
+4. Wait 20 seconds for worker preprocessing...
+   ✅ Preprocessing wait completed
+5. Generate query...
+   Query generation time: 158.750243ms
+6. Send query to Master...
+   ✅ Query sent successfully!
+   📊 Query summary: 17384082 bytes in 4 chunks, took 49.650375ms, 333.91 MB/s
+   ✅ Disconnected from Master
+7. Waiting for 2 workers...
+   📍 Listening on: Ok(0.0.0.0:10001)
+   ⏳ Waiting for 2 workers to report results...
+......
+   🔗 Got connection from 127.0.0.1:39350
+   Expecting response: 67848 bytes
+   The response part from : Worker 0
+   📋 Current results: 1/2
+
+   🔗 Got connection from 127.0.0.1:39362
+   Expecting response: 67848 bytes
+   The response part from : Worker 1
+   📋 Current results: 2/2
+   🎉 All workers reported!
+   The total latency : 6.142547233s
+8. Recover results...
+   Recovery time: 13.734µs
+   Number of results: 16
+   First result: true
+   Second result: false
+   ✅ Verification passed!

@@ -1,4 +1,4 @@
-    Finished `release` profile [optimized] target(s) in 0.04s
+    Finished `release` profile [optimized] target(s) in 0.05s
      Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyanawosel_server`
 ========================================
 🖥️  Qiyana-wosel Server
@@ -10,35 +10,35 @@
 
 Waiting for ONE client connection...
 
-📡 Client connected: 127.0.0.1:33684
+📡 Client connected: 127.0.0.1:54262
 This server will accept only ONE client and then exit.
-[127.0.0.1:33684] 1. Receiving public parameters...
-[127.0.0.1:33684]   Expecting 555491992 bytes total
-[127.0.0.1:33684]   ✅ Received all 555491992 bytes in 106 chunks, took 306.305028ms
-[127.0.0.1:33684]   ✅ Public parameters package deserialized, 7 params
-[127.0.0.1:33684]   ✅ All parameters deserialized in 199.729174ms
-[127.0.0.1:33684] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:33684]   Server initialized in 12.869770399s
-[127.0.0.1:33684]   Number of documents: 16
-[127.0.0.1:33684]   ✅ Preprocessing completed
-[127.0.0.1:33684] 3. Waiting for query...
-[127.0.0.1:33684]   Expecting query: 17384082 bytes
-[127.0.0.1:33684]   ✅ Received query (17384082 bytes) in 9.424651ms (4 chunks, 1759.08 MB/s)
-[127.0.0.1:33684]   Deserializing query...
-[127.0.0.1:33684]   ✅ Query package deserialized, 3 params
-[127.0.0.1:33684]   ✅ All query deserialized in 6.122406ms
-[127.0.0.1:33684] 4. Processing query...
-[127.0.0.1:33684]   ✅ Query processed in 5.319131723s
-[127.0.0.1:33684] 5. Sending response...
-[127.0.0.1:33684]   Response size: 135688 bytes
-[127.0.0.1:33684]   Sent response size header
-[127.0.0.1:33684]   ✅ Response sent in 107.143µs (1 chunks, 1207.75 MB/s)
-[127.0.0.1:33684] 📊 Session statistics:
-[127.0.0.1:33684]   - Receive public params: 306.305028ms
-[127.0.0.1:33684]   - Server init: 12.869770399s
-[127.0.0.1:33684]   - Preprocess wait: 10 seconds
-[127.0.0.1:33684]   - Receive query: 9.424651ms
-[127.0.0.1:33684]   - Process query: 5.319131723s
-[127.0.0.1:33684]   - Send response: 107.143µs
-[127.0.0.1:33684]   - TOTAL TIME: 19.278167767s
-[127.0.0.1:33684] 🎉 Session completed successfully!
+[127.0.0.1:54262] 1. Receiving public parameters...
+[127.0.0.1:54262]   Expecting 555491992 bytes total
+[127.0.0.1:54262]   ✅ Received all 555491992 bytes in 106 chunks, took 305.681736ms
+[127.0.0.1:54262]   ✅ Public parameters package deserialized, 7 params
+[127.0.0.1:54262]   ✅ All parameters deserialized in 193.023345ms
+[127.0.0.1:54262] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:54262]   Server initialized in 13.142112273s
+[127.0.0.1:54262]   Number of documents: 16
+[127.0.0.1:54262]   ✅ Preprocessing completed
+[127.0.0.1:54262] 3. Waiting for query...
+[127.0.0.1:54262]   Expecting query: 17384082 bytes
+[127.0.0.1:54262]   ✅ Received query (17384082 bytes) in 9.184549ms (4 chunks, 1805.07 MB/s)
+[127.0.0.1:54262]   Deserializing query...
+[127.0.0.1:54262]   ✅ Query package deserialized, 3 params
+[127.0.0.1:54262]   ✅ All query deserialized in 5.092755ms
+[127.0.0.1:54262] 4. Processing query...
+[127.0.0.1:54262]   ✅ Query processed in 5.508586757s
+[127.0.0.1:54262] 5. Sending response...
+[127.0.0.1:54262]   Response size: 135688 bytes
+[127.0.0.1:54262]   Sent response size header
+[127.0.0.1:54262]   ✅ Response sent in 117.643µs (1 chunks, 1099.96 MB/s)
+[127.0.0.1:54262] 📊 Session statistics:
+[127.0.0.1:54262]   - Receive public params: 305.681736ms
+[127.0.0.1:54262]   - Server init: 13.142112273s
+[127.0.0.1:54262]   - Preprocess wait: 10 seconds
+[127.0.0.1:54262]   - Receive query: 9.184549ms
+[127.0.0.1:54262]   - Process query: 5.508586757s
+[127.0.0.1:54262]   - Send response: 117.643µs
+[127.0.0.1:54262]   - TOTAL TIME: 19.728996737s
+[127.0.0.1:54262] 🎉 Session completed successfully!

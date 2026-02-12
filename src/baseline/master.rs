@@ -274,8 +274,6 @@ impl MasterNode {
             
             let serialized_query = bincode::serialize(&query_pack).unwrap();
             let query_size = serialized_query.len();
-            println!("   Query size: {} bytes", query_size);
-
             let query_size_bytes = (query_size as u64).to_be_bytes();
             match stream.write_all(&query_size_bytes).await {
                 Ok(()) => {}

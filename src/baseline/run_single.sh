@@ -32,5 +32,8 @@ echo -e "\n📊  Log files created:"
 echo "   Server: ./result/result_single_server.txt ($(wc -l < ./result/result_single_server.txt) lines)"
 echo "   Client: ./result/result_single_client.txt ($(wc -l < ./result/result_single_client.txt) lines)"
 
-echo -e "\n✅  Test completed with exit code: $CLIENT_EXIT"
-exit $CLIENT_EXIT
+echo -e "\nPress Ctrl+C to stop all processes..."
+echo "Waiting for processes to complete..."
+
+wait
+echo -e "\n✅ Test completed!"

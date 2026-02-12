@@ -13,29 +13,29 @@
 4. Wait 10 seconds for server preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 116.126972ms
+   Query generation time: 113.261647ms
 6. Send query to server...
    ✅ Query sent successfully!
-   📊 Query summary: 17384082 bytes in 4 chunks, took 3.482553309s, 4.76 MB/s
+   📊 Query summary: 17384082 bytes in 4 chunks, took 3.749828001s, 4.42 MB/s
 7. Waiting for server response...
 .....   Expecting response: 135688 bytes
 
    ✅ Response received!
    Response size: 135688 bytes (1 chunks)
-   Wait time: 5.352134542s
-   Total time (query+wait): 8.974047716s
+   Wait time: 5.54315084s
+   Total time (query+wait): 9.424083593s
    Deserializing response...
 8. Recover results...
-   Recovery time: 22.452µs
+   Recovery time: 16.203µs
    Number of results: 16
    First result: true
    Second result: false
    ✅ Verification passed!
 
 📊 FINAL STATISTICS:
-   Query generation: 116.126972ms
-   Server wait time: 5.352134542s
-   Result recovery: 22.452µs
-   Total elapsed: 8.974138799s
+   Query generation: 113.261647ms
+   Server wait time: 5.54315084s
+   Result recovery: 16.203µs
+   Total elapsed: 9.424212058s
 
 🔶 Test completed!
