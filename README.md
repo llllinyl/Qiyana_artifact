@@ -23,6 +23,9 @@ Each implementation includes:
 
 2. A client-server interactive implementation for real-world usage
 
+# Database
+We use the English Wikipedia document dump of 1 December 2025 (`https://dumps.wikimedia.org/enwiki/20251201/enwiki-20251201-pages-articles-multistream.xml.bz2`) as our source corpus. All articles are first extracted using the open-source WikiExtractor tool (`https://github.com/attardi/wikiextractor`). From this set, we randomly select a subset of documents subject to file size constraints using a custom script `python random_select_with_size_range.py <input_folder> <output_folder> --total-files <input_number> --select-count <output_number> --min-size <min_size> --max-size <max_size> --seed 42 --verify`. Finally, we generate keyword sets for the selected documents using three preprocessing scripts: `select_keywords_qiyana.py`, `tfidf_processor.py`, and `find.py`.
+
 # Running Tests
 ## Protocol Simulations
 Run simulation tests for each protocol implementation:
