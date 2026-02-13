@@ -32,8 +32,8 @@ async fn main() {
         }
     };
     
-    let keyword_file = "/home/lyl/Desktop/Qiyana/keyword.txt";
-    let tfidf_path = "/home/lyl/Desktop/Qiyana/tf-idf.txt";
+    let keyword_file = "/root/Qiyana-experiment/keyword.txt";
+    let tfidf_path = "/root/Qiyana-experiment/tf-idf.txt";
     println!("========================================");
     println!("👷 Worker {}/{}", worker_id, worker_num);
     println!("========================================\n");

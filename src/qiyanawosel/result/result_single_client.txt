@@ -1,7 +1,7 @@
     Blocking waiting for file lock on build directory
-   Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 15.68s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyanawosel_client`
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
+    Finished `release` profile [optimized] target(s) in 16.19s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawosel_client`
 ========================================
 🔍 Qiyana-wosel Client
 ========================================
@@ -15,29 +15,35 @@
 4. Wait 10 seconds for server preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 171.420394ms
+   Query generation time: 67.487578ms
 6. Send query to server...
    ✅ Query sent successfully!
-   📊 Query summary: 17384082 bytes in 4 chunks, took 12.215721751s, 1.36 MB/s
+   📊 Query summary: 8692067 bytes in 2 chunks, took 119.864864ms, 69.16 MB/s
 7. Waiting for server response...
-.....   Expecting response: 135688 bytes
+............................................................
+   Still waiting... (60.067056459s elapsed)
+............................................................
+   Still waiting... (120.135601819s elapsed)
+............................................................
+   Still waiting... (180.202383653s elapsed)
+.......   Expecting response: 138936328 bytes
 
    ✅ Response received!
-   Response size: 135688 bytes (1 chunks)
-   Wait time: 5.46722363s
-   Total time (query+wait): 17.992458698s
+   Response size: 138936328 bytes (27 chunks)
+   Wait time: 187.82889348s
+   Total time (query+wait): 188.027531375s
    Deserializing response...
 8. Recover results...
-   Recovery time: 15.207µs
-   Number of results: 16
+   Recovery time: 12.442764ms
+   Number of results: 16384
    First result: true
    Second result: false
    ✅ Verification passed!
 
 📊 FINAL STATISTICS:
-   Query generation: 171.420394ms
-   Server wait time: 5.46722363s
-   Result recovery: 15.207µs
-   Total elapsed: 17.992535268s
+   Query generation: 67.487578ms
+   Server wait time: 187.82889348s
+   Result recovery: 12.442764ms
+   Total elapsed: 188.105917323s
 
 🔶 Test completed!

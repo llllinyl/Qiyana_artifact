@@ -84,9 +84,9 @@ def calculate_tf_idf_english(documents):
     return tfidf_results
 
 def main_simple():
-    database_folder = "/home/lyl/Desktop/Qiyana/Qiyana_artifact/src/database"
-    output_file = "/home/lyl/Desktop/Qiyana/keyword.txt"
-    num_keywords = 8
+    database_folder = "/root/Qiyana-experiment/database"
+    output_file = "/root/Qiyana-experiment/keyword.txt"
+    num_keywords = 16
     
     print("Loading documents...")
     documents = load_documents(database_folder)

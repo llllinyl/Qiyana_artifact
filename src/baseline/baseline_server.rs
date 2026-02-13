@@ -10,7 +10,7 @@ include!("baseline_sim.rs");
 #[tokio::main]
 async fn main() {
     let addr = "127.0.0.1:9999";
-    let keyword_file = "/home/lyl/Desktop/Qiyana/keyword.txt";
+    let keyword_file = "/root/Qiyana-experiment/keyword.txt";
     
     println!("========================================");
     println!("🖥️  Baseline Server");

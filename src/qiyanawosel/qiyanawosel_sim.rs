@@ -11,9 +11,9 @@ use std::fs;
 use std::path::Path;
 use rayon::prelude::*;
 
-pub const THREAD_NUM: usize = 16;
-pub const DOCUMENT_NUM: usize = 16;
-pub const KEYWORD_SET_NUM: usize = 8;
+pub const THREAD_NUM: usize = 64;
+pub const DOCUMENT_NUM: usize = 16384;
+pub const KEYWORD_SET_NUM: usize = 16;
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum QueryElement {
@@ -611,7 +611,7 @@ fn test_qiyanawosel_simulate(){
         .num_threads(THREAD_NUM)
         .build_global()
         .unwrap();
-    let file_path = "/home/lyl/Desktop/Qiyana/keyword.txt";
+    let file_path = "/root/Qiyana-experiment/keyword.txt";
     let client = Client::new();
     let pre = Instant::now();
     let server = Server::new(client.seeded_bsk.clone(), 

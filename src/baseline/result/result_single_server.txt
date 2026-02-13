@@ -1,47 +1,11 @@
-   Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 15.04s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/baseline_server`
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
+    Finished `release` profile [optimized] target(s) in 17.32s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baseline_server`
 ========================================
 🖥️  Baseline Server
 ========================================
 
-✅ Server started successfully
-📍 Listening on: 127.0.0.1:9999
-📁 Keyword file: /home/lyl/Desktop/Qiyana/keyword.txt
 
-Waiting for ONE client connection...
-
-📡 Client connected: 127.0.0.1:49460
-This server will accept only ONE client and then exit.
-[127.0.0.1:49460] 1. Receiving public parameters...
-[127.0.0.1:49460]   Expecting 127823230 bytes total
-[127.0.0.1:49460]   ✅ Received 127823230 bytes in 85.447888ms (25 chunks, 1426.62 MB/s)
-[127.0.0.1:49460]   Deserializing public parameters...
-[127.0.0.1:49460]   ✅ Public parameters package deserialized, 2 params
-[127.0.0.1:49460]   ✅ All parameters deserialized in 264.198942ms
-[127.0.0.1:49460] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:49460]   Server initialized in 302.715µs
-[127.0.0.1:49460]   Number of documents: 16
-[127.0.0.1:49460]   ✅ Preprocessing completed
-[127.0.0.1:49460] 3. Waiting for query...
-[127.0.0.1:49460]   Expecting query: 5927919 bytes
-[127.0.0.1:49460]   ✅ Received query (5927919 bytes) in 5.489537ms (2 chunks, 1029.83 MB/s)
-[127.0.0.1:49460]   Deserializing query...
-[127.0.0.1:49460]   ✅ Query package deserialized, 2 params
-[127.0.0.1:49460]   ✅ All query deserialized in 1.035366ms
-[127.0.0.1:49460] 4. Processing query...
-Total time: 84.943248776s
-[127.0.0.1:49460]   ✅ Query processed in 84.946891762s
-[127.0.0.1:49460] 5. Sending response...
-[127.0.0.1:49460]   Response size: 263688 bytes
-[127.0.0.1:49460]   Sent response size header
-[127.0.0.1:49460]   ✅ Response sent in 282.466µs (1 chunks, 890.28 MB/s)
-[127.0.0.1:49460] 📊 Session statistics:
-[127.0.0.1:49460]   - Receive public params: 85.447888ms
-[127.0.0.1:49460]   - Server init: 302.715µs
-[127.0.0.1:49460]   - Preprocess wait: 20 seconds
-[127.0.0.1:49460]   - Receive query: 5.489537ms
-[127.0.0.1:49460]   - Process query: 84.946891762s
-[127.0.0.1:49460]   - Send response: 282.466µs
-[127.0.0.1:49460]   - TOTAL TIME: 95.099218838s
-[127.0.0.1:49460] 🎉 Session completed successfully!
+thread 'main' (29718) panicked at src/baseline/baseline_server.rs:19:50:
+called `Result::unwrap()` on an `Err` value: Os { code: 98, kind: AddrInUse, message: "Address already in use" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

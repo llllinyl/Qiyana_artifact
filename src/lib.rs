@@ -13,9 +13,3 @@ pub mod baseline;
 pub mod qiyana;
 pub mod qiyanawosel;
 
-pub mod test {
-    pub mod testbool;
-    pub mod testcorecrypto;
-    pub mod teststring;
-    pub mod testmatrix;
-}

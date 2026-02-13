@@ -14,12 +14,12 @@ use std::path::Path;
 use rayon::prelude::*;
 use std::sync::Arc;
 
-pub const DOCUMENT_NUM: usize = 16;
+pub const DOCUMENT_NUM: usize = 16384;
 pub const KEYWORD_NUM: usize = 65536;
-pub const THREAD_NUM: usize = 16;
+pub const THREAD_NUM: usize = 64;
 pub const PACKING_NUM: usize = 3276;
 pub const LWESIZE: usize = 1056;
-pub const KEYWORD_SET_NUM: usize = 8;
+pub const KEYWORD_SET_NUM: usize = 16;
 
 pub fn read_tf_idf_file(
     file_path: &str,
@@ -759,7 +759,7 @@ impl Server {
         rank_vector: Vec<LweCiphertextOwned<u64>>) -> Vec<Vec<LweCiphertextOwned<u64>>> {
         let keywords = self.keywords.clone();
 
-        // let equal = Instant::now();
+        let equal = Instant::now();
         let subset_results: Vec<Vec<LweCiphertextOwned<u64>>> = keywords
             .par_iter()
             .map(|keyrow| {
@@ -779,9 +779,9 @@ impl Server {
                     .collect::<Vec<LweCiphertextOwned<u64>>>()
             })
             .collect();
-        // println!("homomorphic subset testing time: {:?}", equal.elapsed());
+        println!("homomorphic subset testing time: {:?}", equal.elapsed());
 
-        // let boolexe = Instant::now();
+        let boolexe = Instant::now();
         let (_strings, queryformat) = parse_query_to_rpn(&template);
 
         let match_results: Vec<LweCiphertextOwned<u64>> = subset_results
@@ -789,9 +789,9 @@ impl Server {
             .map(|res| self.evaluate_rpn_for_doc(&queryformat, res))
             .collect();
         
-        // println!("Boolean match time: {:?}", boolexe.elapsed());
+        println!("Boolean match time: {:?}", boolexe.elapsed());
         
-        // let mul_start = Instant::now();
+        let mul_start = Instant::now();
         let submatrix_arc = Arc::new(self.submatrix.clone());
         let one_clone_arc = Arc::new(self.one.clone());
         let rank_vector_arc = Arc::new(rank_vector);
@@ -825,9 +825,9 @@ impl Server {
                     .collect()
             })
             .collect();
-        // println!("MVM time: {:?}", mul_start.elapsed());
+        println!("MVM time: {:?}", mul_start.elapsed());
 
-        // let select = Instant::now();
+        let select = Instant::now();
         let final_results: Vec<Vec<LweCiphertextOwned<u64>>> = (0..keywords.len())
             .into_par_iter()
             .map(|num| {
@@ -839,7 +839,7 @@ impl Server {
                     .collect()
             })
             .collect();
-        // println!("TFHE selection time: {:?}", select.elapsed());
+        println!("TFHE selection time: {:?}", select.elapsed());
 
         final_results
     }
@@ -1149,8 +1149,8 @@ fn test_qiyana_simulate(){
         .num_threads(THREAD_NUM)
         .build_global()
         .unwrap();
-    let keyword_path = "/home/lyl/Desktop/Qiyana/keyword.txt";
-    let tfidf_path = "/home/lyl/Desktop/Qiyana/tf-idf.txt";
+    let keyword_path = "/root/Qiyana-experiment/keyword.txt";
+    let tfidf_path = "/root/Qiyana-experiment/tf-idf.txt";
     let client = Client::new();
     let pre = Instant::now();
     let server = Server::new(client.seeded_bsk.clone(), 

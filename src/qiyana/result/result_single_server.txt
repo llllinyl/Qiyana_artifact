@@ -1,51 +1,51 @@
-   Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 22.47s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyana_server`
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
+    Finished `release` profile [optimized] target(s) in 17.72s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyana_server`
 ========================================
 🖥️  Qiyana Server
 ========================================
 
 ✅ Server started successfully
 📍 Listening on: 127.0.0.1:9999
-📁 Keyword file: /home/lyl/Desktop/Qiyana/keyword.txt
-📁 TF-IDF file: /home/lyl/Desktop/Qiyana/tf-idf.txt
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+📁 TF-IDF file: /root/Qiyana-experiment/tf-idf.txt
 
 Waiting for ONE client connection...
 
-📡 Client connected: 127.0.0.1:49542
+📡 Client connected: 127.0.0.1:60598
 This server will accept only ONE client and then exit.
-[127.0.0.1:49542] 1. Receiving public parameters...
-[127.0.0.1:49542]   Expecting 694035232 bytes total
-[127.0.0.1:49542]   ✅ Received all 694035232 bytes in 133 chunks, took 369.885581ms
-[127.0.0.1:49542]   ✅ Public parameters package deserialized, 9 params
-[127.0.0.1:49542]   ✅ All parameters deserialized in 222.87137ms
-[127.0.0.1:49542] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:49542]   Server initialized in 14.216934651s
-[127.0.0.1:49542]   Number of documents: 16
-[127.0.0.1:49542]   ✅ Preprocessing completed
-[127.0.0.1:49542] 3. Waiting for query...
-[127.0.0.1:49542]   Expecting query: 21054114 bytes
-[127.0.0.1:49542]   ✅ Received query (21054114 bytes) in 11.476723ms (5 chunks, 1749.52 MB/s)
-[127.0.0.1:49542]   Deserializing query...
-[127.0.0.1:49542]   ✅ Query package deserialized, 4 params
-[127.0.0.1:49542]   ✅ All query deserialized in 6.75988ms
-[127.0.0.1:49542] 4. Processing query...
-homomorphic subset testing time: 3.767665528s
-Boolean match time: 1.874833186s
-MVM time: 1.419399714s
-TFHE selection and container building time: 13.241414539s
-TFHE packing time: 395.003557ms
-[127.0.0.1:49542]   ✅ Query processed in 20.71850154s
-[127.0.0.1:49542] 5. Sending response...
-[127.0.0.1:49542]   Response size: 262192 bytes
-[127.0.0.1:49542]   Sent response size header
-[127.0.0.1:49542]   ✅ Response sent in 175.077µs (1 chunks, 1428.20 MB/s)
-[127.0.0.1:49542] 📊 Session statistics:
-[127.0.0.1:49542]   - Receive public params: 369.885581ms
-[127.0.0.1:49542]   - Server init: 14.216934651s
-[127.0.0.1:49542]   - Preprocess wait: 10 seconds
-[127.0.0.1:49542]   - Receive query: 11.476723ms
-[127.0.0.1:49542]   - Process query: 20.71850154s
-[127.0.0.1:49542]   - Send response: 175.077µs
-[127.0.0.1:49542]   - TOTAL TIME: 36.202270318s
-[127.0.0.1:49542] 🎉 Session completed successfully!
+[127.0.0.1:60598] 1. Receiving public parameters...
+[127.0.0.1:60598]   Expecting 694035232 bytes total
+[127.0.0.1:60598]   ✅ Received all 694035232 bytes in 133 chunks, took 476.33595ms
+[127.0.0.1:60598]   ✅ Public parameters package deserialized, 9 params
+[127.0.0.1:60598]   ✅ All parameters deserialized in 403.084344ms
+[127.0.0.1:60598] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:60598]   Server initialized in 35.810179654s
+[127.0.0.1:60598]   Number of documents: 16384
+[127.0.0.1:60598]   ✅ Preprocessing completed
+[127.0.0.1:60598] 3. Waiting for query...
+[127.0.0.1:60598]   Expecting query: 21054114 bytes
+[127.0.0.1:60598]   ✅ Received query (21054114 bytes) in 5.988641ms (5 chunks, 3352.81 MB/s)
+[127.0.0.1:60598]   Deserializing query...
+[127.0.0.1:60598]   ✅ Query package deserialized, 4 params
+[127.0.0.1:60598]   ✅ All query deserialized in 6.437728ms
+[127.0.0.1:60598] 4. Processing query...
+homomorphic subset testing time: 355.571349847s
+Boolean match time: 156.183775569s
+MVM time: 112.023439317s
+TFHE selection and container building time: 929.443584535s
+TFHE packing time: 50.660003851s
+[127.0.0.1:60598]   ✅ Query processed in 1604.306230494s
+[127.0.0.1:60598] 5. Sending response...
+[127.0.0.1:60598]   Response size: 6816792 bytes
+[127.0.0.1:60598]   Sent response size header
+[127.0.0.1:60598]   ✅ Response sent in 5.175427ms (2 chunks, 1256.13 MB/s)
+[127.0.0.1:60598] 📊 Session statistics:
+[127.0.0.1:60598]   - Receive public params: 476.33595ms
+[127.0.0.1:60598]   - Server init: 35.810179654s
+[127.0.0.1:60598]   - Preprocess wait: 10 seconds
+[127.0.0.1:60598]   - Receive query: 5.988641ms
+[127.0.0.1:60598]   - Process query: 1604.306230494s
+[127.0.0.1:60598]   - Send response: 5.175427ms
+[127.0.0.1:60598]   - TOTAL TIME: 1642.019944939s
+[127.0.0.1:60598] 🎉 Session completed successfully!

@@ -23,7 +23,7 @@ async fn main() {
         }
     };
     
-    let keyword_file = "/home/lyl/Desktop/Qiyana/keyword.txt";
+    let keyword_file = "/root/Qiyana-experiment/keyword.txt";
     println!("========================================");
     println!("👷 Worker {}/{}", worker_id, worker_num);
     println!("========================================\n");

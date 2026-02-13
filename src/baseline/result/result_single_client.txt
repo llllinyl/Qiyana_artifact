@@ -1,7 +1,7 @@
     Blocking waiting for file lock on build directory
-   Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 27.57s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/baseline_client`
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
+    Finished `release` profile [optimized] target(s) in 16.00s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baseline_client`
 ========================================
 🔍 Baseline Client
 ========================================
@@ -11,35 +11,3 @@
    ✅ Connect successfully!
 3. Send public parameters to server...
    Public parameters size: 127823230 bytes
-   ✅ Public parameters sent successfully!
-4. Wait 10 seconds for server preprocessing...
-   ✅ Preprocessing wait completed
-5. Generate query...
-   Query generation time: 42.3692ms
-6. Send query to server...
-   ✅ Query sent successfully!
-   📊 Query summary: 5927919 bytes in 2 chunks, took 5.808491ms, 973.28 MB/s
-7. Waiting for server response...
-............................................................
-   Still waiting... (60.156373575s elapsed)
-........................   Expecting response: 263688 bytes
-
-   ✅ Response received!
-   Response size: 263688 bytes (1 chunks)
-   Wait time: 84.957970351s
-   Total time (query+wait): 85.015371091s
-   Deserializing response...
-8. Recover results...
-   Recovery time: 11.21µs
-   Number of results: 16
-   First result: true
-   Second result: false
-   ✅ Verification passed!
-
-📊 FINAL STATISTICS:
-   Query generation: 42.3692ms
-   Server wait time: 84.957970351s
-   Result recovery: 11.21µs
-   Total elapsed: 85.015425331s
-
-🔶 Test completed!

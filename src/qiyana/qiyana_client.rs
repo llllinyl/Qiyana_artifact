@@ -12,7 +12,9 @@ async fn main() {
     println!("========================================\n");
     
     let server_addr = "127.0.0.1:9999";
-    let test_string = "cladoniaceae AND cladonia OR species";
+    // let test_string = "cladoniaceae AND cladonia";
+    let test_string = "cladoniaceae OR cladonia";
+    // let test_string = "NOT cladoniaceae";
     
     println!("1. Initialize TFHE Client...");
     let client = Client::new();
@@ -221,12 +223,10 @@ async fn main() {
             println!("   Number of results: {}", recovered.len());
             
             let mut valid = true;
-            println!("First final score {}-{}", 222, recovered[0]);
             if recovered[0] != 222 {
                 valid = false;
             }
             for i in 1..DOCUMENT_NUM {
-                println!("Other final scores 0-{}", recovered[i]);
                 if i < recovered.len() && (recovered[i] != 0) {
                     valid = false;
                     break;

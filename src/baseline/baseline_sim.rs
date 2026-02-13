@@ -9,9 +9,9 @@ use serde::{Serialize, Deserialize};
 use rayon::prelude::*;
 use std::sync::Arc;
 
-pub const DOCUMENT_NUM: usize = 16;
-pub const THREAD_NUM: usize = 16;
-pub const KEYWORD_SET_NUM: usize = 8;
+pub const DOCUMENT_NUM: usize = 16384;
+pub const THREAD_NUM: usize = 64;
+pub const KEYWORD_SET_NUM: usize = 16;
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum QueryElement {
@@ -244,21 +244,29 @@ impl Server {
             })
             .build()
             .expect("Failed to build thread pool");
-    
+        
         pool.install(|| {
-            let total_start = Instant::now();
-            
-            let results: Vec<FheBool> = keywords
-                .par_iter()
+            let subset_testing_start = Instant::now();
+            let precomputed_keywords: Vec<Vec<ClearString>> = keywords
+                .iter()
                 .map(|keyword_row| {
+                    keyword_row.iter()
+                        .map(|kc| ClearString::new(kc.clone()))
+                        .collect()
+                })
+                .collect();
+            
+            let row_results_all: Vec<Vec<FheBool>> = precomputed_keywords
+                .par_iter()
+                .zip(&keywords)
+                .map(|(precomputed_row, _keyword_row)| {
                     let row_results: Vec<FheBool> = query
                         .iter()
                         .map(|query_cipher| {
                             let mut or_result: Option<FheBool> = None;
                             
-                            for keyword_char in keyword_row {
-                                let keyword = ClearString::new(keyword_char.clone());
-                                let is_equal = query_cipher.eq(&keyword);
+                            for precomputed in precomputed_row {
+                                let is_equal = query_cipher.eq(precomputed);
                                 
                                 or_result = match or_result {
                                     Some(existing) => Some(existing | &is_equal),
@@ -270,15 +278,29 @@ impl Server {
                         })
                         .collect();
                     
+                    row_results
+                })
+                .collect();
+            
+            let subset_testing_time = subset_testing_start.elapsed();
+            println!("Homomorphic Subset Testing time: {:?}", subset_testing_time);
+            
+            let boolean_match_start = Instant::now();
+            
+            let results: Vec<FheBool> = row_results_all
+                .into_par_iter()
+                .map(|row_results| {
                     self.evaluate_rpn_for_doc(query_structure, &row_results)
                 })
                 .collect();
             
-            println!("Total time: {:?}", total_start.elapsed());
+            let boolean_match_time = boolean_match_start.elapsed();
+            println!("Boolean Match time: {:?}", boolean_match_time);
+            
             results
         })
-    }
 
+    }
     pub fn evaluate_rpn_for_doc(&self, structure: &[QueryElement], term_results: &[FheBool]) -> FheBool {
         let mut stack: Vec<FheBool> = Vec::new();
         let false_ciphertext = self.false_ciphertext.clone();
@@ -333,7 +355,7 @@ fn test_baseline_simulate(){
         .num_threads(THREAD_NUM)
         .build_global()
         .unwrap();
-    let file_path = "/home/lyl/Desktop/Qiyana/keyword.txt";
+    let file_path = "/root/Qiyana-experiment/keyword.txt";
     let client = Client::new();
     let pre = Instant::now();
     let server = Server::new(client.server_key.clone(), client.false_ciphertext.clone(), file_path);

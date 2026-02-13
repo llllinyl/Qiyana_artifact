@@ -254,21 +254,28 @@ impl SubServer {
             })
             .build()
             .expect("Failed to build thread pool");
-    
         pool.install(|| {
-            let total_start = Instant::now();
-            
-            let results: Vec<FheBool> = keywords
-                .par_iter()
+            let subset_testing_start = Instant::now();
+            let precomputed_keywords: Vec<Vec<ClearString>> = keywords
+                .iter()
                 .map(|keyword_row| {
+                    keyword_row.iter()
+                        .map(|kc| ClearString::new(kc.clone()))
+                        .collect()
+                })
+                .collect();
+            
+            let row_results_all: Vec<Vec<FheBool>> = precomputed_keywords
+                .par_iter()
+                .zip(&keywords)
+                .map(|(precomputed_row, _keyword_row)| {
                     let row_results: Vec<FheBool> = query
                         .iter()
                         .map(|query_cipher| {
                             let mut or_result: Option<FheBool> = None;
                             
-                            for keyword_char in keyword_row {
-                                let keyword = ClearString::new(keyword_char.clone());
-                                let is_equal = query_cipher.eq(&keyword);
+                            for precomputed in precomputed_row {
+                                let is_equal = query_cipher.eq(precomputed);
                                 
                                 or_result = match or_result {
                                     Some(existing) => Some(existing | &is_equal),
@@ -280,11 +287,25 @@ impl SubServer {
                         })
                         .collect();
                     
+                    row_results
+                })
+                .collect();
+            
+            let subset_testing_time = subset_testing_start.elapsed();
+            println!("Homomorphic Subset Testing time: {:?}", subset_testing_time);
+            
+            let boolean_match_start = Instant::now();
+            
+            let results: Vec<FheBool> = row_results_all
+                .into_par_iter()
+                .map(|row_results| {
                     self.evaluate_rpn_for_doc(query_structure, &row_results)
                 })
                 .collect();
             
-            println!("Total time: {:?}", total_start.elapsed());
+            let boolean_match_time = boolean_match_start.elapsed();
+            println!("Boolean Match time: {:?}", boolean_match_time);
+            
             results
         })
     }
@@ -292,7 +313,7 @@ impl SubServer {
     pub fn evaluate_rpn_for_doc(&self, structure: &[QueryElement], term_results: &[FheBool]) -> FheBool {
         let mut stack: Vec<FheBool> = Vec::new();
         let false_ciphertext = self.false_ciphertext.clone();
-        
+
         for element in structure {
             match element {
                 QueryElement::Term(idx) => {
@@ -332,7 +353,7 @@ impl SubServer {
                 }
             }
         }
-        
+
         stack.pop().unwrap_or(false_ciphertext.clone())
     }
 }
