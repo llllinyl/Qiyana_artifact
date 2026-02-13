@@ -1,7 +1,7 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 14.83s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyanaclient 2 1`
+    Finished `release` profile [optimized] target(s) in 14.76s
+     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyanaclient 2 0`
 ========================================
 🔍 Distributed Client
 ========================================
@@ -16,28 +16,28 @@
 4. Wait 20 seconds for worker preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 3.322817498s
+   Query generation time: 5.131690493s
 6. Send query to Master...
    ✅ Query sent successfully!
-   📊 Query summary: 21054114 bytes in 5 chunks, took 12.976884ms, 1547.27 MB/s
+   📊 Query summary: 573129378 bytes in 110 chunks, took 1.871175878s, 292.10 MB/s
    ✅ Disconnected from Master
 7. Waiting for 2 workers...
    📍 Listening on: Ok(0.0.0.0:10001)
    ⏳ Waiting for 2 workers to report results...
-.....................
-   🔗 Got connection from 127.0.0.1:46028
-   Expecting response: 262192 bytes
-   The response part from : Worker 0
+................................
+   🔗 Got connection from 127.0.0.1:43732
+   Expecting response: 339272 bytes
+   The response part from : Worker 1
    📋 Current results: 1/2
 .
-   🔗 Got connection from 127.0.0.1:46032
-   Expecting response: 262192 bytes
-   The response part from : Worker 1
+   🔗 Got connection from 127.0.0.1:43744
+   Expecting response: 339272 bytes
+   The response part from : Worker 0
    📋 Current results: 2/2
    🎉 All workers reported!
-   The total latency : 22.113333441s
+   The total latency : 33.753740723s
 8. Recover results...
-   Recovery time: 14.233049ms
+   Recovery time: 134.693µs
    Number of results: 16
    First result: 222
    Second result: 0
