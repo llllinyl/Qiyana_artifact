@@ -360,7 +360,7 @@ fn test_baseline_simulate(){
     let pre = Instant::now();
     let server = Server::new(client.server_key.clone(), client.false_ciphertext.clone(), file_path);
     println!("preprocess time: {:?}", pre.elapsed());
-    let length = 30usize;
+    let length = 35usize;
 
     let test_string = "cladoniaceae AND cladonia OR species".to_string();
 

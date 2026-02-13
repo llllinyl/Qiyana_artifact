@@ -1,6 +1,6 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 16.00s
+    Finished `release` profile [optimized] target(s) in 16.06s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baseline_client`
 ========================================
 🔍 Baseline Client
@@ -11,3 +11,14 @@
    ✅ Connect successfully!
 3. Send public parameters to server...
    Public parameters size: 127823230 bytes
+   ✅ Public parameters sent successfully!
+4. Wait 10 seconds for server preprocessing...
+   ✅ Preprocessing wait completed
+5. Generate query...
+   Query generation time: 35.810447ms
+6. Send query to server...
+   ✅ Query sent successfully!
+   📊 Query summary: 4610598 bytes in 1 chunks, took 847.101µs, 5190.65 MB/s
+7. Waiting for server response...
+   ❌ Failed to read response size: early eof
+   Wait time: 62.153499ms

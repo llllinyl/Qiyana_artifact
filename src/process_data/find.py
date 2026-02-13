@@ -1,5 +1,5 @@
 def find_longest_keyword():
-    with open("/home/lyl/Desktop/Qiyana/keyword.txt", 'r', encoding='utf-8') as f:
+    with open("/root/Qiyana-experiment/keyword.txt", 'r', encoding='utf-8') as f:
         lines = f.readlines()
     
     max_length = 0

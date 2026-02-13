@@ -1,11 +1,36 @@
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 17.32s
+    Finished `release` profile [optimized] target(s) in 17.37s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baseline_server`
 ========================================
 🖥️  Baseline Server
 ========================================
 
+✅ Server started successfully
+📍 Listening on: 127.0.0.1:9999
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
 
-thread 'main' (29718) panicked at src/baseline/baseline_server.rs:19:50:
-called `Result::unwrap()` on an `Err` value: Os { code: 98, kind: AddrInUse, message: "Address already in use" }
+Waiting for ONE client connection...
+
+📡 Client connected: 127.0.0.1:56900
+This server will accept only ONE client and then exit.
+[127.0.0.1:56900] 1. Receiving public parameters...
+[127.0.0.1:56900]   Expecting 127823230 bytes total
+[127.0.0.1:56900]   ✅ Received 127823230 bytes in 79.545892ms (25 chunks, 1532.47 MB/s)
+[127.0.0.1:56900]   Deserializing public parameters...
+[127.0.0.1:56900]   ✅ Public parameters package deserialized, 2 params
+[127.0.0.1:56900]   ✅ All parameters deserialized in 287.661793ms
+[127.0.0.1:56900] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:56900]   Server initialized in 15.664531ms
+[127.0.0.1:56900]   Number of documents: 16384
+[127.0.0.1:56900]   ✅ Preprocessing completed
+[127.0.0.1:56900] 3. Waiting for query...
+[127.0.0.1:56900]   Expecting query: 4610598 bytes
+[127.0.0.1:56900]   ✅ Received query (4610598 bytes) in 4.139415ms (1 chunks, 1062.23 MB/s)
+[127.0.0.1:56900]   Deserializing query...
+[127.0.0.1:56900]   ✅ Query package deserialized, 2 params
+[127.0.0.1:56900]   ✅ All query deserialized in 981.055µs
+[127.0.0.1:56900] 4. Processing query...
+
+thread '<unnamed>' (37226) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tfhe-1.5.3/src/strings/ciphertext.rs:51:9:
+assertion failed: str.len() <= N
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
