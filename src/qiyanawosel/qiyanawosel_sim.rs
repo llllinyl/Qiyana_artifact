@@ -13,7 +13,7 @@ use rayon::prelude::*;
 
 pub const THREAD_NUM: usize = 16;
 pub const DOCUMENT_NUM: usize = 16;
-
+pub const KEYWORD_SET_NUM: usize = 8;
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum QueryElement {
@@ -404,7 +404,7 @@ impl Server {
             let mut index = 0;
             for part in line.split(',') {
                 let trimmed = part.trim();
-                if !trimmed.is_empty() && index < 8 {
+                if !trimmed.is_empty() && index < KEYWORD_SET_NUM {
                     filter.insert(&trimmed.to_string());
                     index += 1;
                 }

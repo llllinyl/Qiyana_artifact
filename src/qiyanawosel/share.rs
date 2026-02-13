@@ -26,6 +26,7 @@ pub const WORKER_BEGIN_PORT: u16 = 8000;
 
 pub const THREAD_NUM: usize = 16;
 pub const DOCUMENT_NUM: usize = 16; //2^k
+pub const KEYWORD_SET_NUM: usize = 8;
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum QueryElement {
@@ -421,7 +422,7 @@ impl SubServer {
                 }
                 filter.insert(&trimmed.to_string());
                 index += 1;
-                if index >= 8 {
+                if index >= KEYWORD_SET_NUM {
                     break;
                 }
             }

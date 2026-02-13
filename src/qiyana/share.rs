@@ -31,6 +31,7 @@ pub const LWESIZE: usize = 1056;
 
 pub const THREAD_NUM: usize = 16;
 pub const DOCUMENT_NUM: usize = 16; //2^k
+pub const KEYWORD_SET_NUM: usize = 8;
 
 pub fn read_tf_idf_file(file_path: &str, max_docs: usize) -> Vec<Vec<u16>> {
     let file = match File::open(Path::new(file_path)) {
@@ -677,52 +678,6 @@ impl Client {
                 }
             }
         }
-        
-        // let length = results.len();
-
-        // for (idx, packed) in results.into_iter().enumerate() {
-        //     let mut decrypted_plaintext_list =
-        //         PlaintextList::new(0u64, PlaintextCount(glwe_sk.polynomial_size().0));
-
-        //     decrypt_glwe_ciphertext(
-        //         &glwe_sk,
-        //         &packed,
-        //         &mut decrypted_plaintext_list,
-        //     );
-
-        //     let decomposer = SignedDecomposer::new(
-        //         DecompositionBaseLog(8), 
-        //         DecompositionLevelCount(1)
-        //     );
-            
-        //     decrypted_plaintext_list
-        //         .iter_mut()
-        //         .for_each(|x| *x.0 = decomposer.closest_representable(*x.0) / delta);
-            
-        //     let plaintext_slice = decrypted_plaintext_list.as_ref();
-
-        //     let range = if idx < length - 1 {
-        //         PACKING_NUM
-        //     } else {
-        //         DOCUMENT_NUM % PACKING_NUM
-        //     };
-
-        //     for num in 0..range {
-        //         let mut plainrow = Vec::new();
-        //         for offset in 0..5 {
-        //             let index = 5 * num + offset;
-        //             if index < plaintext_slice.len() {
-        //                 if plaintext_slice[index] > 96 {
-        //                     println!("error! {}", plaintext_slice[index]);
-        //                 }
-        //                 plainrow.push(plaintext_slice[index] as u8);
-        //             }
-        //         }
-        //         if plainrow.len() == 5 {
-        //             plainsubmatrix.push(plainrow);
-        //         }
-        //     }
-        // }
 
         let final_result = compose_matrices(&plainsubmatrix);
         final_result
@@ -775,7 +730,7 @@ impl SubServer {
                 }
                 filter.insert(&trimmed.to_string());
                 index += 1;
-                if index >= 8 {
+                if index >= KEYWORD_SET_NUM {
                     break;
                 }
             }

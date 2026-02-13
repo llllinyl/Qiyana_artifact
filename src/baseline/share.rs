@@ -22,6 +22,7 @@ pub const WORKER_BEGIN_PORT: u16 = 8000;
 
 pub const THREAD_NUM: usize = 16;
 pub const DOCUMENT_NUM: usize = 16; //2^k
+pub const KEYWORD_SET_NUM: usize = 8;
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum QueryElement {
@@ -202,7 +203,7 @@ impl Client {
 }
 
 pub struct SubServer {
-    pub keywords: Vec<[String; 8]>,
+    pub keywords: Vec<[String; KEYWORD_SET_NUM]>,
     pub server_key: ServerKey,
     pub false_ciphertext: FheBool,
 }
@@ -215,12 +216,12 @@ impl SubServer {
         let mut keywords = Vec::with_capacity(documents_per_worker);
         
         for (_i, line) in content.lines().enumerate().skip(start_doc).take(documents_per_worker) {
-            let mut keys = [const{String::new()}; 8];
+            let mut keys = [const{String::new()}; KEYWORD_SET_NUM];
             let mut index = 0;
             
             for part in line.split(',') {
                 let trimmed = part.trim();
-                if !trimmed.is_empty() && index < 8 {
+                if !trimmed.is_empty() && index < KEYWORD_SET_NUM {
                     keys[index] = trimmed.to_string();
                     index += 1;
                 }
@@ -229,7 +230,7 @@ impl SubServer {
             keywords.push(keys);
         }
         while keywords.len() < documents_per_worker {
-            keywords.push([const{String::new()}; 8]);
+            keywords.push([const{String::new()}; KEYWORD_SET_NUM]);
         }
         println!("[Worker {}]: Successfully loaded {} keyword sets", worker_id, keywords.len());
         

@@ -11,6 +11,7 @@ use std::sync::Arc;
 
 pub const DOCUMENT_NUM: usize = 16;
 pub const THREAD_NUM: usize = 16;
+pub const KEYWORD_SET_NUM: usize = 8;
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum QueryElement {
@@ -191,7 +192,7 @@ impl Client {
 }
 
 pub struct Server {
-    pub keywords: Vec<[String; 8]>,
+    pub keywords: Vec<[String; KEYWORD_SET_NUM]>,
     pub server_key: ServerKey,
     pub false_ciphertext: FheBool,
 }
@@ -206,12 +207,12 @@ impl Server {
                 break;
             }
             
-            let mut keys = [const{String::new()}; 8];
+            let mut keys = [const{String::new()}; KEYWORD_SET_NUM];
             let mut index = 0;
             
             for part in line.split(',') {
                 let trimmed = part.trim();
-                if !trimmed.is_empty() && index < 8 {
+                if !trimmed.is_empty() && index < KEYWORD_SET_NUM {
                     keys[index] = trimmed.to_string();
                     index += 1;
                 }
@@ -221,7 +222,7 @@ impl Server {
         }
         
         while keywords.len() < DOCUMENT_NUM {
-            keywords.push([const{String::new()}; 8]);
+            keywords.push([const{String::new()}; KEYWORD_SET_NUM]);
         }
         Self {
             keywords,

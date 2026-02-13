@@ -1,28 +1,53 @@
    Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
-error[E0412]: cannot find type `Arc` in this scope
- --> src/baseline/master.rs:7:14
-  |
-7 |     workers: Arc<RwLock<HashMap<u32, TcpStream>>>,
-  |              ^^^ not found in this scope
-  |
-help: consider importing this struct
- --> src/baseline/share.rs:1:1
-  |
-1 + use std::sync::Arc;
-  |
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-error[E0433]: failed to resolve: use of undeclared type `Arc`
-  --> src/baseline/master.rs:32:22
-   |
-32 |             workers: Arc::new(RwLock::new(HashMap::new())),
-   |                      ^^^ use of undeclared type `Arc`
-   |
-help: consider importing this struct
-  --> src/baseline/share.rs:1:1
-   |
- 1 + use std::sync::Arc;
-   |
+warning: unused import: `std::io::Write`
+ --> src/baseline/share.rs:6:5
+  |
+6 | use std::io::Write;
+  |     ^^^^^^^^^^^^^^
 
-Some errors have detailed explanations: E0412, E0433.
-For more information about an error, try `rustc --explain E0412`.
-error: could not compile `qiyana` (lib) due to 2 previous errors
+warning: `qiyana` (bin "baselinemaster") generated 2 warnings (run `cargo fix --bin "baselinemaster"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 14.43s
+     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/baselinemaster 2`
+========================================
+🚀 Distributed Master
+========================================
+
+1. Waiting for 2 workers to connect...
+   Worker listener on port 10000
+   ✅ Worker 0 connected from 127.0.0.1:8000
+   ✅ Worker 1 connected from 127.0.0.1:8001
+   ✅ All 2 workers connected
+2. Waiting for client connection...
+   Master listening on port 9999
+   ✅ Client connected from 127.0.0.1:47872
+3. Waiting for public parameters from Client...
+[127.0.0.1:47872]   Expecting 127823230 bytes total
+[127.0.0.1:47872]   ✅ Received all bytes of public parameters, took 76.870142ms
+[127.0.0.1:47872]   ✅ Public parameters package deserialized, 2 params
+4. Distribute public parameters to Workers...
+   📤 Distributing public parameters to 2 workers...
+   Sending public parameters to Worker 1...
+   Public parameters size: 127823230 bytes
+   Sending public parameters to Worker 0...
+   Public parameters size: 127823230 bytes
+   📊 Sent public parameters to workers successfully
+[127.0.0.1:47872] 5. Waiting for query from Client...
+[127.0.0.1:47872]   Expecting query: 5927919 bytes
+[127.0.0.1:47872]   ✅ Received query (5927919 bytes) in 5.08085ms (2 chunks, 1112.67 MB/s)
+[127.0.0.1:47872]   Deserializing query...
+[127.0.0.1:47872]   ✅ Query package deserialized, 2 params
+6. Distribute query to Workers...
+   📤 Distributing query to 2 workers...
+   Sending query to Worker 1...
+   Worker 1 connection to 127.0.0.1:8001 is active
+   Sending query to Worker 0...
+   Worker 0 connection to 127.0.0.1:8000 is active
+   📊 Sent query to workers successfully

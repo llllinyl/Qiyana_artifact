@@ -24,7 +24,11 @@ Each implementation includes:
 2. A client-server interactive implementation for real-world usage
 
 # Database
-We use the English Wikipedia document dump of 1 December 2025 (`https://dumps.wikimedia.org/enwiki/20251201/enwiki-20251201-pages-articles-multistream.xml.bz2`) as our source corpus. All articles are first extracted using the open-source WikiExtractor tool (`https://github.com/attardi/wikiextractor`). From this set, we randomly select a subset of documents subject to file size constraints using `python extract_docs.py <wiki_folder> <output_folder> --start-index <start_index>` and `python random_select_with_size_range.py <input_folder> <output_folder> --total-files <input_number> --select-count <output_number> --min-size <min_size> --max-size <max_size> --seed 42 --verify`. Finally, we generate keyword sets for the selected documents using three preprocessing scripts: `select_keywords_qiyana.py`, `tfidf_processor.py`, and `find.py`.
+We use the English Wikipedia document dump of 1 December 2025 (`https://dumps.wikimedia.org/enwiki/20251201/enwiki-20251201-pages-articles-multistream.xml.bz2`) as our source corpus. All articles are first extracted using the open-source WikiExtractor tool (`https://github.com/attardi/wikiextractor`). 
+
+From this set, we randomly select a subset of documents subject to file size constraints using `python extract_docs.py <wiki_folder> <output_folder> --start-index <start_index>` and `python random_select_with_size_range.py <input_folder> <output_folder> --total-files <input_number> --select-count <output_number> --min-size <min_size> --max-size <max_size> --seed 42 --verify`. 
+
+Finally, we generate keyword sets for the selected documents using three preprocessing scripts: `select_keywords_qiyana.py`, `tfidf_processor.py`, and `find.py`.
 
 # Running Tests
 ## Protocol Simulations
@@ -94,6 +98,7 @@ chmod +x run_single.sh
 ./run_single.sh
 ```
 
+If you want to modify KEYWOR_SET_NUM (the size of each document's keyword set), DOCUMENT_NUM, THREAD_NUM and ports, please refer to the relevant file `<system>_sim.rs`.
 # Running Client-(Master-Workers) Interactive Mode
 We provide a shell script to support easy execution of the entire system. For example, you can run the following code to test the performance with 4 workers. If you wish to adjust the number of documents, ports, threads, etc., please modify the settings in the `share.rs` file.
 ```
@@ -107,6 +112,7 @@ When using Qiyana, you have the option of providing an additional parameter (`MO
 WORKER_NUM=2 MODE=1 ./run_distribute.sh
 ```
 
+Also, if you want to modify KEYWOR_SET_NUM (the size of each document's keyword set), DOCUMENT_NUM, THREAD_NUM and ports, please refer to the relevant file `share.rs`.
 # Performance Optimization
 The RUSTFLAGS="-C target-cpu=native" flag enables CPU-specific optimizations for maximum performance. This is particularly important for cryptographic operations and large dataset processing.
 

@@ -1,29 +1,55 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
-error[E0412]: cannot find type `Arc` in this scope
- --> src/baseline/master.rs:7:14
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
   |
-7 |     workers: Arc<RwLock<HashMap<u32, TcpStream>>>,
-  |              ^^^ not found in this scope
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
   |
-help: consider importing this struct
- --> src/baseline/share.rs:1:1
-  |
-1 + use std::sync::Arc;
-  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-error[E0433]: failed to resolve: use of undeclared type `Arc`
-  --> src/baseline/master.rs:32:22
-   |
-32 |             workers: Arc::new(RwLock::new(HashMap::new())),
-   |                      ^^^ use of undeclared type `Arc`
-   |
-help: consider importing this struct
-  --> src/baseline/share.rs:1:1
-   |
- 1 + use std::sync::Arc;
-   |
+warning: `qiyana` (bin "baselineclient") generated 1 warning (run `cargo fix --bin "baselineclient"` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 12.51s
+     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/baselineclient 2`
+========================================
+🔍 Distributed Client
+========================================
 
-Some errors have detailed explanations: E0412, E0433.
-For more information about an error, try `rustc --explain E0412`.
-error: could not compile `qiyana` (lib) due to 2 previous errors
+1. Starting result listener on port 10001...
+   ✅ Result listener ready
+2. Connecting to Master (127.0.0.1:9999)...
+   ✅ Connect successfully!
+3. Initialize TFHE Client and send public parameters to Master...
+   Public parameters size: 127823230 bytes
+   ✅ Public parameters sent successfully!
+4. Wait 20 seconds for worker preprocessing...
+   ✅ Preprocessing wait completed
+5. Generate query...
+   Query generation time: 36.980216ms
+6. Send query to Master...
+   ✅ Query sent successfully!
+   📊 Query summary: 5927919 bytes in 2 chunks, took 1.551638ms, 3643.44 MB/s
+   ✅ Disconnected from Master
+7. Waiting for 2 workers...
+   📍 Listening on: Ok(0.0.0.0:10001)
+   ⏳ Waiting for 2 workers to report results...
+............................................................
+   Still waiting... (60.185520826s elapsed)
+........................................
+   🔗 Got connection from 127.0.0.1:60384
+   Expecting response: 131848 bytes
+   The response part from : Worker 0
+   📋 Current results: 1/2
+....
+   🔗 Got connection from 127.0.0.1:58964
+   Expecting response: 131848 bytes
+   The response part from : Worker 1
+   📋 Current results: 2/2
+   🎉 All workers reported!
+   The total latency : 104.776856628s
+8. Recover results...
+   Recovery time: 9.26µs
+   Number of results: 16
+   First result: true
+   Second result: false
+   ✅ Verification passed!
