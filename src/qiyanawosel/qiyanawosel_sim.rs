@@ -442,36 +442,41 @@ impl Server {
     pub fn qiyanawosel_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
         querysum: Vec<LweCiphertextOwned<u64>>, 
         template: String) -> Vec<LweCiphertextOwned<u64>> {
-        
         let keywords = self.keywords.clone();
-        let (_strings, queryformat) = parse_query_to_rpn(&template);
-        
-        let final_results: Vec<LweCiphertextOwned<u64>> = keywords
+
+        let equal = Instant::now();
+        let subset_results: Vec<Vec<LweCiphertextOwned<u64>>> = keywords
             .par_iter()
             .map(|keyrow| {
-                let mut row_results = Vec::with_capacity(query.len());
-                
-                for (quid, qu) in query.iter().enumerate() {
-                    let mut sum = self.one.clone();
-                    let length = keyrow.len();
-                    
-                    if length <= 1 {
-                        row_results.push(self.one.clone());
-                        continue;
-                    }
-                    
-                    for ind in 1..length {
-                        lwe_ciphertext_add_assign(&mut sum, &qu[keyrow[ind] as usize]);
-                    }
-                    
-                    let equal_res = self.equal(querysum[quid].clone(), sum);
-                    row_results.push(equal_res);
-                }
-                
-                self.evaluate_rpn_for_doc(&queryformat, &row_results)
+                query
+                    .par_iter()
+                    .enumerate()
+                    .map(|(quid, qu)| {
+                        let mut sum = self.one.clone();
+                        let length = keyrow.len();
+                        
+                        for ind in 1..length {
+                            lwe_ciphertext_add_assign(&mut sum, &qu[keyrow[ind] as usize]);
+                        }
+
+                        self.equal(querysum[quid].clone(), sum)
+                    })
+                    .collect::<Vec<LweCiphertextOwned<u64>>>()
             })
             .collect();
+    
+        println!("homomorphic subset testing time: {:?}", equal.elapsed());
+
+        let boolexe = Instant::now();
+        let (_strings, queryformat) = parse_query_to_rpn(&template);
         
+        let final_results: Vec<LweCiphertextOwned<u64>> = subset_results
+            .par_iter()
+            .map(|res| self.evaluate_rpn_for_doc(&queryformat, res))
+            .collect();
+        
+        println!("Boolean match time: {:?}", boolexe.elapsed());
+
         final_results
     }
 

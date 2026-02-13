@@ -1,6 +1,6 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 16.90s
+    Finished `release` profile [optimized] target(s) in 15.68s
      Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/qiyanawosel_client`
 ========================================
 🔍 Qiyana-wosel Client
@@ -15,29 +15,29 @@
 4. Wait 10 seconds for server preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 175.771531ms
+   Query generation time: 171.420394ms
 6. Send query to server...
    ✅ Query sent successfully!
-   📊 Query summary: 17384082 bytes in 4 chunks, took 12.218666251s, 1.36 MB/s
+   📊 Query summary: 17384082 bytes in 4 chunks, took 12.215721751s, 1.36 MB/s
 7. Waiting for server response...
 .....   Expecting response: 135688 bytes
 
    ✅ Response received!
    Response size: 135688 bytes (1 chunks)
-   Wait time: 5.36504232s
-   Total time (query+wait): 17.859867115s
+   Wait time: 5.46722363s
+   Total time (query+wait): 17.992458698s
    Deserializing response...
 8. Recover results...
-   Recovery time: 15.75µs
+   Recovery time: 15.207µs
    Number of results: 16
    First result: true
    Second result: false
    ✅ Verification passed!
 
 📊 FINAL STATISTICS:
-   Query generation: 175.771531ms
-   Server wait time: 5.36504232s
-   Result recovery: 15.75µs
-   Total elapsed: 17.859945318s
+   Query generation: 171.420394ms
+   Server wait time: 5.46722363s
+   Result recovery: 15.207µs
+   Total elapsed: 17.992535268s
 
 🔶 Test completed!
