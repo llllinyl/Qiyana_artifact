@@ -270,6 +270,9 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, expe
     }
             
     let mut valid = true;
+    if recovered[0] != true {
+        valid = false;
+    }
     for i in 1..DOCUMENT_NUM {
         if i < recovered.len() && recovered[i] {
             valid = false;

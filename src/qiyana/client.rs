@@ -369,14 +369,18 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
     if recovered.len() > 1 {
         println!("   Second result: {}", recovered[1]);
     }
-            
+
     let mut valid = true;
+    if recovered[0] != 222 {
+        valid = false;
+    }
     for i in 1..DOCUMENT_NUM {
         if i < recovered.len() && (recovered[i] != 0) {
             valid = false;
             break;
         }
     }
+            
             
     if valid {
         println!("   ✅ Verification passed!");

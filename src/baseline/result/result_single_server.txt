@@ -1,5 +1,5 @@
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 17.37s
+    Finished `release` profile [optimized] target(s) in 17.07s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baseline_server`
 ========================================
 🖥️  Baseline Server
@@ -11,26 +11,38 @@
 
 Waiting for ONE client connection...
 
-📡 Client connected: 127.0.0.1:56900
+📡 Client connected: 127.0.0.1:41672
 This server will accept only ONE client and then exit.
-[127.0.0.1:56900] 1. Receiving public parameters...
-[127.0.0.1:56900]   Expecting 127823230 bytes total
-[127.0.0.1:56900]   ✅ Received 127823230 bytes in 79.545892ms (25 chunks, 1532.47 MB/s)
-[127.0.0.1:56900]   Deserializing public parameters...
-[127.0.0.1:56900]   ✅ Public parameters package deserialized, 2 params
-[127.0.0.1:56900]   ✅ All parameters deserialized in 287.661793ms
-[127.0.0.1:56900] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:56900]   Server initialized in 15.664531ms
-[127.0.0.1:56900]   Number of documents: 16384
-[127.0.0.1:56900]   ✅ Preprocessing completed
-[127.0.0.1:56900] 3. Waiting for query...
-[127.0.0.1:56900]   Expecting query: 4610598 bytes
-[127.0.0.1:56900]   ✅ Received query (4610598 bytes) in 4.139415ms (1 chunks, 1062.23 MB/s)
-[127.0.0.1:56900]   Deserializing query...
-[127.0.0.1:56900]   ✅ Query package deserialized, 2 params
-[127.0.0.1:56900]   ✅ All query deserialized in 981.055µs
-[127.0.0.1:56900] 4. Processing query...
-
-thread '<unnamed>' (37226) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tfhe-1.5.3/src/strings/ciphertext.rs:51:9:
-assertion failed: str.len() <= N
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+[127.0.0.1:41672] 1. Receiving public parameters...
+[127.0.0.1:41672]   Expecting 127823230 bytes total
+[127.0.0.1:41672]   ✅ Received 127823230 bytes in 76.836567ms (25 chunks, 1586.51 MB/s)
+[127.0.0.1:41672]   Deserializing public parameters...
+[127.0.0.1:41672]   ✅ Public parameters package deserialized, 2 params
+[127.0.0.1:41672]   ✅ All parameters deserialized in 286.63912ms
+[127.0.0.1:41672] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:41672]   Server initialized in 524.957µs
+[127.0.0.1:41672]   Number of documents: 128
+[127.0.0.1:41672]   ✅ Preprocessing completed
+[127.0.0.1:41672] 3. Waiting for query...
+[127.0.0.1:41672]   Expecting query: 4215414 bytes
+[127.0.0.1:41672]   ✅ Received query (4215414 bytes) in 1.723459ms (1 chunks, 2332.60 MB/s)
+[127.0.0.1:41672]   Deserializing query...
+[127.0.0.1:41672]   ✅ Query package deserialized, 2 params
+[127.0.0.1:41672]   ✅ All query deserialized in 879.296µs
+[127.0.0.1:41672] 4. Processing query...
+Homomorphic Subset Testing time: 139.494627934s
+Boolean Match time: 48.430147ms
+[127.0.0.1:41672]   ✅ Query processed in 139.5484334s
+[127.0.0.1:41672] 5. Sending response...
+[127.0.0.1:41672]   Response size: 2109448 bytes
+[127.0.0.1:41672]   Sent response size header
+[127.0.0.1:41672]   ✅ Response sent in 1.012012ms (1 chunks, 1987.85 MB/s)
+[127.0.0.1:41672] 📊 Session statistics:
+[127.0.0.1:41672]   - Receive public params: 76.836567ms
+[127.0.0.1:41672]   - Server init: 524.957µs
+[127.0.0.1:41672]   - Preprocess wait: 20 seconds
+[127.0.0.1:41672]   - Receive query: 1.723459ms
+[127.0.0.1:41672]   - Process query: 139.5484334s
+[127.0.0.1:41672]   - Send response: 1.012012ms
+[127.0.0.1:41672]   - TOTAL TIME: 149.672500662s
+[127.0.0.1:41672] 🎉 Session completed successfully!

@@ -790,7 +790,7 @@ impl SubServer {
                     .par_iter()
                     .enumerate()
                     .map(|(quid, qu)| {
-                        let mut sum = self.one.clone();
+                        let mut sum = qu[keyrow[0] as usize].clone();
                         let length = keyrow.len();
                         
                         for ind in 1..length {
@@ -882,7 +882,7 @@ impl SubServer {
                     .par_iter()
                     .enumerate()
                     .map(|(quid, qu)| {
-                        let mut sum = self.one.clone();
+                        let mut sum = qu[keyrow[0] as usize].clone();
                         let length = keyrow.len();
                         
                         for ind in 1..length {

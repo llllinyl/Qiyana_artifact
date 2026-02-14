@@ -93,7 +93,7 @@ async fn main() {
     println!("5. Generate query...");
     let test_string = "cladoniaceae AND cladonia OR species";
     let start_time = Instant::now();
-    let (encrypted_results, queryformat) = client.baseline_query(&test_string, 30usize);
+    let (encrypted_results, queryformat) = client.baseline_query(&test_string, 32usize);
     let query_time = start_time.elapsed();
     println!("   Query generation time: {:?}", query_time);
 
@@ -255,22 +255,18 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, expe
 
     println!("   Recovery time: {:?}", recover_time);
     println!("   Number of results: {}", recovered.len());
-            
-    if recovered.len() > 0 {
-        println!("   First result: {}", recovered[0]);
-    }
-    if recovered.len() > 1 {
-        println!("   Second result: {}", recovered[1]);
-    }
-            
+    
     let mut valid = true;
-    for i in 1..DOCUMENT_NUM {
+    if recovered[0] != true {
+        valid = false;
+    }
+    for i in 1..DOCUMENT_NUM { 
         if i < recovered.len() && recovered[i] {
             valid = false;
             break;
         }
     }
-            
+
     if valid {
         println!("   ✅ Verification passed!");
     } else {

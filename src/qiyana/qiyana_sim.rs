@@ -14,7 +14,7 @@ use std::path::Path;
 use rayon::prelude::*;
 use std::sync::Arc;
 
-pub const DOCUMENT_NUM: usize = 16384;
+pub const DOCUMENT_NUM: usize = 16;
 pub const KEYWORD_NUM: usize = 65536;
 pub const THREAD_NUM: usize = 64;
 pub const PACKING_NUM: usize = 3276;
@@ -767,7 +767,7 @@ impl Server {
                     .par_iter()
                     .enumerate()
                     .map(|(quid, qu)| {
-                        let mut sum = self.one.clone();
+                        let mut sum = qu[keyrow[0] as usize].clone();
                         let length = keyrow.len();
                         
                         for ind in 1..length {
@@ -858,7 +858,7 @@ impl Server {
                     .par_iter()
                     .enumerate()
                     .map(|(quid, qu)| {
-                        let mut sum = self.one.clone();
+                        let mut sum = qu[keyrow[0] as usize].clone();
                         let length = keyrow.len();
                         
                         for ind in 1..length {

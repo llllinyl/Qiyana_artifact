@@ -468,13 +468,8 @@ impl SubServer {
                 let mut row_results = Vec::with_capacity(query.len());
                 
                 for (quid, qu) in query.iter().enumerate() {
-                    let mut sum = self.one.clone();
+                    let mut sum = qu[keyrow[0] as usize].clone();
                     let length = keyrow.len();
-                    
-                    if length <= 1 {
-                        row_results.push(self.one.clone());
-                        continue;
-                    }
                     
                     for ind in 1..length {
                         lwe_ciphertext_add_assign(&mut sum, &qu[keyrow[ind] as usize]);

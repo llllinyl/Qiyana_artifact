@@ -1,5 +1,5 @@
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 17.72s
+    Finished `release` profile [optimized] target(s) in 1.51s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyana_server`
 ========================================
 🖥️  Qiyana Server
@@ -12,40 +12,43 @@
 
 Waiting for ONE client connection...
 
-📡 Client connected: 127.0.0.1:60598
+📡 Client connected: 127.0.0.1:32898
 This server will accept only ONE client and then exit.
-[127.0.0.1:60598] 1. Receiving public parameters...
-[127.0.0.1:60598]   Expecting 694035232 bytes total
-[127.0.0.1:60598]   ✅ Received all 694035232 bytes in 133 chunks, took 476.33595ms
-[127.0.0.1:60598]   ✅ Public parameters package deserialized, 9 params
-[127.0.0.1:60598]   ✅ All parameters deserialized in 403.084344ms
-[127.0.0.1:60598] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:60598]   Server initialized in 35.810179654s
-[127.0.0.1:60598]   Number of documents: 16384
-[127.0.0.1:60598]   ✅ Preprocessing completed
-[127.0.0.1:60598] 3. Waiting for query...
-[127.0.0.1:60598]   Expecting query: 21054114 bytes
-[127.0.0.1:60598]   ✅ Received query (21054114 bytes) in 5.988641ms (5 chunks, 3352.81 MB/s)
-[127.0.0.1:60598]   Deserializing query...
-[127.0.0.1:60598]   ✅ Query package deserialized, 4 params
-[127.0.0.1:60598]   ✅ All query deserialized in 6.437728ms
-[127.0.0.1:60598] 4. Processing query...
-homomorphic subset testing time: 355.571349847s
-Boolean match time: 156.183775569s
-MVM time: 112.023439317s
-TFHE selection and container building time: 929.443584535s
-TFHE packing time: 50.660003851s
-[127.0.0.1:60598]   ✅ Query processed in 1604.306230494s
-[127.0.0.1:60598] 5. Sending response...
-[127.0.0.1:60598]   Response size: 6816792 bytes
-[127.0.0.1:60598]   Sent response size header
-[127.0.0.1:60598]   ✅ Response sent in 5.175427ms (2 chunks, 1256.13 MB/s)
-[127.0.0.1:60598] 📊 Session statistics:
-[127.0.0.1:60598]   - Receive public params: 476.33595ms
-[127.0.0.1:60598]   - Server init: 35.810179654s
-[127.0.0.1:60598]   - Preprocess wait: 10 seconds
-[127.0.0.1:60598]   - Receive query: 5.988641ms
-[127.0.0.1:60598]   - Process query: 1604.306230494s
-[127.0.0.1:60598]   - Send response: 5.175427ms
-[127.0.0.1:60598]   - TOTAL TIME: 1642.019944939s
-[127.0.0.1:60598] 🎉 Session completed successfully!
+[127.0.0.1:32898] 1. Receiving public parameters...
+[127.0.0.1:32898]   Expecting 694035232 bytes total
+[127.0.0.1:32898]   ✅ Received all 694035232 bytes in 133 chunks, took 396.024519ms
+[127.0.0.1:32898]   ✅ Public parameters package deserialized, 9 params
+[127.0.0.1:32898]   ✅ All parameters deserialized in 400.523043ms
+[127.0.0.1:32898] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:32898]   Server initialized in 18.666413528s
+[127.0.0.1:32898]   Number of documents: 16
+[127.0.0.1:32898]   ✅ Preprocessing completed
+[127.0.0.1:32898] 3. Waiting for query...
+[127.0.0.1:32898]   Expecting query: 12362104 bytes
+[127.0.0.1:32898]   ✅ Received query (12362104 bytes) in 9.001626ms (3 chunks, 1309.70 MB/s)
+[127.0.0.1:32898]   Deserializing query...
+[127.0.0.1:32898]   ✅ Query package deserialized, 4 params
+[127.0.0.1:32898]   ✅ All query deserialized in 4.856754ms
+[127.0.0.1:32898] 4. Processing query...
+homomorphic subset testing time: 1.807218026s
+Boolean match time: 221.172µs
+MVM time: 367.351513ms
+TFHE selection and container building time: 6.939894446s
+TFHE packing time: 246.228188ms
+[127.0.0.1:32898]   ✅ Query processed in 9.440054102s
+[127.0.0.1:32898] 5. Sending response...
+[127.0.0.1:32898]   Response size: 262192 bytes
+[127.0.0.1:32898]   Sent response size header
+[127.0.0.1:32898]   ✅ Response sent in 191.838µs (1 chunks, 1303.42 MB/s)
+[127.0.0.1:32898] 📊 Session statistics:
+[127.0.0.1:32898]   - Receive public params: 396.024519ms
+[127.0.0.1:32898]   - Server init: 18.666413528s
+[127.0.0.1:32898]   - Preprocess wait: 10 seconds
+[127.0.0.1:32898]   - Receive query: 9.001626ms
+[127.0.0.1:32898]   - Process query: 9.440054102s
+[127.0.0.1:32898]   - Send response: 191.838µs
+[127.0.0.1:32898]   - TOTAL TIME: 29.901784217s
+[127.0.0.1:32898] 🎉 Session completed successfully!
+[127.0.0.1:32898] Connection closed
+🔴 Server shutting down...
+Goodbye!

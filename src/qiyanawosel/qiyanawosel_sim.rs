@@ -12,7 +12,7 @@ use std::path::Path;
 use rayon::prelude::*;
 
 pub const THREAD_NUM: usize = 64;
-pub const DOCUMENT_NUM: usize = 16384;
+pub const DOCUMENT_NUM: usize = 16;
 pub const KEYWORD_SET_NUM: usize = 16;
 
 #[derive(Debug, Clone, PartialEq)]
@@ -452,7 +452,7 @@ impl Server {
                     .par_iter()
                     .enumerate()
                     .map(|(quid, qu)| {
-                        let mut sum = self.one.clone();
+                        let mut sum = qu[keyrow[0] as usize].clone();
                         let length = keyrow.len();
                         
                         for ind in 1..length {
@@ -594,7 +594,7 @@ impl Server {
 
     pub fn not(&self, ct: LweCiphertextOwned<u64>) -> LweCiphertextOwned<u64> {
         let one = self.one.clone();
-        let mut ct_diff = ct.clone();
+        let mut ct_diff = one.clone();
 
         lwe_ciphertext_sub(
             &mut ct_diff,

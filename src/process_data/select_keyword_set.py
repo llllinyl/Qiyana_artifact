@@ -83,10 +83,16 @@ def calculate_tf_idf_english(documents):
     
     return tfidf_results
 
+def truncate_word(word, max_length=32):
+    if len(word) <= max_length:
+        return word
+    return word[:max_length]
+
 def main_simple():
     database_folder = "/root/Qiyana-experiment/database"
     output_file = "/root/Qiyana-experiment/keyword.txt"
     num_keywords = 16
+    max_word_length = 32
     
     print("Loading documents...")
     documents = load_documents(database_folder)
@@ -98,7 +104,7 @@ def main_simple():
     with open(output_file, 'w', encoding='utf-8') as f:
         for sorted_words in tfidf_results:
             if sorted_words:
-                keywords = [word for word, score in sorted_words[:num_keywords]]
+                keywords = [truncate_word(word, max_word_length) for word, score in sorted_words[:num_keywords]]
                 f.write(",".join(keywords) + "\n")
             else:
                 f.write("\n")

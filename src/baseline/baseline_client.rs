@@ -14,9 +14,9 @@ async fn main() {
     println!("========================================\n");
     
     let server_addr = "127.0.0.1:9999";
-    // let test_string = "cladoniaceae AND cladonia";
+    //let test_string = "cladoniaceae AND cladonia";
     let test_string = "cladoniaceae OR cladonia";
-    let length = 35usize;
+    let length = 32usize;
     
     println!("1. Initialize TFHE Client...");
     let client = Client::new();
@@ -215,15 +215,11 @@ async fn main() {
             println!("   Recovery time: {:?}", recover_time);
             println!("   Number of results: {}", recovered.len());
             
-            if recovered.len() > 0 {
-                println!("   First result: {}", recovered[0]);
-            }
-            if recovered.len() > 1 {
-                println!("   Second result: {}", recovered[1]);
-            }
-            
             let mut valid = true;
-            for i in 1..16 {
+            if recovered[0] != true {
+                valid = false;
+            }
+            for i in 1..DOCUMENT_NUM {
                 if i < recovered.len() && recovered[i] {
                     valid = false;
                     break;
