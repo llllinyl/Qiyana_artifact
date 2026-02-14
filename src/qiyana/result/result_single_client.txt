@@ -1,5 +1,6 @@
+    Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 1.34s
+    Finished `release` profile [optimized] target(s) in 17.05s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyana_client`
 ========================================
 🔍 Qiyana Client
@@ -14,32 +15,69 @@
 4. Wait 10 seconds for server preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 4.254041168s
+   Query generation time: 4.263870141s
 6. Send query to server...
    ✅ Query sent successfully!
-   📊 Query summary: 12362104 bytes in 3 chunks, took 5.769642669s, 2.04 MB/s
+   📊 Query summary: 12362104 bytes in 3 chunks, took 22.669109961s, 0.52 MB/s
 7. Waiting for server response...
-.........   Expecting response: 262192 bytes
+............................................................
+   Still waiting... (60.060448925s elapsed)
+............................................................
+   Still waiting... (120.123529245s elapsed)
+............................................................
+   Still waiting... (180.184613883s elapsed)
+............................................................
+   Still waiting... (240.246997915s elapsed)
+............................................................
+   Still waiting... (300.308464443s elapsed)
+............................................................
+   Still waiting... (360.371419105s elapsed)
+............................................................
+   Still waiting... (420.434235546s elapsed)
+............................................................
+   Still waiting... (480.49585766s elapsed)
+............................................................
+   Still waiting... (540.558700011s elapsed)
+............................................................
+   Still waiting... (600.624481801s elapsed)
+............................................................
+   Still waiting... (660.687491907s elapsed)
+............................................................
+   Still waiting... (720.758838249s elapsed)
+............................................................
+   Still waiting... (780.825229348s elapsed)
+............................................................
+   Still waiting... (840.894125758s elapsed)
+............................................................
+   Still waiting... (900.959402119s elapsed)
+............................................................
+   Still waiting... (961.024185302s elapsed)
+............................................................
+   Still waiting... (1021.089252489s elapsed)
+............................................................
+   Still waiting... (1081.157739609s elapsed)
+............................................................
+   Still waiting... (1141.22347461s elapsed)
+............................................................
+   Still waiting... (1201.291494557s elapsed)
+............................................................
+   Still waiting... (1261.36062279s elapsed)
+.........................................   Expecting response: 6816792 bytes
 
    ✅ Response received!
-   Response size: 262192 bytes (1 chunks)
-   Wait time: 9.467194484s
-   Total time (query+wait): 19.508302987s
+   Response size: 6816792 bytes (2 chunks)
+   Wait time: 1302.599039853s
+   Total time (query+wait): 1329.549786029s
    Deserializing response...
 8. Recover results...
-error! 223
-error! 226
-error! 253
-error! 191
-error! 191
-   Recovery time: 7.498347ms
-   Number of results: 16
-   ❌ Verification failed!
+   Recovery time: 179.245393ms
+   Number of results: 81904
+   ✅ Verification passed!
 
 📊 FINAL STATISTICS:
-   Query generation: 4.254041168s
-   Server wait time: 9.467194484s
-   Result recovery: 7.498347ms
-   Total elapsed: 37.413576806s
+   Query generation: 4.263870141s
+   Server wait time: 1302.599039853s
+   Result recovery: 179.245393ms
+   Total elapsed: 1331.057314253s
 
 🔶 Test completed!

@@ -1,6 +1,6 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 15.94s
+    Finished `release` profile [optimized] target(s) in 16.38s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawosel_client`
 ========================================
 🔍 Qiyana-wosel Client
@@ -15,29 +15,33 @@
 4. Wait 10 seconds for server preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 67.325655ms
+   Query generation time: 91.729826ms
 6. Send query to server...
    ✅ Query sent successfully!
-   📊 Query summary: 8692067 bytes in 2 chunks, took 128.411763ms, 64.55 MB/s
+   📊 Query summary: 8692072 bytes in 2 chunks, took 117.769061ms, 70.39 MB/s
 7. Waiting for server response...
-..........   Expecting response: 135688 bytes
+............................................................
+   Still waiting... (60.066196779s elapsed)
+............................................................
+   Still waiting... (120.131970665s elapsed)
+............................................................
+   Still waiting... (180.197593134s elapsed)
+.........   Expecting response: 138936328 bytes
 
    ✅ Response received!
-   Response size: 135688 bytes (1 chunks)
-   Wait time: 10.213213266s
-   Total time (query+wait): 10.420128468s
+   Response size: 138936328 bytes (27 chunks)
+   Wait time: 189.308340355s
+   Total time (query+wait): 189.535963635s
    Deserializing response...
 8. Recover results...
-   Recovery time: 8.624µs
-   Number of results: 16
-   First result: true
-   Second result: false
+   Recovery time: 12.227891ms
+   Number of results: 16384
    ✅ Verification passed!
 
 📊 FINAL STATISTICS:
-   Query generation: 67.325655ms
-   Server wait time: 10.213213266s
-   Result recovery: 8.624µs
-   Total elapsed: 10.420208612s
+   Query generation: 91.729826ms
+   Server wait time: 189.308340355s
+   Result recovery: 12.227891ms
+   Total elapsed: 189.613214622s
 
 🔶 Test completed!

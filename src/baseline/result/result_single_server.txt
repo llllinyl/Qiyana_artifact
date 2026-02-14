@@ -1,5 +1,5 @@
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 17.07s
+    Finished `release` profile [optimized] target(s) in 17.21s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baseline_server`
 ========================================
 🖥️  Baseline Server
@@ -11,38 +11,38 @@
 
 Waiting for ONE client connection...
 
-📡 Client connected: 127.0.0.1:41672
+📡 Client connected: 127.0.0.1:45756
 This server will accept only ONE client and then exit.
-[127.0.0.1:41672] 1. Receiving public parameters...
-[127.0.0.1:41672]   Expecting 127823230 bytes total
-[127.0.0.1:41672]   ✅ Received 127823230 bytes in 76.836567ms (25 chunks, 1586.51 MB/s)
-[127.0.0.1:41672]   Deserializing public parameters...
-[127.0.0.1:41672]   ✅ Public parameters package deserialized, 2 params
-[127.0.0.1:41672]   ✅ All parameters deserialized in 286.63912ms
-[127.0.0.1:41672] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:41672]   Server initialized in 524.957µs
-[127.0.0.1:41672]   Number of documents: 128
-[127.0.0.1:41672]   ✅ Preprocessing completed
-[127.0.0.1:41672] 3. Waiting for query...
-[127.0.0.1:41672]   Expecting query: 4215414 bytes
-[127.0.0.1:41672]   ✅ Received query (4215414 bytes) in 1.723459ms (1 chunks, 2332.60 MB/s)
-[127.0.0.1:41672]   Deserializing query...
-[127.0.0.1:41672]   ✅ Query package deserialized, 2 params
-[127.0.0.1:41672]   ✅ All query deserialized in 879.296µs
-[127.0.0.1:41672] 4. Processing query...
-Homomorphic Subset Testing time: 139.494627934s
-Boolean Match time: 48.430147ms
-[127.0.0.1:41672]   ✅ Query processed in 139.5484334s
-[127.0.0.1:41672] 5. Sending response...
-[127.0.0.1:41672]   Response size: 2109448 bytes
-[127.0.0.1:41672]   Sent response size header
-[127.0.0.1:41672]   ✅ Response sent in 1.012012ms (1 chunks, 1987.85 MB/s)
-[127.0.0.1:41672] 📊 Session statistics:
-[127.0.0.1:41672]   - Receive public params: 76.836567ms
-[127.0.0.1:41672]   - Server init: 524.957µs
-[127.0.0.1:41672]   - Preprocess wait: 20 seconds
-[127.0.0.1:41672]   - Receive query: 1.723459ms
-[127.0.0.1:41672]   - Process query: 139.5484334s
-[127.0.0.1:41672]   - Send response: 1.012012ms
-[127.0.0.1:41672]   - TOTAL TIME: 149.672500662s
-[127.0.0.1:41672] 🎉 Session completed successfully!
+[127.0.0.1:45756] 1. Receiving public parameters...
+[127.0.0.1:45756]   Expecting 127823230 bytes total
+[127.0.0.1:45756]   ✅ Received 127823230 bytes in 88.427786ms (25 chunks, 1378.55 MB/s)
+[127.0.0.1:45756]   Deserializing public parameters...
+[127.0.0.1:45756]   ✅ Public parameters package deserialized, 2 params
+[127.0.0.1:45756]   ✅ All parameters deserialized in 288.804461ms
+[127.0.0.1:45756] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:45756]   Server initialized in 484.162µs
+[127.0.0.1:45756]   Number of documents: 16
+[127.0.0.1:45756]   ✅ Preprocessing completed
+[127.0.0.1:45756] 3. Waiting for query...
+[127.0.0.1:45756]   Expecting query: 2107729 bytes
+[127.0.0.1:45756]   ✅ Received query (2107729 bytes) in 689.323µs (1 chunks, 2916.03 MB/s)
+[127.0.0.1:45756]   Deserializing query...
+[127.0.0.1:45756]   ✅ Query package deserialized, 2 params
+[127.0.0.1:45756]   ✅ All query deserialized in 927.145µs
+[127.0.0.1:45756] 4. Processing query...
+Homomorphic Subset Testing time: 11.506772132s
+Boolean Match time: 153.761µs
+[127.0.0.1:45756]   ✅ Query processed in 11.512117587s
+[127.0.0.1:45756] 5. Sending response...
+[127.0.0.1:45756]   Response size: 263688 bytes
+[127.0.0.1:45756]   Sent response size header
+[127.0.0.1:45756]   ✅ Response sent in 227.37µs (1 chunks, 1106.01 MB/s)
+[127.0.0.1:45756] 📊 Session statistics:
+[127.0.0.1:45756]   - Receive public params: 88.427786ms
+[127.0.0.1:45756]   - Server init: 484.162µs
+[127.0.0.1:45756]   - Preprocess wait: 20 seconds
+[127.0.0.1:45756]   - Receive query: 689.323µs
+[127.0.0.1:45756]   - Process query: 11.512117587s
+[127.0.0.1:45756]   - Send response: 227.37µs
+[127.0.0.1:45756]   - TOTAL TIME: 21.621951771s
+[127.0.0.1:45756] 🎉 Session completed successfully!

@@ -273,7 +273,7 @@ impl Client {
         );
         let one: LweCiphertextOwned<u64> = allocate_and_encrypt_new_lwe_ciphertext(
             &small_lwe_sk,
-            Plaintext(1u64),
+            Plaintext(1u64 * delta),
             lwe_noise_distribution,
             ciphertext_modulus,
             &mut encryption_generator,

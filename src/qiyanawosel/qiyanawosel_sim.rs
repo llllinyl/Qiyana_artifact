@@ -12,7 +12,7 @@ use std::path::Path;
 use rayon::prelude::*;
 
 pub const THREAD_NUM: usize = 64;
-pub const DOCUMENT_NUM: usize = 16;
+pub const DOCUMENT_NUM: usize = 16384;
 pub const KEYWORD_SET_NUM: usize = 16;
 
 #[derive(Debug, Clone, PartialEq)]
@@ -260,7 +260,7 @@ impl Client {
         );
         let one: LweCiphertextOwned<u64> = allocate_and_encrypt_new_lwe_ciphertext(
             &small_lwe_sk,
-            Plaintext(1u64),
+            Plaintext(1u64 * delta),
             lwe_noise_distribution,
             ciphertext_modulus,
             &mut encryption_generator,
