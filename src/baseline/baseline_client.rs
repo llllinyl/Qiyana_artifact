@@ -15,8 +15,8 @@ async fn main() {
     
     let server_addr = "127.0.0.1:9999";
     //let test_string = "cladoniaceae AND cladonia";
-    //let test_string = "cladoniaceae OR cladonia";
-    let test_string = "NOT cladoniaceae";
+    let test_string = "cladoniaceae OR cladonia";
+    //let test_string = "NOT cladoniaceae";
     let length = 32usize;
     
     println!("1. Initialize TFHE Client...");
@@ -217,11 +217,11 @@ async fn main() {
             println!("   Number of results: {}", recovered.len());
             
             let mut valid = true;
-            if recovered[0] != false {
+            if recovered[0] != true {
                 valid = false;
             }
             for i in 1..DOCUMENT_NUM {
-                if i < recovered.len() && !recovered[i] {
+                if i < recovered.len() && recovered[i] {
                     valid = false;
                     break;
                 }

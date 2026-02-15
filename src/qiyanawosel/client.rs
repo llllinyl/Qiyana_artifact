@@ -91,8 +91,8 @@ async fn main() {
 
     println!("   ✅ Public parameters sent successfully!");
 
-    println!("4. Wait 20 seconds for worker preprocessing...");
-    sleep(Duration::from_secs(20)).await;
+    println!("4. Wait 30 seconds for worker preprocessing...");
+    sleep(Duration::from_secs(30)).await;
     println!("   ✅ Preprocessing wait completed");
 
     println!("5. Generate query...");
@@ -261,14 +261,7 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, expe
 
     println!("   Recovery time: {:?}", recover_time);
     println!("   Number of results: {}", recovered.len());
-            
-    if recovered.len() > 0 {
-        println!("   First result: {}", recovered[0]);
-    }
-    if recovered.len() > 1 {
-        println!("   Second result: {}", recovered[1]);
-    }
-            
+    
     let mut valid = true;
     if recovered[0] != true {
         valid = false;

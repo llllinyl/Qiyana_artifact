@@ -1,5 +1,4 @@
-   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 17.21s
+    Finished `release` profile [optimized] target(s) in 0.04s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baseline_server`
 ========================================
 🖥️  Baseline Server
@@ -11,38 +10,38 @@
 
 Waiting for ONE client connection...
 
-📡 Client connected: 127.0.0.1:45756
+📡 Client connected: 127.0.0.1:52560
 This server will accept only ONE client and then exit.
-[127.0.0.1:45756] 1. Receiving public parameters...
-[127.0.0.1:45756]   Expecting 127823230 bytes total
-[127.0.0.1:45756]   ✅ Received 127823230 bytes in 88.427786ms (25 chunks, 1378.55 MB/s)
-[127.0.0.1:45756]   Deserializing public parameters...
-[127.0.0.1:45756]   ✅ Public parameters package deserialized, 2 params
-[127.0.0.1:45756]   ✅ All parameters deserialized in 288.804461ms
-[127.0.0.1:45756] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:45756]   Server initialized in 484.162µs
-[127.0.0.1:45756]   Number of documents: 16
-[127.0.0.1:45756]   ✅ Preprocessing completed
-[127.0.0.1:45756] 3. Waiting for query...
-[127.0.0.1:45756]   Expecting query: 2107729 bytes
-[127.0.0.1:45756]   ✅ Received query (2107729 bytes) in 689.323µs (1 chunks, 2916.03 MB/s)
-[127.0.0.1:45756]   Deserializing query...
-[127.0.0.1:45756]   ✅ Query package deserialized, 2 params
-[127.0.0.1:45756]   ✅ All query deserialized in 927.145µs
-[127.0.0.1:45756] 4. Processing query...
-Homomorphic Subset Testing time: 11.506772132s
-Boolean Match time: 153.761µs
-[127.0.0.1:45756]   ✅ Query processed in 11.512117587s
-[127.0.0.1:45756] 5. Sending response...
-[127.0.0.1:45756]   Response size: 263688 bytes
-[127.0.0.1:45756]   Sent response size header
-[127.0.0.1:45756]   ✅ Response sent in 227.37µs (1 chunks, 1106.01 MB/s)
-[127.0.0.1:45756] 📊 Session statistics:
-[127.0.0.1:45756]   - Receive public params: 88.427786ms
-[127.0.0.1:45756]   - Server init: 484.162µs
-[127.0.0.1:45756]   - Preprocess wait: 20 seconds
-[127.0.0.1:45756]   - Receive query: 689.323µs
-[127.0.0.1:45756]   - Process query: 11.512117587s
-[127.0.0.1:45756]   - Send response: 227.37µs
-[127.0.0.1:45756]   - TOTAL TIME: 21.621951771s
-[127.0.0.1:45756] 🎉 Session completed successfully!
+[127.0.0.1:52560] 1. Receiving public parameters...
+[127.0.0.1:52560]   Expecting 127823230 bytes total
+[127.0.0.1:52560]   ✅ Received 127823230 bytes in 77.863548ms (25 chunks, 1565.58 MB/s)
+[127.0.0.1:52560]   Deserializing public parameters...
+[127.0.0.1:52560]   ✅ Public parameters package deserialized, 2 params
+[127.0.0.1:52560]   ✅ All parameters deserialized in 286.549782ms
+[127.0.0.1:52560] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:52560]   Server initialized in 696.342µs
+[127.0.0.1:52560]   Number of documents: 256
+[127.0.0.1:52560]   ✅ Preprocessing completed
+[127.0.0.1:52560] 3. Waiting for query...
+[127.0.0.1:52560]   Expecting query: 4215414 bytes
+[127.0.0.1:52560]   ✅ Received query (4215414 bytes) in 1.792182ms (1 chunks, 2243.15 MB/s)
+[127.0.0.1:52560]   Deserializing query...
+[127.0.0.1:52560]   ✅ Query package deserialized, 2 params
+[127.0.0.1:52560]   ✅ All query deserialized in 870.561µs
+[127.0.0.1:52560] 4. Processing query...
+Homomorphic Subset Testing time: 275.112092946s
+Boolean Match time: 98.67888ms
+[127.0.0.1:52560]   ✅ Query processed in 275.216016436s
+[127.0.0.1:52560] 5. Sending response...
+[127.0.0.1:52560]   Response size: 4218888 bytes
+[127.0.0.1:52560]   Sent response size header
+[127.0.0.1:52560]   ✅ Response sent in 4.659885ms (1 chunks, 863.42 MB/s)
+[127.0.0.1:52560] 📊 Session statistics:
+[127.0.0.1:52560]   - Receive public params: 77.863548ms
+[127.0.0.1:52560]   - Server init: 696.342µs
+[127.0.0.1:52560]   - Preprocess wait: 20 seconds
+[127.0.0.1:52560]   - Receive query: 1.792182ms
+[127.0.0.1:52560]   - Process query: 275.216016436s
+[127.0.0.1:52560]   - Send response: 4.659885ms
+[127.0.0.1:52560]   - TOTAL TIME: 285.344100298s
+[127.0.0.1:52560] 🎉 Session completed successfully!

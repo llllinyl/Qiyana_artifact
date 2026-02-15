@@ -13,8 +13,8 @@ async fn main() {
     
     let server_addr = "127.0.0.1:9999";
     //let test_string = "cladoniaceae AND cladonia";
-    //let test_string = "cladoniaceae OR cladonia";
-    let test_string = "NOT cladoniaceae";
+    let test_string = "cladoniaceae OR cladonia";
+    //let test_string = "NOT cladoniaceae";
 
     println!("1. Initialize TFHE Client...");
     let client = Client::new();
@@ -219,7 +219,7 @@ async fn main() {
                 valid = false;
             }
             for i in 1..DOCUMENT_NUM {
-                if i < recovered.len() && !recovered[i] {
+                if i < recovered.len() && recovered[i] {
                     valid = false;
                     break;
                 }

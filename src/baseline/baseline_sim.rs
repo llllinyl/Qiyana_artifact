@@ -9,7 +9,7 @@ use serde::{Serialize, Deserialize};
 use rayon::prelude::*;
 use std::sync::Arc;
 
-pub const DOCUMENT_NUM: usize = 16;
+pub const DOCUMENT_NUM: usize = 256;
 pub const THREAD_NUM: usize = 64;
 pub const KEYWORD_SET_NUM: usize = 16;
 

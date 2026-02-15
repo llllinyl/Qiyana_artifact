@@ -1,6 +1,6 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 16.38s
+    Finished `release` profile [optimized] target(s) in 16.20s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawosel_client`
 ========================================
 🔍 Qiyana-wosel Client
@@ -15,33 +15,43 @@
 4. Wait 10 seconds for server preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 91.729826ms
+   Query generation time: 134.741257ms
 6. Send query to server...
    ✅ Query sent successfully!
-   📊 Query summary: 8692072 bytes in 2 chunks, took 117.769061ms, 70.39 MB/s
+   📊 Query summary: 17384082 bytes in 4 chunks, took 8.443959827s, 1.96 MB/s
 7. Waiting for server response...
 ............................................................
-   Still waiting... (60.066196779s elapsed)
+   Still waiting... (60.064848028s elapsed)
 ............................................................
-   Still waiting... (120.131970665s elapsed)
+   Still waiting... (120.132414878s elapsed)
 ............................................................
-   Still waiting... (180.197593134s elapsed)
-.........   Expecting response: 138936328 bytes
+   Still waiting... (180.201974754s elapsed)
+............................................................
+   Still waiting... (240.269935412s elapsed)
+............................................................
+   Still waiting... (300.339898602s elapsed)
+............................................................
+   Still waiting... (360.409945332s elapsed)
+............................................................
+   Still waiting... (420.479255769s elapsed)
+............................................................
+   Still waiting... (480.549711231s elapsed)
+.......................   Expecting response: 138936328 bytes
 
    ✅ Response received!
    Response size: 138936328 bytes (27 chunks)
-   Wait time: 189.308340355s
-   Total time (query+wait): 189.535963635s
+   Wait time: 504.025546144s
+   Total time (query+wait): 512.62655288s
    Deserializing response...
 8. Recover results...
-   Recovery time: 12.227891ms
+   Recovery time: 12.110943ms
    Number of results: 16384
-   ✅ Verification passed!
+   ❌ Verification failed!
 
 📊 FINAL STATISTICS:
-   Query generation: 91.729826ms
-   Server wait time: 189.308340355s
-   Result recovery: 12.227891ms
-   Total elapsed: 189.613214622s
+   Query generation: 134.741257ms
+   Server wait time: 504.025546144s
+   Result recovery: 12.110943ms
+   Total elapsed: 512.702815173s
 
 🔶 Test completed!
