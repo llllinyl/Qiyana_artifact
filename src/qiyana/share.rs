@@ -26,7 +26,7 @@ pub const CLIENT_RESULT_PORT: u16 = 10001;
 pub const WORKER_BEGIN_PORT: u16 = 8000;
 
 pub const KEYWORD_NUM: usize = 65536;
-pub const PACKING_NUM: usize = 3276;
+pub const PACKING_NUM: usize = 16380;
 pub const LWESIZE: usize = 1056;
 
 pub const THREAD_NUM: usize = 16;
@@ -116,7 +116,7 @@ pub fn decompose_matrix_2bit(matrix: &[Vec<u16>]) -> [Vec<Vec<u8>>; 5] {
 }
 
 pub fn compose_matrices(decomposed_data: &Vec<Vec<u8>>) -> Vec<u16> {
-    let mut result = Vec::with_capacity(decomposed_data.len());
+    let mut result = Vec::with_capacity(DOCUMENT_NUM);
     
     for row in decomposed_data {
         if row.len() != 5 {
@@ -630,7 +630,7 @@ impl Client {
         let mut plainsubmatrix = Vec::new();
         let docs_per_worker = DOCUMENT_NUM / worker_num;
         let batches = (docs_per_worker + PACKING_NUM - 1) / PACKING_NUM; 
-        let remain_in_last_batch = docs_per_worker % PACKING_NUM;
+        let remain_in_last_batch = docs_per_worker % (PACKING_NUM / 5);
 
         for num in 0..worker_num {
             for idx in 0..batches {
@@ -656,7 +656,7 @@ impl Client {
                 let plaintext_slice = decrypted_plaintext_list.as_ref();
 
                 let range = if idx < batches - 1 {
-                    PACKING_NUM
+                    PACKING_NUM / 5
                 } else {
                     remain_in_last_batch
                 };

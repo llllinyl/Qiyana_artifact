@@ -17,7 +17,7 @@ use std::sync::Arc;
 pub const DOCUMENT_NUM: usize = 16384;
 pub const KEYWORD_NUM: usize = 65536;
 pub const THREAD_NUM: usize = 64;
-pub const PACKING_NUM: usize = 3276;
+pub const PACKING_NUM: usize = 16380;
 pub const LWESIZE: usize = 1056;
 pub const KEYWORD_SET_NUM: usize = 16;
 
@@ -107,7 +107,7 @@ pub fn decompose_matrix_2bit(matrix: &[Vec<u16>]) -> [Vec<Vec<u8>>; 5] {
 }
 
 pub fn compose_matrices(decomposed_data: &Vec<Vec<u8>>) -> Vec<u16> {
-    let mut result = Vec::with_capacity(decomposed_data.len());
+    let mut result = Vec::with_capacity(DOCUMENT_NUM);
     
     for row in decomposed_data {
         if row.len() != 5 {
@@ -620,7 +620,6 @@ impl Client {
         let glwe_sk = self.glwe_sk.clone();
         let mut plainsubmatrix = Vec::new();
         let length = results.len();
-
         for (idx, packed) in results.into_iter().enumerate() {
             let mut decrypted_plaintext_list =
                 PlaintextList::new(0u64, PlaintextCount(glwe_sk.polynomial_size().0));
@@ -643,9 +642,9 @@ impl Client {
             let plaintext_slice = decrypted_plaintext_list.as_ref();
 
             let range = if idx < length - 1 {
-                PACKING_NUM
+                PACKING_NUM / 5
             } else {
-                DOCUMENT_NUM % PACKING_NUM
+                DOCUMENT_NUM % (PACKING_NUM / 5)
             };
 
             for num in 0..range {
@@ -664,7 +663,6 @@ impl Client {
                 }
             }
         }
-
         let final_result = compose_matrices(&plainsubmatrix);
         final_result
     }

@@ -215,7 +215,7 @@ async fn main() {
             println!("   Number of results: {}", recovered.len());
             
             let mut valid = true;
-            if recovered[0] != false {
+            if recovered[0] != true {
                 valid = false;
             }
             for i in 1..DOCUMENT_NUM {

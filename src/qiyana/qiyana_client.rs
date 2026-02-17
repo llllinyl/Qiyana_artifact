@@ -12,9 +12,9 @@ async fn main() {
     println!("========================================\n");
     
     let server_addr = "127.0.0.1:9999";
-    // let test_string = "cladoniaceae AND cladonia";
+    let test_string = "cladoniaceae AND cladonia";
     // let test_string = "cladoniaceae OR cladonia";
-    let test_string = "NOT cladoniaceae";
+    //let test_string = "NOT cladoniaceae";
     
     println!("1. Initialize TFHE Client...");
     let client = Client::new();
@@ -223,49 +223,49 @@ async fn main() {
             println!("   Number of results: {}", recovered.len());
             
             let mut valid = true;
-            // if recovered[0] != 222 {
+            if recovered[0] != 222 {
+                valid = false;
+            }
+            for i in 1..DOCUMENT_NUM {
+                if i < recovered.len() && (recovered[i] != 0) {
+                    valid = false;
+                    break;
+                }
+            }
+
+            // if recovered[0] != 0 {
             //     valid = false;
             // }
-            // for i in 1..DOCUMENT_NUM {
-            //     if i < recovered.len() && (recovered[i] != 0) {
-            //         valid = false;
-            //         break;
+
+            // if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana-experiment/tf-idf.txt") {
+            //     let lines: Vec<&str> = tfidf_content.lines().collect();
+
+            //     for i in 1..recovered.len() {
+            //         let line_idx = i + 1;
+
+            //         if line_idx < lines.len() {
+            //             if let Some(comma_index) = lines[line_idx].find(',') {
+            //                 let first_part = &lines[line_idx][..comma_index];
+
+            //                 let sum: u16 = first_part
+            //                     .split(',')
+            //                     .filter_map(|s| s.parse::<u16>().ok())
+            //                     .take(32)
+            //                     .sum();
+
+            //                 if recovered[i] != sum {
+            //                     valid = false;
+            //                     break;
+            //                 }
+            //             } else {
+            //                 valid = false;
+            //                 break;
+            //             }
+            //         }
             //     }
+            // } else {
+            //     valid = false;
             // }
-
-            if recovered[0] != 0 {
-                valid = false;
-            }
-
-            if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana-experiment/tf-idf.txt") {
-                let lines: Vec<&str> = tfidf_content.lines().collect();
-
-                for i in 1..recovered.len() {
-                    let line_idx = i + 1;
-
-                    if line_idx < lines.len() {
-                        if let Some(comma_index) = lines[line_idx].find(',') {
-                            let first_part = &lines[line_idx][..comma_index];
-
-                            let sum: u16 = first_part
-                                .split(',')
-                                .filter_map(|s| s.parse::<u16>().ok())
-                                .take(32)
-                                .sum();
-
-                            if recovered[i] != sum {
-                                valid = false;
-                                break;
-                            }
-                        } else {
-                            valid = false;
-                            break;
-                        }
-                    }
-                }
-            } else {
-                valid = false;
-            }
             
             if valid {
                 println!("   ✅ Verification passed!");
