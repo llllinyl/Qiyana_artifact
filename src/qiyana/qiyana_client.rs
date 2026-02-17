@@ -12,8 +12,8 @@ async fn main() {
     println!("========================================\n");
     
     let server_addr = "127.0.0.1:9999";
-    let test_string = "cladoniaceae AND cladonia";
-    // let test_string = "cladoniaceae OR cladonia";
+    //let test_string = "cladoniaceae AND cladonia";
+    let test_string = "cladoniaceae OR cladonia";
     //let test_string = "NOT cladoniaceae";
     
     println!("1. Initialize TFHE Client...");
