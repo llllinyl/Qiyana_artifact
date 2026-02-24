@@ -1,4 +1,5 @@
-    Finished `release` profile [optimized] target(s) in 0.05s
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
+    Finished `release` profile [optimized] target(s) in 17.54s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyana_server`
 ========================================
 🖥️  Qiyana Server
@@ -10,3 +11,41 @@
 📁 TF-IDF file: /root/Qiyana-experiment/tf-idf.txt
 
 Waiting for ONE client connection...
+
+📡 Client connected: 127.0.0.1:39790
+This server will accept only ONE client and then exit.
+[127.0.0.1:39790] 1. Receiving public parameters...
+[127.0.0.1:39790]   Expecting 694035232 bytes total
+[127.0.0.1:39790]   ✅ Received all 694035232 bytes in 133 chunks, took 408.490411ms
+[127.0.0.1:39790]   ✅ Public parameters package deserialized, 9 params
+[127.0.0.1:39790]   ✅ All parameters deserialized in 344.678492ms
+[127.0.0.1:39790] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:39790]   Server initialized in 35.637717906s
+[127.0.0.1:39790]   Number of documents: 16384
+[127.0.0.1:39790]   ✅ Preprocessing completed
+[127.0.0.1:39790] 3. Waiting for query...
+[127.0.0.1:39790]   Expecting query: 12362099 bytes
+[127.0.0.1:39790]   ✅ Received query (12362099 bytes) in 3.359735ms (3 chunks, 3509.03 MB/s)
+[127.0.0.1:39790]   Deserializing query...
+[127.0.0.1:39790]   ✅ Query package deserialized, 4 params
+[127.0.0.1:39790]   ✅ All query deserialized in 3.681496ms
+[127.0.0.1:39790] 4. Processing query...
+homomorphic subset testing time: 203.958155373s
+Boolean match time: 42.760008ms
+MVM time: 112.403929061s
+TFHE selection and container building time: 953.683999852s
+TFHE packing time: 52.465940416s
+[127.0.0.1:39790]   ✅ Query processed in 1322.957116842s
+[127.0.0.1:39790] 5. Sending response...
+[127.0.0.1:39790]   Response size: 1573112 bytes
+[127.0.0.1:39790]   Sent response size header
+[127.0.0.1:39790]   ✅ Response sent in 967.25µs (1 chunks, 1551.03 MB/s)
+[127.0.0.1:39790] 📊 Session statistics:
+[127.0.0.1:39790]   - Receive public params: 408.490411ms
+[127.0.0.1:39790]   - Server init: 35.637717906s
+[127.0.0.1:39790]   - Preprocess wait: 10 seconds
+[127.0.0.1:39790]   - Receive query: 3.359735ms
+[127.0.0.1:39790]   - Process query: 1322.957116842s
+[127.0.0.1:39790]   - Send response: 967.25µs
+[127.0.0.1:39790]   - TOTAL TIME: 1360.342586329s
+[127.0.0.1:39790] 🎉 Session completed successfully!
