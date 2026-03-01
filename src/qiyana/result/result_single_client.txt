@@ -1,6 +1,6 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 16.74s
+    Finished `release` profile [optimized] target(s) in 15.27s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyana_client`
 ========================================
 🔍 Qiyana Client
@@ -15,71 +15,79 @@
 4. Wait 10 seconds for server preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 4.244586612s
+   Query generation time: 4.166432265s
 6. Send query to server...
    ✅ Query sent successfully!
-   📊 Query summary: 12362099 bytes in 3 chunks, took 22.695015445s, 0.52 MB/s
+   📊 Query summary: 38438144 bytes in 8 chunks, took 19.305581596s, 1.90 MB/s
 7. Waiting for server response...
 ............................................................
-   Still waiting... (60.067179406s elapsed)
+   Still waiting... (60.066785328s elapsed)
 ............................................................
-   Still waiting... (120.133618022s elapsed)
+   Still waiting... (120.134071171s elapsed)
 ............................................................
-   Still waiting... (180.202867s elapsed)
+   Still waiting... (180.201931228s elapsed)
 ............................................................
-   Still waiting... (240.275228425s elapsed)
+   Still waiting... (240.270337253s elapsed)
 ............................................................
-   Still waiting... (300.342186932s elapsed)
+   Still waiting... (300.337318464s elapsed)
 ............................................................
-   Still waiting... (360.411993393s elapsed)
+   Still waiting... (360.403161552s elapsed)
 ............................................................
-   Still waiting... (420.481646795s elapsed)
+   Still waiting... (420.472457182s elapsed)
 ............................................................
-   Still waiting... (480.549368902s elapsed)
+   Still waiting... (480.540203969s elapsed)
 ............................................................
-   Still waiting... (540.618328247s elapsed)
+   Still waiting... (540.605034679s elapsed)
 ............................................................
-   Still waiting... (600.687677164s elapsed)
+   Still waiting... (600.668605087s elapsed)
 ............................................................
-   Still waiting... (660.756514217s elapsed)
+   Still waiting... (660.733343811s elapsed)
 ............................................................
-   Still waiting... (720.827255508s elapsed)
+   Still waiting... (720.80035737s elapsed)
 ............................................................
-   Still waiting... (780.896348059s elapsed)
+   Still waiting... (780.869949573s elapsed)
 ............................................................
-   Still waiting... (840.965653001s elapsed)
+   Still waiting... (840.937250808s elapsed)
 ............................................................
-   Still waiting... (901.035588177s elapsed)
+   Still waiting... (901.00534136s elapsed)
 ............................................................
-   Still waiting... (961.106392265s elapsed)
+   Still waiting... (961.070347363s elapsed)
 ............................................................
-   Still waiting... (1021.175898119s elapsed)
+   Still waiting... (1021.139033473s elapsed)
 ............................................................
-   Still waiting... (1081.24659757s elapsed)
+   Still waiting... (1081.205801251s elapsed)
 ............................................................
-   Still waiting... (1141.315049743s elapsed)
+   Still waiting... (1141.27160186s elapsed)
 ............................................................
-   Still waiting... (1201.385742292s elapsed)
+   Still waiting... (1201.340087237s elapsed)
 ............................................................
-   Still waiting... (1261.451771182s elapsed)
+   Still waiting... (1261.404878133s elapsed)
 ............................................................
-   Still waiting... (1321.519918463s elapsed)
-.   Expecting response: 1573112 bytes
+   Still waiting... (1321.469037997s elapsed)
+............................................................
+   Still waiting... (1381.534415232s elapsed)
+............................................................
+   Still waiting... (1441.597539039s elapsed)
+............................................................
+   Still waiting... (1501.661736118s elapsed)
+............................................................
+   Still waiting... (1561.726304201s elapsed)
+................................................   Expecting response: 1573112 bytes
 
    ✅ Response received!
    Response size: 1573112 bytes (1 chunks)
-   Wait time: 1322.980292883s
-   Total time (query+wait): 1349.937750952s
+   Wait time: 1610.506230146s
+   Total time (query+wait): 1634.025331044s
    Deserializing response...
 8. Recover results...
-   Recovery time: 40.781546ms
+   Recovery time: 42.063846ms
    Number of results: 16384
    ✅ Verification passed!
 
 📊 FINAL STATISTICS:
-   Query generation: 4.244586612s
-   Server wait time: 1322.980292883s
-   Result recovery: 40.781546ms
-   Total elapsed: 1349.979185966s
+   Query generation: 4.166432265s
+   Server wait time: 1610.506230146s
+   Result recovery: 42.063846ms
+   Total elapsed: 1634.067999214s
 
 🔶 Test completed!

@@ -7,7 +7,7 @@ warning: unused import: `std::sync::Arc`
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
 warning: `qiyana` (bin "qiyanawoselclient") generated 1 warning (run `cargo fix --bin "qiyanawoselclient"` to apply 1 suggestion)
-    Finished `release` profile [optimized] target(s) in 0.04s
+    Finished `release` profile [optimized] target(s) in 0.03s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselclient 8`
 ========================================
 🔍 Distributed Client
@@ -23,57 +23,61 @@ warning: `qiyana` (bin "qiyanawoselclient") generated 1 warning (run `cargo fix 
 4. Wait 30 seconds for worker preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 135.016466ms
+   Query generation time: 62.430556ms
 6. Send query to Master...
    ✅ Query sent successfully!
-   📊 Query summary: 17384082 bytes in 4 chunks, took 7.71512ms, 2148.87 MB/s
+   📊 Query summary: 8692067 bytes in 2 chunks, took 2.292554ms, 3615.79 MB/s
    ✅ Disconnected from Master
 7. Waiting for 8 workers...
    📍 Listening on: Ok(0.0.0.0:10001)
    ⏳ Waiting for 8 workers to report results...
-......................
-   🔗 Got connection from 127.0.0.1:38264
-   Expecting response: 1085448 bytes
-   The response part from : Worker 5
+............................................................
+   Still waiting... (60.06727324s elapsed)
+...
+   🔗 Got connection from 127.0.0.1:43448
+   Expecting response: 17367048 bytes
+   The response part from : Worker 0
    📋 Current results: 1/8
 
-   🔗 Got connection from 127.0.0.1:38266
-   Expecting response: 1085448 bytes
-   The response part from : Worker 7
-.   📋 Current results: 2/8
-..............
-   🔗 Got connection from 127.0.0.1:56582
-   Expecting response: 1085448 bytes
-   The response part from : Worker 3
+   🔗 Got connection from 127.0.0.1:43464
+   Expecting response: 17367048 bytes
+   The response part from : Worker 2
+   📋 Current results: 2/8
+
+   🔗 Got connection from 127.0.0.1:43478
+   Expecting response: 17367048 bytes
+   The response part from : Worker 1
    📋 Current results: 3/8
 .
-   🔗 Got connection from 127.0.0.1:56590
-   Expecting response: 1085448 bytes
-   The response part from : Worker 2
+   🔗 Got connection from 127.0.0.1:43494
+   Expecting response: 17367048 bytes
+   The response part from : Worker 3
    📋 Current results: 4/8
-
-   🔗 Got connection from 127.0.0.1:56606
-   Expecting response: 1085448 bytes
-   The response part from : Worker 6
+....
+   🔗 Got connection from 127.0.0.1:43508
+   Expecting response: 17367048 bytes
+   The response part from : Worker 5
    📋 Current results: 5/8
-
-   🔗 Got connection from 127.0.0.1:56612
-   Expecting response: 1085448 bytes
-   The response part from : Worker 1
+.........
+   🔗 Got connection from 127.0.0.1:32896
+   Expecting response: 17367048 bytes
+   The response part from : Worker 6
    📋 Current results: 6/8
-..
-   🔗 Got connection from 127.0.0.1:56620
-   Expecting response: 1085448 bytes
-   The response part from : Worker 4
+...........................................
+   Still waiting... (120.130344765s elapsed)
+.......................
+   🔗 Got connection from 127.0.0.1:48038
+   Expecting response: 17367048 bytes
+   The response part from : Worker 7
    📋 Current results: 7/8
-.....
-   🔗 Got connection from 127.0.0.1:33800
-   Expecting response: 1085448 bytes
-   The response part from : Worker 0
+.
+   🔗 Got connection from 127.0.0.1:48052
+   Expecting response: 17367048 bytes
+   The response part from : Worker 4
    📋 Current results: 8/8
    🎉 All workers reported!
-   The total latency : 45.093502225s
+   The total latency : 144.801727992s
 8. Recover results...
-   Recovery time: 1.019312ms
-   Number of results: 1024
-   ❌ Verification failed!
+   Recovery time: 14.41877ms
+   Number of results: 16384
+   ✅ Verification passed!

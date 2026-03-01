@@ -24,8 +24,8 @@ pub const MASTER_WORKER_PORT: u16 = 10000;
 pub const CLIENT_RESULT_PORT: u16 = 10001; 
 pub const WORKER_BEGIN_PORT: u16 = 8000;
 
-pub const THREAD_NUM: usize = 16;
-pub const DOCUMENT_NUM: usize = 1024; //2^k
+pub const THREAD_NUM: usize = 20;
+pub const DOCUMENT_NUM: usize = 16384; //2^k
 pub const KEYWORD_SET_NUM: usize = 16;
 
 #[derive(Debug, Clone, PartialEq)]

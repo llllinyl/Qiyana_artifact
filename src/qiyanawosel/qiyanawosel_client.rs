@@ -17,8 +17,8 @@ async fn main() {
     //let test_string = "cladoniaceae AND cladonia AND stereocaulaceae AND podetia";
     //let test_string = "cladoniaceae OR cladonia";
     //let test_string = "cladoniaceae OR cladonia OR stereocaulaceae";
-    let test_string = "cladoniaceae OR cladonia OR stereocaulaceae OR podetia";
-    //let test_string = "NOT cladoniaceae";
+    //let test_string = "cladoniaceae OR cladonia OR stereocaulaceae OR podetia";
+    let test_string = "NOT cladoniaceae";
 
     println!("1. Initialize TFHE Client...");
     let client = Client::new();

@@ -96,7 +96,7 @@ async fn main() {
     println!("   ✅ Preprocessing wait completed");
 
     println!("5. Generate query...");
-    let test_string = "cladoniaceae AND cladonia OR species";
+    let test_string = "cladoniaceae AND cladonia";
     let start_time = Instant::now();
     let (query, querysum, template) = client.qiyanawosel_query(&test_string);
     let query_time = start_time.elapsed();
