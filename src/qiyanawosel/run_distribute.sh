@@ -4,7 +4,7 @@ echo "🔧  Distributed Qiyana-wosel System (Worker Num: ${WORKER_NUM:-8})"
 echo "============================================="
 
 WORKER_NUM=${WORKER_NUM:-8} # 2^a
-WORKER_THREADS=20
+WORKER_THREADS=16
 echo "Using $WORKER_NUM workers"
 
 rm -f ./result/result_master.txt ./result/result_workers.txt ./result/result_client.txt 2>/dev/null

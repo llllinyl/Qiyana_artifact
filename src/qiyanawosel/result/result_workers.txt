@@ -30,9 +30,514 @@
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
     Blocking waiting for file lock on build directory
+    Blocking waiting for file lock on build directory
+    Blocking waiting for file lock on build directory
+    Blocking waiting for file lock on build directory
     Blocking    Blocking waiting for file lock on build directory
  waiting for file lock on build directory
     Blocking waiting for file lock on build directory
-    Blocking waiting for file lock on build directory
-    Blocking waiting for file lock on build directory
-    Blocking waiting for file lock on build directory
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
+warning: unused import: `std::collections::HashMap`
+ --> src/qiyanawosel/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/qiyanawosel/share.rs:11:18
+   |
+11 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/qiyanawosel/share.rs:12:26
+   |
+12 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "qiyanawoselworker") generated 4 warnings (run `cargo fix --bin "qiyanawoselworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.35s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselworker 0 8`
+warning: unused import: `std::collections::HashMap`
+ --> src/qiyanawosel/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/qiyanawosel/share.rs:11:18
+   |
+11 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/qiyanawosel/share.rs:12:26
+   |
+12 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "qiyanawoselworker") generated 4 warnings (run `cargo fix --bin "qiyanawoselworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.36s
+========================================
+👷 Worker 0/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 0 will use port 8000
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8000
+2. Waiting for public parameters from Master...
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselworker 2 8`
+========================================
+👷 Worker 2/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 2 will use port 8002
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8002
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/qiyanawosel/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/qiyanawosel/share.rs:11:18
+   |
+11 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/qiyanawosel/share.rs:12:26
+   |
+12 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "qiyanawoselworker") generated 4 warnings (run `cargo fix --bin "qiyanawoselworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.36s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselworker 3 8`
+========================================
+👷 Worker 3/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 3 will use port 8003
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8003
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/qiyanawosel/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/qiyanawosel/share.rs:11:18
+   |
+11 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/qiyanawosel/share.rs:12:26
+   |
+12 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "qiyanawoselworker") generated 4 warnings (run `cargo fix --bin "qiyanawoselworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.37s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselworker 1 8`
+========================================
+👷 Worker 1/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 1 will use port 8001
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8001
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/qiyanawosel/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/qiyanawosel/share.rs:11:18
+   |
+11 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/qiyanawosel/share.rs:12:26
+   |
+12 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "qiyanawoselworker") generated 4 warnings (run `cargo fix --bin "qiyanawoselworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.37s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselworker 7 8`
+========================================
+👷 Worker 7/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 7 will use port 8007
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8007
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/qiyanawosel/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/qiyanawosel/share.rs:11:18
+   |
+11 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/qiyanawosel/share.rs:12:26
+   |
+12 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "qiyanawoselworker") generated 4 warnings (run `cargo fix --bin "qiyanawoselworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.38s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselworker 5 8`
+========================================
+👷 Worker 5/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 5 will use port 8005
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8005
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/qiyanawosel/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/qiyanawosel/share.rs:11:18
+   |
+11 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/qiyanawosel/share.rs:12:26
+   |
+12 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "qiyanawoselworker") generated 4 warnings (run `cargo fix --bin "qiyanawoselworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.38s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselworker 6 8`
+========================================
+👷 Worker 6/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 6 will use port 8006
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8006
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/qiyanawosel/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/qiyanawosel/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/qiyanawosel/share.rs:11:18
+   |
+11 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/qiyanawosel/share.rs:12:26
+   |
+12 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "qiyanawoselworker") generated 4 warnings (run `cargo fix --bin "qiyanawoselworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.39s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawoselworker 4 8`
+========================================
+👷 Worker 4/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 4 will use port 8004
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8004
+2. Waiting for public parameters from Master...
+[127.0.0.1:10000]   Expecting 555491992 bytes total
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 322.567799ms
+[127.0.0.1:10000]   Expecting 555491992 bytes total
+[Worker 2]   ✅ Public parameters package deserialized, 7 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 333.23419ms
+[Worker 2]   ✅ All parameters deserialized in 267.398268ms
+[Worker 2] 2. Server preprocessing...
+[Worker 2]: Successfully loaded 2048 keyword sets
+[127.0.0.1:10000]   Expecting 555491992 bytes total
+[Worker 1]   ✅ Public parameters package deserialized, 7 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 327.559332ms
+[Worker 1]   ✅ All parameters deserialized in 258.887485ms
+[Worker 1] 2. Server preprocessing...
+[Worker 1]: Successfully loaded 2048 keyword sets
+[127.0.0.1:10000]   Expecting 555491992 bytes total
+[Worker 3]   ✅ Public parameters package deserialized, 7 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 332.974265ms
+[Worker 3]   ✅ All parameters deserialized in 303.730395ms
+[Worker 3] 2. Server preprocessing...
+[Worker 3]: Successfully loaded 2048 keyword sets
+[127.0.0.1:10000]   Expecting 555491992 bytes total
+[Worker 5]   ✅ Public parameters package deserialized, 7 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 335.999341ms
+[Worker 5]   ✅ All parameters deserialized in 236.950152ms
+[Worker 5] 2. Server preprocessing...
+[Worker 5]: Successfully loaded 2048 keyword sets
+[127.0.0.1:10000]   Expecting 555491992 bytes total
+[Worker 4]   ✅ Public parameters package deserialized, 7 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 334.788871ms
+[Worker 4]   ✅ All parameters deserialized in 253.834483ms
+[Worker 4] 2. Server preprocessing...
+[Worker 4]: Successfully loaded 2048 keyword sets
+[127.0.0.1:10000]   Expecting 555491992 bytes total
+[Worker 7]   ✅ Public parameters package deserialized, 7 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 330.865719ms
+[Worker 7]   ✅ All parameters deserialized in 244.195551ms
+[Worker 7] 2. Server preprocessing...
+[Worker 7]: Successfully loaded 2048 keyword sets
+[127.0.0.1:10000]   Expecting 555491992 bytes total
+[Worker 6]   ✅ Public parameters package deserialized, 7 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 328.337064ms
+[Worker 6]   ✅ All parameters deserialized in 265.565177ms
+[Worker 6] 2. Server preprocessing...
+[Worker 6]: Successfully loaded 2048 keyword sets
+[Worker 0]   ✅ Public parameters package deserialized, 7 params
+[Worker 0]   ✅ All parameters deserialized in 234.039157ms
+[Worker 0] 2. Server preprocessing...
+[Worker 0]: Successfully loaded 2048 keyword sets
+[Worker 2]   Server initialized in 15.782493271s
+[Worker 2]   Number of documents: 16384
+[Worker 2]   ✅ Preprocessing completed
+[Worker 2] 3. Waiting for query from Master...
+[Worker 1]   Server initialized in 15.791045978s
+[Worker 1]   Number of documents: 16384
+[Worker 1]   ✅ Preprocessing completed
+[Worker 1] 3. Waiting for query from Master...
+.[Worker 3]   Server initialized in 15.777356991s
+[Worker 3]   Number of documents: 16384
+[Worker 3]   ✅ Preprocessing completed
+[Worker 3] 3. Waiting for query from Master...
+..[Worker 5]   Server initialized in 15.784631278s
+[Worker 5]   Number of documents: 16384
+[Worker 5]   ✅ Preprocessing completed
+[Worker 5] 3. Waiting for query from Master...
+...[Worker 4]   Server initialized in 15.78278936s
+[Worker 4]   Number of documents: 16384
+[Worker 4]   ✅ Preprocessing completed
+[Worker 4] 3. Waiting for query from Master...
+....[Worker 7]   Server initialized in 15.786061605s
+[Worker 7]   Number of documents: 16384
+[Worker 7]   ✅ Preprocessing completed
+[Worker 7] 3. Waiting for query from Master...
+....[Worker 6]   Server initialized in 15.765330288s
+[Worker 6]   Number of documents: 16384
+[Worker 6]   ✅ Preprocessing completed
+[Worker 6] 3. Waiting for query from Master...
+.....[Worker 0]   Server initialized in 15.777675763s
+[Worker 0]   Number of documents: 16384
+[Worker 0]   ✅ Preprocessing completed
+[Worker 0] 3. Waiting for query from Master...
+..............................................[127.0.0.1:10000]   Expecting query: 8692067 bytes
+[127.0.0.1:10000]   ✅ Received query (8692067 bytes) in 6.06924ms (2 chunks, 1365.81 MB/s)
+[Worker 2]   Deserializing query...
+[127.0.0.1:10000]   Expecting query: 8692067 bytes
+[127.0.0.1:10000]   ✅ Received query (8692067 bytes) in 6.472579ms (2 chunks, 1280.70 MB/s)
+[Worker 1]   Deserializing query...
+[127.0.0.1:10000]   Expecting query: 8692067 bytes
+[Worker 2]   ✅ Query package deserialized, 3 params
+.[Worker 2]    ✅ All query deserialized in 1.859211ms
+[Worker 2] 4. Processing query...
+[127.0.0.1:10000]   ✅ Received query (8692067 bytes) in 6.549267ms (2 chunks, 1265.70 MB/s)
+[Worker 3]   Deserializing query...
+[127.0.0.1:10000]   Expecting query: 8692067 bytes
+[Worker 1]   ✅ Query package deserialized, 3 params
+[Worker 1]    ✅ All query deserialized in 1.891714ms
+[Worker 1] 4. Processing query...
+[127.0.0.1:10000]   ✅ Received query (8692067 bytes) in 6.6173ms (2 chunks, 1252.69 MB/s)
+[Worker 5]   Deserializing query...
+[127.0.0.1:10000]   Expecting query: 8692067 bytes
+[Worker 3]   ✅ Query package deserialized, 3 params
+[Worker 3]    ✅ All query deserialized in 1.761399ms
+[Worker 3] 4. Processing query...
+[127.0.0.1:10000]   ✅ Received query (8692067 bytes) in 6.716537ms (2 chunks, 1234.18 MB/s)
+[Worker 4]   Deserializing query...
+[127.0.0.1:10000]   Expecting query: 8692067 bytes
+.[Worker 5]   ✅ Query package deserialized, 3 params
+[Worker 5]    ✅ All query deserialized in 1.601225ms
+[Worker 5] 4. Processing query...
+[127.0.0.1:10000]   ✅ Received query (8692067 bytes) in 6.747112ms (2 chunks, 1228.59 MB/s)
+[Worker 7]   Deserializing query...
+[127.0.0.1:10000]   Expecting query: 8692067 bytes
+[Worker 4]   ✅ Query package deserialized, 3 params
+[Worker 4]    ✅ All query deserialized in 1.616606ms
+[Worker 4] 4. Processing query...
+[127.0.0.1:10000]   ✅ Received query (8692067 bytes) in 6.78471ms (2 chunks, 1221.78 MB/s)
+[Worker 6]   Deserializing query...
+[127.0.0.1:10000]   Expecting query: 8692067 bytes
+[Worker 7]   ✅ Query package deserialized, 3 params
+[Worker 7]    ✅ All query deserialized in 1.595084ms
+[Worker 7] 4. Processing query...
+[127.0.0.1:10000]   ✅ Received query (8692067 bytes) in 6.719838ms (2 chunks, 1233.57 MB/s)
+[Worker 0]   Deserializing query...
+[Worker 6]   ✅ Query package deserialized, 3 params
+[Worker 6]    ✅ All query deserialized in 1.726734ms
+[Worker 6] 4. Processing query...
+[Worker 0]   ✅ Query package deserialized, 3 params
+[Worker 0]    ✅ All query deserialized in 1.571846ms
+[Worker 0] 4. Processing query...
+...................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (60.061848381s elapsed)
+......
+   Still waiting... (60.067106605s elapsed)
+......
+   Still waiting... (60.068397442s elapsed)
+.......
+   Still waiting... (60.086048698s elapsed)
+.......
+   Still waiting... (60.068189343s elapsed)
+.......
+   Still waiting... (60.065382939s elapsed)
+......
+   Still waiting... (60.064219769s elapsed)
+......
+   Still waiting... (60.061351554s elapsed)
+.............................................................................................................................................[Worker 3]   ✅ Query processed in 71.765051969s
+[Worker 3] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 3]: Attempt 1 to connect...
+[Worker 3]  Sending response...
+[Worker 3]  Response size: 17367048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 26.729261ms (4 chunks, 619.64 MB/s)
+   ✅ Task spawned for Worker 3
+........................[Worker 0]   ✅ Query processed in 75.227322678s
+[Worker 0] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 0]: Attempt 1 to connect...
+[Worker 0]  Sending response...
+[Worker 0]  Response size: 17367048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 21.797138ms (4 chunks, 759.85 MB/s)
+   ✅ Task spawned for Worker 0
+...[Worker 1]   ✅ Query processed in 75.498795315s
+[Worker 1] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 1]: Attempt 1 to connect...
+[Worker 1]  Sending response...
+[Worker 1]  Response size: 17367048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 15.74394ms (4 chunks, 1051.99 MB/s)
+   ✅ Task spawned for Worker 1
+............[Worker 2]   ✅ Query processed in 78.052502735s
+[Worker 2] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 2]: Attempt 1 to connect...
+[Worker 2]  Sending response...
+[Worker 2]  Response size: 17367048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 12.985466ms (4 chunks, 1275.47 MB/s)
+   ✅ Task spawned for Worker 2
+..................[Worker 7]   ✅ Query processed in 82.57204765s
+[Worker 7] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 7]: Attempt 1 to connect...
+[Worker 7]  Sending response...
+[Worker 7]  Response size: 17367048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 15.448003ms (4 chunks, 1072.15 MB/s)
+   ✅ Task spawned for Worker 7
+................[Worker 6]   ✅ Query processed in 87.659391248s
+[Worker 6] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 6]: Attempt 1 to connect...
+[Worker 6]  Sending response...
+[Worker 6]  Response size: 17367048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 13.847887ms (4 chunks, 1196.03 MB/s)
+   ✅ Task spawned for Worker 6
+.........[Worker 5]   ✅ Query processed in 91.887080254s
+[Worker 5] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 5]: Attempt 1 to connect...
+[Worker 5]  Sending response...
+[Worker 5]  Response size: 17367048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 12.660787ms (4 chunks, 1308.17 MB/s)
+   ✅ Task spawned for Worker 5
+..[Worker 4]   ✅ Query processed in 93.853378323s
+[Worker 4] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 4]: Attempt 1 to connect...
+[Worker 4]  Sending response...
+[Worker 4]  Response size: 17367048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 12.456183ms (4 chunks, 1329.66 MB/s)
+   ✅ Task spawned for Worker 4
