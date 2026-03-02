@@ -6,7 +6,7 @@
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on build directory
     Blocking waiting for file lock on build directory
-   Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
 warning: unused import: `std::collections::HashMap`
  --> src/baseline/share.rs:1:5
   |
@@ -34,19 +34,10 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 12.50s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/baselineworker 0 2`
-========================================
-👷 Worker 0/2
-========================================
-
-📁 Keyword file: /home/lyl/Desktop/Qiyana/keyword.txt
-Worker 0 will use port 8000
-1. Connecting to Master at 127.0.0.1:10000...
+    Finished `release` profile [optimized] target(s) in 12.86s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 1 2`
 warning: unused import: `std::collections::HashMap`
- -->    ✅ Worker  connected from port 8000
-src/baseline/share.rs:1:5
-2. Waiting for public parameters from Master...
+ --> src/baseline/share.rs:1:5
   |
 1 | use std::collections::HashMap;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,68 +63,73 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 12.51s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/baselineworker 1 2`
+    Finished `release` profile [optimized] target(s) in 12.87s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 0 2`
 ========================================
 👷 Worker 1/2
 ========================================
 
-📁 Keyword file: /home/lyl/Desktop/Qiyana/keyword.txt
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
 Worker 1 will use port 8001
 1. Connecting to Master at 127.0.0.1:10000...
    ✅ Worker  connected from port 8001
 2. Waiting for public parameters from Master...
+========================================
+👷 Worker 0/2
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 0 will use port 8000
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8000
+2. Waiting for public parameters from Master...
 [127.0.0.1:10000]   Expecting 127823230 bytes total
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 56.995125ms
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 77.530315ms
 [127.0.0.1:10000]   Expecting 127823230 bytes total
 [Worker 1]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 70.98245ms
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 74.026382ms
 [Worker 0]   ✅ Public parameters package deserialized, 2 params
-[Worker 1]   ✅ All parameters deserialized in 272.549116ms
+[Worker 1]   ✅ All parameters deserialized in 277.165142ms
 [Worker 1] 2. Server preprocessing...
 [Worker 1]: Successfully loaded 8 keyword sets
-[Worker 1]   Server initialized in 235.199µs
+[Worker 1]   Server initialized in 934.446µs
 [Worker 1]   Number of documents: 16
 [Worker 1]   ✅ Preprocessing completed
 [Worker 1] 3. Waiting for query from Master...
-[Worker 0]   ✅ All parameters deserialized in 259.407677ms
+[Worker 0]   ✅ All parameters deserialized in 274.192827ms
 [Worker 0] 2. Server preprocessing...
 [Worker 0]: Successfully loaded 8 keyword sets
-[Worker 0]   Server initialized in 207.428µs
+[Worker 0]   Server initialized in 885.557µs
 [Worker 0]   Number of documents: 16
 [Worker 0]   ✅ Preprocessing completed
 [Worker 0] 3. Waiting for query from Master...
-......................................[127.0.0.1:10000]   Expecting query: 5927919 bytes
-[127.0.0.1:10000]   ✅ Received query (5927919 bytes) in 4.826811ms (2 chunks, 1171.23 MB/s)
+......................................[127.0.0.1:10000]   Expecting query: 6323103 bytes
+[127.0.0.1:10000]   ✅ Received query (6323103 bytes) in 3.690739ms (2 chunks, 1633.87 MB/s)
 [Worker 1]   Deserializing query...
-[127.0.0.1:10000]   Expecting query: 5927919 bytes
-[Worker 1]   ✅ Query package deserialized, 2 params
-[127.0.0.1:10000]   ✅ Received query (5927919 bytes) in 5.32476ms (2 chunks, 1061.70 MB/s)
+[127.0.0.1:10000]   Expecting query: 6323103 bytes
+[127.0.0.1:10000]   ✅ Received query (6323103 bytes) in 4.214934ms (2 chunks, 1430.67 MB/s)
 [Worker 0]   Deserializing query...
-[Worker 1]    ✅ All query deserialized in 970.811µs
+[Worker 1]   ✅ Query package deserialized, 2 params
+[Worker 1]    ✅ All query deserialized in 1.575591ms
 [Worker 1] 4. Processing query...
 [Worker 0]   ✅ Query package deserialized, 2 params
-[Worker 0]    ✅ All query deserialized in 1.800742ms
+[Worker 0]    ✅ All query deserialized in 1.483158ms
 [Worker 0] 4. Processing query...
-.................................................................................
-   Still waiting... (60.132736827s elapsed)
-.
-   Still waiting... (60.220857652s elapsed)
-......................................................................................................................Total time: 100.700902809s
-[Worker 0]   ✅ Query processed in 100.726531628s
-[Worker 0] 5. Connecting and sending to Client at 127.0.0.1:10001...
-   🔗 [Worker 0]: Attempt 1 to connect...
-[Worker 0]  Sending response...
-[Worker 0]  Response size: 131848 bytes
-[127.0.0.1:10001]   ✅ Response sent in 198.386µs (1 chunks, 633.82 MB/s)
-   ✅ Task spawned for Worker 0
-.
-   Still waiting... (120.355165865s elapsed)
-...Total time: 104.741565929s
-[Worker 1]   ✅ Query processed in 104.744456499s
+................................Homomorphic Subset Testing time: 16.315723579s
+Boolean Match time: 31.805516ms
+[Worker 1]   ✅ Query processed in 16.349328226s
 [Worker 1] 5. Connecting and sending to Client at 127.0.0.1:10001...
    🔗 [Worker 1]: Attempt 1 to connect...
 [Worker 1]  Sending response...
 [Worker 1]  Response size: 131848 bytes
-[127.0.0.1:10001]   ✅ Response sent in 59.376µs (1 chunks, 2117.69 MB/s)
+[127.0.0.1:10001]   ✅ Response sent in 73.091µs (1 chunks, 1720.32 MB/s)
    ✅ Task spawned for Worker 1
+Homomorphic Subset Testing time: 16.463755378s
+Boolean Match time: 30.628586ms
+[Worker 0]   ✅ Query processed in 16.495967997s
+[Worker 0] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 0]: Attempt 1 to connect...
+[Worker 0]  Sending response...
+[Worker 0]  Response size: 131848 bytes
+[127.0.0.1:10001]   ✅ Response sent in 64.276µs (1 chunks, 1956.25 MB/s)
+   ✅ Task spawned for Worker 0

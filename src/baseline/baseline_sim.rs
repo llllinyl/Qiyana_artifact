@@ -11,7 +11,7 @@ use std::sync::Arc;
 
 pub const DOCUMENT_NUM: usize = 16384;
 pub const THREAD_NUM: usize = 64;
-pub const KEYWORD_SET_NUM: usize = 2;
+pub const KEYWORD_SET_NUM: usize = 16;
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum QueryElement {

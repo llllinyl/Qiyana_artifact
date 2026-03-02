@@ -33,7 +33,8 @@ pub const THREAD_NUM: usize = 16;
 pub const DOCUMENT_NUM: usize = 16; //2^k
 pub const KEYWORD_SET_NUM: usize = 8;
 
-pub fn read_tf_idf_file(file_path: &str, max_docs: usize) -> Vec<Vec<u16>> {
+
+pub fn read_tf_idf_file(file_path: &str, start_idx: usize, worker_docs: usize) -> Vec<Vec<u16>> {
     let file = match File::open(Path::new(file_path)) {
         Ok(f) => f,
         Err(e) => {
@@ -41,14 +42,14 @@ pub fn read_tf_idf_file(file_path: &str, max_docs: usize) -> Vec<Vec<u16>> {
             return Vec::new();
         }
     };
-    
+
     let reader = BufReader::new(file);
     let mut lines = reader.lines();
-    
+
     match lines.next() {
-        Some(Ok(_keywords_line)) => {}
+        Some(Ok(_)) => {}
         Some(Err(e)) => {
-            eprintln!("Failed to read keywords line: {}", e);
+            eprintln!("Failed to read comment line: {}", e);
             return Vec::new();
         }
         None => {
@@ -56,25 +57,12 @@ pub fn read_tf_idf_file(file_path: &str, max_docs: usize) -> Vec<Vec<u16>> {
             return Vec::new();
         }
     };
-    
-    let mut tf_idf_matrix = Vec::new();
-    let mut doc_count = 0;
-    
+
+    let mut all_data_lines = Vec::new();
     for line in lines {
-        if doc_count >= max_docs {
-            break;
-        }
-        
         match line {
             Ok(line_content) => {
-                let tf_idf_values: Vec<u16> = line_content
-                    .split(',')
-                    .filter_map(|s| s.parse::<u16>().ok())
-                    .filter(|&x| x <= 1023)
-                    .collect();
-                
-                tf_idf_matrix.push(tf_idf_values);
-                doc_count += 1;
+                all_data_lines.push(line_content);
             }
             Err(e) => {
                 eprintln!("Failed to read document line: {}", e);
@@ -82,6 +70,25 @@ pub fn read_tf_idf_file(file_path: &str, max_docs: usize) -> Vec<Vec<u16>> {
             }
         }
     }
+
+    let actual_data_lines = all_data_lines.len();
+
+    let mut tf_idf_matrix = Vec::with_capacity(worker_docs);
+
+    for i in 0..worker_docs {
+        let global_doc_idx = start_idx + i;
+        let line_idx = global_doc_idx % actual_data_lines;
+        let line_content = &all_data_lines[line_idx];
+
+        let tf_idf_values: Vec<u16> = line_content
+            .split(',')
+            .filter_map(|s| s.parse::<u16>().ok())
+            .filter(|&x| x <= 1023)
+            .collect();
+
+        tf_idf_matrix.push(tf_idf_values);
+    }
+
     tf_idf_matrix
 }
 
@@ -714,12 +721,18 @@ impl SubServer {
         or_lut: GlweCiphertextOwned<u64>, mul_lut: GlweCiphertextOwned<u64>, 
         one: LweCiphertextOwned<u64>, zero: LweCiphertextOwned<u64>, 
         keyword_path: P, tfidf_path: &str) -> Self {
-        let content = fs::read_to_string(keyword_path).unwrap(); 
+        let content = fs::read_to_string(keyword_path).unwrap();
+        let lines: Vec<&str> = content.lines().collect();
+        let actual_file_lines = lines.len();
         let documents_per_worker = DOCUMENT_NUM / worker_num;
         let start_doc = worker_id as usize * documents_per_worker;
+        let end_doc = start_doc + documents_per_worker;
         let mut keywords = Vec::with_capacity(documents_per_worker);
-        
-        for (_i, line) in content.lines().enumerate().skip(start_doc).take(documents_per_worker) {
+
+        for doc_idx in start_doc..end_doc {
+            let line_idx = doc_idx % actual_file_lines;
+            let line = lines[line_idx];
+
             let filter = BloomFilter::new();
             let mut index = 0;
 
@@ -739,12 +752,11 @@ impl SubServer {
         }
         println!("[Worker {}]: Successfully loaded {} keyword sets", worker_id, keywords.len());
 
-
-        let all_docs = read_tf_idf_file(tfidf_path, DOCUMENT_NUM);
-        let docs_per_worker = DOCUMENT_NUM / worker_num;
-        let start_idx = worker_id as usize * docs_per_worker;
-        let end_idx = start_idx + docs_per_worker;
-        let matrix = all_docs[start_idx..end_idx].to_vec();
+        let matrix = read_tf_idf_file(
+            tfidf_path, 
+            start_doc,         
+            documents_per_worker
+        );
         let submatrix = decompose_matrix_2bit(&matrix);
 
         let std_bootstrapping_key = seeded_bsk.decompress_into_lwe_bootstrap_key();

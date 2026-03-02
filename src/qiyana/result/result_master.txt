@@ -1,3 +1,4 @@
+    Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
 warning: unused import: `timeout`
   --> src/qiyana/share.rs:13:26
@@ -14,7 +15,7 @@ warning: unused import: `Write`
   |               ^^^^^
 
 warning: `qiyana` (bin "qiyanamaster") generated 2 warnings (run `cargo fix --bin "qiyanamaster"` to apply 1 suggestion)
-    Finished `release` profile [optimized] target(s) in 17.11s
+    Finished `release` profile [optimized] target(s) in 1.18s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanamaster 2`
 ========================================
 🚀 Distributed Master
@@ -22,32 +23,3 @@ warning: `qiyana` (bin "qiyanamaster") generated 2 warnings (run `cargo fix --bi
 
 1. Waiting for 2 workers to connect...
    Worker listener on port 10000
-   ✅ Worker 1 connected from 127.0.0.1:8001
-   ✅ Worker 0 connected from 127.0.0.1:8000
-   ✅ All 2 workers connected
-2. Waiting for client connection...
-   Master listening on port 9999
-   ✅ Client connected from 127.0.0.1:43638
-3. Waiting for public parameters from Client...
-[127.0.0.1:43638]   Expecting 694035232 bytes total
-[127.0.0.1:43638]   ✅ Received all bytes of public parameters, took 402.599142ms
-[127.0.0.1:43638]   ✅ Public parameters package deserialized, 9 params
-4. Distribute public parameters to Workers...
-   📤 Distributing public parameters to 2 workers...
-   Sending to Worker 1...
-   Public parameters size: 694035232 bytes
-   Sending to Worker 0...
-   Public parameters size: 694035232 bytes
-   📊 Sent public parameters to workers successfully
-[127.0.0.1:43638] 5. Waiting for query from Client...
-[127.0.0.1:43638]   Expecting query: 21054114 bytes
-[127.0.0.1:43638]   ✅ Received query (21054114 bytes) in 13.288961ms (5 chunks, 1510.94 MB/s)
-[127.0.0.1:43638]   Deserializing query...
-[127.0.0.1:43638]   ✅ Query package deserialized, 4 params
-6. Distribute query to Workers...
-   📤 Distributing query to 2 workers...
-   Sending query to Worker 1...
-   Worker 1 connection to 127.0.0.1:8001 is active
-   Sending query to Worker 0...
-   Worker 0 connection to 127.0.0.1:8000 is active
-   📊 Sent query to workers successfully

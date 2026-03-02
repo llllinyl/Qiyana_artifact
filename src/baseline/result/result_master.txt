@@ -1,4 +1,4 @@
-   Compiling qiyana v0.1.0 (/home/lyl/Desktop/Qiyana/Qiyana_artifact)
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
 warning: unused import: `timeout`
   --> src/baseline/share.rs:14:26
    |
@@ -14,24 +14,24 @@ warning: unused import: `std::io::Write`
   |     ^^^^^^^^^^^^^^
 
 warning: `qiyana` (bin "baselinemaster") generated 2 warnings (run `cargo fix --bin "baselinemaster"` to apply 1 suggestion)
-    Finished `release` profile [optimized] target(s) in 14.43s
-     Running `/home/lyl/Desktop/Qiyana/Qiyana_artifact/target/release/baselinemaster 2`
+    Finished `release` profile [optimized] target(s) in 14.88s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselinemaster 2`
 ========================================
 🚀 Distributed Master
 ========================================
 
 1. Waiting for 2 workers to connect...
    Worker listener on port 10000
-   ✅ Worker 0 connected from 127.0.0.1:8000
    ✅ Worker 1 connected from 127.0.0.1:8001
+   ✅ Worker 0 connected from 127.0.0.1:8000
    ✅ All 2 workers connected
 2. Waiting for client connection...
    Master listening on port 9999
-   ✅ Client connected from 127.0.0.1:47872
+   ✅ Client connected from 127.0.0.1:37654
 3. Waiting for public parameters from Client...
-[127.0.0.1:47872]   Expecting 127823230 bytes total
-[127.0.0.1:47872]   ✅ Received all bytes of public parameters, took 76.870142ms
-[127.0.0.1:47872]   ✅ Public parameters package deserialized, 2 params
+[127.0.0.1:37654]   Expecting 127823230 bytes total
+[127.0.0.1:37654]   ✅ Received all bytes of public parameters, took 76.151007ms
+[127.0.0.1:37654]   ✅ Public parameters package deserialized, 2 params
 4. Distribute public parameters to Workers...
    📤 Distributing public parameters to 2 workers...
    Sending public parameters to Worker 1...
@@ -39,11 +39,11 @@ warning: `qiyana` (bin "baselinemaster") generated 2 warnings (run `cargo fix --
    Sending public parameters to Worker 0...
    Public parameters size: 127823230 bytes
    📊 Sent public parameters to workers successfully
-[127.0.0.1:47872] 5. Waiting for query from Client...
-[127.0.0.1:47872]   Expecting query: 5927919 bytes
-[127.0.0.1:47872]   ✅ Received query (5927919 bytes) in 5.08085ms (2 chunks, 1112.67 MB/s)
-[127.0.0.1:47872]   Deserializing query...
-[127.0.0.1:47872]   ✅ Query package deserialized, 2 params
+[127.0.0.1:37654] 5. Waiting for query from Client...
+[127.0.0.1:37654]   Expecting query: 6323103 bytes
+[127.0.0.1:37654]   ✅ Received query (6323103 bytes) in 3.889794ms (2 chunks, 1550.26 MB/s)
+[127.0.0.1:37654]   Deserializing query...
+[127.0.0.1:37654]   ✅ Query package deserialized, 2 params
 6. Distribute query to Workers...
    📤 Distributing query to 2 workers...
    Sending query to Worker 1...

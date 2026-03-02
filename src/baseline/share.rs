@@ -210,15 +210,21 @@ pub struct SubServer {
 
 impl SubServer {
     pub fn new<P: AsRef<Path>>(worker_num: usize, worker_id: u32, server_key: ServerKey, false_ciphertext: FheBool, file_path: P) -> Self {
-        let content = fs::read_to_string(file_path).unwrap(); 
+        let content = fs::read_to_string(file_path).unwrap();
+        let lines: Vec<&str> = content.lines().collect();
+        let actual_file_lines = lines.len();
+
         let documents_per_worker = DOCUMENT_NUM / worker_num;
         let start_doc = worker_id as usize * documents_per_worker;
+        let end_doc = start_doc + documents_per_worker;
         let mut keywords = Vec::with_capacity(documents_per_worker);
-        
-        for (_i, line) in content.lines().enumerate().skip(start_doc).take(documents_per_worker) {
+
+        for doc_idx in start_doc..end_doc {
+            let line_idx = doc_idx % actual_file_lines;
+            let line = lines[line_idx];
             let mut keys = [const{String::new()}; KEYWORD_SET_NUM];
             let mut index = 0;
-            
+
             for part in line.split(',') {
                 let trimmed = part.trim();
                 if !trimmed.is_empty() && index < KEYWORD_SET_NUM {
@@ -226,11 +232,8 @@ impl SubServer {
                     index += 1;
                 }
             }
-            
+
             keywords.push(keys);
-        }
-        while keywords.len() < documents_per_worker {
-            keywords.push([const{String::new()}; KEYWORD_SET_NUM]);
         }
         println!("[Worker {}]: Successfully loaded {} keyword sets", worker_id, keywords.len());
         

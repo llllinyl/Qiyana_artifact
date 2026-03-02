@@ -406,12 +406,19 @@ impl SubServer {
         seeded_ksk: SeededLweKeyswitchKey<Vec<u64>>, equal_lut: GlweCiphertextOwned<u64>,
         and_lut: GlweCiphertextOwned<u64>, or_lut: GlweCiphertextOwned<u64>, 
         one: LweCiphertextOwned<u64>, zero: LweCiphertextOwned<u64>, file_path: P) -> Self {
-        let content = fs::read_to_string(file_path).unwrap(); 
+        let content = fs::read_to_string(file_path).unwrap();
+        let lines: Vec<&str> = content.lines().collect();
+        let actual_file_lines = lines.len();        
         let documents_per_worker = DOCUMENT_NUM / worker_num;
         let start_doc = worker_id as usize * documents_per_worker;
+        let end_doc = start_doc + documents_per_worker;
+        
         let mut keywords = Vec::with_capacity(documents_per_worker);
         
-        for (_i, line) in content.lines().enumerate().skip(start_doc).take(documents_per_worker) {
+        for doc_idx in start_doc..end_doc {
+            let line_idx = doc_idx % actual_file_lines;
+            let line = lines[line_idx];
+            
             let filter = BloomFilter::new();
             let mut index = 0;
 
