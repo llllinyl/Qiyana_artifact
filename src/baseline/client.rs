@@ -91,7 +91,12 @@ async fn main() {
     println!("   ✅ Preprocessing wait completed");
 
     println!("5. Generate query...");
-    let test_string = "cladoniaceae AND cladonia OR species";
+    let test_string = "cladoniaceae AND cladonia";
+    //let test_string = "cladoniaceae OR cladonia";
+    //let test_string = "NOT cladoniaceae";
+    //let test_string = "(cladoniaceae OR cladonia OR stereocaulaceae) AND podetia AND NOT (swabians OR danube) AND pycnothelia AND stellaris";
+    //let test_string = "(cladoniaceae AND cladonia AND stereocaulaceae) AND NOT (swabians OR danube) AND podetia AND NOT banat OR pycnothelia";
+    //let test_string = "(cladoniaceae AND NOT swabians) OR (cladonia AND stereocaulaceae AND NOT danube) OR (podetia AND pycnothelia AND stellaris)";
     let start_time = Instant::now();
     let (encrypted_results, queryformat) = client.baseline_query(&test_string, 32usize);
     let query_time = start_time.elapsed();
@@ -257,16 +262,21 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, expe
     println!("   Number of results: {}", recovered.len());
     
     let mut valid = true;
-    if recovered[0] != true {
-        valid = false;
-    }
-    for i in 1..DOCUMENT_NUM { 
-        if i < recovered.len() && recovered[i] {
-            valid = false;
-            break;
+    for i in 0..DOCUMENT_NUM {
+        if i % 16384 == 0 {
+            if recovered[i] != true {
+                valid = false;
+                break;
+            }
+        }
+        else{
+            if recovered[i] {
+                valid = false;
+                break;
+            }
         }
     }
-
+    
     if valid {
         println!("   ✅ Verification passed!");
     } else {

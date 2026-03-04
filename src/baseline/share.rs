@@ -21,8 +21,8 @@ pub const CLIENT_RESULT_PORT: u16 = 10001;
 pub const WORKER_BEGIN_PORT: u16 = 8000;
 
 pub const THREAD_NUM: usize = 16;
-pub const DOCUMENT_NUM: usize = 16; //2^k
-pub const KEYWORD_SET_NUM: usize = 8;
+pub const DOCUMENT_NUM: usize = 16384; //2^k
+pub const KEYWORD_SET_NUM: usize = 16;
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum QueryElement {

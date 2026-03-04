@@ -108,7 +108,12 @@ async fn main() {
     println!("   ✅ Preprocessing wait completed");
 
     println!("5. Generate query...");
-    let test_string = "cladoniaceae AND cladonia OR species";
+    let test_string = "cladoniaceae AND cladonia";
+    //let test_string = "cladoniaceae OR cladonia";
+    //let test_string = "NOT cladoniaceae";
+    //let test_string = "(cladoniaceae OR cladonia OR stereocaulaceae) AND podetia AND NOT (swabians OR danube) AND pycnothelia AND stellaris";
+    //let test_string = "(cladoniaceae AND cladonia AND stereocaulaceae) AND NOT (swabians OR danube) AND podetia AND NOT banat OR pycnothelia";
+    //let test_string = "(cladoniaceae AND NOT swabians) OR (cladonia AND stereocaulaceae AND NOT danube) OR (podetia AND pycnothelia AND stellaris)";
     let start_time = Instant::now();
     if mode == 0 {
         let (query, querysum, template, rank_vector) = client.qiyana_query(&test_string);
@@ -363,24 +368,22 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
     println!("   Recovery time: {:?}", recover_time);
     println!("   Number of results: {}", recovered.len());
             
-    if recovered.len() > 0 {
-        println!("   First result: {}", recovered[0]);
-    }
-    if recovered.len() > 1 {
-        println!("   Second result: {}", recovered[1]);
-    }
-
     let mut valid = true;
-    if recovered[0] != 222 {
-        valid = false;
-    }
-    for i in 1..DOCUMENT_NUM {
-        if i < recovered.len() && (recovered[i] != 0) {
-            valid = false;
-            break;
+    for i in 0..DOCUMENT_NUM {
+        if i % 16384 == 0 {
+            if recovered[i] != 222 {
+                valid = false;
+                println!("error {} line 222: {}", i, recovered[i]);
+                break;
+            }
+        }
+        else{
+            if recovered[i] != 0 {
+                valid = false;
+                break;
+            }
         }
     }
-            
             
     if valid {
         println!("   ✅ Verification passed!");

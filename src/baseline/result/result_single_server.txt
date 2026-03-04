@@ -1,5 +1,5 @@
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 15.56s
+    Finished `release` profile [optimized] target(s) in 15.19s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baseline_server`
 ========================================
 🖥️  Baseline Server
@@ -11,38 +11,38 @@
 
 Waiting for ONE client connection...
 
-📡 Client connected: 127.0.0.1:42138
+📡 Client connected: 127.0.0.1:50206
 This server will accept only ONE client and then exit.
-[127.0.0.1:42138] 1. Receiving public parameters...
-[127.0.0.1:42138]   Expecting 127823230 bytes total
-[127.0.0.1:42138]   ✅ Received 127823230 bytes in 78.969912ms (25 chunks, 1543.65 MB/s)
-[127.0.0.1:42138]   Deserializing public parameters...
-[127.0.0.1:42138]   ✅ Public parameters package deserialized, 2 params
-[127.0.0.1:42138]   ✅ All parameters deserialized in 275.601737ms
-[127.0.0.1:42138] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:42138]   Server initialized in 7.091337ms
-[127.0.0.1:42138]   Number of documents: 16384
-[127.0.0.1:42138]   ✅ Preprocessing completed
-[127.0.0.1:42138] 3. Waiting for query...
-[127.0.0.1:42138]   Expecting query: 4215414 bytes
-[127.0.0.1:42138]   ✅ Received query (4215414 bytes) in 3.27301ms (1 chunks, 1228.27 MB/s)
-[127.0.0.1:42138]   Deserializing query...
-[127.0.0.1:42138]   ✅ Query package deserialized, 2 params
-[127.0.0.1:42138]   ✅ All query deserialized in 964.1µs
-[127.0.0.1:42138] 4. Processing query...
-Homomorphic Subset Testing time: 1304.661637695s
-Boolean Match time: 4.003990814s
-[127.0.0.1:42138]   ✅ Query processed in 1308.674607153s
-[127.0.0.1:42138] 5. Sending response...
-[127.0.0.1:42138]   Response size: 270008328 bytes
-[127.0.0.1:42138]   Sent response size header
-[127.0.0.1:42138]   ✅ Response sent in 283.295653ms (52 chunks, 908.94 MB/s)
-[127.0.0.1:42138] 📊 Session statistics:
-[127.0.0.1:42138]   - Receive public params: 78.969912ms
-[127.0.0.1:42138]   - Server init: 7.091337ms
-[127.0.0.1:42138]   - Preprocess wait: 20 seconds
-[127.0.0.1:42138]   - Receive query: 3.27301ms
-[127.0.0.1:42138]   - Process query: 1308.674607153s
-[127.0.0.1:42138]   - Send response: 283.295653ms
-[127.0.0.1:42138]   - TOTAL TIME: 1319.080243417s
-[127.0.0.1:42138] 🎉 Session completed successfully!
+[127.0.0.1:50206] 1. Receiving public parameters...
+[127.0.0.1:50206]   Expecting 127823230 bytes total
+[127.0.0.1:50206]   ✅ Received 127823230 bytes in 76.118263ms (25 chunks, 1601.48 MB/s)
+[127.0.0.1:50206]   Deserializing public parameters...
+[127.0.0.1:50206]   ✅ Public parameters package deserialized, 2 params
+[127.0.0.1:50206]   ✅ All parameters deserialized in 274.954575ms
+[127.0.0.1:50206] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:50206]   Server initialized in 404.613µs
+[127.0.0.1:50206]   Number of documents: 128
+[127.0.0.1:50206]   ✅ Preprocessing completed
+[127.0.0.1:50206] 3. Waiting for query...
+[127.0.0.1:50206]   Expecting query: 6323103 bytes
+[127.0.0.1:50206]   ✅ Received query (6323103 bytes) in 3.643377ms (2 chunks, 1655.11 MB/s)
+[127.0.0.1:50206]   Deserializing query...
+[127.0.0.1:50206]   ✅ Query package deserialized, 2 params
+[127.0.0.1:50206]   ✅ All query deserialized in 1.503879ms
+[127.0.0.1:50206] 4. Processing query...
+Homomorphic Subset Testing time: 136.968412308s
+Boolean Match time: 71.651045ms
+[127.0.0.1:50206]   ✅ Query processed in 137.045107196s
+[127.0.0.1:50206] 5. Sending response...
+[127.0.0.1:50206]   Response size: 2109448 bytes
+[127.0.0.1:50206]   Sent response size header
+[127.0.0.1:50206]   ✅ Response sent in 907.965µs (1 chunks, 2215.64 MB/s)
+[127.0.0.1:50206] 📊 Session statistics:
+[127.0.0.1:50206]   - Receive public params: 76.118263ms
+[127.0.0.1:50206]   - Server init: 404.613µs
+[127.0.0.1:50206]   - Preprocess wait: 20 seconds
+[127.0.0.1:50206]   - Receive query: 3.643377ms
+[127.0.0.1:50206]   - Process query: 137.045107196s
+[127.0.0.1:50206]   - Send response: 907.965µs
+[127.0.0.1:50206]   - TOTAL TIME: 147.186406838s
+[127.0.0.1:50206] 🎉 Session completed successfully!

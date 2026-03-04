@@ -1,10 +1,40 @@
+    Blocking    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+ waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking    Blocking waiting for file lock on build directory
     Blocking waiting for file lock on build directory
+ waiting for file lock on build directory
+    Blocking    Blocking waiting for file lock on build directory
+ waiting for file lock on build directory
+    Blocking    Blocking waiting for file lock on build directory
+ waiting for file lock on build directory
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
 warning: unused import: `std::collections::HashMap`
@@ -34,8 +64,8 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 12.86s
-     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 1 2`
+    Finished `release` profile [optimized] target(s) in 49.51s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 3 8`
 warning: unused import: `std::collections::HashMap`
  --> src/baseline/share.rs:1:5
   |
@@ -63,10 +93,57 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 12.87s
-     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 0 2`
+    Finished `release` profile [optimized] target(s) in 49.52s
 ========================================
-👷 Worker 1/2
+👷 Worker 3/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 3 will use port 8003
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8003
+2. Waiting for public parameters from Master...
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 2 8`
+========================================
+👷 Worker 2/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 2 will use port 8002
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8002
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/baseline/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/baseline/share.rs:13:18
+   |
+13 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.53s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 1 8`
+========================================
+👷 Worker 1/8
 ========================================
 
 📁 Keyword file: /root/Qiyana-experiment/keyword.txt
@@ -74,8 +151,37 @@ Worker 1 will use port 8001
 1. Connecting to Master at 127.0.0.1:10000...
    ✅ Worker  connected from port 8001
 2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/baseline/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/baseline/share.rs:13:18
+   |
+13 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.53s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 0 8`
 ========================================
-👷 Worker 0/2
+👷 Worker 0/8
 ========================================
 
 📁 Keyword file: /root/Qiyana-experiment/keyword.txt
@@ -83,53 +189,3049 @@ Worker 0 will use port 8000
 1. Connecting to Master at 127.0.0.1:10000...
    ✅ Worker  connected from port 8000
 2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/baseline/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/baseline/share.rs:13:18
+   |
+13 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.54s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 5 8`
+========================================
+👷 Worker 5/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 5 will use port 8005
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8005
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/baseline/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/baseline/share.rs:13:18
+   |
+13 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.54s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 6 8`
+========================================
+👷 Worker 6/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 6 will use port 8006
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8006
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/baseline/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/baseline/share.rs:13:18
+   |
+13 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.55s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 4 8`
+========================================
+👷 Worker 4/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 4 will use port 8004
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8004
+2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/baseline/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/baseline/share.rs:13:18
+   |
+13 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 49.55s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 7 8`
+========================================
+👷 Worker 7/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 7 will use port 8007
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8007
+2. Waiting for public parameters from Master...
 [127.0.0.1:10000]   Expecting 127823230 bytes total
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 77.530315ms
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 76.462238ms
 [127.0.0.1:10000]   Expecting 127823230 bytes total
-[Worker 1]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 74.026382ms
 [Worker 0]   ✅ Public parameters package deserialized, 2 params
-[Worker 1]   ✅ All parameters deserialized in 277.165142ms
-[Worker 1] 2. Server preprocessing...
-[Worker 1]: Successfully loaded 8 keyword sets
-[Worker 1]   Server initialized in 934.446µs
-[Worker 1]   Number of documents: 16
-[Worker 1]   ✅ Preprocessing completed
-[Worker 1] 3. Waiting for query from Master...
-[Worker 0]   ✅ All parameters deserialized in 274.192827ms
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 75.028437ms
+[127.0.0.1:10000]   Expecting 127823230 bytes total
+[Worker 5]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 76.237691ms
+[Worker 0]   ✅ All parameters deserialized in 283.516536ms
 [Worker 0] 2. Server preprocessing...
-[Worker 0]: Successfully loaded 8 keyword sets
-[Worker 0]   Server initialized in 885.557µs
-[Worker 0]   Number of documents: 16
+[Worker 0]: Successfully loaded 2048 keyword sets
+[Worker 0]   Server initialized in 6.447627ms
+[Worker 0]   Number of documents: 16384
 [Worker 0]   ✅ Preprocessing completed
 [Worker 0] 3. Waiting for query from Master...
-......................................[127.0.0.1:10000]   Expecting query: 6323103 bytes
-[127.0.0.1:10000]   ✅ Received query (6323103 bytes) in 3.690739ms (2 chunks, 1633.87 MB/s)
-[Worker 1]   Deserializing query...
-[127.0.0.1:10000]   Expecting query: 6323103 bytes
-[127.0.0.1:10000]   ✅ Received query (6323103 bytes) in 4.214934ms (2 chunks, 1430.67 MB/s)
+[127.0.0.1:10000]   Expecting 127823230 bytes total
+[Worker 1]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 79.618042ms
+[Worker 5]   ✅ All parameters deserialized in 277.796364ms
+[Worker 5] 2. Server preprocessing...
+[Worker 5]: Successfully loaded 2048 keyword sets
+[Worker 5]   Server initialized in 2.13575ms
+[Worker 5]   Number of documents: 16384
+[Worker 5]   ✅ Preprocessing completed
+[Worker 5] 3. Waiting for query from Master...
+[127.0.0.1:10000]   Expecting 127823230 bytes total
+[Worker 4]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 76.281871ms
+[Worker 1]   ✅ All parameters deserialized in 277.574243ms
+[Worker 1] 2. Server preprocessing...
+[Worker 1]: Successfully loaded 2048 keyword sets
+[Worker 1]   Server initialized in 2.079692ms
+[Worker 1]   Number of documents: 16384
+[Worker 1]   ✅ Preprocessing completed
+[Worker 1] 3. Waiting for query from Master...
+[127.0.0.1:10000]   Expecting 127823230 bytes total
+[Worker 2]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 78.236194ms
+[Worker 4]   ✅ All parameters deserialized in 278.31749ms
+[Worker 4] 2. Server preprocessing...
+[Worker 4]: Successfully loaded 2048 keyword sets
+[Worker 4]   Server initialized in 2.093249ms
+[Worker 4]   Number of documents: 16384
+[Worker 4]   ✅ Preprocessing completed
+[Worker 4] 3. Waiting for query from Master...
+[127.0.0.1:10000]   Expecting 127823230 bytes total
+[Worker 7]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 75.882895ms
+[Worker 2]   ✅ All parameters deserialized in 279.796875ms
+[Worker 2] 2. Server preprocessing...
+[Worker 2]: Successfully loaded 2048 keyword sets
+[Worker 2]   Server initialized in 2.043363ms
+[Worker 2]   Number of documents: 16384
+[Worker 2]   ✅ Preprocessing completed
+[Worker 2] 3. Waiting for query from Master...
+[127.0.0.1:10000]   Expecting 127823230 bytes total
+[Worker 3]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 78.06208ms
+[Worker 7]   ✅ All parameters deserialized in 276.130521ms
+[Worker 7] 2. Server preprocessing...
+[Worker 7]: Successfully loaded 2048 keyword sets
+[Worker 7]   Server initialized in 2.056705ms
+[Worker 7]   Number of documents: 16384
+[Worker 7]   ✅ Preprocessing completed
+[Worker 7] 3. Waiting for query from Master...
+[Worker 6]   ✅ Public parameters package deserialized, 2 params
+.[Worker 3]   ✅ All parameters deserialized in 276.19291ms
+[Worker 3] 2. Server preprocessing...
+[Worker 3]: Successfully loaded 2048 keyword sets
+[Worker 3]   Server initialized in 2.030074ms
+[Worker 3]   Number of documents: 16384
+[Worker 3]   ✅ Preprocessing completed
+[Worker 3] 3. Waiting for query from Master...
+.[Worker 6]   ✅ All parameters deserialized in 276.491619ms
+[Worker 6] 2. Server preprocessing...
+[Worker 6]: Successfully loaded 2048 keyword sets
+[Worker 6]   Server initialized in 2.063698ms
+[Worker 6]   Number of documents: 16384
+[Worker 6]   ✅ Preprocessing completed
+[Worker 6] 3. Waiting for query from Master...
+...............................................................................................................................................[127.0.0.1:10000]   Expecting query: 4215414 bytes
+[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.890266ms (1 chunks, 1390.92 MB/s)
 [Worker 0]   Deserializing query...
-[Worker 1]   ✅ Query package deserialized, 2 params
-[Worker 1]    ✅ All query deserialized in 1.575591ms
-[Worker 1] 4. Processing query...
+[127.0.0.1:10000]   Expecting query: 4215414 bytes
+[127.0.0.1:10000]   Expecting query: 4215414 bytes
+[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 3.296065ms (1 chunks, 1219.68 MB/s)
+[Worker 5]   Deserializing query...
 [Worker 0]   ✅ Query package deserialized, 2 params
-[Worker 0]    ✅ All query deserialized in 1.483158ms
+[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.944783ms (1 chunks, 1365.17 MB/s)
+[Worker 1]   Deserializing query...
+[127.0.0.1:10000]   Expecting query: 4215414 bytes
+[Worker 0]    ✅ All query deserialized in 991.084µs
 [Worker 0] 4. Processing query...
-................................Homomorphic Subset Testing time: 16.315723579s
-Boolean Match time: 31.805516ms
-[Worker 1]   ✅ Query processed in 16.349328226s
+[Worker 5]   ✅ Query package deserialized, 2 params
+[127.0.0.1:10000]   Expecting query: 4215414 bytes
+[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 3.351684ms (1 chunks, 1199.44 MB/s)
+[Worker 4]   Deserializing query...
+[Worker 5]    ✅ All query deserialized in 848.428µs
+[Worker 5] 4. Processing query...
+[Worker 1]   ✅ Query package deserialized, 2 params
+[127.0.0.1:10000]   Expecting query: 4215414 bytes
+[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 3.24264ms (1 chunks, 1239.77 MB/s)
+[Worker 2]   Deserializing query...
+[Worker 1]    ✅ All query deserialized in 1.018274ms
+[Worker 1] 4. Processing query...
+[Worker 4]   ✅ Query package deserialized, 2 params
+[127.0.0.1:10000]   Expecting query: 4215414 bytes
+[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 3.433283ms (1 chunks, 1170.93 MB/s)
+[Worker 7]   Deserializing query...
+[Worker 4]    ✅ All query deserialized in 1.032994ms
+[Worker 4] 4. Processing query...
+[Worker 2]   ✅ Query package deserialized, 2 params
+[127.0.0.1:10000]   Expecting query: 4215414 bytes
+[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 3.303999ms (1 chunks, 1216.75 MB/s)
+[Worker 3]   Deserializing query...
+[Worker 2]    ✅ All query deserialized in 1.015217ms
+[Worker 2] 4. Processing query...
+[Worker 7]   ✅ Query package deserialized, 2 params
+[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 3.536355ms (1 chunks, 1136.80 MB/s)
+[Worker 6]   Deserializing query...
+[Worker 7]    ✅ All query deserialized in 1.158497ms
+[Worker 7] 4. Processing query...
+[Worker 3]   ✅ Query package deserialized, 2 params
+[Worker 3]    ✅ All query deserialized in 1.05639ms
+[Worker 3] 4. Processing query...
+[Worker 6]   ✅ Query package deserialized, 2 params
+[Worker 6]    ✅ All query deserialized in 1.207833ms
+[Worker 6] 4. Processing query...
+......................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (60.068300838s elapsed)
+..
+   Still waiting... (60.068655048s elapsed)
+..
+   Still waiting... (60.061957012s elapsed)
+.
+   Still waiting... (60.061087993s elapsed)
+.
+   Still waiting... (60.068562391s elapsed)
+.
+   Still waiting... (60.069188706s elapsed)
+..
+   Still waiting... (60.068383706s elapsed)
+..
+   Still waiting... (60.068174536s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (120.137423443s elapsed)
+..
+   Still waiting... (120.137575542s elapsed)
+..
+   Still waiting... (120.12413728s elapsed)
+.
+   Still waiting... (120.123079607s elapsed)
+.
+   Still waiting... (120.136465698s elapsed)
+.
+   Still waiting... (120.138065949s elapsed)
+..
+   Still waiting... (120.137351307s elapsed)
+..
+   Still waiting... (120.136147358s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (180.207224102s elapsed)
+..
+   Still waiting... (180.205581246s elapsed)
+..
+   Still waiting... (180.184949846s elapsed)
+.
+   Still waiting... (180.184078549s elapsed)
+.
+   Still waiting... (180.205307568s elapsed)
+.
+   Still waiting... (180.206806363s elapsed)
+..
+   Still waiting... (180.206035319s elapsed)
+..
+   Still waiting... (180.205108829s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (240.276360011s elapsed)
+..
+   Still waiting... (240.275016043s elapsed)
+..
+   Still waiting... (240.245964139s elapsed)
+.
+   Still waiting... (240.246090557s elapsed)
+.
+   Still waiting... (240.271230983s elapsed)
+.
+   Still waiting... (240.273365255s elapsed)
+..
+   Still waiting... (240.274863055s elapsed)
+..
+   Still waiting... (240.27430943s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (300.34711981s elapsed)
+..
+   Still waiting... (300.343847558s elapsed)
+..
+   Still waiting... (300.307103853s elapsed)
+.
+   Still waiting... (300.307075925s elapsed)
+.
+   Still waiting... (300.337253977s elapsed)
+.
+   Still waiting... (300.339551148s elapsed)
+..
+   Still waiting... (300.343659682s elapsed)
+..
+   Still waiting... (300.342415409s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (360.417558604s elapsed)
+..
+   Still waiting... (360.411614136s elapsed)
+..
+   Still waiting... (360.367962361s elapsed)
+.
+   Still waiting... (360.369094775s elapsed)
+.
+   Still waiting... (360.406249243s elapsed)
+.
+   Still waiting... (360.406826251s elapsed)
+..
+   Still waiting... (360.411397653s elapsed)
+..
+   Still waiting... (360.410581392s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (420.488919238s elapsed)
+..
+   Still waiting... (420.480203596s elapsed)
+..
+   Still waiting... (420.429962575s elapsed)
+.
+   Still waiting... (420.430081949s elapsed)
+.
+   Still waiting... (420.475191008s elapsed)
+.
+   Still waiting... (420.475307239s elapsed)
+..
+   Still waiting... (420.477354632s elapsed)
+..
+   Still waiting... (420.478753885s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (480.557240411s elapsed)
+..
+   Still waiting... (480.548896622s elapsed)
+..
+   Still waiting... (480.491125118s elapsed)
+.
+   Still waiting... (480.492090179s elapsed)
+.
+   Still waiting... (480.543267853s elapsed)
+.
+   Still waiting... (480.544309435s elapsed)
+..
+   Still waiting... (480.545460307s elapsed)
+..
+   Still waiting... (480.548006776s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (540.624938759s elapsed)
+..
+   Still waiting... (540.614804613s elapsed)
+..
+   Still waiting... (540.552957959s elapsed)
+.
+   Still waiting... (540.553089417s elapsed)
+.
+   Still waiting... (540.612088556s elapsed)
+.
+   Still waiting... (540.612352692s elapsed)
+..
+   Still waiting... (540.613569668s elapsed)
+..
+   Still waiting... (540.61604603s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (600.694900619s elapsed)
+..
+   Still waiting... (600.681850138s elapsed)
+..
+   Still waiting... (600.614954564s elapsed)
+.
+   Still waiting... (600.613081685s elapsed)
+.
+   Still waiting... (600.681095822s elapsed)
+.
+   Still waiting... (600.678279062s elapsed)
+..
+   Still waiting... (600.681488662s elapsed)
+..
+   Still waiting... (600.682336592s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (660.763035822s elapsed)
+..
+   Still waiting... (660.749509923s elapsed)
+..
+   Still waiting... (660.676102654s elapsed)
+.
+   Still waiting... (660.675085346s elapsed)
+.
+   Still waiting... (660.749006142s elapsed)
+.
+   Still waiting... (660.744974839s elapsed)
+..
+   Still waiting... (660.750059896s elapsed)
+..
+   Still waiting... (660.749583922s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (720.831916276s elapsed)
+..
+   Still waiting... (720.818227015s elapsed)
+..
+   Still waiting... (720.737947369s elapsed)
+.
+   Still waiting... (720.736082121s elapsed)
+.
+   Still waiting... (720.817946412s elapsed)
+.
+   Still waiting... (720.810893866s elapsed)
+..
+   Still waiting... (720.814884007s elapsed)
+..
+   Still waiting... (720.817553767s elapsed)
+.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (780.900249425s elapsed)
+..
+   Still waiting... (780.887105791s elapsed)
+.
+   Still waiting... (780.797951747s elapsed)
+..
+   Still waiting... (780.798078297s elapsed)
+.
+   Still waiting... (780.887796951s elapsed)
+.
+   Still waiting... (780.877942893s elapsed)
+..
+   Still waiting... (780.883753707s elapsed)
+...
+   Still waiting... (780.886270511s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (840.969233146s elapsed)
+..
+   Still waiting... (840.954945948s elapsed)
+.
+   Still waiting... (840.859158212s elapsed)
+..
+   Still waiting... (840.860087904s elapsed)
+.
+   Still waiting... (840.954763855s elapsed)
+.
+   Still waiting... (840.946094945s elapsed)
+..
+   Still waiting... (840.951528982s elapsed)
+...
+   Still waiting... (840.953182189s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (901.039902729s elapsed)
+..
+   Still waiting... (901.024556943s elapsed)
+.
+   Still waiting... (900.920951732s elapsed)
+..
+   Still waiting... (900.921079678s elapsed)
+.
+   Still waiting... (901.023736608s elapsed)
+.
+   Still waiting... (901.016322187s elapsed)
+..
+   Still waiting... (901.020433301s elapsed)
+...
+   Still waiting... (901.019203145s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (961.10849455s elapsed)
+..
+   Still waiting... (961.091256583s elapsed)
+.
+   Still waiting... (960.981947201s elapsed)
+..
+   Still waiting... (960.983083358s elapsed)
+.
+   Still waiting... (961.092622962s elapsed)
+.
+   Still waiting... (961.083791468s elapsed)
+..
+   Still waiting... (961.087265837s elapsed)
+...
+   Still waiting... (961.088301207s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1021.176896126s elapsed)
+..
+   Still waiting... (1021.15819258s elapsed)
+.
+   Still waiting... (1021.04410658s elapsed)
+..
+   Still waiting... (1021.044138134s elapsed)
+.
+   Still waiting... (1021.160696617s elapsed)
+.
+   Still waiting... (1021.150692979s elapsed)
+..
+   Still waiting... (1021.154101361s elapsed)
+...
+   Still waiting... (1021.155387732s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1081.247452909s elapsed)
+..
+   Still waiting... (1081.22403243s elapsed)
+.
+   Still waiting... (1081.104954511s elapsed)
+..
+   Still waiting... (1081.10508516s elapsed)
+.
+   Still waiting... (1081.229497724s elapsed)
+.
+   Still waiting... (1081.220265603s elapsed)
+..
+   Still waiting... (1081.220918461s elapsed)
+...
+   Still waiting... (1081.2244763s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1141.315948819s elapsed)
+..
+   Still waiting... (1141.291204759s elapsed)
+.
+   Still waiting... (1141.166954978s elapsed)
+..
+   Still waiting... (1141.166092054s elapsed)
+.
+   Still waiting... (1141.298355709s elapsed)
+.
+   Still waiting... (1141.286411913s elapsed)
+..
+   Still waiting... (1141.28950311s elapsed)
+...
+   Still waiting... (1141.292600573s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1201.385384066s elapsed)
+..
+   Still waiting... (1201.357943627s elapsed)
+.
+   Still waiting... (1201.228067122s elapsed)
+..
+   Still waiting... (1201.227217885s elapsed)
+.
+   Still waiting... (1201.366231405s elapsed)
+.
+   Still waiting... (1201.356974533s elapsed)
+..
+   Still waiting... (1201.355379001s elapsed)
+...
+   Still waiting... (1201.360798976s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1261.455253937s elapsed)
+..
+   Still waiting... (1261.42669989s elapsed)
+.
+   Still waiting... (1261.289964281s elapsed)
+..
+   Still waiting... (1261.289091598s elapsed)
+.
+   Still waiting... (1261.434262368s elapsed)
+.
+   Still waiting... (1261.423078598s elapsed)
+..
+   Still waiting... (1261.422184637s elapsed)
+...
+   Still waiting... (1261.429921366s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1321.524492646s elapsed)
+..
+   Still waiting... (1321.49336558s elapsed)
+.
+   Still waiting... (1321.349961405s elapsed)
+..
+   Still waiting... (1321.350083005s elapsed)
+.
+   Still waiting... (1321.504209861s elapsed)
+.
+   Still waiting... (1321.489840355s elapsed)
+..
+   Still waiting... (1321.486995425s elapsed)
+...
+   Still waiting... (1321.499064684s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1381.595422265s elapsed)
+..
+   Still waiting... (1381.559225304s elapsed)
+.
+   Still waiting... (1381.411052189s elapsed)
+..
+   Still waiting... (1381.412200656s elapsed)
+.
+   Still waiting... (1381.57221001s elapsed)
+.
+   Still waiting... (1381.555083253s elapsed)
+..
+   Still waiting... (1381.554879433s elapsed)
+...
+   Still waiting... (1381.567310584s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1441.663078639s elapsed)
+..
+   Still waiting... (1441.625027906s elapsed)
+.
+   Still waiting... (1441.472949796s elapsed)
+..
+   Still waiting... (1441.473081154s elapsed)
+.
+   Still waiting... (1441.641124375s elapsed)
+.
+   Still waiting... (1441.623214271s elapsed)
+..
+   Still waiting... (1441.621552873s elapsed)
+...
+   Still waiting... (1441.635342602s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1501.734503299s elapsed)
+..
+   Still waiting... (1501.691946324s elapsed)
+.
+   Still waiting... (1501.533956106s elapsed)
+..
+   Still waiting... (1501.535074506s elapsed)
+.
+   Still waiting... (1501.709075327s elapsed)
+.
+   Still waiting... (1501.689807044s elapsed)
+..
+   Still waiting... (1501.688525821s elapsed)
+...
+   Still waiting... (1501.700584639s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1561.80293832s elapsed)
+..
+   Still waiting... (1561.759711896s elapsed)
+.
+   Still waiting... (1561.595951654s elapsed)
+..
+   Still waiting... (1561.596254405s elapsed)
+.
+   Still waiting... (1561.778037725s elapsed)
+.
+   Still waiting... (1561.758695612s elapsed)
+..
+   Still waiting... (1561.755351115s elapsed)
+...
+   Still waiting... (1561.764686608s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1621.869880674s elapsed)
+..
+   Still waiting... (1621.828327994s elapsed)
+.
+   Still waiting... (1621.656944188s elapsed)
+..
+   Still waiting... (1621.657092535s elapsed)
+.
+   Still waiting... (1621.846946432s elapsed)
+.
+   Still waiting... (1621.823708713s elapsed)
+..
+   Still waiting... (1621.82404068s elapsed)
+...
+   Still waiting... (1621.831820884s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1681.93950146s elapsed)
+..
+   Still waiting... (1681.894144699s elapsed)
+.
+   Still waiting... (1681.718956052s elapsed)
+..
+   Still waiting... (1681.718082624s elapsed)
+.
+   Still waiting... (1681.914872851s elapsed)
+.
+   Still waiting... (1681.890301563s elapsed)
+..
+   Still waiting... (1681.888962485s elapsed)
+...
+   Still waiting... (1681.901259589s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1742.007907015s elapsed)
+..
+   Still waiting... (1741.961038435s elapsed)
+.
+   Still waiting... (1741.780864832s elapsed)
+..
+   Still waiting... (1741.779249486s elapsed)
+.
+   Still waiting... (1741.983911053s elapsed)
+.
+   Still waiting... (1741.957423048s elapsed)
+..
+   Still waiting... (1741.9556728s elapsed)
+...
+   Still waiting... (1741.969461756s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1802.077369483s elapsed)
+..
+   Still waiting... (1801.841956388s elapsed)
+.
+   Still waiting... (1802.029668179s elapsed)
+..
+   Still waiting... (1801.841098695s elapsed)
+.
+   Still waiting... (1802.050681375s elapsed)
+.
+   Still waiting... (1802.024432157s elapsed)
+..
+   Still waiting... (1802.023475026s elapsed)
+...
+   Still waiting... (1802.035648292s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1862.147539345s elapsed)
+..
+   Still waiting... (1861.901963087s elapsed)
+.
+   Still waiting... (1862.099002665s elapsed)
+..
+   Still waiting... (1861.902101245s elapsed)
+.
+   Still waiting... (1862.11686349s elapsed)
+.
+   Still waiting... (1862.093334977s elapsed)
+..
+   Still waiting... (1862.089467742s elapsed)
+...
+   Still waiting... (1862.101078543s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1922.215776644s elapsed)
+..
+   Still waiting... (1921.962954807s elapsed)
+.
+   Still waiting... (1922.166835048s elapsed)
+..
+   Still waiting... (1921.964167608s elapsed)
+.
+   Still waiting... (1922.184647986s elapsed)
+.
+   Still waiting... (1922.161458229s elapsed)
+..
+   Still waiting... (1922.158287958s elapsed)
+...
+   Still waiting... (1922.167407494s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (1982.285054297s elapsed)
+..
+   Still waiting... (1982.024953037s elapsed)
+.
+   Still waiting... (1982.234808646s elapsed)
+..
+   Still waiting... (1982.025081068s elapsed)
+.
+   Still waiting... (1982.251629647s elapsed)
+.
+   Still waiting... (1982.228701084s elapsed)
+..
+   Still waiting... (1982.224931478s elapsed)
+...
+   Still waiting... (1982.233696683s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2042.356322446s elapsed)
+..
+   Still waiting... (2042.086954943s elapsed)
+.
+   Still waiting... (2042.303468821s elapsed)
+..
+   Still waiting... (2042.087076404s elapsed)
+.
+   Still waiting... (2042.318756034s elapsed)
+.
+   Still waiting... (2042.296097942s elapsed)
+..
+   Still waiting... (2042.291856984s elapsed)
+...
+   Still waiting... (2042.30291428s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2102.425026203s elapsed)
+..
+   Still waiting... (2102.147963278s elapsed)
+.
+   Still waiting... (2102.373151001s elapsed)
+..
+   Still waiting... (2102.149183337s elapsed)
+.
+   Still waiting... (2102.384859239s elapsed)
+.
+   Still waiting... (2102.361509701s elapsed)
+..
+   Still waiting... (2102.359474726s elapsed)
+...
+   Still waiting... (2102.369989182s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2162.493228383s elapsed)
+..
+   Still waiting... (2162.209952175s elapsed)
+.
+   Still waiting... (2162.439878224s elapsed)
+..
+   Still waiting... (2162.209083978s elapsed)
+.
+   Still waiting... (2162.452951965s elapsed)
+.
+   Still waiting... (2162.427791103s elapsed)
+..
+   Still waiting... (2162.426088139s elapsed)
+...
+   Still waiting... (2162.436171788s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2222.56206147s elapsed)
+..
+   Still waiting... (2222.270950945s elapsed)
+.
+   Still waiting... (2222.509641478s elapsed)
+..
+   Still waiting... (2222.270079666s elapsed)
+.
+   Still waiting... (2222.520292249s elapsed)
+.
+   Still waiting... (2222.494264674s elapsed)
+..
+   Still waiting... (2222.49428632s elapsed)
+...
+   Still waiting... (2222.501315597s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2282.630931996s elapsed)
+..
+   Still waiting... (2282.331959252s elapsed)
+.
+   Still waiting... (2282.57832416s elapsed)
+..
+   Still waiting... (2282.33208038s elapsed)
+.
+   Still waiting... (2282.587227952s elapsed)
+.
+   Still waiting... (2282.563784344s elapsed)
+..
+   Still waiting... (2282.560643885s elapsed)
+...
+   Still waiting... (2282.568397604s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2342.702316541s elapsed)
+..
+   Still waiting... (2342.392941104s elapsed)
+.
+   Still waiting... (2342.646008389s elapsed)
+..
+   Still waiting... (2342.393079196s elapsed)
+.
+   Still waiting... (2342.656075032s elapsed)
+.
+   Still waiting... (2342.633430634s elapsed)
+..
+   Still waiting... (2342.628522966s elapsed)
+...
+   Still waiting... (2342.636414182s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2402.772475338s elapsed)
+..
+   Still waiting... (2402.453947683s elapsed)
+.
+   Still waiting... (2402.714870434s elapsed)
+..
+   Still waiting... (2402.455078092s elapsed)
+.
+   Still waiting... (2402.724018011s elapsed)
+.
+   Still waiting... (2402.700842401s elapsed)
+..
+   Still waiting... (2402.692676975s elapsed)
+...
+   Still waiting... (2402.706622165s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2462.838275414s elapsed)
+..
+   Still waiting... (2462.515951804s elapsed)
+.
+   Still waiting... (2462.781819751s elapsed)
+..
+   Still waiting... (2462.516067834s elapsed)
+.
+   Still waiting... (2462.792929339s elapsed)
+.
+   Still waiting... (2462.765701096s elapsed)
+..
+   Still waiting... (2462.75864872s elapsed)
+...
+   Still waiting... (2462.774566497s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2522.904774978s elapsed)
+..
+   Still waiting... (2522.576959135s elapsed)
+.
+   Still waiting... (2522.847651666s elapsed)
+.
+   Still waiting... (2522.578083181s elapsed)
+..
+   Still waiting... (2522.859877248s elapsed)
+.
+   Still waiting... (2522.832018631s elapsed)
+..
+   Still waiting... (2522.826766876s elapsed)
+...
+   Still waiting... (2522.841717337s elapsed)
+....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2582.97412371s elapsed)
+..
+   Still waiting... (2582.638955422s elapsed)
+.
+   Still waiting... (2582.912729752s elapsed)
+.
+   Still waiting... (2582.63908375s elapsed)
+..
+   Still waiting... (2582.926837006s elapsed)
+.
+   Still waiting... (2582.901983324s elapsed)
+..
+   Still waiting... (2582.894026896s elapsed)
+....
+   Still waiting... (2582.911273613s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2643.044777613s elapsed)
+..
+   Still waiting... (2642.69995331s elapsed)
+.
+   Still waiting... (2642.980774147s elapsed)
+.
+   Still waiting... (2642.69908191s elapsed)
+..
+   Still waiting... (2642.9938669s elapsed)
+.
+   Still waiting... (2642.970705056s elapsed)
+..
+   Still waiting... (2642.962037591s elapsed)
+....
+   Still waiting... (2642.979266743s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2703.113335298s elapsed)
+..
+   Still waiting... (2702.761944618s elapsed)
+.
+   Still waiting... (2703.049734121s elapsed)
+.
+   Still waiting... (2702.761087734s elapsed)
+..
+   Still waiting... (2703.062671736s elapsed)
+.
+   Still waiting... (2703.039046792s elapsed)
+..
+   Still waiting... (2703.028369404s elapsed)
+....
+   Still waiting... (2703.04814391s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2762.822964563s elapsed)
+..
+   Still waiting... (2763.181214833s elapsed)
+.
+   Still waiting... (2763.118560266s elapsed)
+.
+   Still waiting... (2762.822087563s elapsed)
+..
+   Still waiting... (2763.130511301s elapsed)
+.
+   Still waiting... (2763.107840693s elapsed)
+..
+   Still waiting... (2763.095099972s elapsed)
+....
+   Still waiting... (2763.117282438s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2822.883951448s elapsed)
+.
+   Still waiting... (2823.248783506s elapsed)
+..
+   Still waiting... (2823.18629538s elapsed)
+.
+   Still waiting... (2822.884076743s elapsed)
+..
+   Still waiting... (2823.199486924s elapsed)
+.
+   Still waiting... (2823.174367026s elapsed)
+..
+   Still waiting... (2823.162729603s elapsed)
+....
+   Still waiting... (2823.183398168s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2882.944959863s elapsed)
+.
+   Still waiting... (2883.315777055s elapsed)
+..
+   Still waiting... (2883.255265732s elapsed)
+.
+   Still waiting... (2882.945082868s elapsed)
+..
+   Still waiting... (2883.268382601s elapsed)
+.
+   Still waiting... (2883.242818396s elapsed)
+...
+   Still waiting... (2883.232002716s elapsed)
+...
+   Still waiting... (2883.249569416s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (2943.005966167s elapsed)
+.
+   Still waiting... (2943.382776951s elapsed)
+..
+   Still waiting... (2943.323059471s elapsed)
+.
+   Still waiting... (2943.007071747s elapsed)
+..
+   Still waiting... (2943.334596959s elapsed)
+.
+   Still waiting... (2943.310988055s elapsed)
+...
+   Still waiting... (2943.297728304s elapsed)
+...
+   Still waiting... (2943.317773069s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3003.067953898s elapsed)
+..
+   Still waiting... (3003.450925827s elapsed)
+.
+   Still waiting... (3003.39295167s elapsed)
+.
+   Still waiting... (3003.068079559s elapsed)
+..
+   Still waiting... (3003.399792614s elapsed)
+.
+   Still waiting... (3003.378343941s elapsed)
+..
+   Still waiting... (3003.364663187s elapsed)
+....
+   Still waiting... (3003.384030024s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3063.128949055s elapsed)
+..
+   Still waiting... (3063.520153396s elapsed)
+.
+   Still waiting... (3063.460750485s elapsed)
+.
+   Still waiting... (3063.130086224s elapsed)
+..
+   Still waiting... (3063.468800258s elapsed)
+.
+   Still waiting... (3063.446005301s elapsed)
+..
+   Still waiting... (3063.433276992s elapsed)
+....
+   Still waiting... (3063.451204263s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3123.190957982s elapsed)
+..
+   Still waiting... (3123.589295294s elapsed)
+.
+   Still waiting... (3123.528393541s elapsed)
+.
+   Still waiting... (3123.191079064s elapsed)
+..
+   Still waiting... (3123.537710276s elapsed)
+.
+   Still waiting... (3123.515408677s elapsed)
+..
+   Still waiting... (3123.501929864s elapsed)
+....
+   Still waiting... (3123.519352753s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3183.252866404s elapsed)
+.
+   Still waiting... (3183.654480275s elapsed)
+..
+   Still waiting... (3183.593322645s elapsed)
+.
+   Still waiting... (3183.251086782s elapsed)
+..
+   Still waiting... (3183.60658189s elapsed)
+.
+   Still waiting... (3183.585234616s elapsed)
+...
+   Still waiting... (3183.570300099s elapsed)
+...
+   Still waiting... (3183.587516181s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3243.313953828s elapsed)
+..
+   Still waiting... (3243.727004399s elapsed)
+.
+   Still waiting... (3243.660193782s elapsed)
+.
+   Still waiting... (3243.313096652s elapsed)
+..
+   Still waiting... (3243.675572899s elapsed)
+.
+   Still waiting... (3243.65432751s elapsed)
+..
+   Still waiting... (3243.639129056s elapsed)
+....
+   Still waiting... (3243.653582701s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3303.375973703s elapsed)
+..
+   Still waiting... (3303.795232971s elapsed)
+.
+   Still waiting... (3303.725198175s elapsed)
+.
+   Still waiting... (3303.3740848s elapsed)
+..
+   Still waiting... (3303.743458558s elapsed)
+.
+   Still waiting... (3303.720818137s elapsed)
+..
+   Still waiting... (3303.706873326s elapsed)
+....
+   Still waiting... (3303.720963844s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3363.435973616s elapsed)
+..
+   Still waiting... (3363.862223444s elapsed)
+.
+   Still waiting... (3363.792048905s elapsed)
+.
+   Still waiting... (3363.436091128s elapsed)
+..
+   Still waiting... (3363.812345673s elapsed)
+.
+   Still waiting... (3363.787707097s elapsed)
+...
+   Still waiting... (3363.776292086s elapsed)
+...
+   Still waiting... (3363.785263591s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3423.496951547s elapsed)
+..
+   Still waiting... (3423.931912717s elapsed)
+.
+   Still waiting... (3423.857979562s elapsed)
+.
+   Still waiting... (3423.497084824s elapsed)
+..
+   Still waiting... (3423.881318835s elapsed)
+.
+   Still waiting... (3423.857326434s elapsed)
+..
+   Still waiting... (3423.844463005s elapsed)
+....
+   Still waiting... (3423.852352977s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3483.558953894s elapsed)
+..
+   Still waiting... (3484.000248231s elapsed)
+.
+   Still waiting... (3483.55908588s elapsed)
+.
+   Still waiting... (3483.92757078s elapsed)
+..
+   Still waiting... (3483.949245177s elapsed)
+.
+   Still waiting... (3483.922825991s elapsed)
+..
+   Still waiting... (3483.913014793s elapsed)
+....
+   Still waiting... (3483.921627238s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3543.619968311s elapsed)
+..
+   Still waiting... (3544.068500493s elapsed)
+.
+   Still waiting... (3543.621089475s elapsed)
+.
+   Still waiting... (3543.995749482s elapsed)
+..
+   Still waiting... (3544.018007963s elapsed)
+.
+   Still waiting... (3543.990178489s elapsed)
+..
+   Still waiting... (3543.981614105s elapsed)
+....
+   Still waiting... (3543.990726901s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3603.68195682s elapsed)
+..
+   Still waiting... (3604.139460248s elapsed)
+.
+   Still waiting... (3603.682082396s elapsed)
+.
+   Still waiting... (3604.063469631s elapsed)
+..
+   Still waiting... (3604.087005558s elapsed)
+.
+   Still waiting... (3604.057312529s elapsed)
+..
+   Still waiting... (3604.047459035s elapsed)
+....
+   Still waiting... (3604.056981802s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3663.742970662s elapsed)
+..
+   Still waiting... (3664.209928042s elapsed)
+.
+   Still waiting... (3663.74308218s elapsed)
+.
+   Still waiting... (3664.129396308s elapsed)
+..
+   Still waiting... (3664.154910208s elapsed)
+.
+   Still waiting... (3664.125271649s elapsed)
+..
+   Still waiting... (3664.114132714s elapsed)
+....
+   Still waiting... (3664.123266183s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3723.804964092s elapsed)
+..
+   Still waiting... (3724.277083283s elapsed)
+.
+   Still waiting... (3723.804079919s elapsed)
+.
+   Still waiting... (3724.197244666s elapsed)
+..
+   Still waiting... (3724.22291054s elapsed)
+.
+   Still waiting... (3724.190184832s elapsed)
+..
+   Still waiting... (3724.183720812s elapsed)
+....
+   Still waiting... (3724.191476103s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3783.865970993s elapsed)
+..
+   Still waiting... (3784.339592885s elapsed)
+.
+   Still waiting... (3783.865084677s elapsed)
+.
+   Still waiting... (3784.262967004s elapsed)
+..
+   Still waiting... (3784.288936578s elapsed)
+.
+   Still waiting... (3784.26069663s elapsed)
+..
+   Still waiting... (3784.251306064s elapsed)
+....
+   Still waiting... (3784.258422451s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3843.927960248s elapsed)
+..
+   Still waiting... (3844.406856087s elapsed)
+.
+   Still waiting... (3843.9271008s elapsed)
+.
+   Still waiting... (3844.329684331s elapsed)
+..
+   Still waiting... (3844.355904629s elapsed)
+.
+   Still waiting... (3844.328047502s elapsed)
+..
+   Still waiting... (3844.319903405s elapsed)
+....
+   Still waiting... (3844.323731584s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3903.987973027s elapsed)
+.
+   Still waiting... (3904.473784258s elapsed)
+..
+   Still waiting... (3903.988088016s elapsed)
+.
+   Still waiting... (3904.397553101s elapsed)
+..
+   Still waiting... (3904.422999598s elapsed)
+.
+   Still waiting... (3904.397206813s elapsed)
+...
+   Still waiting... (3904.388557169s elapsed)
+...
+   Still waiting... (3904.392715242s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (3964.048961633s elapsed)
+.
+   Still waiting... (3964.540786469s elapsed)
+..
+   Still waiting... (3964.050080863s elapsed)
+.
+   Still waiting... (3964.466272856s elapsed)
+..
+   Still waiting... (3964.48999787s elapsed)
+.
+   Still waiting... (3964.465952198s elapsed)
+...
+   Still waiting... (3964.456579788s elapsed)
+...
+   Still waiting... (3964.460636751s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4024.110953436s elapsed)
+..
+   Still waiting... (4024.611948607s elapsed)
+.
+   Still waiting... (4024.111087364s elapsed)
+.
+   Still waiting... (4024.535002273s elapsed)
+..
+   Still waiting... (4024.557871496s elapsed)
+.
+   Still waiting... (4024.533695649s elapsed)
+..
+   Still waiting... (4024.525983517s elapsed)
+....
+   Still waiting... (4024.529785855s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4084.171971343s elapsed)
+..
+   Still waiting... (4084.682032108s elapsed)
+.
+   Still waiting... (4084.17307852s elapsed)
+.
+   Still waiting... (4084.60100231s elapsed)
+..
+   Still waiting... (4084.625862095s elapsed)
+.
+   Still waiting... (4084.601710205s elapsed)
+..
+   Still waiting... (4084.593697748s elapsed)
+....
+   Still waiting... (4084.597993743s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4144.233975803s elapsed)
+..
+   Still waiting... (4144.751399536s elapsed)
+.
+   Still waiting... (4144.23409647s elapsed)
+.
+   Still waiting... (4144.668080364s elapsed)
+..
+   Still waiting... (4144.69479456s elapsed)
+.
+   Still waiting... (4144.666184183s elapsed)
+..
+   Still waiting... (4144.663336419s elapsed)
+....
+   Still waiting... (4144.667082839s elapsed)
+...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4204.294960117s elapsed)
+..
+   Still waiting... (4204.818960028s elapsed)
+.
+   Still waiting... (4204.295067536s elapsed)
+.
+   Still waiting... (4204.733810758s elapsed)
+..
+   Still waiting... (4204.763646282s elapsed)
+.
+   Still waiting... (4204.736953117s elapsed)
+..
+   Still waiting... (4204.73007889s elapsed)
+....
+   Still waiting... (4204.735134488s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4264.356971698s elapsed)
+...
+   Still waiting... (4264.887797012s elapsed)
+.
+   Still waiting... (4264.356068443s elapsed)
+.
+   Still waiting... (4264.798812818s elapsed)
+..
+   Still waiting... (4264.831506358s elapsed)
+..
+   Still waiting... (4264.804818282s elapsed)
+.
+   Still waiting... (4264.794956334s elapsed)
+....
+   Still waiting... (4264.802364745s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4324.418964005s elapsed)
+...
+   Still waiting... (4324.417068823s elapsed)
+.
+   Still waiting... (4324.954887826s elapsed)
+.
+   Still waiting... (4324.865766428s elapsed)
+..
+   Still waiting... (4324.900376067s elapsed)
+..
+   Still waiting... (4324.871373476s elapsed)
+.
+   Still waiting... (4324.864577335s elapsed)
+....
+   Still waiting... (4324.870737726s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4384.47995218s elapsed)
+..
+   Still waiting... (4384.479075558s elapsed)
+..
+   Still waiting... (4385.0209658s elapsed)
+.
+   Still waiting... (4384.931723969s elapsed)
+..
+   Still waiting... (4384.965498768s elapsed)
+..
+   Still waiting... (4384.939730627s elapsed)
+..
+   Still waiting... (4384.930622432s elapsed)
+...
+   Still waiting... (4384.935945362s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4444.539961972s elapsed)
+..
+   Still waiting... (4444.540087286s elapsed)
+..
+   Still waiting... (4445.087482205s elapsed)
+.
+   Still waiting... (4444.998718958s elapsed)
+..
+   Still waiting... (4445.032471064s elapsed)
+..
+   Still waiting... (4445.007209427s elapsed)
+..
+   Still waiting... (4444.998001254s elapsed)
+...
+   Still waiting... (4445.004908444s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4504.600952654s elapsed)
+..
+   Still waiting... (4504.602072644s elapsed)
+..
+   Still waiting... (4505.155773317s elapsed)
+.
+   Still waiting... (4505.064555075s elapsed)
+..
+   Still waiting... (4505.099445225s elapsed)
+..
+   Still waiting... (4505.075955277s elapsed)
+..
+   Still waiting... (4505.065550394s elapsed)
+...
+   Still waiting... (4505.073032521s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4564.662955087s elapsed)
+..
+   Still waiting... (4564.663073136s elapsed)
+..
+   Still waiting... (4565.220482227s elapsed)
+.
+   Still waiting... (4565.130680735s elapsed)
+..
+   Still waiting... (4565.167670644s elapsed)
+..
+   Still waiting... (4565.143307511s elapsed)
+..
+   Still waiting... (4565.134121304s elapsed)
+...
+   Still waiting... (4565.142191337s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4624.724883667s elapsed)
+..
+   Still waiting... (4624.725096791s elapsed)
+.
+   Still waiting... (4625.288176848s elapsed)
+..
+   Still waiting... (4625.197460895s elapsed)
+..
+   Still waiting... (4625.234799667s elapsed)
+..
+   Still waiting... (4625.21013012s elapsed)
+...
+   Still waiting... (4625.20323301s elapsed)
+..
+   Still waiting... (4625.210171642s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4684.785957864s elapsed)
+..
+   Still waiting... (4684.785097585s elapsed)
+.
+   Still waiting... (4685.355781348s elapsed)
+..
+   Still waiting... (4685.263639107s elapsed)
+..
+   Still waiting... (4685.302794775s elapsed)
+..
+   Still waiting... (4685.280430996s elapsed)
+...
+   Still waiting... (4685.271025704s elapsed)
+..
+   Still waiting... (4685.279279466s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4744.847969602s elapsed)
+..
+   Still waiting... (4744.846088624s elapsed)
+..
+   Still waiting... (4745.426031752s elapsed)
+.
+   Still waiting... (4745.331025155s elapsed)
+..
+   Still waiting... (4745.37078946s elapsed)
+..
+   Still waiting... (4745.348691603s elapsed)
+..
+   Still waiting... (4745.337110432s elapsed)
+...
+   Still waiting... (4745.344577008s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4804.908950576s elapsed)
+..
+   Still waiting... (4804.90808505s elapsed)
+..
+   Still waiting... (4805.493041287s elapsed)
+.
+   Still waiting... (4805.396923854s elapsed)
+..
+   Still waiting... (4805.43957124s elapsed)
+..
+   Still waiting... (4805.414690364s elapsed)
+..
+   Still waiting... (4805.405011354s elapsed)
+...
+   Still waiting... (4805.411827574s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4864.969962314s elapsed)
+..
+   Still waiting... (4864.96908602s elapsed)
+..
+   Still waiting... (4865.563301225s elapsed)
+.
+   Still waiting... (4865.462811386s elapsed)
+..
+   Still waiting... (4865.50646121s elapsed)
+..
+   Still waiting... (4865.481410069s elapsed)
+..
+   Still waiting... (4865.471869966s elapsed)
+...
+   Still waiting... (4865.478132244s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4925.031153835s elapsed)
+..
+   Still waiting... (4925.03107602s elapsed)
+..
+   Still waiting... (4925.631953706s elapsed)
+.
+   Still waiting... (4925.531608213s elapsed)
+..
+   Still waiting... (4925.572293842s elapsed)
+..
+   Still waiting... (4925.548894858s elapsed)
+..
+   Still waiting... (4925.536760513s elapsed)
+...
+   Still waiting... (4925.546561944s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (4985.091978553s elapsed)
+..
+   Still waiting... (4985.093087063s elapsed)
+..
+   Still waiting... (4985.700273854s elapsed)
+.
+   Still waiting... (4985.600421167s elapsed)
+..
+   Still waiting... (4985.641235148s elapsed)
+..
+   Still waiting... (4985.616245454s elapsed)
+..
+   Still waiting... (4985.603694821s elapsed)
+...
+   Still waiting... (4985.612817714s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5045.153964316s elapsed)
+..
+   Still waiting... (5045.154087866s elapsed)
+..
+   Still waiting... (5045.769516678s elapsed)
+.
+   Still waiting... (5045.66929102s elapsed)
+..
+   Still waiting... (5045.70897782s elapsed)
+..
+   Still waiting... (5045.684398425s elapsed)
+..
+   Still waiting... (5045.67047772s elapsed)
+...
+   Still waiting... (5045.680043222s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5105.215108331s elapsed)
+..
+   Still waiting... (5105.216086099s elapsed)
+..
+   Still waiting... (5105.838099352s elapsed)
+.
+   Still waiting... (5105.738141772s elapsed)
+..
+   Still waiting... (5105.777834852s elapsed)
+..
+   Still waiting... (5105.751699421s elapsed)
+..
+   Still waiting... (5105.73839347s elapsed)
+...
+   Still waiting... (5105.747199533s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5165.276946092s elapsed)
+..
+   Still waiting... (5165.277084147s elapsed)
+..
+   Still waiting... (5165.908236595s elapsed)
+.
+   Still waiting... (5165.803996983s elapsed)
+..
+   Still waiting... (5165.844775686s elapsed)
+..
+   Still waiting... (5165.820319147s elapsed)
+..
+   Still waiting... (5165.806233081s elapsed)
+...
+   Still waiting... (5165.814385539s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5225.337951344s elapsed)
+..
+   Still waiting... (5225.337074906s elapsed)
+..
+   Still waiting... (5225.977267248s elapsed)
+.
+   Still waiting... (5225.869800201s elapsed)
+..
+   Still waiting... (5225.911805926s elapsed)
+..
+   Still waiting... (5225.888821355s elapsed)
+..
+   Still waiting... (5225.873912008s elapsed)
+...
+   Still waiting... (5225.882957241s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5285.400183861s elapsed)
+..
+   Still waiting... (5285.399080594s elapsed)
+..
+   Still waiting... (5286.042777745s elapsed)
+.
+   Still waiting... (5285.938685971s elapsed)
+..
+   Still waiting... (5285.978958547s elapsed)
+..
+   Still waiting... (5285.957707421s elapsed)
+..
+   Still waiting... (5285.942668426s elapsed)
+...
+   Still waiting... (5285.951377936s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5345.460969463s elapsed)
+..
+   Still waiting... (5345.460085996s elapsed)
+..
+   Still waiting... (5346.112076037s elapsed)
+.
+   Still waiting... (5346.007320579s elapsed)
+..
+   Still waiting... (5346.046052856s elapsed)
+..
+   Still waiting... (5346.025176704s elapsed)
+..
+   Still waiting... (5346.011328187s elapsed)
+...
+   Still waiting... (5346.019654658s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5405.521965932s elapsed)
+..
+   Still waiting... (5405.522083607s elapsed)
+..
+   Still waiting... (5406.180775025s elapsed)
+.
+   Still waiting... (5406.076026161s elapsed)
+..
+   Still waiting... (5406.114172858s elapsed)
+..
+   Still waiting... (5406.091366876s elapsed)
+..
+   Still waiting... (5406.080048557s elapsed)
+...
+   Still waiting... (5406.085914055s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5465.583135509s elapsed)
+..
+   Still waiting... (5465.583087117s elapsed)
+..
+   Still waiting... (5466.249665283s elapsed)
+.
+   Still waiting... (5466.143884188s elapsed)
+..
+   Still waiting... (5466.185186947s elapsed)
+..
+   Still waiting... (5466.158707474s elapsed)
+..
+   Still waiting... (5466.148732253s elapsed)
+...
+   Still waiting... (5466.151154641s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5525.643958631s elapsed)
+..
+   Still waiting... (5525.645082462s elapsed)
+..
+   Still waiting... (5526.318488186s elapsed)
+.
+   Still waiting... (5526.212632726s elapsed)
+..
+   Still waiting... (5526.254251254s elapsed)
+..
+   Still waiting... (5526.225978261s elapsed)
+..
+   Still waiting... (5526.215632825s elapsed)
+...
+   Still waiting... (5526.218412341s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5585.705949718s elapsed)
+..
+   Still waiting... (5585.706095211s elapsed)
+..
+   Still waiting... (5586.38877924s elapsed)
+.
+   Still waiting... (5586.280463474s elapsed)
+..
+   Still waiting... (5586.321960067s elapsed)
+..
+   Still waiting... (5586.289952858s elapsed)
+..
+   Still waiting... (5586.281359535s elapsed)
+...
+   Still waiting... (5586.284585831s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5645.767074307s elapsed)
+..
+   Still waiting... (5645.768085154s elapsed)
+..
+   Still waiting... (5646.458896479s elapsed)
+.
+   Still waiting... (5646.345515121s elapsed)
+..
+   Still waiting... (5646.39074768s elapsed)
+..
+   Still waiting... (5646.358164521s elapsed)
+..
+   Still waiting... (5646.347257863s elapsed)
+...
+   Still waiting... (5646.35107823s elapsed)
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5705.830937496s elapsed)
+..
+   Still waiting... (5705.82908995s elapsed)
+..
+   Still waiting... (5706.528925823s elapsed)
+.
+   Still waiting... (5706.413391591s elapsed)
+..
+   Still waiting... (5706.458724449s elapsed)
+..
+   Still waiting... (5706.426939283s elapsed)
+..
+   Still waiting... (5706.413194063s elapsed)
+...
+   Still waiting... (5706.417266635s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5765.891954056s elapsed)
+...
+   Still waiting... (5765.889084399s elapsed)
+..
+   Still waiting... (5766.599425809s elapsed)
+.
+   Still waiting... (5766.482316904s elapsed)
+...
+   Still waiting... (5766.527808834s elapsed)
+.
+   Still waiting... (5766.495084148s elapsed)
+..
+   Still waiting... (5766.482919393s elapsed)
+...
+   Still waiting... (5766.48642204s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5825.954123631s elapsed)
+...
+   Still waiting... (5825.951076898s elapsed)
+..
+   Still waiting... (5826.668920658s elapsed)
+.
+   Still waiting... (5826.550000698s elapsed)
+...
+   Still waiting... (5826.596415186s elapsed)
+.
+   Still waiting... (5826.563690081s elapsed)
+..
+   Still waiting... (5826.550861506s elapsed)
+...
+   Still waiting... (5826.55263368s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5886.014957517s elapsed)
+...
+   Still waiting... (5886.01208476s elapsed)
+..
+   Still waiting... (5886.738509598s elapsed)
+.
+   Still waiting... (5886.618948138s elapsed)
+...
+   Still waiting... (5886.664233798s elapsed)
+.
+   Still waiting... (5886.62797121s elapsed)
+..
+   Still waiting... (5886.619649433s elapsed)
+...
+   Still waiting... (5886.618886278s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (5946.076947391s elapsed)
+...
+   Still waiting... (5946.074083783s elapsed)
+..
+   Still waiting... (5946.808213852s elapsed)
+.
+   Still waiting... (5946.688563594s elapsed)
+...
+   Still waiting... (5946.732881658s elapsed)
+.
+   Still waiting... (5946.693408025s elapsed)
+..
+   Still waiting... (5946.68846687s elapsed)
+...
+   Still waiting... (5946.68695127s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6006.137115293s elapsed)
+...
+   Still waiting... (6006.135062669s elapsed)
+..
+   Still waiting... (6006.878572447s elapsed)
+.
+   Still waiting... (6006.756333112s elapsed)
+...
+   Still waiting... (6006.801746969s elapsed)
+.
+   Still waiting... (6006.760333364s elapsed)
+..
+   Still waiting... (6006.756180085s elapsed)
+...
+   Still waiting... (6006.752103382s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6066.197957926s elapsed)
+..
+   Still waiting... (6066.19708351s elapsed)
+...
+   Still waiting... (6066.948961576s elapsed)
+.
+   Still waiting... (6066.825088524s elapsed)
+...
+   Still waiting... (6066.870724341s elapsed)
+..
+   Still waiting... (6066.829129906s elapsed)
+.
+   Still waiting... (6066.82397322s elapsed)
+...
+   Still waiting... (6066.819153291s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6126.259956483s elapsed)
+..
+   Still waiting... (6126.259001414s elapsed)
+...
+   Still waiting... (6127.01834428s elapsed)
+.
+   Still waiting... (6126.888916785s elapsed)
+...
+   Still waiting... (6126.939302408s elapsed)
+..
+   Still waiting... (6126.893907495s elapsed)
+.
+   Still waiting... (6126.890887022s elapsed)
+...
+   Still waiting... (6126.888327999s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6186.321109838s elapsed)
+..
+   Still waiting... (6186.320079967s elapsed)
+...
+   Still waiting... (6187.085775964s elapsed)
+.
+   Still waiting... (6186.957659201s elapsed)
+...
+   Still waiting... (6187.008144277s elapsed)
+..
+   Still waiting... (6186.963051841s elapsed)
+.
+   Still waiting... (6186.958832331s elapsed)
+...
+   Still waiting... (6186.957420485s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6246.382952586s elapsed)
+..
+   Still waiting... (6246.381099874s elapsed)
+...
+   Still waiting... (6247.152786116s elapsed)
+.
+   Still waiting... (6247.023616219s elapsed)
+...
+   Still waiting... (6247.074097239s elapsed)
+..
+   Still waiting... (6247.030442441s elapsed)
+.
+   Still waiting... (6247.026630538s elapsed)
+...
+   Still waiting... (6247.025613264s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6306.443959439s elapsed)
+..
+   Still waiting... (6306.441082501s elapsed)
+...
+   Still waiting... (6307.220917728s elapsed)
+.
+   Still waiting... (6307.090396255s elapsed)
+...
+   Still waiting... (6307.14020834s elapsed)
+..
+   Still waiting... (6307.097458686s elapsed)
+.
+   Still waiting... (6307.095344895s elapsed)
+...
+   Still waiting... (6307.093777097s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6366.506140051s elapsed)
+..
+   Still waiting... (6366.503086334s elapsed)
+...
+   Still waiting... (6367.287815814s elapsed)
+.
+   Still waiting... (6367.159118168s elapsed)
+...
+   Still waiting... (6367.209029947s elapsed)
+..
+   Still waiting... (6367.163791386s elapsed)
+.
+   Still waiting... (6367.164027444s elapsed)
+...
+   Still waiting... (6367.164061644s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6426.56695277s elapsed)
+..
+   Still waiting... (6426.565079379s elapsed)
+...
+   Still waiting... (6427.355460578s elapsed)
+.
+   Still waiting... (6427.226999543s elapsed)
+...
+   Still waiting... (6427.277861587s elapsed)
+..
+   Still waiting... (6427.232417067s elapsed)
+.
+   Still waiting... (6427.231857112s elapsed)
+...
+   Still waiting... (6427.23185659s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6486.628952067s elapsed)
+..
+   Still waiting... (6486.626079808s elapsed)
+...
+   Still waiting... (6487.425186193s elapsed)
+.
+   Still waiting... (6487.294868775s elapsed)
+...
+   Still waiting... (6487.345788606s elapsed)
+..
+   Still waiting... (6487.300416199s elapsed)
+.
+   Still waiting... (6487.300525082s elapsed)
+...
+   Still waiting... (6487.300105235s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6546.689110501s elapsed)
+..
+   Still waiting... (6546.688094376s elapsed)
+...
+   Still waiting... (6547.49177547s elapsed)
+.
+   Still waiting... (6547.360940502s elapsed)
+...
+   Still waiting... (6547.414580875s elapsed)
+..
+   Still waiting... (6547.368286741s elapsed)
+.
+   Still waiting... (6547.369205733s elapsed)
+...
+   Still waiting... (6547.366295022s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6606.750962045s elapsed)
+..
+   Still waiting... (6606.749081371s elapsed)
+...
+   Still waiting... (6607.557950087s elapsed)
+.
+   Still waiting... (6607.427834283s elapsed)
+...
+   Still waiting... (6607.483652234s elapsed)
+..
+   Still waiting... (6607.436871546s elapsed)
+.
+   Still waiting... (6607.43503493s elapsed)
+...
+   Still waiting... (6607.432910392s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6666.811959234s elapsed)
+..
+   Still waiting... (6666.811077353s elapsed)
+...
+   Still waiting... (6667.630903022s elapsed)
+.
+   Still waiting... (6667.495701037s elapsed)
+...
+   Still waiting... (6667.551596105s elapsed)
+..
+   Still waiting... (6667.506693909s elapsed)
+.
+   Still waiting... (6667.502556409s elapsed)
+...
+   Still waiting... (6667.500497119s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6726.873139125s elapsed)
+..
+   Still waiting... (6726.871077932s elapsed)
+...
+   Still waiting... (6727.702553044s elapsed)
+.
+   Still waiting... (6727.562498613s elapsed)
+...
+   Still waiting... (6727.619480419s elapsed)
+..
+   Still waiting... (6727.573850629s elapsed)
+.
+   Still waiting... (6727.568576852s elapsed)
+...
+   Still waiting... (6727.569535933s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6786.934954589s elapsed)
+..
+   Still waiting... (6786.932078935s elapsed)
+...
+   Still waiting... (6787.772773222s elapsed)
+.
+   Still waiting... (6787.629265897s elapsed)
+...
+   Still waiting... (6787.689315096s elapsed)
+..
+   Still waiting... (6787.640820857s elapsed)
+.
+   Still waiting... (6787.635692393s elapsed)
+...
+   Still waiting... (6787.638598487s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6846.996870991s elapsed)
+..
+   Still waiting... (6846.994085466s elapsed)
+...
+   Still waiting... (6847.842353679s elapsed)
+.
+   Still waiting... (6847.695144546s elapsed)
+...
+   Still waiting... (6847.755163589s elapsed)
+..
+   Still waiting... (6847.707918419s elapsed)
+.
+   Still waiting... (6847.703608013s elapsed)
+...
+   Still waiting... (6847.706858345s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6907.058124158s elapsed)
+..
+   Still waiting... (6907.055095265s elapsed)
+...
+   Still waiting... (6907.913507783s elapsed)
+.
+   Still waiting... (6907.762705084s elapsed)
+...
+   Still waiting... (6907.821207564s elapsed)
+..
+   Still waiting... (6907.775060181s elapsed)
+.
+   Still waiting... (6907.771345311s elapsed)
+...
+   Still waiting... (6907.775234062s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (6967.119965635s elapsed)
+..
+   Still waiting... (6967.117080473s elapsed)
+...
+   Still waiting... (6967.982195933s elapsed)
+.
+   Still waiting... (6967.831368769s elapsed)
+...
+   Still waiting... (6967.888190607s elapsed)
+..
+   Still waiting... (6967.843495109s elapsed)
+.
+   Still waiting... (6967.840194294s elapsed)
+...
+   Still waiting... (6967.843549523s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7027.180955737s elapsed)
+..
+   Still waiting... (7027.178083919s elapsed)
+...
+   Still waiting... (7028.04992332s elapsed)
+.
+   Still waiting... (7027.900031679s elapsed)
+...
+   Still waiting... (7027.956313964s elapsed)
+..
+   Still waiting... (7027.912358611s elapsed)
+.
+   Still waiting... (7027.90902652s elapsed)
+...
+   Still waiting... (7027.911722307s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7087.24110675s elapsed)
+..
+   Still waiting... (7087.240082669s elapsed)
+...
+   Still waiting... (7088.118469761s elapsed)
+.
+   Still waiting... (7087.966818516s elapsed)
+...
+   Still waiting... (7088.024459517s elapsed)
+..
+   Still waiting... (7087.976818881s elapsed)
+.
+   Still waiting... (7087.978656729s elapsed)
+...
+   Still waiting... (7087.978119692s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7147.302953591s elapsed)
+..
+   Still waiting... (7147.301076725s elapsed)
+...
+   Still waiting... (7148.185770484s elapsed)
+.
+   Still waiting... (7148.033608594s elapsed)
+...
+   Still waiting... (7148.091567042s elapsed)
+..
+   Still waiting... (7148.045083471s elapsed)
+.
+   Still waiting... (7148.046413237s elapsed)
+...
+   Still waiting... (7148.047533452s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7207.363955986s elapsed)
+..
+   Still waiting... (7207.36309626s elapsed)
+...
+   Still waiting... (7208.255953012s elapsed)
+.
+   Still waiting... (7208.101385251s elapsed)
+...
+   Still waiting... (7208.159523785s elapsed)
+..
+   Still waiting... (7208.114166284s elapsed)
+.
+   Still waiting... (7208.113271825s elapsed)
+...
+   Still waiting... (7208.113898058s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7267.42612201s elapsed)
+..
+   Still waiting... (7267.423236182s elapsed)
+...
+   Still waiting... (7268.324592401s elapsed)
+.
+   Still waiting... (7268.168988731s elapsed)
+...
+   Still waiting... (7268.225531978s elapsed)
+..
+   Still waiting... (7268.183957337s elapsed)
+.
+   Still waiting... (7268.180232359s elapsed)
+...
+   Still waiting... (7268.182557226s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7327.486957543s elapsed)
+..
+   Still waiting... (7327.484066426s elapsed)
+...
+   Still waiting... (7328.394782968s elapsed)
+.
+   Still waiting... (7328.237608454s elapsed)
+...
+   Still waiting... (7328.29264196s elapsed)
+..
+   Still waiting... (7328.250068003s elapsed)
+.
+   Still waiting... (7328.247302572s elapsed)
+...
+   Still waiting... (7328.250719247s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7387.548953898s elapsed)
+.
+   Still waiting... (7387.546080417s elapsed)
+....
+   Still waiting... (7388.462042197s elapsed)
+.
+   Still waiting... (7388.306075693s elapsed)
+....
+   Still waiting... (7388.361013198s elapsed)
+.
+   Still waiting... (7388.318430604s elapsed)
+.
+   Still waiting... (7388.316093213s elapsed)
+...
+   Still waiting... (7388.318889634s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7447.610048486s elapsed)
+.
+   Still waiting... (7447.607243667s elapsed)
+....
+   Still waiting... (7448.529229114s elapsed)
+.
+   Still waiting... (7448.372636954s elapsed)
+....
+   Still waiting... (7448.425434543s elapsed)
+.
+   Still waiting... (7448.385316573s elapsed)
+.
+   Still waiting... (7448.382043138s elapsed)
+...
+   Still waiting... (7448.387940468s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7507.671950699s elapsed)
+.
+   Still waiting... (7507.669086599s elapsed)
+....
+   Still waiting... (7508.598195169s elapsed)
+.
+   Still waiting... (7508.439321435s elapsed)
+....
+   Still waiting... (7508.492937375s elapsed)
+.
+   Still waiting... (7508.455034407s elapsed)
+.
+   Still waiting... (7508.450084394s elapsed)
+...
+   Still waiting... (7508.456241321s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7567.732950978s elapsed)
+.
+   Still waiting... (7567.731006381s elapsed)
+....
+   Still waiting... (7568.668008504s elapsed)
+.
+   Still waiting... (7568.507597008s elapsed)
+....
+   Still waiting... (7568.561843075s elapsed)
+.
+   Still waiting... (7568.525053286s elapsed)
+.
+   Still waiting... (7568.516108957s elapsed)
+...
+   Still waiting... (7568.525394297s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7627.792966062s elapsed)
+.
+   Still waiting... (7627.792225658s elapsed)
+....
+   Still waiting... (7628.735621818s elapsed)
+.
+   Still waiting... (7628.57406746s elapsed)
+....
+   Still waiting... (7628.630837475s elapsed)
+.
+   Still waiting... (7628.590709716s elapsed)
+.
+   Still waiting... (7628.585898845s elapsed)
+...
+   Still waiting... (7628.593566777s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7687.85496019s elapsed)
+.
+   Still waiting... (7687.854095548s elapsed)
+....
+   Still waiting... (7688.805908076s elapsed)
+.
+   Still waiting... (7688.638057226s elapsed)
+....
+   Still waiting... (7688.69966505s elapsed)
+.
+   Still waiting... (7688.65904776s elapsed)
+.
+   Still waiting... (7688.653834777s elapsed)
+...
+   Still waiting... (7688.661766003s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7747.915976313s elapsed)
+.
+   Still waiting... (7747.915076763s elapsed)
+....
+   Still waiting... (7748.701895442s elapsed)
+.
+   Still waiting... (7748.873336824s elapsed)
+....
+   Still waiting... (7748.767723525s elapsed)
+.
+   Still waiting... (7748.726415755s elapsed)
+.
+   Still waiting... (7748.720781798s elapsed)
+...
+   Still waiting... (7748.728012441s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7807.977952643s elapsed)
+.
+   Still waiting... (7807.97519928s elapsed)
+....
+   Still waiting... (7808.767798903s elapsed)
+.
+   Still waiting... (7808.940400783s elapsed)
+....
+   Still waiting... (7808.836655739s elapsed)
+.
+   Still waiting... (7808.794285318s elapsed)
+.
+   Still waiting... (7808.787758418s elapsed)
+...
+   Still waiting... (7808.794061174s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7868.038965226s elapsed)
+.
+   Still waiting... (7868.037083682s elapsed)
+....
+   Still waiting... (7868.836558952s elapsed)
+.
+   Still waiting... (7869.007905165s elapsed)
+....
+   Still waiting... (7868.904682511s elapsed)
+.
+   Still waiting... (7868.863718606s elapsed)
+.
+   Still waiting... (7868.852531439s elapsed)
+...
+   Still waiting... (7868.863260588s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7928.100946265s elapsed)
+.
+   Still waiting... (7928.098084014s elapsed)
+....
+   Still waiting... (7928.905375707s elapsed)
+.
+   Still waiting... (7929.076065228s elapsed)
+....
+   Still waiting... (7928.97159218s elapsed)
+.
+   Still waiting... (7928.929081078s elapsed)
+.
+   Still waiting... (7928.920397904s elapsed)
+...
+   Still waiting... (7928.928523563s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (7988.161956632s elapsed)
+.
+   Still waiting... (7988.1602388s elapsed)
+....
+   Still waiting... (7988.974116009s elapsed)
+.
+   Still waiting... (7989.144374391s elapsed)
+....
+   Still waiting... (7989.037517482s elapsed)
+.
+   Still waiting... (7988.996129311s elapsed)
+.
+   Still waiting... (7988.987103858s elapsed)
+...
+   Still waiting... (7988.995839696s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8048.222947197s elapsed)
+.
+   Still waiting... (8048.221079449s elapsed)
+....
+   Still waiting... (8049.041708183s elapsed)
+.
+   Still waiting... (8049.211479392s elapsed)
+....
+   Still waiting... (8049.106386882s elapsed)
+.
+   Still waiting... (8049.064693994s elapsed)
+.
+   Still waiting... (8049.055932203s elapsed)
+...
+   Still waiting... (8049.064030417s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8108.283955888s elapsed)
+.
+   Still waiting... (8108.283077891s elapsed)
+....
+   Still waiting... (8109.111191749s elapsed)
+.
+   Still waiting... (8109.279770896s elapsed)
+....
+   Still waiting... (8109.17426774s elapsed)
+.
+   Still waiting... (8109.133322668s elapsed)
+.
+   Still waiting... (8109.123948855s elapsed)
+...
+   Still waiting... (8109.133204716s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8168.34495085s elapsed)
+.
+   Still waiting... (8168.344165522s elapsed)
+....
+   Still waiting... (8169.346119337s elapsed)
+.
+   Still waiting... (8169.177920011s elapsed)
+....
+   Still waiting... (8169.243154948s elapsed)
+.
+   Still waiting... (8169.202173693s elapsed)
+.
+   Still waiting... (8169.19372557s elapsed)
+...
+   Still waiting... (8169.201440286s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8228.406974439s elapsed)
+.
+   Still waiting... (8228.406075437s elapsed)
+....
+   Still waiting... (8229.244142856s elapsed)
+.
+   Still waiting... (8229.416774962s elapsed)
+....
+   Still waiting... (8229.312889477s elapsed)
+.
+   Still waiting... (8229.269710477s elapsed)
+.
+   Still waiting... (8229.261758448s elapsed)
+...
+   Still waiting... (8229.269587871s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8288.468867809s elapsed)
+.
+   Still waiting... (8288.467073824s elapsed)
+....
+   Still waiting... (8289.310804503s elapsed)
+.
+   Still waiting... (8289.48527942s elapsed)
+....
+   Still waiting... (8289.38001173s elapsed)
+.
+   Still waiting... (8289.33494904s elapsed)
+.
+   Still waiting... (8289.327692975s elapsed)
+...
+   Still waiting... (8289.338763742s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8348.53195566s elapsed)
+.
+   Still waiting... (8348.527081922s elapsed)
+....
+   Still waiting... (8349.377598503s elapsed)
+.
+   Still waiting... (8349.552554804s elapsed)
+....
+   Still waiting... (8349.449026362s elapsed)
+.
+   Still waiting... (8349.40221786s elapsed)
+.
+   Still waiting... (8349.394682401s elapsed)
+...
+   Still waiting... (8349.407834129s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8408.592969843s elapsed)
+.
+   Still waiting... (8408.589080083s elapsed)
+....
+   Still waiting... (8409.444290954s elapsed)
+.
+   Still waiting... (8409.620017508s elapsed)
+....
+   Still waiting... (8409.51699439s elapsed)
+.
+   Still waiting... (8409.47070024s elapsed)
+.
+   Still waiting... (8409.462607775s elapsed)
+...
+   Still waiting... (8409.476028807s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8468.654989712s elapsed)
+.
+   Still waiting... (8468.650109499s elapsed)
+....
+   Still waiting... (8469.512269464s elapsed)
+.
+   Still waiting... (8469.687043384s elapsed)
+....
+   Still waiting... (8469.5851887s elapsed)
+.
+   Still waiting... (8469.538902983s elapsed)
+.
+   Still waiting... (8469.531434132s elapsed)
+...
+   Still waiting... (8469.542311156s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8528.715958109s elapsed)
+.
+   Still waiting... (8528.712072584s elapsed)
+....
+   Still waiting... (8529.582194304s elapsed)
+.
+   Still waiting... (8529.756033146s elapsed)
+....
+   Still waiting... (8529.654422768s elapsed)
+.
+   Still waiting... (8529.604843404s elapsed)
+.
+   Still waiting... (8529.600319378s elapsed)
+...
+   Still waiting... (8529.608577857s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8588.777955955s elapsed)
+.
+   Still waiting... (8588.773079351s elapsed)
+....
+   Still waiting... (8589.650770204s elapsed)
+.
+   Still waiting... (8589.825494881s elapsed)
+....
+   Still waiting... (8589.721551785s elapsed)
+.
+   Still waiting... (8589.672710075s elapsed)
+.
+   Still waiting... (8589.669155195s elapsed)
+...
+   Still waiting... (8589.676648096s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8648.838960406s elapsed)
+.
+   Still waiting... (8648.835075726s elapsed)
+....
+   Still waiting... (8649.718597252s elapsed)
+.
+   Still waiting... (8649.893209019s elapsed)
+....
+   Still waiting... (8649.787838607s elapsed)
+.
+   Still waiting... (8649.739712951s elapsed)
+.
+   Still waiting... (8649.736999878s elapsed)
+...
+   Still waiting... (8649.744811577s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8708.899952587s elapsed)
+.
+   Still waiting... (8708.896084913s elapsed)
+....
+   Still waiting... (8709.784511844s elapsed)
+.
+   Still waiting... (8709.962099606s elapsed)
+....
+   Still waiting... (8709.855900359s elapsed)
+.
+   Still waiting... (8709.809325958s elapsed)
+.
+   Still waiting... (8709.805790985s elapsed)
+...
+   Still waiting... (8709.814196557s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8768.960960018s elapsed)
+.
+   Still waiting... (8768.957078697s elapsed)
+....
+   Still waiting... (8769.851243562s elapsed)
+.
+   Still waiting... (8770.029422736s elapsed)
+....
+   Still waiting... (8769.923867663s elapsed)
+.
+   Still waiting... (8769.878441327s elapsed)
+.
+   Still waiting... (8769.87368112s elapsed)
+...
+   Still waiting... (8769.882436189s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8829.021952963s elapsed)
+.
+   Still waiting... (8829.018077612s elapsed)
+....
+   Still waiting... (8829.92006656s elapsed)
+.
+   Still waiting... (8830.096051627s elapsed)
+....
+   Still waiting... (8829.992620262s elapsed)
+.
+   Still waiting... (8829.94730256s elapsed)
+.
+   Still waiting... (8829.941521152s elapsed)
+...
+   Still waiting... (8829.951699217s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8889.083962167s elapsed)
+.
+   Still waiting... (8889.079080927s elapsed)
+....
+   Still waiting... (8889.987860551s elapsed)
+.
+   Still waiting... (8890.160513118s elapsed)
+....
+   Still waiting... (8890.062415281s elapsed)
+.
+   Still waiting... (8890.016033294s elapsed)
+.
+   Still waiting... (8890.007635325s elapsed)
+...
+   Still waiting... (8890.019739866s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (8949.144949947s elapsed)
+.
+   Still waiting... (8949.141079109s elapsed)
+....
+   Still waiting... (8950.053738186s elapsed)
+.
+   Still waiting... (8950.226382881s elapsed)
+....
+   Still waiting... (8950.130332256s elapsed)
+.
+   Still waiting... (8950.084694482s elapsed)
+.
+   Still waiting... (8950.073611714s elapsed)
+...
+   Still waiting... (8950.08397888s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9009.206957105s elapsed)
+.
+   Still waiting... (9009.203004055s elapsed)
+....
+   Still waiting... (9010.122492558s elapsed)
+.
+   Still waiting... (9010.291737127s elapsed)
+....
+   Still waiting... (9010.198969001s elapsed)
+.
+   Still waiting... (9010.15225507s elapsed)
+.
+   Still waiting... (9010.14170279s elapsed)
+...
+   Still waiting... (9010.152365719s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9069.268870617s elapsed)
+.
+   Still waiting... (9069.264098906s elapsed)
+....
+   Still waiting... (9070.19009489s elapsed)
+.
+   Still waiting... (9070.359311847s elapsed)
+....
+   Still waiting... (9070.265668661s elapsed)
+.
+   Still waiting... (9070.221046008s elapsed)
+.
+   Still waiting... (9070.208726816s elapsed)
+...
+   Still waiting... (9070.217636868s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9129.329956318s elapsed)
+.
+   Still waiting... (9129.326093205s elapsed)
+....
+   Still waiting... (9130.257835306s elapsed)
+.
+   Still waiting... (9130.427337018s elapsed)
+....
+   Still waiting... (9130.33354704s elapsed)
+.
+   Still waiting... (9130.28617608s elapsed)
+.
+   Still waiting... (9130.277553355s elapsed)
+...
+   Still waiting... (9130.28212494s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9189.391967161s elapsed)
+.
+   Still waiting... (9189.387074593s elapsed)
+....
+   Still waiting... (9190.324514049s elapsed)
+.
+   Still waiting... (9190.494878921s elapsed)
+....
+   Still waiting... (9190.400445254s elapsed)
+.
+   Still waiting... (9190.35505401s elapsed)
+.
+   Still waiting... (9190.345405803s elapsed)
+...
+   Still waiting... (9190.349348714s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9249.451956033s elapsed)
+.
+   Still waiting... (9249.449080719s elapsed)
+....
+   Still waiting... (9250.391534166s elapsed)
+.
+   Still waiting... (9250.56231383s elapsed)
+....
+   Still waiting... (9250.468239686s elapsed)
+.
+   Still waiting... (9250.420787441s elapsed)
+.
+   Still waiting... (9250.412323614s elapsed)
+...
+   Still waiting... (9250.415592289s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9309.512958367s elapsed)
+.
+   Still waiting... (9309.509081481s elapsed)
+....
+   Still waiting... (9310.458082015s elapsed)
+.
+   Still waiting... (9310.628345845s elapsed)
+....
+   Still waiting... (9310.53510207s elapsed)
+.
+   Still waiting... (9310.486013242s elapsed)
+.
+   Still waiting... (9310.479380938s elapsed)
+...
+   Still waiting... (9310.482090066s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9369.574967684s elapsed)
+.
+   Still waiting... (9369.57009858s elapsed)
+....
+   Still waiting... (9370.523969151s elapsed)
+.
+   Still waiting... (9370.695369642s elapsed)
+....
+   Still waiting... (9370.601008887s elapsed)
+.
+   Still waiting... (9370.556706674s elapsed)
+.
+   Still waiting... (9370.548399069s elapsed)
+...
+   Still waiting... (9370.548249802s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9429.63596356s elapsed)
+.
+   Still waiting... (9429.632077369s elapsed)
+....
+   Still waiting... (9430.591794085s elapsed)
+.
+   Still waiting... (9430.764173937s elapsed)
+....
+   Still waiting... (9430.669506608s elapsed)
+.
+   Still waiting... (9430.625729534s elapsed)
+.
+   Still waiting... (9430.615241865s elapsed)
+...
+   Still waiting... (9430.615745312s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9489.697952934s elapsed)
+.
+   Still waiting... (9489.693094169s elapsed)
+....
+   Still waiting... (9490.658701085s elapsed)
+.
+   Still waiting... (9490.829016181s elapsed)
+....
+   Still waiting... (9490.73828921s elapsed)
+.
+   Still waiting... (9490.693487385s elapsed)
+.
+   Still waiting... (9490.68393779s elapsed)
+...
+   Still waiting... (9490.683261836s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9549.758953233s elapsed)
+.
+   Still waiting... (9549.755076865s elapsed)
+....
+   Still waiting... (9550.72460272s elapsed)
+.
+   Still waiting... (9550.897169448s elapsed)
+....
+   Still waiting... (9550.806221709s elapsed)
+.
+   Still waiting... (9550.762171492s elapsed)
+.
+   Still waiting... (9550.752504219s elapsed)
+...
+   Still waiting... (9550.748758983s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9609.820950078s elapsed)
+.
+   Still waiting... (9609.816084475s elapsed)
+....
+   Still waiting... (9610.793285278s elapsed)
+.
+   Still waiting... (9610.964918499s elapsed)
+....
+   Still waiting... (9610.874938255s elapsed)
+.
+   Still waiting... (9610.829021567s elapsed)
+.
+   Still waiting... (9610.818359279s elapsed)
+...
+   Still waiting... (9610.815197705s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9669.881965471s elapsed)
+.
+   Still waiting... (9669.878089788s elapsed)
+....
+   Still waiting... (9670.861980315s elapsed)
+.
+   Still waiting... (9671.034830469s elapsed)
+....
+   Still waiting... (9670.94369735s elapsed)
+.
+   Still waiting... (9670.897411299s elapsed)
+.
+   Still waiting... (9670.885330492s elapsed)
+...
+   Still waiting... (9670.883324099s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9729.94194519s elapsed)
+.
+   Still waiting... (9729.939080958s elapsed)
+....
+   Still waiting... (9730.930759011s elapsed)
+.
+   Still waiting... (9731.101243654s elapsed)
+....
+   Still waiting... (9731.012286944s elapsed)
+.
+   Still waiting... (9730.966026673s elapsed)
+.
+   Still waiting... (9730.95312113s elapsed)
+...
+   Still waiting... (9730.949483703s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9790.003961724s elapsed)
+.
+   Still waiting... (9790.001102525s elapsed)
+....
+   Still waiting... (9790.99851704s elapsed)
+.
+   Still waiting... (9791.168168224s elapsed)
+....
+   Still waiting... (9791.079092368s elapsed)
+.
+   Still waiting... (9791.033717574s elapsed)
+.
+   Still waiting... (9791.021871451s elapsed)
+...
+   Still waiting... (9791.014841894s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9850.064972676s elapsed)
+.
+   Still waiting... (9850.061081599s elapsed)
+....
+   Still waiting... (9851.235986572s elapsed)
+.
+   Still waiting... (9851.067924468s elapsed)
+....
+   Still waiting... (9851.144143547s elapsed)
+.
+   Still waiting... (9851.099217821s elapsed)
+.
+   Still waiting... (9851.090689821s elapsed)
+...
+   Still waiting... (9851.0801772s elapsed)
+.................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   Still waiting... (9910.126957005s elapsed)
+.
+   Still waiting... (9910.122092451s elapsed)
+....
+   Still waiting... (9911.30413093s elapsed)
+.
+   Still waiting... (9911.136041303s elapsed)
+....
+   Still waiting... (9911.212992454s elapsed)
+.
+   Still waiting... (9911.164924505s elapsed)
+.
+   Still waiting... (9911.157556746s elapsed)
+...
+   Still waiting... (9911.146497987s elapsed)
+..................................................................................................................................................................................................Homomorphic Subset Testing time: 9917.472338669s
+..............................Boolean Match time: 3.794244502s
+[Worker 5]   ✅ Query processed in 9921.269756006s
+[Worker 5] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 5]: Attempt 1 to connect...
+[Worker 5]  Sending response...
+[Worker 5]  Response size: 33751048 bytes
+.[127.0.0.1:10001]   ✅ Response sent in 33.712091ms (7 chunks, 954.78 MB/s)
+   ✅ Task spawned for Worker 5
+............................................................................................................................................................................................................Homomorphic Subset Testing time: 9950.560427996s
+......
+   Still waiting... (9970.187975362s elapsed)
+.
+   Still waiting... (9970.184094666s elapsed)
+....
+   Still waiting... (9971.373207722s elapsed)
+....
+   Still waiting... (9971.281852615s elapsed)
+.
+   Still waiting... (9971.231925168s elapsed)
+.
+   Still waiting... (9971.223501386s elapsed)
+..
+   Still waiting... (9971.212864222s elapsed)
+.......Boolean Match time: 3.709002472s
+[Worker 1]   ✅ Query processed in 9954.272303611s
 [Worker 1] 5. Connecting and sending to Client at 127.0.0.1:10001...
    🔗 [Worker 1]: Attempt 1 to connect...
 [Worker 1]  Sending response...
-[Worker 1]  Response size: 131848 bytes
-[127.0.0.1:10001]   ✅ Response sent in 73.091µs (1 chunks, 1720.32 MB/s)
+[Worker 1]  Response size: 33751048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 32.763326ms (7 chunks, 982.42 MB/s)
    ✅ Task spawned for Worker 1
-Homomorphic Subset Testing time: 16.463755378s
-Boolean Match time: 30.628586ms
-[Worker 0]   ✅ Query processed in 16.495967997s
+...........................................................................................Homomorphic Subset Testing time: 9969.459074336s
+...................Boolean Match time: 3.336889521s
+[Worker 0]   ✅ Query processed in 9972.798766067s
 [Worker 0] 5. Connecting and sending to Client at 127.0.0.1:10001...
    🔗 [Worker 0]: Attempt 1 to connect...
 [Worker 0]  Sending response...
-[Worker 0]  Response size: 131848 bytes
-[127.0.0.1:10001]   ✅ Response sent in 64.276µs (1 chunks, 1956.25 MB/s)
+.[Worker 0]  Response size: 33751048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 33.182061ms (7 chunks, 970.03 MB/s)
    ✅ Task spawned for Worker 0
+.........................................................................................................Homomorphic Subset Testing time: 9993.849055733s
+...................Boolean Match time: 3.693863328s
+[Worker 3]   ✅ Query processed in 9997.54590056s
+[Worker 3] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 3]: Attempt 1 to connect...
+[Worker 3]  Sending response...
+[Worker 3]  Response size: 33751048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 32.081578ms (7 chunks, 1003.30 MB/s)
+   ✅ Task spawned for Worker 3
+......Homomorphic Subset Testing time: 9999.247419648s
+..............Boolean Match time: 3.308118719s
+[Worker 2]   ✅ Query processed in 10002.558423133s
+[Worker 2] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 2]: Attempt 1 to connect...
+[Worker 2]  Sending response...
+[Worker 2]  Response size: 33751048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 32.08896ms (7 chunks, 1003.07 MB/s)
+   ✅ Task spawned for Worker 2
+...........................
+   Still waiting... (10030.245076557s elapsed)
+....
+   Still waiting... (10031.2986189s elapsed)
+.
+   Still waiting... (10031.278075015s elapsed)
+...............................................................................................................................................................................
+   Still waiting... (10090.307077359s elapsed)
+....
+   Still waiting... (10091.366004367s elapsed)
+.
+   Still waiting... (10091.341910512s elapsed)
+...............................................................................................................................................................................
+   Still waiting... (10150.368072722s elapsed)
+....
+   Still waiting... (10151.430347057s elapsed)
+.
+   Still waiting... (10151.409471914s elapsed)
+...............................................................................................................................................................................
+   Still waiting... (10210.430081125s elapsed)
+....
+   Still waiting... (10211.497104126s elapsed)
+.
+   Still waiting... (10211.478096832s elapsed)
+...............................................................................................................................................................................
+   Still waiting... (10270.492090812s elapsed)
+....
+   Still waiting... (10271.564823283s elapsed)
+.
+   Still waiting... (10271.542701412s elapsed)
+...............................................................................................................................................................................
+   Still waiting... (10330.553081974s elapsed)
+....
+   Still waiting... (10331.633414524s elapsed)
+.
+   Still waiting... (10331.610429249s elapsed)
+....................................................................................................................................................Homomorphic Subset Testing time: 10363.090417292s
+...........Boolean Match time: 3.793782601s
+[Worker 6]   ✅ Query processed in 10366.887231467s
+[Worker 6] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 6]: Attempt 1 to connect...
+[Worker 6]  Sending response...
+.[Worker 6]  Response size: 33751048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 32.728199ms (7 chunks, 983.48 MB/s)
+   ✅ Task spawned for Worker 6
+..........
+   Still waiting... (10390.613088744s elapsed)
+...
+   Still waiting... (10391.69799772s elapsed)
+..............Homomorphic Subset Testing time: 10380.839007784s
+........Boolean Match time: 3.715937955s
+[Worker 4]   ✅ Query processed in 10384.557960637s
+[Worker 4] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 4]: Attempt 1 to connect...
+[Worker 4]  Sending response...
+[Worker 4]  Response size: 33751048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 32.468339ms (7 chunks, 991.35 MB/s)
+   ✅ Task spawned for Worker 4
+..Homomorphic Subset Testing time: 10387.138564269s
+....Boolean Match time: 3.333800841s
+[Worker 7]   ✅ Query processed in 10390.475342237s
+[Worker 7] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 7]: Attempt 1 to connect...
+[Worker 7]  Sending response...
+[Worker 7]  Response size: 33751048 bytes
+[127.0.0.1:10001]   ✅ Response sent in 31.93067ms (7 chunks, 1008.04 MB/s)
+   ✅ Task spawned for Worker 7

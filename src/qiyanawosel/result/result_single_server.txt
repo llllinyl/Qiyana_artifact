@@ -1,5 +1,5 @@
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 15.43s
+    Finished `release` profile [optimized] target(s) in 15.23s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawosel_server`
 ========================================
 🖥️  Qiyana-wosel Server
@@ -11,37 +11,37 @@
 
 Waiting for ONE client connection...
 
-📡 Client connected: 127.0.0.1:49068
+📡 Client connected: 127.0.0.1:49532
 This server will accept only ONE client and then exit.
-[127.0.0.1:49068] 1. Receiving public parameters...
-[127.0.0.1:49068]   Expecting 555491992 bytes total
-[127.0.0.1:49068]   ✅ Received all 555491992 bytes in 106 chunks, took 326.964539ms
-[127.0.0.1:49068]   ✅ Public parameters package deserialized, 7 params
-[127.0.0.1:49068]   ✅ All parameters deserialized in 287.675009ms
-[127.0.0.1:49068] 2. Server preprocessing for 10 seconds...
-[127.0.0.1:49068]   Server initialized in 16.051226235s
-[127.0.0.1:49068]   Number of documents: 16384
-[127.0.0.1:49068]   ✅ Preprocessing completed
-[127.0.0.1:49068] 3. Waiting for query...
-[127.0.0.1:49068]   Expecting query: 8692072 bytes
-[127.0.0.1:49068]   ✅ Received query (8692072 bytes) in 6.651825ms (2 chunks, 1246.19 MB/s)
-[127.0.0.1:49068]   Deserializing query...
-[127.0.0.1:49068]   ✅ Query package deserialized, 3 params
-[127.0.0.1:49068]   ✅ All query deserialized in 1.89369ms
-[127.0.0.1:49068] 4. Processing query...
-homomorphic subset testing time: 132.554550395s
-Boolean match time: 42.989721ms
-[127.0.0.1:49068]   ✅ Query processed in 132.613363595s
-[127.0.0.1:49068] 5. Sending response...
-[127.0.0.1:49068]   Response size: 138936328 bytes
-[127.0.0.1:49068]   Sent response size header
-[127.0.0.1:49068]   ✅ Response sent in 143.181052ms (27 chunks, 925.40 MB/s)
-[127.0.0.1:49068] 📊 Session statistics:
-[127.0.0.1:49068]   - Receive public params: 326.964539ms
-[127.0.0.1:49068]   - Server init: 16.051226235s
-[127.0.0.1:49068]   - Preprocess wait: 10 seconds
-[127.0.0.1:49068]   - Receive query: 6.651825ms
-[127.0.0.1:49068]   - Process query: 132.613363595s
-[127.0.0.1:49068]   - Send response: 143.181052ms
-[127.0.0.1:49068]   - TOTAL TIME: 150.068226351s
-[127.0.0.1:49068] 🎉 Session completed successfully!
+[127.0.0.1:49532] 1. Receiving public parameters...
+[127.0.0.1:49532]   Expecting 555491992 bytes total
+[127.0.0.1:49532]   ✅ Received all 555491992 bytes in 106 chunks, took 323.753427ms
+[127.0.0.1:49532]   ✅ Public parameters package deserialized, 7 params
+[127.0.0.1:49532]   ✅ All parameters deserialized in 280.94021ms
+[127.0.0.1:49532] 2. Server preprocessing for 10 seconds...
+[127.0.0.1:49532]   Server initialized in 16.045366538s
+[127.0.0.1:49532]   Number of documents: 16384
+[127.0.0.1:49532]   ✅ Preprocessing completed
+[127.0.0.1:49532] 3. Waiting for query...
+[127.0.0.1:49532]   Expecting query: 8692067 bytes
+[127.0.0.1:49532]   ✅ Received query (8692067 bytes) in 6.385628ms (2 chunks, 1298.13 MB/s)
+[127.0.0.1:49532]   Deserializing query...
+[127.0.0.1:49532]   ✅ Query package deserialized, 3 params
+[127.0.0.1:49532]   ✅ All query deserialized in 1.82061ms
+[127.0.0.1:49532] 4. Processing query...
+homomorphic subset testing time: 130.378806288s
+Boolean match time: 37.027068ms
+[127.0.0.1:49532]   ✅ Query processed in 130.431387045s
+[127.0.0.1:49532] 5. Sending response...
+[127.0.0.1:49532]   Response size: 138936328 bytes
+[127.0.0.1:49532]   Sent response size header
+[127.0.0.1:49532]   ✅ Response sent in 143.081296ms (27 chunks, 926.05 MB/s)
+[127.0.0.1:49532] 📊 Session statistics:
+[127.0.0.1:49532]   - Receive public params: 323.753427ms
+[127.0.0.1:49532]   - Server init: 16.045366538s
+[127.0.0.1:49532]   - Preprocess wait: 10 seconds
+[127.0.0.1:49532]   - Receive query: 6.385628ms
+[127.0.0.1:49532]   - Process query: 130.431387045s
+[127.0.0.1:49532]   - Send response: 143.081296ms
+[127.0.0.1:49532]   - TOTAL TIME: 147.870196717s
+[127.0.0.1:49532] 🎉 Session completed successfully!

@@ -30,8 +30,8 @@ pub const PACKING_NUM: usize = 16380;
 pub const LWESIZE: usize = 1056;
 
 pub const THREAD_NUM: usize = 16;
-pub const DOCUMENT_NUM: usize = 16; //2^k
-pub const KEYWORD_SET_NUM: usize = 8;
+pub const DOCUMENT_NUM: usize = 32768; //2^k
+pub const KEYWORD_SET_NUM: usize = 16;
 
 
 pub fn read_tf_idf_file(file_path: &str, start_idx: usize, worker_docs: usize) -> Vec<Vec<u16>> {
@@ -636,7 +636,7 @@ impl Client {
         let glwe_sk = self.glwe_sk.clone();
         let mut plainsubmatrix = Vec::new();
         let docs_per_worker = DOCUMENT_NUM / worker_num;
-        let batches = (docs_per_worker + PACKING_NUM - 1) / PACKING_NUM; 
+        let batches = (docs_per_worker * 5 + PACKING_NUM - 1) / PACKING_NUM; 
         let remain_in_last_batch = docs_per_worker % (PACKING_NUM / 5);
 
         for num in 0..worker_num {
@@ -668,10 +668,10 @@ impl Client {
                     remain_in_last_batch
                 };
 
-                for num in 0..range {
+                for cur in 0..range {
                     let mut plainrow = Vec::new();
                     for offset in 0..5 {
-                        let index = 5 * num + offset;
+                        let index = 5 * cur + offset;
                         if index < plaintext_slice.len() {
                             if plaintext_slice[index] > 96 {
                                 println!("error! {}", plaintext_slice[index]);

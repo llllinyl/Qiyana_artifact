@@ -1,6 +1,6 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 14.32s
+    Finished `release` profile [optimized] target(s) in 14.12s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanawosel_client`
 ========================================
 🔍 Qiyana-wosel Client
@@ -15,31 +15,31 @@
 4. Wait 10 seconds for server preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Query generation time: 62.446476ms
+   Query generation time: 62.612332ms
 6. Send query to server...
    ✅ Query sent successfully!
-   📊 Query summary: 8692072 bytes in 2 chunks, took 119.076898ms, 69.61 MB/s
+   📊 Query summary: 8692067 bytes in 2 chunks, took 117.593358ms, 70.49 MB/s
 7. Waiting for server response...
 ............................................................
-   Still waiting... (60.068590176s elapsed)
+   Still waiting... (60.066555143s elapsed)
 ............................................................
-   Still waiting... (120.135189879s elapsed)
-...................   Expecting response: 138936328 bytes
+   Still waiting... (120.134989183s elapsed)
+.................   Expecting response: 138936328 bytes
 
    ✅ Response received!
    Response size: 138936328 bytes (27 chunks)
-   Wait time: 139.553979919s
-   Total time (query+wait): 139.746095158s
+   Wait time: 137.360567776s
+   Total time (query+wait): 137.551333068s
    Deserializing response...
 8. Recover results...
-   Recovery time: 10.659657ms
+   Recovery time: 10.064101ms
    Number of results: 16384
-   ✅  Verification passed!
+   ✅ Verification passed!
 
 📊 FINAL STATISTICS:
-   Query generation: 62.446476ms
-   Server wait time: 139.553979919s
-   Result recovery: 10.659657ms
-   Total elapsed: 139.820942363s
+   Query generation: 62.612332ms
+   Server wait time: 137.360567776s
+   Result recovery: 10.064101ms
+   Total elapsed: 137.626461592s
 
 🔶 Test completed!

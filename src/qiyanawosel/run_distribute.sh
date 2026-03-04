@@ -17,7 +17,7 @@ CLIENT_CORE=64
 pkill -f "qiyanawoselmaster\|qiyanawoselworker\|qiyanawoselclient" 2>/dev/null || true
 
 echo -e "\n📱  Starting Master Node..."
-RUSTFLAGS="-C target-cpu=native" numactl --cpunodebind=0 --membind=1 taskset -c $MASTER_CORE cargo run --release --bin qiyanawoselmaster -- $WORKER_NUM > ./result/result_master.txt 2>&1 &
+RUSTFLAGS="-C target-cpu=native" numactl --cpunodebind=0 --membind=0 taskset -c $MASTER_CORE cargo run --release --bin qiyanawoselmaster -- $WORKER_NUM > ./result/result_master.txt 2>&1 &
 MASTER_PID=$!
 echo "Master PID: $MASTER_PID"
 sleep 3
@@ -30,11 +30,11 @@ for ((i=0; i<WORKER_NUM; i++)); do
     echo -e "\n👷  Starting Worker $i..."
     if [ $i -lt $WORKERS_PER_NUMA ]; then
         NUMA_NODE=0
-        START_BASE=1
+        START_BASE=2
         NODE_CORES=63
     elif [ $i -lt $((WORKERS_PER_NUMA * 2)) ]; then
         NUMA_NODE=1
-        START_BASE=65
+        START_BASE=66
         NODE_CORES=127
     else
         NUMA_NODE=2

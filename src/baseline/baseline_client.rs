@@ -15,12 +15,12 @@ async fn main() {
     
     let server_addr = "127.0.0.1:9999";
     //let test_string = "cladoniaceae AND cladonia";
-    //let test_string = "cladoniaceae AND cladonia AND stereocaulaceae";    
+    let test_string = "cladoniaceae AND cladonia AND stereocaulaceae";
     //let test_string = "cladoniaceae AND cladonia AND stereocaulaceae AND podetia";
     //let test_string = "cladoniaceae OR cladonia";
-    //let test_string = "cladoniaceae OR cladonia OR stereocaulaceae";    
+    //let test_string = "cladoniaceae OR cladonia OR stereocaulaceae";
     //let test_string = "cladoniaceae OR cladonia OR stereocaulaceae OR podetia";
-    let test_string = "NOT cladoniaceae";
+    //let test_string = "NOT cladoniaceae";
     let length = 32usize;
     
     println!("1. Initialize TFHE Client...");
@@ -230,7 +230,7 @@ async fn main() {
                     break;
                 }
             }
-            
+
             if valid {
                 println!("   ✅ Verification passed!");
             } else {

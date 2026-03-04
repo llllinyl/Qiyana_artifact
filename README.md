@@ -118,12 +118,12 @@ We provide a shell script to support easy execution of the entire system. For ex
 ```
 cd src/<folder>
 chmod +x run_distribute.sh
-WORKER_NUM=4 ./run_distribute.sh
+(WORKER_NUM=4, default=8) ./run_distribute.sh
 ```
 
 When using Qiyana, you have the option of providing an additional parameter (`MODE=0/1` to represent standard/compressed communication):
 ```
-WORKER_NUM=2 MODE=1 ./run_distribute.sh
+(WORKER_NUM=2 MODE=1, default=8,1) ./run_distribute.sh
 ```
 
 Also, if you want to modify KEYWORD_SET_NUM (the size of each document's keyword set), DOCUMENT_NUM, THREAD_NUM and ports, please refer to the relevant file `share.rs`.
