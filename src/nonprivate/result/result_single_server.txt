@@ -1,0 +1,11 @@
+   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
+error[E0107]: type alias takes 1 generic argument but 2 generic arguments were supplied
+   --> src/nonprivate/nonprivate_server.rs:284:6
+    |
+284 | ) -> Result<(), Box<dyn Error>> {
+    |      ^^^^^^   ---------------- help: remove the unnecessary generic argument
+    |      |
+    |      expected 1 generic argument
+
+For more information about this error, try `rustc --explain E0107`.
+error: could not compile `qiyana` (lib) due to 1 previous error

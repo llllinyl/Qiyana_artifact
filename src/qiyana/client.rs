@@ -108,8 +108,8 @@ async fn main() {
     println!("   ✅ Preprocessing wait completed");
 
     println!("5. Generate query...");
-    let test_string = "cladoniaceae AND cladonia";
-    //let test_string = "cladoniaceae OR cladonia";
+    //let test_string = "cladoniaceae AND cladonia";
+    let test_string = "cladoniaceae OR cladonia";
     //let test_string = "NOT cladoniaceae";
     //let test_string = "(cladoniaceae OR cladonia OR stereocaulaceae) AND podetia AND NOT (swabians OR danube) AND pycnothelia AND stellaris";
     //let test_string = "(cladoniaceae AND cladonia AND stereocaulaceae) AND NOT (swabians OR danube) AND podetia AND NOT banat OR pycnothelia";
@@ -118,6 +118,7 @@ async fn main() {
     if mode == 0 {
         let (query, querysum, template, rank_vector) = client.qiyana_query(&test_string);
         let query_time = start_time.elapsed();
+        println!("   Client submit the Boolean query: {}", test_string);
         println!("   Query generation time: {:?}", query_time);
 
         let query_vec = vec![
@@ -176,6 +177,7 @@ async fn main() {
     } else {
         let (query, querysum, template, rank_vector) = client.qiyana_compress_query(&test_string);
         let query_time = start_time.elapsed();
+        println!("   Client submit the Boolean query: {}", test_string);
         println!("   Query generation time: {:?}", query_time);
 
         let query_vec = vec![
@@ -383,6 +385,36 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
                 break;
             }
         }
+        //NOT query
+        //if i % 16384 == 0 { 
+        //    if recovered[i] != 0 {
+        //        valid = false;
+        //        println!("error {} line 222: {}", i, recovered[i]);
+        //        break;
+        //    }
+        //}
+        //else{
+            //if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana-experiment/tf-idf.txt") {
+            //  let lines: Vec<&str> = tfidf_content.lines().collect();
+            //  if let Some(comma_index) = lines[i % 16384 + 1].find(',') {
+            //      let first_part = &lines[i % 16384 + 1][..comma_index];
+            //      let sum: u16 = first_part
+            //          .split(',')
+            //          .filter_map(|s| s.parse::<u16>().ok())
+            //          .take(32)
+            //          .sum();
+            //      if recovered[i] != sum {
+            //          valid = false;
+            //          break;
+            //      }
+            //  } else {
+            //      valid = false;
+            //      break;
+            //  }
+            //} else {
+            //  valid = false;
+            //}
+        //}
     }
             
     if valid {

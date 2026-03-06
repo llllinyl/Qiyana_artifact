@@ -99,6 +99,7 @@ async fn main() {
     let (query, querysum, template, rank_vector) = client.qiyana_compress_query(&test_string);
     
     let query_time = start_time.elapsed();
+    println!("   Client submit the Boolean query: {}", test_string);
     println!("   Query generation time: {:?}", query_time);
 
     let query_vec = vec![

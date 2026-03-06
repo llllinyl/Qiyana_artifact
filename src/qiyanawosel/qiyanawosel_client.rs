@@ -94,6 +94,7 @@ async fn main() {
     let start_time = Instant::now();
     let (query, querysum, template) = client.qiyanawosel_query(&test_string);
     let query_time = start_time.elapsed();
+    println!("   Client submit the Boolean query: {}", test_string);
     println!("   Query generation time: {:?}", query_time);
 
     let query_vec = vec![
@@ -223,12 +224,23 @@ async fn main() {
                 valid = false;
             }
             for i in 1..DOCUMENT_NUM {
-                if i < recovered.len() && recovered[i] {
+                if recovered[i] {
                     valid = false;
                     break;
                 }
             }
-            
+   
+            // NOT query
+            //if recovered[0] != false {
+            //    valid = false;
+            //}
+            //for i in 1..DOCUMENT_NUM {
+            //    if !recovered[i] {
+            //        valid = false;
+            //        break;
+            //    }
+            //}
+
             if valid {
                 println!("   ✅ Verification passed!");
             } else {

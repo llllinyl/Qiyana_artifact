@@ -1,32 +1,27 @@
-#![allow(unused_imports)]
-
 use std::time::Duration;
 use tokio::net::TcpStream;
 use tokio::io::{AsyncWriteExt, AsyncReadExt};
 use tokio::time::{timeout, sleep};
 use std::io::*;
-include!("baseline_sim.rs");
+use std::time::Instant;
+use serde::{Serialize, Deserialize};
+
+
+pub const DOCUMENT_NUM: usize = 16384;
+pub const KEYWORD_NUM: usize = 65536;
 
 #[tokio::main]
 async fn main() {
     println!("========================================");
-    println!("🔍 Baseline Client");
+    println!("🔍 Qiyana Client");
     println!("========================================\n");
     
     let server_addr = "127.0.0.1:9999";
-    //let test_string = "cladoniaceae AND cladonia";
-    let test_string = "cladoniaceae AND cladonia AND stereocaulaceae";
-    //let test_string = "cladoniaceae AND cladonia AND stereocaulaceae AND podetia";
+    let test_string = "cladoniaceae AND cladonia";
     //let test_string = "cladoniaceae OR cladonia";
-    //let test_string = "cladoniaceae OR cladonia OR stereocaulaceae";
-    //let test_string = "cladoniaceae OR cladonia OR stereocaulaceae OR podetia";
     //let test_string = "NOT cladoniaceae";
-    let length = 32usize;
     
-    println!("1. Initialize TFHE Client...");
-    let client = Client::new();
-    
-    println!("2. Connect to server: {}", server_addr);
+    println!("1. Connect to server: {}", server_addr);
     let connect_result = timeout(
         Duration::from_secs(10),
         TcpStream::connect(server_addr)
@@ -47,61 +42,24 @@ async fn main() {
         }
     };
 
-    println!("3. Send public parameters to server...");
-    let params_vec = vec![
-        bincode::serialize(&client.server_key).unwrap(),
-        bincode::serialize(&client.false_ciphertext).unwrap(),
-    ];
-    let serialized_pp = bincode::serialize(&params_vec).unwrap();
-    let pp_size = serialized_pp.len();
-    println!("   Public parameters size: {} bytes", pp_size);
-
-    let size_bytes = (pp_size as u64).to_be_bytes();
-    if let Err(e) = stream.write_all(&size_bytes).await {
-        println!("   ❌ Failed to send size header: {}", e);
-        return;
-    }
-
-    let chunk_size = 5 * 1024 * 1024;
-    let mut sent = 0;
-
-    while sent < pp_size {
-        let remaining = pp_size - sent;
-        let current_chunk_size = chunk_size.min(remaining);
-        let chunk = &serialized_pp[sent..sent + current_chunk_size];
-        
-        match stream.write_all(chunk).await {
-            Ok(()) => {
-                sent += current_chunk_size;
-            }
-            Err(e) => {
-                println!("   ❌ Failed to send chunk at {} bytes: {}", sent, e);
-                return;
-            }
-        }
-    }
-
-    println!("   ✅ Public parameters sent successfully!");
-
-    println!("4. Wait 10 seconds for server preprocessing...");
+    println!("2. Wait 10 seconds for server preprocessing...");
     sleep(Duration::from_secs(10)).await;
     println!("   ✅ Preprocessing wait completed");
 
-    println!("5. Generate query...");
-    let start_time = Instant::now();
-    let (query, format) = client.baseline_query(test_string, length);
-    let query_time = start_time.elapsed();
+    println!("3. Send query...");
     println!("   Client submit the Boolean query: {}", test_string);
-    println!("   Query generation time: {:?}", query_time);
-    
+    let start_time = Instant::now();
+    let mut rank_vector = Vec::new();
+    for num in 0..KEYWORD_NUM {
+        let input_message = if num < 32 { 1u64 } else { 0u64 };
+        rank_vector.push(input_message);
+    }
     let query_vec = vec![
-        bincode::serialize(&query).unwrap(),
-        bincode::serialize(&format).unwrap(),
+        bincode::serialize(&test_string).unwrap(),
+        bincode::serialize(&rank_vector).unwrap()
     ];
     let serialized_query = bincode::serialize(&query_vec).unwrap();
     let query_size = serialized_query.len();
-
-    println!("6. Send query to server...");
     let query_size_bytes = (query_size as u64).to_be_bytes();
     match stream.write_all(&query_size_bytes).await {
         Ok(()) => {}
@@ -121,20 +79,13 @@ async fn main() {
         let current_chunk_size = query_chunk_size.min(remaining);
         let chunk = &serialized_query[query_sent..query_sent + current_chunk_size];
         
-        match timeout(
-            Duration::from_secs(5),
-            stream.write_all(chunk)
-        ).await {
-            Ok(Ok(())) => {
+        match stream.write_all(chunk).await {
+            Ok(()) => {
                 query_sent += current_chunk_size;
                 query_chunk_count += 1;
             }
-            Ok(Err(e)) => {
+            Err(e) => {
                 println!("   ❌ Failed to send query chunk at {} bytes: {}", query_sent, e);
-                return;
-            }
-            Err(_) => {
-                println!("   ⏰ Send query chunk timeout at {} bytes", query_sent);
                 return;
             }
         }
@@ -146,7 +97,7 @@ async fn main() {
         query_sent, query_chunk_count, query_send_time,
         (query_sent as f64 / 1024.0 / 1024.0) / query_send_time.as_secs_f64());
     
-    println!("7. Waiting for server response...");
+    println!("4. Waiting for server response...");
     let wait_start = Instant::now();
     let mut dots = 0;
 
@@ -164,7 +115,7 @@ async fn main() {
             }
         }
     });
-
+    
     let wait_start = Instant::now();
 
     let mut size_buf = [0u8; 8];
@@ -211,49 +162,61 @@ async fn main() {
     println!("   Total time (query+wait): {:?}", total_time);
 
     println!("   Deserializing response...");
-    match bincode::deserialize::<Vec<FheBool>>(&all_response_data) {
-        Ok(response) => {
-            println!("8. Recover results...");
-            let recover_start = Instant::now();
-            let recovered = client.baseline_recovery(response);
-            let recover_time = recover_start.elapsed();
-            
-            println!("   Recovery time: {:?}", recover_time);
+    match bincode::deserialize::<Vec<u64>>(&all_response_data) {
+        Ok(recovered) => {
+            println!("5. Check results...");
             println!("   Number of results: {}", recovered.len());
             
             let mut valid = true;
-            if recovered[0] != true {
+            if recovered[0] != 222 {
                 valid = false;
             }
             for i in 1..DOCUMENT_NUM {
-                if i < recovered.len() && recovered[i] {
+                if i < recovered.len() && (recovered[i] != 0) {
                     valid = false;
                     break;
                 }
             }
 
-            // NOT query
-            //if recovered[0] != false {
-            //    valid = false;
-            //}
-            //for i in 1..DOCUMENT_NUM {
-            //    if !recovered[i] {
-            //        valid = false;
-            //        break;
-            //    }
-            //}
+            // if recovered[0] != 0 {
+            //     valid = false;
+            // }
 
+            // if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana-experiment/tf-idf.txt") {
+            //     let lines: Vec<&str> = tfidf_content.lines().collect();
+
+            //     for i in 1..recovered.len() {
+            //         let line_idx = i + 1;
+
+            //         if line_idx < lines.len() {
+            //             if let Some(comma_index) = lines[line_idx].find(',') {
+            //                 let first_part = &lines[line_idx][..comma_index];
+
+            //                 let sum: u16 = first_part
+            //                     .split(',')
+            //                     .filter_map(|s| s.parse::<u16>().ok())
+            //                     .take(32)
+            //                     .sum();
+
+            //                 if recovered[i] != sum {
+            //                     valid = false;
+            //                     break;
+            //                 }
+            //             } else {
+            //                 valid = false;
+            //                 break;
+            //             }
+            //         }
+            //     }
+            // } else {
+            //     valid = false;
+            // }
+            
             if valid {
                 println!("   ✅ Verification passed!");
             } else {
                 println!("   ❌ Verification failed!");
             }
-            
-            println!("\n📊 FINAL STATISTICS:");
-            println!("   Query generation: {:?}", query_time);
-            println!("   Server wait time: {:?}", wait_time);
-            println!("   Result recovery: {:?}", recover_time);
-            println!("   Total elapsed: {:?}", start_time.elapsed());
         }
         Err(e) => {
             println!("❌ Failed to deserialize response: {}", e);

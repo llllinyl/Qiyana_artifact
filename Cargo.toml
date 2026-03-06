@@ -4,6 +4,16 @@ version = "0.1.0"
 edition = "2021"
 
 [[bin]]
+name = "nonprivate_server"
+path = "src/nonprivate/nonprivate_server.rs"
+test = false
+
+[[bin]]
+name = "nonprivate_client"
+path = "src/nonprivate/nonprivate_client.rs"
+test = false
+
+[[bin]]
 name = "baseline_server"
 path = "src/baseline/baseline_server.rs"
 test = false

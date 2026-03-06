@@ -7,9 +7,5 @@
     redundant_semicolons
 )]
 
-
-pub mod utils;
-pub mod baseline;
-pub mod qiyana;
-pub mod qiyanawosel;
-pub mod nonprivate;
+pub mod nonprivate_client;
+pub mod nonprivate_server;

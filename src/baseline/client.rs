@@ -100,6 +100,7 @@ async fn main() {
     let start_time = Instant::now();
     let (encrypted_results, queryformat) = client.baseline_query(&test_string, 32usize);
     let query_time = start_time.elapsed();
+    println!("   Client submit the Boolean query: {}", test_string);
     println!("   Query generation time: {:?}", query_time);
 
     let query_vec = vec![
@@ -275,6 +276,19 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, expe
                 break;
             }
         }
+        //NOT query
+        //if i % 16384 == 0 { 
+        //    if recovered[i] != true {
+        //        valid = false;
+        //        break;
+        //    }
+        //}
+        //else{
+        //    if recovered[i] {
+        //        valid = false;
+        //        break;
+        //    }
+        //}
     }
     
     if valid {
