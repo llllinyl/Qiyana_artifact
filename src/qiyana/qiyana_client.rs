@@ -237,7 +237,8 @@ async fn main() {
                     break;
                 }
             }
-
+            
+            // NOT query
             // if recovered[0] != 0 {
             //     valid = false;
             // }

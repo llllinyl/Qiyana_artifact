@@ -369,7 +369,7 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
 
     println!("   Recovery time: {:?}", recover_time);
     println!("   Number of results: {}", recovered.len());
-         
+    
     let mut expected_values = vec![0u16; 16384];
 
     if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana-experiment/tf-idf.txt") {
@@ -398,33 +398,33 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
 
     let mut valid = true;
     for i in 0..DOCUMENT_NUM {
-        //if i % 16384 == 0 {
-        //    if recovered[i] != 222 {
-        //        valid = false;
-        //        println!("error {} line 222: {}", i, recovered[i]);
-        //        break;
-        //    }
-        //}
-        //else{
-        //    if recovered[i] != 0 {
-        //        valid = false;
-        //        break;
-        //    }
-        //}
-        //NOT query
-        if i % 16384 == 0 { 
-            if recovered[i] != 0 {
+        if i % 16384 == 0 {
+            if recovered[i] != 222 {
                 valid = false;
                 println!("error {} line 222: {}", i, recovered[i]);
                 break;
             }
         }
         else{
-            if recovered[i] != expected_values[i] {
+            if recovered[i] != 0 {
                 valid = false;
                 break;
             }
         }
+        //NOT query
+        //if i % 16384 == 0 { 
+        //    if recovered[i] != 0 {
+        //        valid = false;
+        //        println!("error {} line 222: {}", i, recovered[i]);
+        //        break;
+        //    }
+        //}
+        //else{
+        //    if recovered[i] != expected_values[i] {
+        //        valid = false;
+        //        break;
+        //    }
+        //}
     }
             
     if valid {
