@@ -109,8 +109,8 @@ async fn main() {
 
     println!("5. Generate query...");
     //let test_string = "cladoniaceae AND cladonia";
-    let test_string = "cladoniaceae OR cladonia";
-    //let test_string = "NOT cladoniaceae";
+    //let test_string = "cladoniaceae OR cladonia";
+    let test_string = "NOT cladoniaceae";
     //let test_string = "(cladoniaceae OR cladonia OR stereocaulaceae) AND podetia AND NOT (swabians OR danube) AND pycnothelia AND stellaris";
     //let test_string = "(cladoniaceae AND cladonia AND stereocaulaceae) AND NOT (swabians OR danube) AND podetia AND NOT banat OR pycnothelia";
     //let test_string = "(cladoniaceae AND NOT swabians) OR (cladonia AND stereocaulaceae AND NOT danube) OR (podetia AND pycnothelia AND stellaris)";
@@ -369,52 +369,62 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
 
     println!("   Recovery time: {:?}", recover_time);
     println!("   Number of results: {}", recovered.len());
-            
+         
+    let mut expected_values = vec![0u16; 16384];
+
+    if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana-experiment/tf-idf.txt") {
+        let lines: Vec<&str> = tfidf_content.lines().collect();
+        let required_lines = 16385;
+        if lines.len() >= required_lines {
+            for i in 0..16384 {
+                let line_index = i + 1;
+                if let Some(comma_index) = lines[line_index].find(',') {
+                    let first_part = &lines[line_index][..comma_index];
+                    let sum: u16 = first_part
+                        .split(',')
+                        .filter_map(|s| s.parse::<u16>().ok())
+                        .take(32)
+                        .sum();
+                    expected_values[i] = sum;
+                }
+            }
+        } else {
+            println!("File doesn't have enough lines. Has: {}, Need: {}", 
+                    lines.len(), required_lines);
+        }
+    } else {
+        println!("Failed to read file");
+    }
+
     let mut valid = true;
     for i in 0..DOCUMENT_NUM {
-        if i % 16384 == 0 {
-            if recovered[i] != 222 {
-                valid = false;
-                println!("error {} line 222: {}", i, recovered[i]);
-                break;
-            }
-        }
-        else{
-            if recovered[i] != 0 {
-                valid = false;
-                break;
-            }
-        }
-        //NOT query
-        //if i % 16384 == 0 { 
-        //    if recovered[i] != 0 {
+        //if i % 16384 == 0 {
+        //    if recovered[i] != 222 {
         //        valid = false;
         //        println!("error {} line 222: {}", i, recovered[i]);
         //        break;
         //    }
         //}
         //else{
-            //if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana-experiment/tf-idf.txt") {
-            //  let lines: Vec<&str> = tfidf_content.lines().collect();
-            //  if let Some(comma_index) = lines[i % 16384 + 1].find(',') {
-            //      let first_part = &lines[i % 16384 + 1][..comma_index];
-            //      let sum: u16 = first_part
-            //          .split(',')
-            //          .filter_map(|s| s.parse::<u16>().ok())
-            //          .take(32)
-            //          .sum();
-            //      if recovered[i] != sum {
-            //          valid = false;
-            //          break;
-            //      }
-            //  } else {
-            //      valid = false;
-            //      break;
-            //  }
-            //} else {
-            //  valid = false;
-            //}
+        //    if recovered[i] != 0 {
+        //        valid = false;
+        //        break;
+        //    }
         //}
+        //NOT query
+        if i % 16384 == 0 { 
+            if recovered[i] != 0 {
+                valid = false;
+                println!("error {} line 222: {}", i, recovered[i]);
+                break;
+            }
+        }
+        else{
+            if recovered[i] != expected_values[i] {
+                valid = false;
+                break;
+            }
+        }
     }
             
     if valid {

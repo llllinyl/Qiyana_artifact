@@ -1,6 +1,6 @@
-    Blocking    Blocking    Blocking waiting for file lock on package cache
- waiting for file lock on package cache
- waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
@@ -31,8 +31,8 @@
     Blocking waiting for file lock on build directory
     Blocking waiting for file lock on build directory
     Blocking waiting for file lock on build directory
-    Blocking waiting for file lock on build directory
-    Blocking waiting for file lock on build directory
+    Blocking    Blocking waiting for file lock on build directory
+ waiting for file lock on build directory
     Blocking waiting for file lock on build directory
     Blocking waiting for file lock on build directory
     Blocking waiting for file lock on build directory
@@ -64,9 +64,36 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 1m 00s
+    Finished `release` profile [optimized] target(s) in 46.57s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 3 8`
-   Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
+warning: unused import: `std::collections::HashMap`
+ --> src/baseline/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/baseline/share.rs:13:18
+   |
+13 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 46.57s
 ========================================
 👷 Worker 3/8
 ========================================
@@ -76,63 +103,7 @@ Worker 3 will use port 8003
 1. Connecting to Master at 127.0.0.1:10000...
    ✅ Worker  connected from port 8003
 2. Waiting for public parameters from Master...
-warning: unused import: `std::collections::HashMap`
- --> src/baseline/share.rs:1:5
-  |
-1 | use std::collections::HashMap;
-  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  |
-  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
-
-warning: unused import: `std::sync::Arc`
- --> src/baseline/share.rs:4:5
-  |
-4 | use std::sync::Arc;
-  |     ^^^^^^^^^^^^^^
-
-warning: unused import: `TcpListener`
-  --> src/baseline/share.rs:13:18
-   |
-13 | use tokio::net::{TcpListener, TcpStream};
-   |                  ^^^^^^^^^^^
-
-warning: unused import: `timeout`
-  --> src/baseline/share.rs:14:26
-   |
-14 | use tokio::time::{sleep, timeout};
-   |                          ^^^^^^^
-
-warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 1m 16s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 2 8`
-warning: unused import: `std::collections::HashMap`
- --> src/baseline/share.rs:1:5
-  |
-1 | use std::collections::HashMap;
-  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  |
-  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
-
-warning: unused import: `std::sync::Arc`
- --> src/baseline/share.rs:4:5
-  |
-4 | use std::sync::Arc;
-  |     ^^^^^^^^^^^^^^
-
-warning: unused import: `TcpListener`
-  --> src/baseline/share.rs:13:18
-   |
-13 | use tokio::net::{TcpListener, TcpStream};
-   |                  ^^^^^^^^^^^
-
-warning: unused import: `timeout`
-  --> src/baseline/share.rs:14:26
-   |
-14 | use tokio::time::{sleep, timeout};
-   |                          ^^^^^^^
-
-warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 1m 16s
 ========================================
 👷 Worker 2/8
 ========================================
@@ -142,16 +113,6 @@ Worker 2 will use port 8002
 1. Connecting to Master at 127.0.0.1:10000...
    ✅ Worker  connected from port 8002
 2. Waiting for public parameters from Master...
-     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 0 8`
-========================================
-👷 Worker 0/8
-========================================
-
-📁 Keyword file: /root/Qiyana-experiment/keyword.txt
-Worker 0 will use port 8000
-1. Connecting to Master at 127.0.0.1:10000...
-   ✅ Worker  connected from port 8000
-2. Waiting for public parameters from Master...
 warning: unused import: `std::collections::HashMap`
  --> src/baseline/share.rs:1:5
   |
@@ -179,7 +140,7 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 1m 16s
+    Finished `release` profile [optimized] target(s) in 46.58s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 1 8`
 ========================================
 👷 Worker 1/8
@@ -217,7 +178,7 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 1m 16s
+    Finished `release` profile [optimized] target(s) in 46.58s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 5 8`
 ========================================
 👷 Worker 5/8
@@ -255,7 +216,7 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 1m 16s
+    Finished `release` profile [optimized] target(s) in 46.59s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 4 8`
 ========================================
 👷 Worker 4/8
@@ -293,7 +254,7 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 1m 16s
+    Finished `release` profile [optimized] target(s) in 46.59s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 6 8`
 ========================================
 👷 Worker 6/8
@@ -331,7 +292,7 @@ warning: unused import: `timeout`
    |                          ^^^^^^^
 
 warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 1m 16s
+    Finished `release` profile [optimized] target(s) in 46.60s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 7 8`
 ========================================
 👷 Worker 7/8
@@ -342,369 +303,279 @@ Worker 7 will use port 8007
 1. Connecting to Master at 127.0.0.1:10000...
    ✅ Worker  connected from port 8007
 2. Waiting for public parameters from Master...
+warning: unused import: `std::collections::HashMap`
+ --> src/baseline/share.rs:1:5
+  |
+1 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::sync::Arc`
+ --> src/baseline/share.rs:4:5
+  |
+4 | use std::sync::Arc;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `TcpListener`
+  --> src/baseline/share.rs:13:18
+   |
+13 | use tokio::net::{TcpListener, TcpStream};
+   |                  ^^^^^^^^^^^
+
+warning: unused import: `timeout`
+  --> src/baseline/share.rs:14:26
+   |
+14 | use tokio::time::{sleep, timeout};
+   |                          ^^^^^^^
+
+warning: `qiyana` (bin "baselineworker") generated 4 warnings (run `cargo fix --bin "baselineworker"` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 46.60s
+     Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/baselineworker 0 8`
+========================================
+👷 Worker 0/8
+========================================
+
+📁 Keyword file: /root/Qiyana-experiment/keyword.txt
+Worker 0 will use port 8000
+1. Connecting to Master at 127.0.0.1:10000...
+   ✅ Worker  connected from port 8000
+2. Waiting for public parameters from Master...
 [127.0.0.1:10000]   Expecting 127823230 bytes total
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 75.571469ms
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 78.058611ms
+[127.0.0.1:10000]   Expecting 127823230 bytes total
+[Worker 5]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 80.131146ms
+[127.0.0.1:10000]   Expecting 127823230 bytes total
+[Worker 6]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 77.207437ms
+[Worker 5]   ✅ All parameters deserialized in 276.449444ms
+[Worker 5] 2. Server preprocessing...
+[Worker 5]: Successfully loaded 64 keyword sets
+[Worker 5]   Server initialized in 976.747µs
+[Worker 5]   Number of documents: 512
+[Worker 5]   ✅ Preprocessing completed
+[Worker 5] 3. Waiting for query from Master...
 [127.0.0.1:10000]   Expecting 127823230 bytes total
 [Worker 0]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 77.007466ms
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 78.706158ms
+[Worker 6]   ✅ All parameters deserialized in 276.482727ms
+[Worker 6] 2. Server preprocessing...
+[Worker 6]: Successfully loaded 64 keyword sets
+[Worker 6]   Server initialized in 968.75µs
+[Worker 6]   Number of documents: 512
+[Worker 6]   ✅ Preprocessing completed
+[Worker 6] 3. Waiting for query from Master...
 [127.0.0.1:10000]   Expecting 127823230 bytes total
 [Worker 7]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 78.952265ms
-[Worker 0]   ✅ All parameters deserialized in 277.642925ms
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 79.461437ms
+[Worker 0]   ✅ All parameters deserialized in 276.835829ms
 [Worker 0] 2. Server preprocessing...
-[Worker 0]: Successfully loaded 128 keyword sets
-[Worker 0]   Server initialized in 921.365µs
-[Worker 0]   Number of documents: 1024
+[Worker 0]: Successfully loaded 64 keyword sets
+[Worker 0]   Server initialized in 910.539µs
+[Worker 0]   Number of documents: 512
 [Worker 0]   ✅ Preprocessing completed
 [Worker 0] 3. Waiting for query from Master...
 [127.0.0.1:10000]   Expecting 127823230 bytes total
 [Worker 4]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 75.222144ms
-[Worker 7]   ✅ All parameters deserialized in 275.684701ms
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 76.852558ms
+[Worker 7]   ✅ All parameters deserialized in 276.292739ms
 [Worker 7] 2. Server preprocessing...
-[Worker 7]: Successfully loaded 128 keyword sets
-[Worker 7]   Server initialized in 975.186µs
-[Worker 7]   Number of documents: 1024
+[Worker 7]: Successfully loaded 64 keyword sets
+[Worker 7]   Server initialized in 971.383µs
+[Worker 7]   Number of documents: 512
 [Worker 7]   ✅ Preprocessing completed
 [Worker 7] 3. Waiting for query from Master...
 [127.0.0.1:10000]   Expecting 127823230 bytes total
-[Worker 1]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 78.360423ms
-[Worker 4]   ✅ All parameters deserialized in 276.611139ms
+[Worker 2]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 75.424014ms
+[Worker 4]   ✅ All parameters deserialized in 276.467726ms
 [Worker 4] 2. Server preprocessing...
-[Worker 4]: Successfully loaded 128 keyword sets
-[Worker 4]   Server initialized in 1.028078ms
-[Worker 4]   Number of documents: 1024
+[Worker 4]: Successfully loaded 64 keyword sets
+[Worker 4]   Server initialized in 953.023µs
+[Worker 4]   Number of documents: 512
 [Worker 4]   ✅ Preprocessing completed
 [Worker 4] 3. Waiting for query from Master...
 [127.0.0.1:10000]   Expecting 127823230 bytes total
-[Worker 6]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 78.096418ms
-[Worker 1]   ✅ All parameters deserialized in 276.880163ms
-[Worker 1] 2. Server preprocessing...
-[Worker 1]: Successfully loaded 128 keyword sets
-[Worker 1]   Server initialized in 964.059µs
-[Worker 1]   Number of documents: 1024
-[Worker 1]   ✅ Preprocessing completed
-[Worker 1] 3. Waiting for query from Master...
-[127.0.0.1:10000]   Expecting 127823230 bytes total
-[Worker 5]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 76.613079ms
-[Worker 6]   ✅ All parameters deserialized in 276.870951ms
-[Worker 6] 2. Server preprocessing...
-[Worker 6]: Successfully loaded 128 keyword sets
-[Worker 6]   Server initialized in 997.806µs
-[Worker 6]   Number of documents: 1024
-[Worker 6]   ✅ Preprocessing completed
-[Worker 6] 3. Waiting for query from Master...
-[127.0.0.1:10000]   Expecting 127823230 bytes total
-[Worker 3]   ✅ Public parameters package deserialized, 2 params
-[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 76.567384ms
-[Worker 5]   ✅ All parameters deserialized in 284.606803ms
-[Worker 5] 2. Server preprocessing...
-[Worker 5]: Successfully loaded 128 keyword sets
-[Worker 5]   Server initialized in 980.235µs
-[Worker 5]   Number of documents: 1024
-[Worker 5]   ✅ Preprocessing completed
-[Worker 5] 3. Waiting for query from Master...
-.[Worker 2]   ✅ Public parameters package deserialized, 2 params
-[Worker 3]   ✅ All parameters deserialized in 276.540712ms
-[Worker 3] 2. Server preprocessing...
-[Worker 3]: Successfully loaded 128 keyword sets
-[Worker 3]   Server initialized in 942.005µs
-[Worker 3]   Number of documents: 1024
-[Worker 3]   ✅ Preprocessing completed
-[Worker 3] 3. Waiting for query from Master...
-.[Worker 2]   ✅ All parameters deserialized in 274.976879ms
+[Worker 1]   ✅ Public parameters package deserialized, 2 params
+[Worker 127.0.0.1:10000]   ✅ Received all bytes of public parameters, took 76.753042ms
+[Worker 2]   ✅ All parameters deserialized in 275.877168ms
 [Worker 2] 2. Server preprocessing...
-[Worker 2]: Successfully loaded 128 keyword sets
-[Worker 2]   Server initialized in 925.551µs
-[Worker 2]   Number of documents: 1024
+[Worker 2]: Successfully loaded 64 keyword sets
+[Worker 2]   Server initialized in 923.482µs
+[Worker 2]   Number of documents: 512
 [Worker 2]   ✅ Preprocessing completed
 [Worker 2] 3. Waiting for query from Master...
-...............................................................................................................................................[127.0.0.1:10000]   Expecting query: 4215414 bytes
-[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.345404ms (1 chunks, 1714.05 MB/s)
-[Worker 0]   Deserializing query...
-[127.0.0.1:10000]   Expecting query: 4215414 bytes
-[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.720793ms (1 chunks, 1477.56 MB/s)
-[Worker 7]   Deserializing query...
-[127.0.0.1:10000]   Expecting query: 4215414 bytes
-[Worker 0]   ✅ Query package deserialized, 2 params
-[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.724746ms (1 chunks, 1475.42 MB/s)
-[Worker 4]   Deserializing query...
-[Worker 0]    ✅ All query deserialized in 1.011494ms
-[Worker 0] 4. Processing query...
-[127.0.0.1:10000]   Expecting query: 4215414 bytes
-[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.294942ms (1 chunks, 1751.74 MB/s)
-[Worker 7]   ✅ Query package deserialized, 2 params
-[Worker 1]   Deserializing query...
-[127.0.0.1:10000]   Expecting query: 4215414 bytes
-[Worker 7]    ✅ All query deserialized in 950.902µs
-[Worker 7] 4. Processing query...
-[Worker 4]   ✅ Query package deserialized, 2 params
-[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.744666ms (1 chunks, 1464.71 MB/s)
-[Worker 6]   Deserializing query...
-[127.0.0.1:10000]   Expecting query: 4215414 bytes
-[Worker 4]    ✅ All query deserialized in 1.137954ms
-[Worker 4] 4. Processing query...
-[Worker 1]   ✅ Query package deserialized, 2 params
-[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.764713ms (1 chunks, 1454.09 MB/s)
+.[Worker 3]   ✅ Public parameters package deserialized, 2 params
+[Worker 1]   ✅ All parameters deserialized in 276.971327ms
+[Worker 1] 2. Server preprocessing...
+[Worker 1]: Successfully loaded 64 keyword sets
+[Worker 1]   Server initialized in 872.035µs
+[Worker 1]   Number of documents: 512
+[Worker 1]   ✅ Preprocessing completed
+[Worker 1] 3. Waiting for query from Master...
+.[Worker 3]   ✅ All parameters deserialized in 275.084386ms
+[Worker 3] 2. Server preprocessing...
+[Worker 3]: Successfully loaded 64 keyword sets
+[Worker 3]   Server initialized in 915.476µs
+[Worker 3]   Number of documents: 512
+[Worker 3]   ✅ Preprocessing completed
+[Worker 3] 3. Waiting for query from Master...
+..............................................................................................................................................[127.0.0.1:10000]   Expecting query: 2107729 bytes
+[127.0.0.1:10000]   ✅ Received query (2107729 bytes) in 493.238µs (1 chunks, 4075.29 MB/s)
 [Worker 5]   Deserializing query...
-[127.0.0.1:10000]   Expecting query: 4215414 bytes
-[Worker 1]    ✅ All query deserialized in 1.146105ms
-[Worker 1] 4. Processing query...
-[Worker 6]   ✅ Query package deserialized, 2 params
-[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.598407ms (1 chunks, 1547.15 MB/s)
-[Worker 3]   Deserializing query...
-[127.0.0.1:10000]   Expecting query: 4215414 bytes
-[Worker 6]    ✅ All query deserialized in 1.160407ms
-[Worker 6] 4. Processing query...
+.[127.0.0.1:10000]   Expecting query: 2107729 bytes
 [Worker 5]   ✅ Query package deserialized, 2 params
-[127.0.0.1:10000]   ✅ Received query (4215414 bytes) in 2.588346ms (1 chunks, 1553.17 MB/s)
-[Worker 2]   Deserializing query...
-[Worker 5]    ✅ All query deserialized in 1.091534ms
+[127.0.0.1:10000]   ✅ Received query (2107729 bytes) in 858.126µs (1 chunks, 2342.41 MB/s)
+[Worker 6]   Deserializing query...
+[Worker 5]    ✅ All query deserialized in 760.026µs
 [Worker 5] 4. Processing query...
-[Worker 3]   ✅ Query package deserialized, 2 params
-[Worker 3]    ✅ All query deserialized in 1.016213ms
-[Worker 3] 4. Processing query...
+[127.0.0.1:10000]   Expecting query: 2107729 bytes
+[127.0.0.1:10000]   ✅ Received query (2107729 bytes) in 852.176µs (1 chunks, 2358.77 MB/s)
+[Worker 0]   Deserializing query...
+[Worker 6]   ✅ Query package deserialized, 2 params
+[Worker 6]    ✅ All query deserialized in 316.294µs
+[Worker 6] 4. Processing query...
+[127.0.0.1:10000]   Expecting query: 2107729 bytes
+[127.0.0.1:10000]   ✅ Received query (2107729 bytes) in 860.018µs (1 chunks, 2337.26 MB/s)
+[Worker 7]   Deserializing query...
+[Worker 0]   ✅ Query package deserialized, 2 params
+[Worker 0]    ✅ All query deserialized in 305.174µs
+[Worker 0] 4. Processing query...
+[127.0.0.1:10000]   Expecting query: 2107729 bytes
+[127.0.0.1:10000]   ✅ Received query (2107729 bytes) in 451.34µs (1 chunks, 4453.60 MB/s)
+[Worker 4]   Deserializing query...
+[Worker 7]   ✅ Query package deserialized, 2 params
+[Worker 7]    ✅ All query deserialized in 294.253µs
+[Worker 7] 4. Processing query...
+[127.0.0.1:10000]   Expecting query: 2107729 bytes
+[Worker 4]   ✅ Query package deserialized, 2 params
+[127.0.0.1:10000]   ✅ Received query (2107729 bytes) in 780.129µs (1 chunks, 2576.61 MB/s)
+[Worker 2]   Deserializing query...
+[Worker 4]    ✅ All query deserialized in 797.24µs
+[Worker 4] 4. Processing query...
+[127.0.0.1:10000]   Expecting query: 2107729 bytes
+[127.0.0.1:10000]   ✅ Received query (2107729 bytes) in 792.463µs (1 chunks, 2536.51 MB/s)
+[Worker 1]   Deserializing query...
 [Worker 2]   ✅ Query package deserialized, 2 params
-[Worker 2]    ✅ All query deserialized in 1.068304ms
+[Worker 2]    ✅ All query deserialized in 293.371µs
 [Worker 2] 4. Processing query...
+[127.0.0.1:10000]   Expecting query: 2107729 bytes
+[127.0.0.1:10000]   ✅ Received query (2107729 bytes) in 812.99µs (1 chunks, 2472.46 MB/s)
+[Worker 3]   Deserializing query...
+[Worker 1]   ✅ Query package deserialized, 2 params
+[Worker 1]    ✅ All query deserialized in 283.647µs
+[Worker 1] 4. Processing query...
+[Worker 3]   ✅ Query package deserialized, 2 params
+[Worker 3]    ✅ All query deserialized in 300.671µs
+[Worker 3] 4. Processing query...
 ......................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (60.066355901s elapsed)
+   Still waiting... (60.061901566s elapsed)
 ..
-   Still waiting... (60.064976409s elapsed)
+   Still waiting... (60.066892562s elapsed)
 ..
-   Still waiting... (60.072486452s elapsed)
+   Still waiting... (60.10035735s elapsed)
 .
-   Still waiting... (60.06455858s elapsed)
+   Still waiting... (60.067116944s elapsed)
 .
-   Still waiting... (60.066583361s elapsed)
+   Still waiting... (60.063969658s elapsed)
 .
-   Still waiting... (60.065821594s elapsed)
+   Still waiting... (60.06490231s elapsed)
 ..
-   Still waiting... (60.066776063s elapsed)
+   Still waiting... (60.064820467s elapsed)
 ..
-   Still waiting... (60.067782658s elapsed)
+   Still waiting... (60.066858658s elapsed)
 .....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (120.133454975s elapsed)
+   Still waiting... (120.12389833s elapsed)
 ..
-   Still waiting... (120.13328838s elapsed)
+   Still waiting... (120.135211272s elapsed)
 ..
-   Still waiting... (120.147564881s elapsed)
+   Still waiting... (120.218350419s elapsed)
 .
-   Still waiting... (120.132953304s elapsed)
+   Still waiting... (120.13489979s elapsed)
 .
-   Still waiting... (120.135891611s elapsed)
+   Still waiting... (120.130700645s elapsed)
 .
-   Still waiting... (120.126814866s elapsed)
+   Still waiting... (120.130611091s elapsed)
 ..
-   Still waiting... (120.135367782s elapsed)
+   Still waiting... (120.13394495s elapsed)
 ..
-   Still waiting... (120.136635869s elapsed)
-.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (180.19722466s elapsed)
-..
-   Still waiting... (180.202860383s elapsed)
-..
-   Still waiting... (180.219389061s elapsed)
-.
-   Still waiting... (180.198963785s elapsed)
-.
-   Still waiting... (180.205639093s elapsed)
-.
-   Still waiting... (180.191818795s elapsed)
-..
-   Still waiting... (180.203926609s elapsed)
-..
-   Still waiting... (180.201648282s elapsed)
-.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (240.262734625s elapsed)
-..
-   Still waiting... (240.269588032s elapsed)
-..
-   Still waiting... (240.289472288s elapsed)
-.
-   Still waiting... (240.266650981s elapsed)
-.
-   Still waiting... (240.273604207s elapsed)
-.
-   Still waiting... (240.254823272s elapsed)
-..
-   Still waiting... (240.272632497s elapsed)
-..
-   Still waiting... (240.268757293s elapsed)
-.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (300.330480161s elapsed)
-..
-   Still waiting... (300.338002715s elapsed)
-..
-   Still waiting... (300.359546591s elapsed)
-.
-   Still waiting... (300.334919612s elapsed)
-.
-   Still waiting... (300.342563622s elapsed)
-.
-   Still waiting... (300.317968572s elapsed)
-..
-   Still waiting... (300.339527177s elapsed)
-..
-   Still waiting... (300.335763041s elapsed)
-.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (360.397656086s elapsed)
-..
-   Still waiting... (360.406097283s elapsed)
-..
-   Still waiting... (360.432287025s elapsed)
-.
-   Still waiting... (360.401318874s elapsed)
-.
-   Still waiting... (360.41024282s elapsed)
-.
-   Still waiting... (360.384820301s elapsed)
-..
-   Still waiting... (360.406308709s elapsed)
-..
-   Still waiting... (360.404060042s elapsed)
-.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (420.463381565s elapsed)
-..
-   Still waiting... (420.473993169s elapsed)
-..
-   Still waiting... (420.504270431s elapsed)
-.
-   Still waiting... (420.47039984s elapsed)
-.
-   Still waiting... (420.479046652s elapsed)
-.
-   Still waiting... (420.448264552s elapsed)
-..
-   Still waiting... (420.470005246s elapsed)
-..
-   Still waiting... (420.470379969s elapsed)
-.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (480.530352242s elapsed)
-..
-   Still waiting... (480.54270765s elapsed)
-..
-   Still waiting... (480.577571142s elapsed)
-.
-   Still waiting... (480.538687417s elapsed)
-.
-   Still waiting... (480.541823657s elapsed)
-.
-   Still waiting... (480.512991054s elapsed)
-..
-   Still waiting... (480.534678789s elapsed)
-..
-   Still waiting... (480.535700617s elapsed)
-.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (540.596460518s elapsed)
-..
-   Still waiting... (540.610906935s elapsed)
-..
-   Still waiting... (540.651291293s elapsed)
-.
-   Still waiting... (540.607032592s elapsed)
-.
-   Still waiting... (540.611473242s elapsed)
-.
-   Still waiting... (540.580815271s elapsed)
-..
-   Still waiting... (540.601342841s elapsed)
-..
-   Still waiting... (540.603141991s elapsed)
-.....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-   Still waiting... (600.663696038s elapsed)
-..
-   Still waiting... (600.678742791s elapsed)
-..
-   Still waiting... (600.725269085s elapsed)
-.
-   Still waiting... (600.67426789s elapsed)
-.
-   Still waiting... (600.679166562s elapsed)
-.
-   Still waiting... (600.644823303s elapsed)
-..
-   Still waiting... (600.667796015s elapsed)
-..
-   Still waiting... (600.671973127s elapsed)
-............................................................................Homomorphic Subset Testing time: 592.418123023s
-...Boolean Match time: 220.613379ms
-[Worker 0]   ✅ Query processed in 592.639858003s
-[Worker 0] 5. Connecting and sending to Client at 127.0.0.1:10001...
-   🔗 [Worker 0]: Attempt 1 to connect...
-[Worker 0]  Sending response...
-[Worker 0]  Response size: 2109448 bytes
-[127.0.0.1:10001]   ✅ Response sent in 742.288µs (1 chunks, 2710.17 MB/s)
-   ✅ Task spawned for Worker 0
-........................Homomorphic Subset Testing time: 596.088674434s
-.Boolean Match time: 219.671785ms
-[Worker 2]   ✅ Query processed in 596.309972803s
-[Worker 2] 5. Connecting and sending to Client at 127.0.0.1:10001...
-   🔗 [Worker 2]: Attempt 1 to connect...
-[Worker 2]  Sending response...
-[Worker 2]  Response size: 2109448 bytes
-[127.0.0.1:10001]   ✅ Response sent in 720.572µs (1 chunks, 2791.85 MB/s)
-   ✅ Task spawned for Worker 2
-.......................................................................................................................................Homomorphic Subset Testing time: 618.791865467s
-.Boolean Match time: 209.437707ms
-[Worker 1]   ✅ Query processed in 619.002376603s
+   Still waiting... (120.136476985s elapsed)
+...........................................................................................................................................................................................................................................................................................................................................................................................................................Homomorphic Subset Testing time: 153.782612888s
+Boolean Match time: 81.161µs
+[Worker 1]   ✅ Query processed in 153.78448838s
 [Worker 1] 5. Connecting and sending to Client at 127.0.0.1:10001...
    🔗 [Worker 1]: Attempt 1 to connect...
 [Worker 1]  Sending response...
-[Worker 1]  Response size: 2109448 bytes
-[127.0.0.1:10001]   ✅ Response sent in 700.484µs (1 chunks, 2871.91 MB/s)
+[Worker 1]  Response size: 1054728 bytes
+[127.0.0.1:10001]   ✅ Response sent in 365.054µs (1 chunks, 2755.39 MB/s)
    ✅ Task spawned for Worker 1
-.....Homomorphic Subset Testing time: 619.942040125s
-Boolean Match time: 208.552672ms
-[Worker 3]   ✅ Query processed in 620.151658278s
+...............Homomorphic Subset Testing time: 155.943234013s
+Boolean Match time: 68.673µs
+[Worker 0]   ✅ Query processed in 155.94430982s
+[Worker 0] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 0]: Attempt 1 to connect...
+[Worker 0]  Sending response...
+[Worker 0]  Response size: 1054728 bytes
+[127.0.0.1:10001]   ✅ Response sent in 378.761µs (1 chunks, 2655.68 MB/s)
+   ✅ Task spawned for Worker 0
+...Homomorphic Subset Testing time: 156.390319251s
+Boolean Match time: 77.186µs
+[Worker 3]   ✅ Query processed in 156.391357147s
 [Worker 3] 5. Connecting and sending to Client at 127.0.0.1:10001...
    🔗 [Worker 3]: Attempt 1 to connect...
 [Worker 3]  Sending response...
-[Worker 3]  Response size: 2109448 bytes
-[127.0.0.1:10001]   ✅ Response sent in 733.034µs (1 chunks, 2744.38 MB/s)
+[Worker 3]  Response size: 1054728 bytes
+[127.0.0.1:10001]   ✅ Response sent in 384.21µs (1 chunks, 2618.01 MB/s)
    ✅ Task spawned for Worker 3
-........................................................Homomorphic Subset Testing time: 634.046136196s
-.Boolean Match time: 235.251269ms
-[Worker 6]   ✅ Query processed in 634.282587571s
-[Worker 6] 5. Connecting and sending to Client at 127.0.0.1:10001...
-   🔗 [Worker 6]: Attempt 1 to connect...
-[Worker 6]  Sending response...
-[Worker 6]  Response size: 2109448 bytes
-[127.0.0.1:10001]   ✅ Response sent in 780.331µs (1 chunks, 2578.04 MB/s)
-   ✅ Task spawned for Worker 6
-.......................
-   Still waiting... (660.7451174s elapsed)
-.
-   Still waiting... (660.800461941s elapsed)
-.
-   Still waiting... (660.706911613s elapsed)
-...................................Homomorphic Subset Testing time: 654.228815095s
-.Boolean Match time: 242.524591ms
-[Worker 5]   ✅ Query processed in 654.4726355s
-[Worker 5] 5. Connecting and sending to Client at 127.0.0.1:10001...
-   🔗 [Worker 5]: Attempt 1 to connect...
-[Worker 5]  Sending response...
-[Worker 5]  Response size: 2109448 bytes
-[127.0.0.1:10001]   ✅ Response sent in 743.997µs (1 chunks, 2703.94 MB/s)
-   ✅ Task spawned for Worker 5
-........Homomorphic Subset Testing time: 658.273560172s
-Boolean Match time: 231.153742ms
-[Worker 4]   ✅ Query processed in 658.505894317s
-[Worker 4] 5. Connecting and sending to Client at 127.0.0.1:10001...
-   🔗 [Worker 4]: Attempt 1 to connect...
-[Worker 4]  Sending response...
-[Worker 4]  Response size: 2109448 bytes
-[127.0.0.1:10001]   ✅ Response sent in 775.554µs (1 chunks, 2593.92 MB/s)
-   ✅ Task spawned for Worker 4
-.Homomorphic Subset Testing time: 659.412013815s
-Boolean Match time: 211.731668ms
-[Worker 7]   ✅ Query processed in 659.625333135s
+..Homomorphic Subset Testing time: 156.730833688s
+Boolean Match time: 68.048µs
+[Worker 2]   ✅ Query processed in 156.731876073s
+[Worker 2] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 2]: Attempt 1 to connect...
+[Worker 2]  Sending response...
+[Worker 2]  Response size: 1054728 bytes
+[127.0.0.1:10001]   ✅ Response sent in 361.284µs (1 chunks, 2784.14 MB/s)
+   ✅ Task spawned for Worker 2
+......Homomorphic Subset Testing time: 158.185781432s
+Boolean Match time: 89.24µs
+[Worker 7]   ✅ Query processed in 158.186889356s
 [Worker 7] 5. Connecting and sending to Client at 127.0.0.1:10001...
    🔗 [Worker 7]: Attempt 1 to connect...
 [Worker 7]  Sending response...
-[Worker 7]  Response size: 2109448 bytes
-[127.0.0.1:10001]   ✅ Response sent in 737.409µs (1 chunks, 2728.10 MB/s)
+[Worker 7]  Response size: 1054728 bytes
+[127.0.0.1:10001]   ✅ Response sent in 427.018µs (1 chunks, 2355.56 MB/s)
    ✅ Task spawned for Worker 7
+........
+   Still waiting... (180.184897375s elapsed)
+.
+   Still waiting... (180.20448775s elapsed)
+.
+   Still waiting... (180.199119112s elapsed)
+........Homomorphic Subset Testing time: 164.265382675s
+Boolean Match time: 147.347µs
+[Worker 6]   ✅ Query processed in 164.26651435s
+[Worker 6] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 6]: Attempt 1 to connect...
+[Worker 6]  Sending response...
+[Worker 6]  Response size: 1054728 bytes
+[127.0.0.1:10001]   ✅ Response sent in 424.515µs (1 chunks, 2369.45 MB/s)
+   ✅ Task spawned for Worker 6
+Homomorphic Subset Testing time: 164.282348385s
+Boolean Match time: 71.385µs
+[Worker 5]   ✅ Query processed in 164.283476038s
+[Worker 5] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 5]: Attempt 1 to connect...
+[Worker 5]  Sending response...
+[Worker 5]  Response size: 1054728 bytes
+[127.0.0.1:10001]   ✅ Response sent in 381.246µs (1 chunks, 2638.37 MB/s)
+   ✅ Task spawned for Worker 5
+.Homomorphic Subset Testing time: 164.841316412s
+Boolean Match time: 57.202µs
+[Worker 4]   ✅ Query processed in 164.842470538s
+[Worker 4] 5. Connecting and sending to Client at 127.0.0.1:10001...
+   🔗 [Worker 4]: Attempt 1 to connect...
+[Worker 4]  Sending response...
+[Worker 4]  Response size: 1054728 bytes
+[127.0.0.1:10001]   ✅ Response sent in 365.642µs (1 chunks, 2750.96 MB/s)
+   ✅ Task spawned for Worker 4

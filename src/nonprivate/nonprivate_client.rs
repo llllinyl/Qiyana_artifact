@@ -169,6 +169,7 @@ async fn main() {
             
             let mut valid = true;
             if recovered[0] != 222 {
+                println!("value: {}", recovered[0]);
                 valid = false;
             }
             for i in 1..DOCUMENT_NUM {

@@ -4,8 +4,8 @@ use std::time::Duration;
 use tokio::net::{TcpListener, TcpStream};
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::time::sleep;
-use std::io::*;
 use std::time::Instant;
+use std::io::{BufRead, BufReader};
 use std::fs;
 use std::fs::File;
 use std::path::Path;
@@ -388,21 +388,21 @@ async fn handle_client(
             let process_start = Instant::now();
             let (strings, queryformat) = parse_query_to_rpn(&test_string);
 
-            let result: Vec<u64> = matrix.iter()
-                .zip(keywords.iter())
-                .par_bridge() 
-                .map(|(doc_row, doc_keywords)| {
+            let result: Vec<u64> = matrix.par_iter()
+                .zip(keywords.par_iter())
+                .enumerate()
+                .map(|(idx, (doc_row, doc_keywords))| {
                     let sum: u64 = doc_row.iter()
                         .zip(rank_vector.iter())
                         .map(|(&matrix_val, &rank_val)| (matrix_val as u64) * rank_val)
                         .sum();
-                    
+
                     let row_bool: Vec<bool> = strings.iter()
                         .map(|query_string| doc_keywords.iter().any(|k| k == query_string))
                         .collect();
 
                     let bool_result = evaluate_rpn_for_doc_plain(&queryformat, &row_bool);
-                    
+
                     if bool_result {
                         sum
                     } else {
@@ -410,6 +410,7 @@ async fn handle_client(
                     }
                 })
                 .collect();
+
             let process_time = process_start.elapsed();
 
             println!("[{}] 3. Sending response...", client_addr);
