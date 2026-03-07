@@ -1,6 +1,6 @@
     Blocking waiting for file lock on build directory
    Compiling qiyana v0.1.0 (/root/Qiyana-experiment/Qiyana_artifact)
-    Finished `release` profile [optimized] target(s) in 53.26s
+    Finished `release` profile [optimized] target(s) in 53.01s
      Running `/root/Qiyana-experiment/Qiyana_artifact/target/release/qiyanaclient 8 1`
 ========================================
 🔍 Distributed Client
@@ -16,84 +16,106 @@
 4. Wait 20 seconds for worker preprocessing...
    ✅ Preprocessing wait completed
 5. Generate query...
-   Client submit the Boolean query: NOT cladoniaceae
-   Query generation time: 3.986503295s
+   Client submit the Boolean query: (cladoniaceae AND NOT swabians) OR (cladonia AND stereocaulaceae AND NOT danube) OR (podetia AND pycnothelia AND stellaris)
+   Query generation time: 4.233102347s
 6. Send query to Master...
    ✅ Query sent successfully!
-   📊 Query summary: 12362104 bytes in 3 chunks, took 5.236467ms, 2251.41 MB/s
+   📊 Query summary: 47130171 bytes in 9 chunks, took 24.861105ms, 1807.92 MB/s
    ✅ Disconnected from Master
 7. Waiting for 8 workers...
    📍 Listening on: Ok(0.0.0.0:10001)
    ⏳ Waiting for 8 workers to report results...
 ............................................................
-   Still waiting... (60.06356711s elapsed)
+   Still waiting... (60.063572725s elapsed)
 ............................................................
-   Still waiting... (120.129571292s elapsed)
+   Still waiting... (120.126159313s elapsed)
 ............................................................
-   Still waiting... (180.195310617s elapsed)
+   Still waiting... (180.19072218s elapsed)
 ............................................................
-   Still waiting... (240.262778425s elapsed)
+   Still waiting... (240.257292931s elapsed)
 ............................................................
-   Still waiting... (300.325626473s elapsed)
+   Still waiting... (300.321087518s elapsed)
 ............................................................
-   Still waiting... (360.391787573s elapsed)
+   Still waiting... (360.385617127s elapsed)
 ............................................................
-   Still waiting... (420.457508293s elapsed)
+   Still waiting... (420.449049804s elapsed)
 ............................................................
-   Still waiting... (480.524904649s elapsed)
-..........................................
-   🔗 Got connection from 127.0.0.1:49766
+   Still waiting... (480.513469769s elapsed)
+............................................................
+   Still waiting... (540.576955275s elapsed)
+............................................................
+   Still waiting... (600.641505185s elapsed)
+............................................................
+   Still waiting... (660.705979543s elapsed)
+............................................................
+   Still waiting... (720.77061541s elapsed)
+............................................................
+   Still waiting... (780.838017113s elapsed)
+............................................................
+   Still waiting... (840.902504891s elapsed)
+............................................................
+   Still waiting... (900.966986022s elapsed)
+............................................................
+   Still waiting... (961.031481534s elapsed)
+............................................................
+   Still waiting... (1021.098731277s elapsed)
+............................................................
+   Still waiting... (1081.162203431s elapsed)
+............................................................
+   Still waiting... (1141.22678539s elapsed)
+............................................................
+   Still waiting... (1201.291371003s elapsed)
+.........................
+   🔗 Got connection from 127.0.0.1:46406
    Expecting response: 262192 bytes
    The response part from : Worker 3
    📋 Current results: 1/8
-..................
-   Still waiting... (540.589739095s elapsed)
-...........................................
-   🔗 Got connection from 127.0.0.1:55566
+...........................
+   🔗 Got connection from 127.0.0.1:41224
    Expecting response: 262192 bytes
    The response part from : Worker 2
    📋 Current results: 2/8
-.................
-   Still waiting... (600.656634831s elapsed)
-..............................
-   🔗 Got connection from 127.0.0.1:36790
-   Expecting response: 262192 bytes
-   The response part from : Worker 6
-   📋 Current results: 3/8
-...
-   🔗 Got connection from 127.0.0.1:36796
+........
+   Still waiting... (1261.352221796s elapsed)
+............................................................
+   Still waiting... (1321.415656337s elapsed)
+............................................................
+   Still waiting... (1381.477996898s elapsed)
+......
+   🔗 Got connection from 127.0.0.1:40938
    Expecting response: 262192 bytes
    The response part from : Worker 5
+   📋 Current results: 3/8
+.........
+   🔗 Got connection from 127.0.0.1:57178
+   Expecting response: 262192 bytes
+   The response part from : Worker 0
    📋 Current results: 4/8
-..........................
-   🔗 Got connection from 127.0.0.1:57662
+....................
+   🔗 Got connection from 127.0.0.1:37072
    Expecting response: 262192 bytes
    The response part from : Worker 4
    📋 Current results: 5/8
-.
-   Still waiting... (660.721502859s elapsed)
-.................
-   🔗 Got connection from 127.0.0.1:43220
+..
+   🔗 Got connection from 127.0.0.1:38406
    Expecting response: 262192 bytes
-   The response part from : Worker 7
+   The response part from : Worker 6
    📋 Current results: 6/8
-...........................................
-   Still waiting... (720.785493417s elapsed)
-..........................................................
-   🔗 Got connection from 127.0.0.1:54262
+.......................
+   Still waiting... (1441.542104644s elapsed)
+.
+   🔗 Got connection from 127.0.0.1:37744
    Expecting response: 262192 bytes
    The response part from : Worker 1
    📋 Current results: 7/8
-..
-   Still waiting... (780.849669967s elapsed)
-....
-   🔗 Got connection from 127.0.0.1:52116
+..................
+   🔗 Got connection from 127.0.0.1:48752
    Expecting response: 262192 bytes
-   The response part from : Worker 0
+   The response part from : Worker 7
    📋 Current results: 8/8
    🎉 All workers reported!
-   The total latency : 785.669805994s
+   The total latency : 1461.352391377s
 8. Recover results...
-   Recovery time: 58.604748ms
+   Recovery time: 59.722635ms
    Number of results: 16384
    ✅ Verification passed!

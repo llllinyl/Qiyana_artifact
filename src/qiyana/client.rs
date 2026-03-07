@@ -110,10 +110,10 @@ async fn main() {
     println!("5. Generate query...");
     //let test_string = "cladoniaceae AND cladonia";
     //let test_string = "cladoniaceae OR cladonia";
-    let test_string = "NOT cladoniaceae";
+    //let test_string = "NOT cladoniaceae";
     //let test_string = "(cladoniaceae OR cladonia OR stereocaulaceae) AND podetia AND NOT (swabians OR danube) AND pycnothelia AND stellaris";
     //let test_string = "(cladoniaceae AND cladonia AND stereocaulaceae) AND NOT (swabians OR danube) AND podetia AND NOT banat OR pycnothelia";
-    //let test_string = "(cladoniaceae AND NOT swabians) OR (cladonia AND stereocaulaceae AND NOT danube) OR (podetia AND pycnothelia AND stellaris)";
+    let test_string = "(cladoniaceae AND NOT swabians) OR (cladonia AND stereocaulaceae AND NOT danube) OR (podetia AND pycnothelia AND stellaris)";
     let start_time = Instant::now();
     if mode == 0 {
         let (query, querysum, template, rank_vector) = client.qiyana_query(&test_string);
