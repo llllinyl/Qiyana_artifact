@@ -13,7 +13,7 @@ The project consists of three main protocol implementations:
 
 1. **Baseline** - Baseline implementation
 
-2. **Qiyana** - Enhanced system with optimal communication
+2. **Qiyana** - Enhanced system for latency and communication
 
 3. **Qiyana-wosel** - A trade-off for optimal latency
 
