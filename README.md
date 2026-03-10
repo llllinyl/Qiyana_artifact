@@ -115,8 +115,16 @@ When using Qiyana, you have the option of providing an additional parameter (`MO
 ```
 
 Also, if you want to modify KEYWORD_SET_NUM (the size of each document's keyword set), DOCUMENT_NUM, THREAD_NUM and ports, please refer to the relevant file `share.rs`. If you want to test a single NOT query, you need to adjust the comments in the verification section of the relevant file `share.rs`.
+
 # Performance Optimization
 The RUSTFLAGS="-C target-cpu=native" flag enables CPU-specific optimizations for maximum performance. This is particularly important for cryptographic operations and large dataset processing.
+
+# Generate graphs
+We provided our test data and the Python code for the figures in the evaluation chapter.
+```
+cd src/graph
+python <file_name>.py
+```
 
 # Citation
 To cite Qiyana in academic papers, please use the following entry:
