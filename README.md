@@ -100,19 +100,7 @@ chmod +x run_single.sh
 
 If you want to modify KEYWORD_SET_NUM (the size of each document's keyword set), DOCUMENT_NUM, THREAD_NUM and ports, please refer to the relevant file `<system>_sim.rs`.
 
-If you want to test a single NOT query, you need to modify the verification part of `baseline/qiyanawosel_client.rs` by
-```
-if recovered[0] != false {
-    valid = false;
-}
-    for i in 1..DOCUMENT_NUM {
-        if i < recovered.len() && recovered[i] {
-            valid = false;
-        break;
-    }
-}
-```
-and adjust the comments in the verification section of `qiyana_client.rs`.
+If you want to test a single NOT query, you need to adjust the comments in the verification section of `baseline_client.rs/qiyana_client.rs/qiyanawosel_client.rs` in 279-291/242-274/234-242 lines.
 # Running Client-(Master-Workers) Interactive Mode
 We provide a shell script to support easy execution of the entire system. For example, you can run the following code to test the performance with 4 workers. If you wish to adjust the number of documents, ports, threads, etc., please modify the settings in the `share.rs` file.
 ```
