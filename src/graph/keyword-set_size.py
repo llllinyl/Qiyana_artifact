@@ -26,33 +26,33 @@ black = '#000000'
 
 fig, ax1 = plt.subplots(figsize=(5, 2)) 
 
-ax1.set_ylabel('Latency (s)', fontsize=10, family='Times New Roman', labelpad=0)
-ax1.set_ylim(50, 40000)
+ax1.set_ylabel('Latency (s)', fontsize=11, family='Times New Roman', labelpad=0)
+ax1.set_ylim(50, 50000)
 ax1.set_xlim(0.5, 6.5)
 ax1.set_yscale('log')
 ax1.set_yticks([100, 1000, 10000])
-ax1.set_yticklabels(['$10^2$', '$10^3$', '$10^4$'], fontsize=8)
+ax1.set_yticklabels(['$10^2$', '$10^3$', '$10^4$'], fontsize=9)
 
 ax1.set_xticks(x_positions)
-ax1.set_xticklabels(x_labels, ha='center', fontsize=9, family='Times New Roman')
+ax1.set_xticklabels(x_labels, ha='center', fontsize=10, family='Times New Roman')
 
-bar_width = 0.1
+bar_width = 0.125
 data_sets = [data_2, data_4, data_8, data_16]
 colors = [myblue, myyellow, myred, mypurple]
 labels = ['2', '4', '8', '16']
-shifts = [-0.24, -0.08, 0.08, 0.24]
+shifts = [-1.875*bar_width, -0.625*bar_width, 0.625*bar_width, 1.875*bar_width]
 
 for i, (data, color, label, shift) in enumerate(zip(data_sets, colors, labels, shifts)):
-    x_shifted = x_positions + shift * 0.8
+    x_shifted = x_positions + shift
     bars = ax1.bar(x_shifted, data, width=bar_width, color=color, 
                    edgecolor='black', linewidth=0.5, label=label)
 
 ax1.axvline(x=3.5, color='red', linestyle='-.', linewidth=1.5)
 
-ax1.text(2, 17500, 'A AND B', color='red', fontsize=10, ha='center', 
+ax1.text(2, 23500, 'A AND B', color='red', fontsize=10, ha='center', 
          family='Times New Roman', fontweight='bold', 
          bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
-ax1.text(5, 17500, 'A OR B', color='blue', fontsize=10, ha='center', 
+ax1.text(5, 23500, 'A OR B', color='blue', fontsize=10, ha='center', 
          family='Times New Roman', fontweight='bold', 
          bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
@@ -66,12 +66,12 @@ ratio1 = y_min1 / y_qiyana_and_max
 ratio2 = y_min1 / y_wosel_and_max
 
 ax1.annotate(r'$\geq$' + f'{ratio1:.1f}x', xy=(2, y_min1 * 1.25), 
-             ha='center', va='bottom', fontsize=8,
+             ha='center', va='bottom', fontsize=9,
              fontweight='bold', family='Times New Roman',
              bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
 ax1.annotate(r'$\geq$' + f'{ratio2:.1f}x', xy=(3, y_min1 * 1.25), 
-             ha='center', va='bottom', fontsize=8,
+             ha='center', va='bottom', fontsize=9,
              fontweight='bold', family='Times New Roman',
              bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
@@ -85,12 +85,12 @@ ratio3 = y_min2 / y_qiyana_or_max
 ratio4 = y_min2 / y_wosel_or_max
 
 ax1.annotate(r'$\geq$' + f'{ratio3:.1f}x', xy=(5, y_min2 * 1.25), 
-             ha='center', va='bottom', fontsize=8,
+             ha='center', va='bottom', fontsize=9,
              fontweight='bold', family='Times New Roman',
              bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
 ax1.annotate(r'$\geq$' + f'{ratio4:.1f}x', xy=(6, y_min2 * 1.25), 
-             ha='center', va='bottom', fontsize=8,
+             ha='center', va='bottom', fontsize=9,
              fontweight='bold', family='Times New Roman',
              bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
@@ -103,13 +103,13 @@ y_wosel_and_max = data_16[2]
 ratio1 = y_max1 / y_qiyana_and_max
 ratio2 = y_max1 / y_wosel_and_max
 
-ax1.annotate(r'$\leq$' + f'{ratio1:.1f}x', xy=(2, y_max1 * 0.5), 
-             ha='center', va='bottom', fontsize=8,
+ax1.annotate(r'$\leq$' + f'{ratio1:.1f}x', xy=(2, y_max1 * 0.475), 
+             ha='center', va='bottom', fontsize=9,
              fontweight='bold', family='Times New Roman',
              bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
-ax1.annotate(r'$\leq$' + f'{ratio2:.1f}x', xy=(3, y_max1 * 0.5), 
-             ha='center', va='bottom', fontsize=8,
+ax1.annotate(r'$\leq$' + f'{ratio2:.1f}x', xy=(3, y_max1 * 0.475), 
+             ha='center', va='bottom', fontsize=9,
              fontweight='bold', family='Times New Roman',
              bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
@@ -122,23 +122,23 @@ y_wosel_or_max = data_2[5]
 ratio3 = y_max2 / y_qiyana_or_max
 ratio4 = y_max2 / y_wosel_or_max
 
-ax1.annotate(r'$\leq$' + f'{ratio3:.1f}x', xy=(5, y_max2 * 0.5), 
-             ha='center', va='bottom', fontsize=8,
+ax1.annotate(r'$\leq$' + f'{ratio3:.1f}x', xy=(5, y_max2 * 0.475), 
+             ha='center', va='bottom', fontsize=9,
              fontweight='bold', family='Times New Roman',
              bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
-ax1.annotate(r'$\leq$' + f'{ratio4:.1f}x', xy=(6, y_max2 * 0.5), 
-             ha='center', va='bottom', fontsize=8,
+ax1.annotate(r'$\leq$' + f'{ratio4:.1f}x', xy=(6, y_max2 * 0.475), 
+             ha='center', va='bottom', fontsize=9,
              fontweight='bold', family='Times New Roman',
              bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.8))
 
 handles1, labels1 = ax1.get_legend_handles_labels()
 ax1.legend(handles1, labels1, ncol=2, loc='upper right', 
-           bbox_to_anchor=(1.01, 1.01), fontsize=8, frameon=True, 
-           framealpha=0.95, columnspacing=0.9, handlelength=1,
+           bbox_to_anchor=(1.01, 1.02), fontsize=7.5, frameon=True, 
+           framealpha=0.7, columnspacing=0.9, handlelength=1,
            handletextpad=0.3, borderpad=0.2) 
 
-ax1.tick_params(axis="both", which="major", direction="in", width=0.8, length=4, labelsize=8)
+# ax1.tick_params(axis="both", which="major", direction="in", width=0.8, length=4, labelsize=10)
 
 plt.tight_layout()
 plt.savefig('lkss.pdf', dpi=600, bbox_inches='tight')

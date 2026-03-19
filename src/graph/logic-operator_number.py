@@ -37,15 +37,15 @@ myred = '#E4A9A4'
 fig, ax1 = plt.subplots(figsize=(5, 2))
 
 ax1.set_facecolor('none') 
-ax1.set_ylabel('Latency (s)', fontsize=10, family='Times New Roman', labelpad=0)
+ax1.set_ylabel('Latency (s)', fontsize=11, family='Times New Roman', labelpad=0)
 ax1.set_ylim(50, 500000)
 ax1.set_xlim(0.5, 6.5)
 ax1.set_yscale('log')
 ax1.set_yticks([100, 1000, 10000, 100000])
-ax1.set_yticklabels(['$10^2$', '$10^3$', '$10^4$', '$10^5$'], fontsize=8)
+ax1.set_yticklabels(['$10^2$', '$10^3$', '$10^4$', '$10^5$'], fontsize=9)
 
 ax1.set_xticks(x_positions)
-ax1.set_xticklabels(x_labels, ha='center', fontsize=10, family='Times New Roman')
+ax1.set_xticklabels(x_labels, ha='center', fontsize=11, family='Times New Roman')
 
 x_and = x_positions[:4]
 
@@ -81,28 +81,28 @@ def add_ratio_arrow(ax, x_pos, y_low, y_high, offset_x=0):
     mid_y = np.sqrt(y_low * y_high)
     if offset_x < 0:
         ax.annotate(f'{ratio:.1f}x', xy=(x_arrow + offset_x, mid_y), 
-                    ha='right', va='center', fontsize=6,
+                    ha='right', va='center', fontsize=9,
                     fontweight='bold', family='Times New Roman',
                     bbox=dict(boxstyle='round,pad=0.1', facecolor='white', alpha=0.7, edgecolor='none'),
                     zorder=20)
     else: 
         ax.annotate(f'{ratio:.1f}x', xy=(x_arrow + offset_x, mid_y), 
-                    ha='left', va='center', fontsize=6,
+                    ha='left', va='center', fontsize=9,
                     fontweight='bold', family='Times New Roman',
                     bbox=dict(boxstyle='round,pad=0.1', facecolor='white', alpha=0.7, edgecolor='none'),
                     zorder=20)
 
-add_ratio_arrow(ax1, 1, qiyana_and[0], baseline_and[0], offset_x=-0.06)
-add_ratio_arrow(ax1, 1, qiyanawosel_and[0], baseline_and[0], offset_x=0.06)
+add_ratio_arrow(ax1, 1, qiyana_and[0], baseline_and[0], offset_x=-0.03)
+add_ratio_arrow(ax1, 1, qiyanawosel_and[0], baseline_and[0], offset_x=0.03)
 
-add_ratio_arrow(ax1, 3, qiyana_and[2], baseline_and[2], offset_x=-0.06)
-add_ratio_arrow(ax1, 3, qiyanawosel_and[2], baseline_and[2], offset_x=0.06)
+add_ratio_arrow(ax1, 3, qiyana_and[2], baseline_and[2], offset_x=-0.03)
+add_ratio_arrow(ax1, 3, qiyanawosel_and[2], baseline_and[2], offset_x=0.03)
 
-add_ratio_arrow(ax1, 4, qiyana_or[0], baseline_or[0], offset_x=-0.06)
-add_ratio_arrow(ax1, 4, qiyanawosel_or[0], baseline_or[0], offset_x=0.06)
+add_ratio_arrow(ax1, 4, qiyana_or[0], baseline_or[0], offset_x=-0.03)
+add_ratio_arrow(ax1, 4, qiyanawosel_or[0], baseline_or[0], offset_x=0.03)
 
-add_ratio_arrow(ax1, 6, qiyana_or[2], baseline_or[2], offset_x=-0.06)
-add_ratio_arrow(ax1, 6, qiyanawosel_or[2], baseline_or[2], offset_x=0.06)
+add_ratio_arrow(ax1, 6, qiyana_or[2], baseline_or[2], offset_x=-0.03)
+add_ratio_arrow(ax1, 6, qiyanawosel_or[2], baseline_or[2], offset_x=0.03)
 
 ax1.axvline(x=3.5, color='red', linestyle='-.', linewidth=1.5)
 
@@ -115,16 +115,16 @@ ax1.text(3.75, 150000, 'OR Queries', color='blue', fontsize=10, ha='left',
 
 ax2 = ax1.twinx()
 ax2.set_zorder(ax1.get_zorder() - 1)
-ax2.set_ylabel('Communication (MB)', fontsize=10, family='Times New Roman', labelpad=0)
-ax2.set_ylim(5, 1200)
+ax2.set_ylabel('Communication (MB)', fontsize=11, family='Times New Roman', labelpad=0)
+ax2.set_ylim(5, 1500)
 ax2.set_yscale('log')
 ax2.set_yticks([10, 50, 200])
-ax2.set_yticklabels([10, 50, 200], fontsize=8)
+ax2.set_yticklabels([10, 50, 200], fontsize=9)
 
-bar_width = 0.1
-x_baseline = x_positions - bar_width * 1.5
+bar_width = 0.15
+x_baseline = x_positions - bar_width * 1.25
 x_qiyana = x_positions
-x_qiyanawosel = x_positions + bar_width * 1.5
+x_qiyanawosel = x_positions + bar_width * 1.25
 
 bars1 = ax2.bar(x_baseline, comm_baseline, width=bar_width, color=myred, 
                 edgecolor='black', linewidth=0.5, alpha=0.7, label='Comm-Baseline', zorder=1)
@@ -143,7 +143,7 @@ legend_elements = [
 ]
 
 ax1.legend(handles=legend_elements, ncol=1, loc='upper left', 
-           fontsize=7, frameon=True, framealpha=0.95, 
+           fontsize=7.3, frameon=True, framealpha=0.95, 
            handlelength=0.8, handletextpad=0.2, borderpad=0.2, labelspacing=0.2)  
 
 legend_elements2 = [
@@ -153,11 +153,11 @@ legend_elements2 = [
 ]
 
 ax2.legend(handles=legend_elements2, ncol=1, loc='upper right', 
-           fontsize=7, frameon=True, framealpha=0.95, 
+           fontsize=7.3, frameon=True, framealpha=0.95, 
            handlelength=0.8, handletextpad=0.2, borderpad=0.2, labelspacing=0.2)  
 
-ax1.tick_params(axis="both", which="major", direction="in", width=0.8, length=4, labelsize=9)
-ax2.tick_params(axis="y", which="major", direction="in", width=0.8, length=4, labelsize=9)
+# ax1.tick_params(axis="both", which="major", direction="in", width=0.8, length=4, labelsize=11)
+# ax2.tick_params(axis="y", which="major", direction="in", width=0.8, length=4, labelsize=11)
 
 plt.tight_layout()
 plt.savefig('lnlo.pdf', dpi=600, bbox_inches='tight')
