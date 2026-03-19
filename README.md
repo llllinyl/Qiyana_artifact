@@ -8,6 +8,8 @@ To build and run this code, we need some environmental needs and adjustments.
 1. Run `sudo apt-get update && sudo apt-get install -y build-essential` to ensure an up-to-date environment.
 2. Our code is under Rust, so we need to install Rust compiler by `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` and `sudo apt install cargo`.
 
+In our implementation, the Rust version should be 1.91.1 to support TFHE. If you have an older version installed, you can update it using the command `rustup install 1.91.1`.
+
 # Project Structure
 The project consists of three main protocol implementations:
 
