@@ -30,6 +30,8 @@ We use the English Wikipedia document dump of 1 December 2025 (`https://dumps.wi
 
 From this set, we randomly select a subset of documents subject to file size constraints using `python extract_docs.py <wiki_folder> <output_folder> --start-index <start_index>` and `python random_select_with_size_range.py <input_folder> <output_folder> --total-files <input_number> --select-count <output_number> --min-size <min_size> --max-size <max_size> --seed 42 --verify`. 
 
+We provide `keyword.txt` and `tf-idf.txt`, the latter being a compressed file due to the large size of the matrix.
+
 Finally, we generate keyword sets for the selected documents using three preprocessing scripts: `select_keyword_set.py`, `tfidf_processor.py`, and `find.py`.
 
 # Running Tests
