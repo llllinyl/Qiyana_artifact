@@ -506,7 +506,7 @@ impl Client {
 
         let mut rank_vector = Vec::new();
         for num in 0..KEYWORD_NUM {
-            let input_message = if num < 32 { 1u64 } else { 0u64 };
+            let input_message = if num < 6 { 1u64 } else { 0u64 };
             let lwe_ciphertext_in: LweCiphertextOwned<u64> = allocate_and_encrypt_new_lwe_ciphertext(
                 &self.small_lwe_sk,
                 Plaintext(input_message * delta),
@@ -579,7 +579,7 @@ impl Client {
 
         let mut rank_vector = Vec::new();
         for num in 0..KEYWORD_NUM {
-            let input_message = if num < 32 { 1u64 } else { 0u64 };
+            let input_message = if num < 6 { 1u64 } else { 0u64 };
             let mut lwe = SeededLweCiphertext::new(
                 0u64,
                 small_lwe_dimension.to_lwe_size(),
