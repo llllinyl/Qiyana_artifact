@@ -399,7 +399,7 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
     let mut valid = true;
     for i in 0..DOCUMENT_NUM {
         if i % 16384 == 0 {
-            if recovered[i] != 222 {
+            if recovered[i] != 637 {
                 valid = false;
                 println!("error {} line 222: {}", i, recovered[i]);
                 break;
