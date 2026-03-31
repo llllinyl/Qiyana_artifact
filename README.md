@@ -30,8 +30,7 @@ We use the English Wikipedia document dump of 1 December 2025 (`https://dumps.wi
 
 From this set, we randomly select a subset of documents subject to file size constraints using `python extract_docs.py <wiki_folder> <output_folder> --start-index <start_index>` and `python random_select_with_size_range.py <input_folder> <output_folder> --total-files <input_number> --select-count <output_number> --min-size <min_size> --max-size <max_size> --seed 42 --verify`. Moreover, we can use `python generate_database.py` to expand the seed corpus.
 
-Finally, we generate keyword sets for the selected documents using three preprocessing scripts: `select_keyword_set.py`, `tfidf_processor.py`, and `find.py`. We provide `keyword.txt` and `tf-idf.txt`, being compressed files due to their large sizes.
-
+Finally, we generate keyword sets for the selected documents using three preprocessing scripts: `select_keyword_set.py`, `tfidf_processor.py`, and `find.py`. Due to file size limitations, we are providing a 16K example here that includes `keyword.txt` and compressed `tf-idf.txt`.
 # Running Tests
 ## Protocol Simulations
 Run simulation tests for each protocol implementation:
