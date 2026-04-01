@@ -7,16 +7,6 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import multiprocessing as mp
 
 
-FORCED_WORDS = [
-    "cladoniaceae",
-    "cladonia",
-    "stereocaulaceae",
-    "podetia",
-    "pycnothelia",
-    "stellaris",
-]
-
-
 def process_chunk_task(db_folder, file_names, keywords_set, chunk_start_idx, doc_freq, num_docs):
     results = []
     chunk_word_counts = []
@@ -128,13 +118,9 @@ class TFIDFProcessor:
 
         self.all_keywords = list(dict.fromkeys(raw_keywords))
 
-        print(f"Loaded {min(self.max_docs, 16384)} lines from keyword file")
+        print(f"Loaded {self.max_docs} lines from keyword file")
         print(f"Total keywords before deduplication: {len(raw_keywords)}")
         print(f"Unique keywords after deduplication: {len(self.all_keywords)}")
-
-        missing_forced = [w for w in FORCED_WORDS if w not in set(self.all_keywords)]
-        if missing_forced:
-            print(f"Forced keywords not found in keyword file: {missing_forced}")
 
         return self.all_keywords
 
@@ -178,31 +164,17 @@ class TFIDFProcessor:
         print(f"Found {len(word_doc_counts)} keywords appearing in the documents")
 
         idf_scores = {}
-        for word in keywords_set:
+        for word in self.all_keywords:
             doc_count = word_doc_counts.get(word, 0)
             idf_scores[word] = math.log((1 + self.num_docs) / (1 + doc_count)) + 1.0
 
-        sorted_keywords = sorted(idf_scores.items(), key=lambda x: (-x[1], x[0]))
-
-        forced_order = [w for w in FORCED_WORDS if w in keywords_set]
-        print(f"Forced keywords at front: {forced_order}")
+        ranked_words = sorted(idf_scores.items(), key=lambda x: (-x[1], x[0]))
+        top_word_set = set(word for word, _ in ranked_words[:self.max_words])
 
         selected_words = []
-        selected_set = set()
-
-        for word in forced_order:
-            selected_words.append((word, idf_scores[word]))
-            selected_set.add(word)
-
-        for word, score in sorted_keywords:
-            if word in selected_set:
-                continue
-            if len(selected_words) >= self.max_words:
-                break
-            selected_words.append((word, score))
-            selected_set.add(word)
-
-        selected_words = selected_words[:self.max_words]
+        for word in self.all_keywords:
+            if word in top_word_set:
+                selected_words.append((word, idf_scores[word]))
 
         self.word_to_id.clear()
         self.id_to_word.clear()
@@ -217,7 +189,6 @@ class TFIDFProcessor:
         }
 
         print(f"Selected {len(self.word_to_id)} keywords")
-        print(f"Forced keywords kept: {[w for w in FORCED_WORDS if w in self.word_to_id]}")
 
         idf_values = [idf_scores[w] for w in self.word_to_id.keys()]
         if idf_values:
@@ -347,7 +318,6 @@ def main():
         print(f"Selected up to {MAX_WORDS} keywords from {len(processor.all_keywords)} unique keywords")
         print(f"Processed {processor.num_docs} documents")
         print(f"Each document vector has {len(processor.word_to_id)} dimensions, quantized to 0-{NUM_BINS - 1}")
-        print(f"Forced keywords: {FORCED_WORDS}")
     except Exception as e:
         print(f"Error during processing: {e}")
         import traceback
