@@ -48,6 +48,15 @@ RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyana::qiy
 RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyanawosel::qiyanawosel_sim::test_qiyanawosel_simulate
 ```
 
+Note that, we use 
+```
+let input_message = match num {
+  0 | 1 | 2 | 3 | 4 | 6 => 1u64,
+   _ => 0u64,
+};
+```
+to generate the ranking vector for simplicity. In real-world scenarios, the vector needs to be modified based on the query terms.
+
 ## Utility Modules
 Test the supporting modules:
 ```
