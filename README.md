@@ -55,7 +55,7 @@ let input_message = match num {
    _ => 0u64,
 };
 ```
-to generate the ranking vector for simplicity because the first six words in the TF-IDF matrix can cover all the positive words used in our test. In real-world scenarios, the vector needs to be modified based on the query terms.
+to generate the ranking vector for simplicity because these six words in the TF-IDF matrix can cover all the positive words used in our test. In real-world scenarios, the vector needs to be modified based on the query terms.
 
 ## Utility Modules
 Test the supporting modules:
