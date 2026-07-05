@@ -15,9 +15,9 @@ The project consists of three main protocol implementations:
 
 1. **Baseline** - Baseline implementation
 
-2. **Qiyana** - Enhanced system for latency and communication
+2. **Qiyana0** - Communication-friendly
 
-3. **Qiyana-wosel** - A trade-off for optimal latency
+3. **Qiyana1** - Computation-efficient
 
 Each implementation includes:
 
@@ -78,7 +78,7 @@ RUSTFLAGS="-C target-cpu=native" cargo run --release --bin baseline_server
 RUSTFLAGS="-C target-cpu=native" cargo run --release --bin baseline_client
 ```
 
-## Qiyana Protocol
+## Qiyana0 Protocol
 1. Start the server:
 ```
 RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana_server
@@ -90,7 +90,7 @@ RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana_client
 
 To compress a rank ciphertext vector, modify lines 93, 211 and 215 in `qiyana_client.rs`, as well as the comments on lines 287–295 and 313 in `qiyana_server.rs`.
 
-## Qiyana-wosel Protocol
+## Qiyana1 Protocol
 1. Start the server:
 ```
 RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyanawosel_server
@@ -120,7 +120,7 @@ chmod +x run_distribute.sh
 (WORKER_NUM=4, default=8) ./run_distribute.sh
 ```
 
-When using Qiyana, you have the option of providing an additional parameter (`MODE=0/1` to represent standard/compressed communication):
+When using Qiyana0, you have the option of providing an additional parameter (`MODE=0/1` to represent standard/compressed communication):
 ```
 (WORKER_NUM=2 MODE=1, default=8,1) ./run_distribute.sh
 ```
