@@ -1,6 +1,6 @@
 # Qiyana
 
-This is an Rust implementation of the Qiyana scheme, introduiced in "Qiyana: A Boolean-Aware System for Oblivious Document Ranking and Retrieval".
+This is an Rust implementation of the Qiyana scheme, introduiced in "Qiyana: Enabling Boolean Queries for Oblivious Document Ranking and Retrieval".
 
 # Build
 To build and run this code, we need some environmental needs and adjustments.
