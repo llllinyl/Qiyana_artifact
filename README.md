@@ -38,13 +38,13 @@ Run simulation tests for each protocol implementation:
 # Baseline simulation
 RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture baseline::baseline_sim::test_baseline_simulate
 
-# Qiyana simulation
+# Qiyana0 simulation
 RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyana::qiyana_sim::test_qiyana_simulate
 
 (Compress rank ciphertext vector)
 RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyana::qiyana_sim::test_qiyana_zip_simulate
 
-# QiyanaWosel simulation
+# Qiyana1 simulation
 RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyanawosel::qiyanawosel_sim::test_qiyanawosel_simulate
 ```
 
