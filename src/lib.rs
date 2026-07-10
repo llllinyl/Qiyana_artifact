@@ -10,6 +10,6 @@
 
 pub mod utils;
 pub mod baseline;
-pub mod qiyana;
-pub mod qiyanawosel;
+pub mod qiyana0;
+pub mod qiyana1;
 pub mod nonprivate;
