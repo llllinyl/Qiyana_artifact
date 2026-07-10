@@ -1,4 +1,4 @@
-include!("qiyana_sim.rs");
+include!("qiyana0_sim.rs");
 use std::error::Error;
 use std::time::Duration;
 use tokio::net::{TcpListener, TcpStream};
@@ -8,11 +8,11 @@ use tokio::time::sleep;
 #[tokio::main]
 async fn main() {
     let addr = "127.0.0.1:9999";
-    let keyword_file = "/root/Qiyana-experiment/keyword.txt";
-    let tfidf_path = "/root/Qiyana-experiment/tf-idf.txt";
+    let keyword_file = "/root/Qiyana0-experiment/keyword.txt";
+    let tfidf_path = "/root/Qiyana0-experiment/tf-idf.txt";
     
     println!("========================================");
-    println!("🖥️  Qiyana Server");
+    println!("🖥️  Qiyana0 Server");
     println!("========================================\n");
     
     let listener = TcpListener::bind(addr).await.unwrap();
@@ -325,8 +325,8 @@ async fn handle_client(
                         .num_threads(THREAD_NUM)
                         .build_global()
                         .unwrap();
-                    // let response = server.qiyana_response(query, querysum, template, rank_vector);
-                    let response = server.qiyana_decompress_response(query, querysum, template, rank_vector);
+                    // let response = server.qiyana0_response(query, querysum, template, rank_vector);
+                    let response = server.qiyana0_decompress_response(query, querysum, template, rank_vector);
                     
                     let process_time = process_start.elapsed();
                     
