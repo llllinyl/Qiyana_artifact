@@ -11,7 +11,7 @@ config = {
 plt.rcParams.update(config)
 
 x_positions = np.array([1, 2, 3, 4, 5, 6])
-x_labels = ['Baseline', 'Qiyana', 'Qiyana-wosel', 'Baseline', 'Qiyana', 'Qiyana-wosel']
+x_labels = ['Baseline', 'Qiyana'+ r'$_0$', 'Qiyana'+ r'$_1$', 'Baseline', 'Qiyana'+ r'$_0$', 'Qiyana'+ r'$_1$']
 
 data_2 = [1308.97+3.78, 924.97, 137.25+3.78, 1291.84+3.78, 1159.16, 360.22+3.78]
 data_4 = [2571.16+3.78, 927.38, 137.49+3.78, 2510.75+3.78, 1155.39, 365.66+3.78]
@@ -60,10 +60,10 @@ y_min1 = data_2[0]
 ax1.hlines(y=y_min1, xmin=0.75, xmax=3.25, 
            colors='purple', linestyles='--', linewidth=0.75, alpha=0.7)
 
-y_qiyana_and_max = data_16[1]
-y_wosel_and_max = data_8[2]
-ratio1 = y_min1 / y_qiyana_and_max
-ratio2 = y_min1 / y_wosel_and_max
+y_qiyana0_and_max = data_16[1]
+y_qiyana1_and_max = data_8[2]
+ratio1 = y_min1 / y_qiyana0_and_max
+ratio2 = y_min1 / y_qiyana1_and_max
 
 ax1.annotate(r'$\geq$' + f'{ratio1:.1f}x', xy=(2, y_min1 * 1.25), 
              ha='center', va='bottom', fontsize=9,
@@ -79,10 +79,10 @@ y_min2 = data_2[3]
 ax1.hlines(y=y_min2, xmin=3.75, xmax=6.25, 
            colors='orange', linestyles='--', linewidth=0.75, alpha=0.7)
 
-y_qiyana_or_max = data_8[4]
-y_wosel_or_max = data_16[5]
-ratio3 = y_min2 / y_qiyana_or_max
-ratio4 = y_min2 / y_wosel_or_max
+y_qiyana0_or_max = data_8[4]
+y_qiyana1_or_max = data_16[5]
+ratio3 = y_min2 / y_qiyana0_or_max
+ratio4 = y_min2 / y_qiyana1_or_max
 
 ax1.annotate(r'$\geq$' + f'{ratio3:.1f}x', xy=(5, y_min2 * 1.25), 
              ha='center', va='bottom', fontsize=9,
@@ -98,10 +98,10 @@ y_max1 = data_16[0]
 ax1.hlines(y=y_max1, xmin=0.75, xmax=3.25, 
            colors='purple', linestyles='--', linewidth=0.75, alpha=0.7)
 
-y_qiyana_and_max = data_8[1]
-y_wosel_and_max = data_16[2]
-ratio1 = y_max1 / y_qiyana_and_max
-ratio2 = y_max1 / y_wosel_and_max
+y_qiyana0_and_max = data_8[1]
+y_qiyana1_and_max = data_16[2]
+ratio1 = y_max1 / y_qiyana0_and_max
+ratio2 = y_max1 / y_qiyana1_and_max
 
 ax1.annotate(r'$\leq$' + f'{ratio1:.1f}x', xy=(2, y_max1 * 0.475), 
              ha='center', va='bottom', fontsize=9,
@@ -117,10 +117,10 @@ y_max2 = data_16[3]
 ax1.hlines(y=y_max2, xmin=3.75, xmax=6.25, 
            colors='orange', linestyles='--', linewidth=0.75, alpha=0.7)
 
-y_qiyana_or_max = data_4[4]
-y_wosel_or_max = data_2[5]
-ratio3 = y_max2 / y_qiyana_or_max
-ratio4 = y_max2 / y_wosel_or_max
+y_qiyana0_or_max = data_4[4]
+y_qiyana1_or_max = data_2[5]
+ratio3 = y_max2 / y_qiyana0_or_max
+ratio4 = y_max2 / y_qiyana1_or_max
 
 ax1.annotate(r'$\leq$' + f'{ratio3:.1f}x', xy=(5, y_max2 * 0.475), 
              ha='center', va='bottom', fontsize=9,
