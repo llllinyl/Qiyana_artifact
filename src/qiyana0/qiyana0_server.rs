@@ -8,8 +8,8 @@ use tokio::time::sleep;
 #[tokio::main]
 async fn main() {
     let addr = "127.0.0.1:9999";
-    let keyword_file = "/root/Qiyana0-experiment/keyword.txt";
-    let tfidf_path = "/root/Qiyana0-experiment/tf-idf.txt";
+    let keyword_file = "/root/Qiyana-experiment/keyword.txt";
+    let tfidf_path = "/root/Qiyana-experiment/tf-idf.txt";
     
     println!("========================================");
     println!("🖥️  Qiyana0 Server");

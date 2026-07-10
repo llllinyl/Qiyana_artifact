@@ -1,8 +1,18 @@
 #!/bin/bash
 echo "============================================="
-echo "🔧  Distributed Qiyana-wosel System (Worker Num: ${WORKER_NUM:-8})"
+echo "🔧 Distributed Qiyana0 System (Worker Num: ${WORKER_NUM:-8})"
 echo "============================================="
 
+MODE=${MODE:-1}
+echo "Using $WORKER_NUM workers"
+
+if [ "$MODE" == "0" ]; then
+    echo "Using standard communication"
+fi
+
+if [ "$MODE" == "1" ]; then
+    echo "Using compressed communication"
+fi
 WORKER_NUM=${WORKER_NUM:-8} # 2^a
 WORKER_THREADS=16
 echo "Using $WORKER_NUM workers"
@@ -14,20 +24,21 @@ echo -e "\n1. Starting components sequentially..."
 MASTER_CORE=0
 CLIENT_CORE=64
 
-pkill -f "qiyanawoselmaster\|qiyanawoselworker\|qiyanawoselclient" 2>/dev/null || true
+echo -e "\n1. Starting components sequentially..."
 
-echo -e "\n📱  Starting Master Node..."
-RUSTFLAGS="-C target-cpu=native" numactl --cpunodebind=0 --membind=0 taskset -c $MASTER_CORE cargo run --release --bin qiyanawoselmaster -- $WORKER_NUM > ./result/result_master.txt 2>&1 &
+pkill -f "qiyana0master\|qiyana0worker\|qiyana0client" 2>/dev/null || true
+
+echo -e "\n📱   Starting Master Node..."
+RUSTFLAGS="-C target-cpu=native" numactl --cpunodebind=0 --membind=0 taskset -c $MASTER_CORE cargo run --release --bin qiyana0master -- $WORKER_NUM > ./result/result_master.txt 2>&1 &
 MASTER_PID=$!
 echo "Master PID: $MASTER_PID"
 sleep 3
-
 
 > ./result/result_workers.txt
 WORKERS_PER_NUMA=$((WORKER_NUM / 3))
 REMAINDER=$((WORKER_NUM % 3))
 for ((i=0; i<WORKER_NUM; i++)); do
-    echo -e "\n👷  Starting Worker $i..."
+    echo -e "\n👷   Starting Worker $i..."
     if [ $i -lt $WORKERS_PER_NUMA ]; then
         NUMA_NODE=0
         START_BASE=2
@@ -49,10 +60,10 @@ for ((i=0; i<WORKER_NUM; i++)); do
     else
         NODE_INDEX=$((i - WORKERS_PER_NUMA * 2))
     fi
-    
+
     START_CORE=$((START_BASE + NODE_INDEX * WORKER_THREADS))
     END_CORE=$((START_CORE + WORKER_THREADS - 1))
-    
+
     if [ $END_CORE -gt $NODE_CORES ]; then
         echo "⚠️  Warning: Worker $i core range $START_CORE-$END_CORE exceeds NUMA node $NUMA_NODE range"
         START_CORE=$START_BASE
@@ -60,19 +71,19 @@ for ((i=0; i<WORKER_NUM; i++)); do
     fi
 
     CORE_RANGE="${START_CORE}-${END_CORE}"
-    
-    RUSTFLAGS="-C target-cpu=native" numactl --cpunodebind=$NUMA_NODE --membind=$NUMA_NODE taskset -c $CORE_RANGE cargo run --release --bin qiyanawoselworker -- $i $WORKER_NUM >> ./result/result_workers.txt 2>&1 &
+
+    RUSTFLAGS="-C target-cpu=native" numactl --cpunodebind=$NUMA_NODE --membind=$NUMA_NODE taskset -c $CORE_RANGE cargo run --release --bin qiyana0worker -- $i $WORKER_NUM $MODE>> ./result/result_workers.txt 2>&1 &
     WORKER_PIDS[$i]=$!
     echo "Worker $i PID: ${WORKER_PIDS[$i]}"
 done
 
 sleep 1
-echo -e "\n🔍  Starting Client..."
-RUSTFLAGS="-C target-cpu=native" numactl --cpunodebind=1 --membind=1 taskset -c $CLIENT_CORE cargo run --release --bin qiyanawoselclient -- $WORKER_NUM 2>&1 | tee ./result/result_client.txt &
+echo -e "\n🔍   Starting Client..."
+RUSTFLAGS="-C target-cpu=native" numactl --cpunodebind=1 --membind=1 taskset -c $CLIENT_CORE cargo run --release --bin qiyana0client -- $WORKER_NUM $MODE 2>&1 | tee ./result/result_client.txt &
 CLIENT_PID=$!
 echo "Client PID: $CLIENT_PID"
 
-echo -e "\n📊   Log files created:"
+echo -e "\n📊    Log files created:"
 echo "   Master: ./result/result_master.txt ($(wc -l < ./result/result_master.txt) lines)"
 echo "   Workers: ./result/result_workers.txt ($(wc -l < ./result/result_workers.txt) lines)"
 echo "   Client: ./result/result_client.txt ($(wc -l < ./result/result_client.txt) lines)"
@@ -81,4 +92,4 @@ echo -e "\nPress Ctrl+C to stop all processes..."
 echo "Waiting for processes to complete..."
 
 wait
-echo -e "\n✅  Test completed!"
+echo -e "\n✅   Test completed!"

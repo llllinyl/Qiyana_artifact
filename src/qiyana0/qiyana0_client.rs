@@ -243,7 +243,7 @@ async fn main() {
             //     valid = false;
             // }
 
-            // if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana0-experiment/tf-idf.txt") {
+            // if let Ok(tfidf_content) = std::fs::read_to_string("/root/qiyana0-experiment/tf-idf.txt") {
             //     let lines: Vec<&str> = tfidf_content.lines().collect();
 
             //     for i in 1..recovered.len() {

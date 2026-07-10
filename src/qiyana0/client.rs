@@ -116,7 +116,7 @@ async fn main() {
     //let test_string = "(cladoniaceae AND NOT swabians) OR (cladonia AND stereocaulaceae AND NOT danube) OR (podetia AND pycnothelia AND stellaris)";
     let start_time = Instant::now();
     if mode == 0 {
-        let (query, querysum, template, rank_vector) = client.qiyana_query(&test_string);
+        let (query, querysum, template, rank_vector) = client.qiyana0_query(&test_string);
         let query_time = start_time.elapsed();
         println!("   Client submit the Boolean query: {}", test_string);
         println!("   Query generation time: {:?}", query_time);
@@ -175,7 +175,7 @@ async fn main() {
         println!("7. Waiting for {} workers...", worker_num);
         receive_and_process_results(client, result_listener, worker_num, mode).await;
     } else {
-        let (query, querysum, template, rank_vector) = client.qiyana_compress_query(&test_string);
+        let (query, querysum, template, rank_vector) = client.qiyana0_compress_query(&test_string);
         let query_time = start_time.elapsed();
         println!("   Client submit the Boolean query: {}", test_string);
         println!("   Query generation time: {:?}", query_time);
@@ -353,7 +353,7 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
                 _ => panic!("Unexpected response type"),
             })
             .collect();
-        client.qiyana_recovery(lwe_data)
+        client.qiyana0_recovery(lwe_data)
     } else {
         let mut sorted: Vec<_> = results.into_iter().collect();
         sorted.sort_by_key(|(id, _)| *id);
@@ -363,7 +363,7 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, work
                 _ => panic!("Unexpected response type"),
             })
             .collect();
-        client.qiyana_packing_recovery(glwe_data, worker_num)
+        client.qiyana0_packing_recovery(glwe_data, worker_num)
     };
     let recover_time = recover_start.elapsed();
 

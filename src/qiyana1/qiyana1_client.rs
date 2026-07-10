@@ -1,4 +1,4 @@
-include!("qiyanawosel_sim.rs");
+include!("qiyana1_sim.rs");
 use std::time::Duration;
 use tokio::net::TcpStream;
 use tokio::io::{AsyncWriteExt, AsyncReadExt};
@@ -8,7 +8,7 @@ use std::io::*;
 #[tokio::main]
 async fn main() {
     println!("========================================");
-    println!("🔍 Qiyana-wosel Client");
+    println!("🔍 Qiyana1 Client");
     println!("========================================\n");
     
     let server_addr = "127.0.0.1:9999";
@@ -92,7 +92,7 @@ async fn main() {
 
     println!("5. Generate query...");
     let start_time = Instant::now();
-    let (query, querysum, template) = client.qiyanawosel_query(&test_string);
+    let (query, querysum, template) = client.qiyana1_query(&test_string);
     let query_time = start_time.elapsed();
     println!("   Client submit the Boolean query: {}", test_string);
     println!("   Query generation time: {:?}", query_time);
@@ -213,7 +213,7 @@ async fn main() {
         Ok(response) => {
             println!("8. Recover results...");
             let recover_start = Instant::now();
-            let recovered = client.qiyanawosel_recovery(response);
+            let recovered = client.qiyana1_recovery(response);
             let recover_time = recover_start.elapsed();
             
             println!("   Recovery time: {:?}", recover_time);

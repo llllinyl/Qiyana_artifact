@@ -7,9 +7,9 @@
     redundant_semicolons
 )]
 
-pub mod qiyanawosel_sim;
-pub mod qiyanawosel_client;
-pub mod qiyanawosel_server;
+pub mod qiyana1_sim;
+pub mod qiyana1_client;
+pub mod qiyana1_server;
 
 pub mod share;
 pub mod client;

@@ -1,15 +1,15 @@
 #!/bin/bash
 
 echo "============================================="
-echo "🔧  Client-to-Server Qiyana-wosel Test (With Logs)"
+echo "🔧  Client-to-Server Qiyana0 Test (With Logs)"
 echo "============================================="
 
 rm -f ./result/result_single_server.txt ./result/result_single_client.txt 2>/dev/null
 
-pkill -f "qiyanawosel_server\|qiyanawosel_client" 2>/dev/null || true
+pkill -f "qiyana0_server\|qiyana0_client" 2>/dev/null || true
 
 echo -e "\n1. Starting Server (logs to ./result/result_single_server.txt)..."
-RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyanawosel_server > ./result/result_single_server.txt 2>&1 &
+RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana0_server > ./result/result_single_server.txt 2>&1 &
 SERVER_PID=$!
 echo "   Server PID: $SERVER_PID"
 echo "   Server logs: ./result/result_single_server.txt"
@@ -20,7 +20,7 @@ echo
 
 echo -e "\n2. Starting Client (logs to ./result/result_single_client.txt)..."
 echo "================ CLIENT OUTPUT ================"
-RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyanawosel_client 2>&1 | tee ./result/result_single_client.txt
+RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana0_client 2>&1 | tee ./result/result_single_client.txt
 CLIENT_EXIT=$?
 echo "================ CLIENT ENDED ================="
 

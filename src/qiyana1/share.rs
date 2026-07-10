@@ -299,7 +299,7 @@ impl Client {
         }
     }
     
-    pub fn qiyanawosel_query(&self, strings: &str)
+    pub fn qiyana1_query(&self, strings: &str)
          -> (Vec<Vec<LweCiphertextOwned<u64>>>, Vec<LweCiphertextOwned<u64>>, String) {
         let message_modulus = 1u64 << 7;
         let delta = (1_u64 << 63) / message_modulus;
@@ -355,7 +355,7 @@ impl Client {
         (query, querysum, template)
     }
 
-    pub fn qiyanawosel_recovery(&self, result: Vec<LweCiphertextOwned<u64>>) -> Vec<bool> {
+    pub fn qiyana1_recovery(&self, result: Vec<LweCiphertextOwned<u64>>) -> Vec<bool> {
         let number = result.len();
         let message_modulus = 1u64 << 7;
         let delta = (1_u64 << 63) / message_modulus;
@@ -462,7 +462,7 @@ impl SubServer {
         }
     }
 
-    pub fn qiyanawosel_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
+    pub fn qiyana1_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
         querysum: Vec<LweCiphertextOwned<u64>>, 
         template: String) -> Vec<LweCiphertextOwned<u64>> {
         

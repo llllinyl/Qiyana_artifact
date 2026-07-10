@@ -286,7 +286,7 @@ impl Client {
         }
     }
     
-    pub fn qiyanawosel_query(&self, strings: &str)
+    pub fn qiyana1_query(&self, strings: &str)
          -> (Vec<Vec<LweCiphertextOwned<u64>>>, Vec<LweCiphertextOwned<u64>>, String) {
         let message_modulus = 1u64 << 7;
         let delta = (1_u64 << 63) / message_modulus;
@@ -342,7 +342,7 @@ impl Client {
         (query, querysum, template)
     }
 
-    pub fn qiyanawosel_recovery(&self, result: Vec<LweCiphertextOwned<u64>>) -> Vec<bool> {
+    pub fn qiyana1_recovery(&self, result: Vec<LweCiphertextOwned<u64>>) -> Vec<bool> {
         let number = result.len();
         let message_modulus = 1u64 << 7;
         let delta = (1_u64 << 63) / message_modulus;
@@ -439,7 +439,7 @@ impl Server {
         }
     }
 
-    pub fn qiyanawosel_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
+    pub fn qiyana1_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
         querysum: Vec<LweCiphertextOwned<u64>>, 
         template: String) -> Vec<LweCiphertextOwned<u64>> {
         let keywords = self.keywords.clone();
@@ -606,7 +606,7 @@ impl Server {
 }
 
 #[test]
-fn test_qiyanawosel_simulate(){
+fn test_qiyana1_simulate(){
     rayon::ThreadPoolBuilder::new()
         .num_threads(THREAD_NUM)
         .build_global()
@@ -626,7 +626,7 @@ fn test_qiyanawosel_simulate(){
     let test_string = "cladoniaceae AND cladonia OR species".to_string();
 
     let query_gen = Instant::now();
-    let (query, querysum, template) = client.qiyanawosel_query(&test_string);
+    let (query, querysum, template) = client.qiyana1_query(&test_string);
     let query_time = query_gen.elapsed();
     println!("query generation time: {:?}", query_time);
 
@@ -637,7 +637,7 @@ fn test_qiyanawosel_simulate(){
     println!("Query serialized size: {} bytes", serialized_query_size);
 
     let response_gen = Instant::now();
-    let response = server.qiyanawosel_response(query, querysum, template);
+    let response = server.qiyana1_response(query, querysum, template);
     let response_time = response_gen.elapsed();
     println!("response generation time: {:?}", response_time);
 
@@ -646,7 +646,7 @@ fn test_qiyanawosel_simulate(){
     println!("Response serialized size: {} bytes", serialized_response_size);
 
     let recover_gen = Instant::now();
-    let recovered = client.qiyanawosel_recovery(response);
+    let recovered = client.qiyana1_recovery(response);
     let recover_time = recover_gen.elapsed();
     println!("recovery time: {:?}", recover_time);
 

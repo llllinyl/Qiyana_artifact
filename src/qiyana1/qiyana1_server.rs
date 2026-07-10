@@ -1,4 +1,4 @@
-include!("qiyanawosel_sim.rs");
+include!("qiyana1_sim.rs");
 use std::error::Error;
 use std::time::Duration;
 use tokio::net::{TcpListener, TcpStream};
@@ -11,7 +11,7 @@ async fn main() {
     let keyword_file = "/root/Qiyana-experiment/keyword.txt";
     
     println!("========================================");
-    println!("🖥️  Qiyana-wosel Server");
+    println!("🖥️  Qiyana1 Server");
     println!("========================================\n");
     
     let listener = TcpListener::bind(addr).await.unwrap();
@@ -279,7 +279,7 @@ async fn handle_client(
                         .num_threads(THREAD_NUM)
                         .build_global()
                         .unwrap();
-                    let response = server.qiyanawosel_response(query, querysum, template);
+                    let response = server.qiyana1_response(query, querysum, template);
                     let process_time = process_start.elapsed();
                     
                     println!("[{}]   ✅ Query processed in {:?}", client_addr, process_time);

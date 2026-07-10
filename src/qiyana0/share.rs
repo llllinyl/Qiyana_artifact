@@ -448,7 +448,7 @@ impl Client {
         }
     }
     
-    pub fn qiyana_query(&self, strings: &str)
+    pub fn qiyana0_query(&self, strings: &str)
          -> (Vec<Vec<LweCiphertextOwned<u64>>>, 
             Vec<LweCiphertextOwned<u64>>, 
             String, Vec<LweCiphertextOwned<u64>>) {
@@ -523,7 +523,7 @@ impl Client {
         (query, querysum, template, rank_vector)
     }
 
-    pub fn qiyana_compress_query(&self, strings: &str)
+    pub fn qiyana0_compress_query(&self, strings: &str)
          -> (Vec<Vec<LweCiphertextOwned<u64>>>, 
             Vec<LweCiphertextOwned<u64>>, 
             String, Vec<SeededLweCiphertext<u64>>) {
@@ -606,7 +606,7 @@ impl Client {
         (query, querysum, template, rank_vector)
     }
 
-    pub fn qiyana_recovery(&self, results: Vec<Vec<LweCiphertextOwned<u64>>>) -> Vec<u16> {
+    pub fn qiyana0_recovery(&self, results: Vec<Vec<LweCiphertextOwned<u64>>>) -> Vec<u16> {
         let message_modulus = 1u64 << 7;
         let delta = (1_u64 << 63) / message_modulus;
         let small_sk = self.small_lwe_sk.clone();
@@ -636,7 +636,7 @@ impl Client {
         final_result
     }
 
-    pub fn qiyana_packing_recovery(&self, results: Vec<GlweCiphertext<Vec<u64>>>, worker_num: usize) -> Vec<u16> {
+    pub fn qiyana0_packing_recovery(&self, results: Vec<GlweCiphertext<Vec<u64>>>, worker_num: usize) -> Vec<u16> {
         let message_modulus = 1u64 << 7;
         let delta = (1_u64 << 63) / message_modulus;
         let glwe_sk = self.glwe_sk.clone();
@@ -793,7 +793,7 @@ impl SubServer {
         }
     }
 
-    pub fn qiyana_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
+    pub fn qiyana0_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
         querysum: Vec<LweCiphertextOwned<u64>>, 
         template: String,
         rank_vector: Vec<LweCiphertextOwned<u64>>) -> Vec<Vec<LweCiphertextOwned<u64>>> {
@@ -885,7 +885,7 @@ impl SubServer {
         final_results
     }
 
-    pub fn qiyana_decompress_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
+    pub fn qiyana0_decompress_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
         querysum: Vec<LweCiphertextOwned<u64>>, 
         template: String,
         rank_vector: Vec<SeededLweCiphertext<u64>>) -> Vec<GlweCiphertext<Vec<u64>>> {

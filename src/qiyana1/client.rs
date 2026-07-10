@@ -103,7 +103,7 @@ async fn main() {
     let test_string = "(cladoniaceae AND cladonia AND stereocaulaceae) AND NOT (swabians OR danube) AND podetia AND NOT banat OR pycnothelia";
     //let test_string = "(cladoniaceae AND NOT swabians) OR (cladonia AND stereocaulaceae AND NOT danube) OR (podetia AND pycnothelia AND stellaris)";
     let start_time = Instant::now();
-    let (query, querysum, template) = client.qiyanawosel_query(&test_string);
+    let (query, querysum, template) = client.qiyana1_query(&test_string);
     let query_time = start_time.elapsed();
     println!("   Client submit the Boolean query: {}", test_string);
     println!("   Query generation time: {:?}", query_time);
@@ -262,7 +262,7 @@ async fn receive_and_process_results(client: Client, listener: TcpListener, expe
     
     println!("8. Recover results...");
     let recover_start = Instant::now();
-    let recovered = client.qiyanawosel_recovery(merged_and_sorted);
+    let recovered = client.qiyana1_recovery(merged_and_sorted);
     let recover_time = recover_start.elapsed();
 
     println!("   Recovery time: {:?}", recover_time);
