@@ -1,4 +1,4 @@
-include!("qiyana_sim.rs");
+include!("qiyana0_sim.rs");
 use std::time::Duration;
 use tokio::net::TcpStream;
 use tokio::io::{AsyncWriteExt, AsyncReadExt};
@@ -8,7 +8,7 @@ use std::io::*;
 #[tokio::main]
 async fn main() {
     println!("========================================");
-    println!("🔍 Qiyana Client");
+    println!("🔍 Qiyana0 Client");
     println!("========================================\n");
     
     let server_addr = "127.0.0.1:9999";
@@ -95,8 +95,8 @@ async fn main() {
     println!("5. Generate query...");
     let start_time = Instant::now();
     
-    // let (query, querysum, template, rank_vector) = client.qiyana_query(&test_string);
-    let (query, querysum, template, rank_vector) = client.qiyana_compress_query(&test_string);
+    // let (query, querysum, template, rank_vector) = client.qiyana0_query(&test_string);
+    let (query, querysum, template, rank_vector) = client.qiyana0_compress_query(&test_string);
     
     let query_time = start_time.elapsed();
     println!("   Client submit the Boolean query: {}", test_string);
@@ -220,8 +220,8 @@ async fn main() {
         Ok(response) => {
             println!("8. Recover results...");
             let recover_start = Instant::now();
-            // let recovered = client.qiyana_recovery(response);
-            let recovered = client.qiyana_packing_recovery(response);
+            // let recovered = client.qiyana0_recovery(response);
+            let recovered = client.qiyana0_packing_recovery(response);
             let recover_time = recover_start.elapsed();
             
             println!("   Recovery time: {:?}", recover_time);
@@ -243,7 +243,7 @@ async fn main() {
             //     valid = false;
             // }
 
-            // if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana-experiment/tf-idf.txt") {
+            // if let Ok(tfidf_content) = std::fs::read_to_string("/root/Qiyana0-experiment/tf-idf.txt") {
             //     let lines: Vec<&str> = tfidf_content.lines().collect();
 
             //     for i in 1..recovered.len() {
