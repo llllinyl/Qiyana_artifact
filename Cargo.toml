@@ -1,5 +1,5 @@
 [package]
-name = "qiyana"
+name = "qiyana0"
 version = "0.1.0"
 edition = "2021"
 
@@ -24,23 +24,23 @@ path = "src/baseline/baseline_client.rs"
 test = false
 
 [[bin]]
-name = "qiyanawosel_server"
-path = "src/qiyanawosel/qiyanawosel_server.rs"
+name = "qiyana1_server"
+path = "src/qiyana1/qiyana1_server.rs"
 test = false
 
 [[bin]]
-name = "qiyanawosel_client"
-path = "src/qiyanawosel/qiyanawosel_client.rs"
+name = "qiyana1_client"
+path = "src/qiyana1/qiyana1_client.rs"
 test = false
 
 [[bin]]
-name = "qiyana_server"
-path = "src/qiyana/qiyana_server.rs"
+name = "qiyana0_server"
+path = "src/qiyana0/qiyana0_server.rs"
 test = false
 
 [[bin]]
-name = "qiyana_client"
-path = "src/qiyana/qiyana_client.rs"
+name = "qiyana0_client"
+path = "src/qiyana0/qiyana0_client.rs"
 test = false
 
 [[bin]]
@@ -59,33 +59,33 @@ path = "src/baseline/worker.rs"
 test = false
 
 [[bin]]
-name = "qiyanaclient"
-path = "src/qiyana/client.rs"
+name = "qiyana0client"
+path = "src/qiyana0/client.rs"
 test = false
 
 [[bin]]
-name = "qiyanamaster"
-path = "src/qiyana/master.rs"
+name = "qiyana0master"
+path = "src/qiyana0/master.rs"
 test = false
 
 [[bin]]
-name = "qiyanaworker"
-path = "src/qiyana/worker.rs"
+name = "qiyana0worker"
+path = "src/qiyana0/worker.rs"
 test = false
 
 [[bin]]
-name = "qiyanawoselclient"
-path = "src/qiyanawosel/client.rs"
+name = "qiyana1client"
+path = "src/qiyana1/client.rs"
 test = false
 
 [[bin]]
-name = "qiyanawoselmaster"
-path = "src/qiyanawosel/master.rs"
+name = "qiyana1master"
+path = "src/qiyana1/master.rs"
 test = false
 
 [[bin]]
-name = "qiyanawoselworker"
-path = "src/qiyanawosel/worker.rs"
+name = "qiyana1worker"
+path = "src/qiyana1/worker.rs"
 test = false
 
 [dependencies]
