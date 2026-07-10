@@ -39,13 +39,13 @@ Run simulation tests for each protocol implementation:
 RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture baseline::baseline_sim::test_baseline_simulate
 
 # Qiyana0 simulation
-RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyana::qiyana_sim::test_qiyana_simulate
+RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyana0::qiyana0_sim::test_qiyana0_simulate
 
 (Compress rank ciphertext vector)
-RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyana::qiyana_sim::test_qiyana_zip_simulate
+RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyana0::qiyana0_sim::test_qiyana0_zip_simulate
 
 # Qiyana1 simulation
-RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyanawosel::qiyanawosel_sim::test_qiyanawosel_simulate
+RUSTFLAGS="-C target-cpu=native" cargo test --release -- --nocapture qiyana1::qiyana1_sim::test_qiyana1_simulate
 ```
 
 Note that, we use 
@@ -81,23 +81,23 @@ RUSTFLAGS="-C target-cpu=native" cargo run --release --bin baseline_client
 ## Qiyana0 Protocol
 1. Start the server:
 ```
-RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana_server
+RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana0_server
 ```
 2. Start the client:
 ```
-RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana_client
+RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana0_client
 ```
 
-To compress a rank ciphertext vector, modify lines 93, 211 and 215 in `qiyana_client.rs`, as well as the comments on lines 287–295 and 313 in `qiyana_server.rs`.
+To compress a rank ciphertext vector, modify lines 93, 211 and 215 in `qiyana0_client.rs`, as well as the comments on lines 287–295 and 313 in `qiyana0_server.rs`.
 
 ## Qiyana1 Protocol
 1. Start the server:
 ```
-RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyanawosel_server
+RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana1_server
 ```
 2. Start the client:
 ```
-RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyanawosel_client
+RUSTFLAGS="-C target-cpu=native" cargo run --release --bin qiyana1_client
 ```
 
 ## Other
@@ -110,7 +110,7 @@ chmod +x run_single.sh
 
 If you want to modify KEYWORD_SET_NUM (the size of each document's keyword set), DOCUMENT_NUM, THREAD_NUM and ports, please refer to the relevant file `<system>_sim.rs`.
 
-If you want to test a single NOT query, you need to adjust the comments in the verification section of `baseline_client.rs/qiyana_client.rs/qiyanawosel_client.rs` in 279-291/242-274/234-242 lines.
+If you want to test a single NOT query, you need to adjust the comments in the verification section of `baseline_client.rs/qiyana0_client.rs/qiyana1_client.rs` in 279-291/242-274/234-242 lines.
 
 # Running Client-Master-Workers Interactive Mode
 We provide a shell script to support easy execution of the entire system. For example, you can run the following code to test the performance with 4 workers. If you wish to adjust the number of documents, ports, threads, etc., please modify the settings in the `share.rs` file.
