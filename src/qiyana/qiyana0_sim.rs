@@ -432,7 +432,7 @@ impl Client {
         }
     }
     
-    pub fn qiyana_query(&self, strings: &str)
+    pub fn qiyana000_query(&self, strings: &str)
          -> (Vec<Vec<LweCiphertextOwned<u64>>>, 
             Vec<LweCiphertextOwned<u64>>, 
             String, Vec<LweCiphertextOwned<u64>>) {
@@ -507,7 +507,7 @@ impl Client {
         (query, querysum, template, rank_vector)
     }
 
-    pub fn qiyana_compress_query(&self, strings: &str)
+    pub fn qiyana000_compress_query(&self, strings: &str)
          -> (Vec<Vec<LweCiphertextOwned<u64>>>, 
             Vec<LweCiphertextOwned<u64>>, 
             String, Vec<SeededLweCiphertext<u64>>) {
@@ -590,7 +590,7 @@ impl Client {
         (query, querysum, template, rank_vector)
     }
 
-    pub fn qiyana_recovery(&self, results: Vec<Vec<LweCiphertextOwned<u64>>>) -> Vec<u16> {
+    pub fn qiyana000_recovery(&self, results: Vec<Vec<LweCiphertextOwned<u64>>>) -> Vec<u16> {
         let message_modulus = 1u64 << 7;
         let delta = (1_u64 << 63) / message_modulus;
         let small_sk = self.small_lwe_sk.clone();
@@ -620,7 +620,7 @@ impl Client {
         final_result
     }
 
-    pub fn qiyana_packing_recovery(&self, results: Vec<GlweCiphertext<Vec<u64>>>) -> Vec<u16> {
+    pub fn qiyana000_packing_recovery(&self, results: Vec<GlweCiphertext<Vec<u64>>>) -> Vec<u16> {
         let message_modulus = 1u64 << 7;
         let delta = (1_u64 << 63) / message_modulus;
         let glwe_sk = self.glwe_sk.clone();
@@ -757,7 +757,7 @@ impl Server {
         }
     }
 
-    pub fn qiyana_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
+    pub fn qiyana000_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
         querysum: Vec<LweCiphertextOwned<u64>>, 
         template: String,
         rank_vector: Vec<LweCiphertextOwned<u64>>) -> Vec<Vec<LweCiphertextOwned<u64>>> {
@@ -848,7 +848,7 @@ impl Server {
         final_results
     }
 
-    pub fn qiyana_decompress_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
+    pub fn qiyana000_decompress_response(&self, query: Vec<Vec<LweCiphertextOwned<u64>>>,
         querysum: Vec<LweCiphertextOwned<u64>>, 
         template: String,
         rank_vector: Vec<SeededLweCiphertext<u64>>) -> Vec<GlweCiphertext<Vec<u64>>> {
@@ -1148,13 +1148,13 @@ impl Server {
 }
 
 #[test]
-fn test_qiyana_simulate(){
+fn test_qiyana000_simulate(){
     rayon::ThreadPoolBuilder::new()
         .num_threads(THREAD_NUM)
         .build_global()
         .unwrap();
-    let keyword_path = "/root/Qiyana-experiment/keyword.txt";
-    let tfidf_path = "/root/Qiyana-experiment/tf-idf.txt";
+    let keyword_path = "/root/Qiyana000-experiment/keyword.txt";
+    let tfidf_path = "/root/Qiyana000-experiment/tf-idf.txt";
     let client = Client::new();
     let pre = Instant::now();
     let server = Server::new(client.seeded_bsk.clone(), 
@@ -1172,7 +1172,7 @@ fn test_qiyana_simulate(){
     let test_string = "cladoniaceae AND cladonia OR species".to_string();
 
     let query_gen = Instant::now();
-    let (query, querysum, template, rank_vector) = client.qiyana_query(&test_string);
+    let (query, querysum, template, rank_vector) = client.qiyana000_query(&test_string);
     let query_time = query_gen.elapsed();
     println!("query generation time: {:?}", query_time);
 
@@ -1184,7 +1184,7 @@ fn test_qiyana_simulate(){
     println!("Query serialized size: {} bytes", serialized_query_size);
 
     let response_gen = Instant::now();
-    let response = server.qiyana_response(query, querysum, template, rank_vector);
+    let response = server.qiyana000_response(query, querysum, template, rank_vector);
     let response_time = response_gen.elapsed();
     println!("response generation time: {:?}", response_time);
 
@@ -1193,7 +1193,7 @@ fn test_qiyana_simulate(){
     println!("Response serialized size: {} bytes", serialized_response_size);
 
     let recover_gen = Instant::now();
-    let recovered = client.qiyana_recovery(response);
+    let recovered = client.qiyana000_recovery(response);
     let recover_time = recover_gen.elapsed();
     println!("recovery time: {:?}", recover_time);
 
@@ -1204,13 +1204,13 @@ fn test_qiyana_simulate(){
 }
 
 #[test]
-fn test_qiyana_zip_simulate(){
+fn test_qiyana000_zip_simulate(){
     rayon::ThreadPoolBuilder::new()
         .num_threads(THREAD_NUM)
         .build_global()
         .unwrap();
-    let keyword_path = "/home/lyl/Desktop/Qiyana/keyword.txt";
-    let tfidf_path = "/home/lyl/Desktop/Qiyana/tf-idf.txt";
+    let keyword_path = "/home/lyl/Desktop/Qiyana000/keyword.txt";
+    let tfidf_path = "/home/lyl/Desktop/Qiyana000/tf-idf.txt";
     let client = Client::new();
     let pre = Instant::now();
     let server = Server::new(client.seeded_bsk.clone(), 
@@ -1229,7 +1229,7 @@ fn test_qiyana_zip_simulate(){
     // let test_string = "((cladoniaceae AND lichen) OR (genera AND NOT merri)) AND (thallus OR NOT fossil)".to_string();
 
     let query_gen = Instant::now();
-    let (query, querysum, template, rank_vector) = client.qiyana_compress_query(&test_string);
+    let (query, querysum, template, rank_vector) = client.qiyana000_compress_query(&test_string);
     let query_time = query_gen.elapsed();
     println!("query generation time: {:?}", query_time);
 
@@ -1241,7 +1241,7 @@ fn test_qiyana_zip_simulate(){
     println!("Query serialized size: {} bytes", serialized_query_size);
 
     let response_gen = Instant::now();
-    let response = server.qiyana_decompress_response(query, querysum, template, rank_vector);
+    let response = server.qiyana000_decompress_response(query, querysum, template, rank_vector);
     let response_time = response_gen.elapsed();
     println!("response generation time: {:?}", response_time);
 
@@ -1250,7 +1250,7 @@ fn test_qiyana_zip_simulate(){
     println!("Response serialized size: {} bytes", serialized_response_size);
 
     let recover_gen = Instant::now();
-    let recovered = client.qiyana_packing_recovery(response);
+    let recovered = client.qiyana000_packing_recovery(response);
     let recover_time = recover_gen.elapsed();
     println!("recovery time: {:?}", recover_time);
 
