@@ -25,6 +25,16 @@ baseline2  = np.array([42293.47, 172327.74, 674564.43, 2668806.49])
 qiyana2   = np.array([1783.43, 6926.30, 31814.25, 127545.84]) 
 qiyanawosel2   = np.array([1070.68, 4255.29, 17220.62, 70313.37]) 
 
+coeus3 = np.array([0.086, 0.110, 0.129, 0.214]) 
+baseline3  = np.array([0.086, 0.110, 0.129, 0.214]) 
+qiyana3   = np.array([0.086, 0.110, 0.129, 0.214]) 
+qiyanawosel3   = np.array([0.086, 0.110, 0.129, 0.214]) 
+
+coeus4 = np.array([0.086, 0.144, 0.193, 0.408]) 
+baseline4  = np.array([0.086, 0.144, 0.193, 0.408]) 
+qiyana4   = np.array([0.086, 0.144, 0.193, 0.408]) 
+qiyanawosel4   = np.array([0.086, 0.144, 0.193, 0.408]) 
+
 fig, (ax1, ax2) = plt.subplots(1, 2, sharey=True, figsize=(5, 3),
                                gridspec_kw={'width_ratios': [1, 35], 'wspace': 0.03})
 
@@ -45,28 +55,44 @@ p1 = ax2.bar(x_coeus, coeus1, bar_width,
             label='Coeus-CPU1', color=c_coeus, edgecolor='black', linewidth=0.5)
 p2 = ax2.bar(x_coeus, coeus2, bar_width, bottom=coeus1,
             label='Coeus-CPU2', color=c_coeus, edgecolor='black', linewidth=0.5, hatch='x')
+p3 = ax2.bar(x_coeus, coeus3, bar_width, bottom=coeus1 + coeus2,
+            label='Coeus-CPU3', color=c_coeus, edgecolor='black', linewidth=0.5, hatch='--')
+p4 = ax2.bar(x_coeus, coeus4, bar_width, bottom=coeus1 + coeus2 + coeus3,
+            label='Coeus-CPU4', color=c_coeus, edgecolor='black', linewidth=0.5, hatch='|||')
 
-p3 = ax2.bar(x_baseline, baseline1, bar_width,
+p5 = ax2.bar(x_baseline, baseline1, bar_width,
             label='Baseline-CPU1', color=c_baseline, edgecolor='black', linewidth=0.5)
-p4 = ax2.bar(x_baseline, baseline2, bar_width, bottom=baseline1,
+p6 = ax2.bar(x_baseline, baseline2, bar_width, bottom=baseline1,
             label='Baseline-CPU2', color=c_baseline, edgecolor='black', linewidth=0.5, hatch='x')
+p7 = ax2.bar(x_baseline, baseline3, bar_width, bottom=baseline1 + baseline2,
+            label='Baseline-CPU3', color=c_baseline, edgecolor='black', linewidth=0.5, hatch='--')
+p8 = ax2.bar(x_baseline, baseline4, bar_width, bottom=baseline1 + baseline2 + baseline3,
+            label='Baseline-CPU4', color=c_baseline, edgecolor='black', linewidth=0.5, hatch='|||')
 
-p5 = ax2.bar(x_qiyana, qiyana1, bar_width,
+p9 = ax2.bar(x_qiyana, qiyana1, bar_width,
             label='Qiyana-CPU1', color=c_qiyana, edgecolor='black', linewidth=0.5)
-p6 = ax2.bar(x_qiyana, qiyana2, bar_width, bottom=qiyana1,
+p10 = ax2.bar(x_qiyana, qiyana2, bar_width, bottom=qiyana1,
             label='Qiyana-CPU2', color=c_qiyana, edgecolor='black', linewidth=0.5, hatch='x')
+p11 = ax2.bar(x_qiyana, qiyana3, bar_width, bottom=qiyana1 + qiyana2,
+            label='Qiyana-CPU3', color=c_qiyana, edgecolor='black', linewidth=0.5, hatch='--')
+p12 = ax2.bar(x_qiyana, qiyana4, bar_width, bottom=qiyana1 + qiyana2 + qiyana3,
+            label='Qiyana-CPU4', color=c_qiyana, edgecolor='black', linewidth=0.5, hatch='|||')
 
-p7 = ax2.bar(x_qiyanawosel, qiyanawosel1, bar_width,
+p13 = ax2.bar(x_qiyanawosel, qiyanawosel1, bar_width,
             label='Qiyana-wosel-CPU1', color=c_qiyanawosel, edgecolor='black', linewidth=0.5)
-p8 = ax2.bar(x_qiyanawosel, qiyanawosel2, bar_width, bottom=qiyanawosel1,
+p14 = ax2.bar(x_qiyanawosel, qiyanawosel2, bar_width, bottom=qiyanawosel1,
             label='Qiyana-wosel-CPU2', color=c_qiyanawosel, edgecolor='black', linewidth=0.5, hatch='x')
+p15 = ax2.bar(x_qiyanawosel, qiyanawosel3, bar_width, bottom=qiyanawosel1 + qiyanawosel2,
+            label='Qiyana-wosel-CPU3', color=c_qiyanawosel, edgecolor='black', linewidth=0.5, hatch='--')
+p16 = ax2.bar(x_qiyanawosel, qiyanawosel4, bar_width, bottom=qiyanawosel1 + qiyanawosel2 + qiyanawosel3,
+            label='Qiyana-wosel-CPU4', color=c_qiyanawosel, edgecolor='black', linewidth=0.5, hatch='|||')
 
 for i in range(len(x_pos)):
     values = [
-        coeus1[i] + coeus2[i],
-        baseline1[i] + baseline2[i],
-        qiyana1[i] + qiyana2[i],
-        qiyanawosel1[i] + qiyanawosel2[i]
+        coeus1[i] + coeus2[i] + coeus3[i] + coeus4[i],
+        baseline1[i] + baseline2[i] + baseline3[i] + baseline4[i],
+        qiyana1[i] + qiyana2[i] + qiyana3[i] + qiyana4[i],
+        qiyanawosel1[i] + qiyanawosel2[i] + qiyanawosel3[i] + qiyanawosel4[i]
     ]
     max_val = values[1]
     
@@ -94,8 +120,8 @@ from matplotlib.patches import Patch
 legend_elements = [
     Patch(facecolor=c_coeus, edgecolor='black', linewidth=0.4, label='Coeus'),
     Patch(facecolor=c_baseline, edgecolor='black', linewidth=0.4, label='Baseline'),
-    Patch(facecolor=c_qiyana, edgecolor='black', linewidth=0.4, label='Qiyana'),
-    Patch(facecolor=c_qiyanawosel, edgecolor='black', linewidth=0.4, label='Qiyana-wosel'),
+    Patch(facecolor=c_qiyana, edgecolor='black', linewidth=0.4, label='Qiyana'+ r'$_0$'),
+    Patch(facecolor=c_qiyanawosel, edgecolor='black', linewidth=0.4, label='Qiyana'+ r'$_1$'),
 ]
 
 ax2.legend(handles=legend_elements, ncol=2, loc='upper left', 
