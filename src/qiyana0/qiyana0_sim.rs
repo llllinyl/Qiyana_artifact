@@ -930,27 +930,27 @@ impl Server {
         println!("MVM time: {:?}", mul_start.elapsed());
 
         let select = Instant::now();
-        let all_containers: Vec<Vec<u64>> = {
-            let flat_items: Vec<u64> = (0..keywords.len())
-                .into_par_iter()
-                .flat_map(|num| {
-                    let row = results[num].clone();
-                    let mask = match_results[num].clone();
-                    let mut flat = Vec::with_capacity(5);
-                    
-                    for ind in 0..5 {
-                        let mul_res = self.mul(mask.clone(), row[ind].clone());
-                        flat.extend_from_slice(mul_res.as_ref());
-                    }
-                    flat
-                })
-                .collect();
-            
-            flat_items
-                .chunks(PACKING_NUM * LWESIZE)
-                .map(|chunk| chunk.to_vec())
-                .collect()
-        };
+        let flat_items: Vec<u64> = (0..keywords.len())
+            .into_par_iter()
+            .flat_map_iter(|num| {
+                let row = &results[num];
+                let mask = &match_results[num];
+
+                let mut flat = Vec::with_capacity(5);
+
+                for ind in 0..5 {
+                    let mul_res = self.mul(mask.clone(), row[ind].clone());
+                    flat.extend_from_slice(mul_res.as_ref());
+                }   
+
+                flat.into_iter()
+            })
+            .collect();
+
+        let all_containers: Vec<Vec<u64>> = flat_items
+            .chunks(PACKING_NUM * LWESIZE)
+            .map(|chunk| chunk.to_vec())
+            .collect();
 
         println!("TFHE selection and container building time: {:?}", select.elapsed());
 
