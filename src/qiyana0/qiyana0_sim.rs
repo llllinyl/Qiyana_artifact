@@ -890,7 +890,7 @@ impl Server {
         let mul_start = Instant::now();
         let real_vector: Vec<LweCiphertextOwned<u64>> = rank_vector
             .par_iter()
-            .map(|ct| ct.decompress_into_lwe_ciphertext())
+            .map(|ct| ct.clone().decompress_into_lwe_ciphertext())
             .collect();
         
         let real_vector_arc = Arc::new(real_vector);
