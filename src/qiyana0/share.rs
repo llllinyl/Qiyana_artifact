@@ -968,28 +968,31 @@ impl SubServer {
         println!("MVM time: {:?}", mul_start.elapsed());
 
         let select = Instant::now();
-        let flat_items: Vec<u64> = (0..keywords.len())
-            .into_par_iter()
-            .flat_map_iter(|num| {
-                let row = &results[num];
-                let mask = &match_results[num];
+        let all_containers: Vec<Vec<u64>> = {
+            let total_ciphertexts = keywords.len() * 5;
 
-                let mut flat = Vec::with_capacity(5);
+            let mut flat_items = vec![0u64; total_ciphertexts * LWESIZE];
 
-                for ind in 0..5 {
-                    let mul_res = self.mul(mask.clone(), row[ind].clone());
-                    flat.extend_from_slice(mul_res.as_ref());
-                }   
+            flat_items
+                .par_chunks_mut(LWESIZE)
+                .enumerate()
+                .for_each(|(flat_idx, output_chunk)| {
+                    let doc_idx = flat_idx / 5;
+                    let bit_position = flat_idx % 5;
+    
+                    let mul_result = self.mul(
+                        match_results[doc_idx].clone(),
+                        results[doc_idx][bit_position].clone(),
+                    );
+    
+                    output_chunk.copy_from_slice(mul_result.as_ref());
+                });
 
-                flat.into_iter()
-            })
-            .collect();
-
-        let all_containers: Vec<Vec<u64>> = flat_items
-            .chunks(PACKING_NUM * LWESIZE)
-            .map(|chunk| chunk.to_vec())
-            .collect();
-
+            flat_items
+                .chunks(PACKING_NUM * LWESIZE)
+                .map(|chunk| chunk.to_vec())
+                .collect()
+        };
         println!("TFHE selection and container building time: {:?}", select.elapsed());
 
         let packing_start = Instant::now();
