@@ -5,8 +5,8 @@ use std::{
     sync::RwLock,
 };
 
-pub const DEFAULT_SIZE: u16 = 1024;
-pub const DEFAULT_HASH_LOOP: u16 = 24;
+pub const DEFAULT_SIZE: u16 = 2048;
+pub const DEFAULT_HASH_LOOP: u16 = 26;
 
 pub struct BloomFilter {
     pub size: Cell<u16>,
