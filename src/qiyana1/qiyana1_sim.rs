@@ -163,7 +163,7 @@ impl Client {
         let glwe_dimension = GlweDimension(1);
         let polynomial_size = PolynomialSize(16384);
         let lwe_noise_distribution =
-            DynamicDistribution::new_gaussian_from_std_dev(StandardDev(0.000000000465661287));//512 ciphertext sum; real 2^{-40}
+            DynamicDistribution::new_gaussian_from_std_dev(StandardDev(0.000000000465661287));
         let glwe_noise_distribution =
             DynamicDistribution::new_gaussian_from_std_dev(StandardDev(2.168404344971009e-19));
         let pbs_base_log = DecompositionBaseLog(15);
