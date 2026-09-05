@@ -24,6 +24,16 @@ path = "src/baseline/baseline_client.rs"
 test = false
 
 [[bin]]
+name = "baselineh_server"
+path = "src/baselineh/baselineh_server.rs"
+test = false
+
+[[bin]]
+name = "baselineh_client"
+path = "src/baselineh/baselineh_client.rs"
+test = false
+
+[[bin]]
 name = "qiyana1_server"
 path = "src/qiyana1/qiyana1_server.rs"
 test = false
@@ -56,6 +66,21 @@ test = false
 [[bin]]
 name = "baselineworker"
 path = "src/baseline/worker.rs"
+test = false
+
+[[bin]]
+name = "baselinehclient"
+path = "src/baselineh/client.rs"
+test = false
+
+[[bin]]
+name = "baselinehmaster"
+path = "src/baselineh/master.rs"
+test = false
+
+[[bin]]
+name = "baselinehworker"
+path = "src/baselineh/worker.rs"
 test = false
 
 [[bin]]
