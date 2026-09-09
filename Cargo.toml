@@ -34,6 +34,16 @@ path = "src/baselineh/baselineh_client.rs"
 test = false
 
 [[bin]]
+name = "baselineb_server"
+path = "src/baselineb/baselineb_server.rs"
+test = false
+
+[[bin]]
+name = "baselineb_client"
+path = "src/baselineb/baselineb_client.rs"
+test = false
+
+[[bin]]
 name = "qiyana1_server"
 path = "src/qiyana1/qiyana1_server.rs"
 test = false
