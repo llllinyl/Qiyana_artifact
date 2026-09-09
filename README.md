@@ -15,9 +15,11 @@ The project consists of three main protocol implementations:
 
 1. **Baseline** - Baseline implementation
 
-2. **Qiyana0** - Communication-friendly
+2. **BaselineH** - Baseline implementation with fixed-length hashing
 
-3. **Qiyana1** - Computation-efficient
+3. **Qiyana0** - Communication-friendly
+
+4. **Qiyana1** - Computation-efficient
 
 Each implementation includes:
 
@@ -78,6 +80,16 @@ RUSTFLAGS="-C target-cpu=native" cargo run --release --bin baseline_server
 RUSTFLAGS="-C target-cpu=native" cargo run --release --bin baseline_client
 ```
 
+## BaselineH Protocol
+1. Start the server:
+```
+RUSTFLAGS="-C target-cpu=native" cargo run --release --bin baselineh_server
+```
+2. Start the client:
+```
+RUSTFLAGS="-C target-cpu=native" cargo run --release --bin baselineh_client
+```
+
 ## Qiyana0 Protocol
 1. Start the server:
 ```
@@ -110,7 +122,7 @@ chmod +x run_single.sh
 
 If you want to modify KEYWORD_SET_NUM (the size of each document's keyword set), DOCUMENT_NUM, THREAD_NUM and ports, please refer to the relevant file `<system>_sim.rs`.
 
-If you want to test a single NOT query, you need to adjust the comments in the verification section of `baseline_client.rs/qiyana0_client.rs/qiyana1_client.rs` in 279-291/242-274/234-242 lines.
+If you want to test a single NOT query, you need to adjust the comments in the verification section of `baseline_client.rs/baselineh_client.rs/qiyana0_client.rs/qiyana1_client.rs` in 279-291/242-274/234-242 lines.
 
 # Running Client-Master-Workers Interactive Mode
 We provide a shell script to support easy execution of the entire system. For example, you can run the following code to test the performance with 4 workers. If you wish to adjust the number of documents, ports, threads, etc., please modify the settings in the `share.rs` file.
